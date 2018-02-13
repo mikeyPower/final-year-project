@@ -66,7 +66,7 @@ ipdets={}
 
 # full mode - real data not in repo
 home=os.path.expanduser('~')
-file=home+'/data/tcd-surveys/TrinityIps.csv'
+file=home+'/data/tcd-surveys/trinityIps.csv'
 verbose=False
 
 # test mode

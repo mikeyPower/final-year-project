@@ -7,10 +7,10 @@ import sys
 
 '''
 This script outputs the number of ips that are considered stable( i.e continuosly up for a given period) and those not considered
-stable.
+stable. As well as taking account for what port the ip is found on
 
 A smaple command that can be proformed is as follows:
-python range.py 5/2/2018 5/6/2018 14 21
+python range.py 5/2/2018 5/6/2018 14 21 tmp.csv
 
 The date is structured as (day/month/year)
 With time as 24 hour
@@ -42,6 +42,8 @@ endYear = end[2]
 startTime = sys.argv[3]
 endTime = sys.argv[4]
 
+csvFile = sys.argv[5]
+
 #print(startday,startmonth,startyear,endDay,endMonth, endYear,startTime, endTime)
 
 start = datetime.date(startyear, startmonth, startday)#Actualy started on the 06/02/2018T00
@@ -69,7 +71,7 @@ for q in lenght:
 
 
 
-with open('tmp.csv') as csvfile:
+with open(csvFile) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
 
     mostCount =0
@@ -93,7 +95,7 @@ with open('tmp.csv') as csvfile:
     for t in dateIsoSub:
         stableIps.append([])
         dictionary[t] = []
-        with open('tmp.csv') as csvfile:
+        with open(csvFile) as csvfile:
             readCSV = csv.reader(csvfile, delimiter=',')
             for u in readCSV:
                 if u[-3][:13]==t: #compare dates
@@ -132,7 +134,7 @@ with open('tmp.csv') as csvfile:
     nonStableIps = []
     for t in difSet:
         #print(t)
-        with open('tmp.csv') as csvfile:
+        with open(csvFile) as csvfile:
             readCSV = csv.reader(csvfile, delimiter=',')
             for u in readCSV:
                 if u[0]+'P'+u[6]==t:

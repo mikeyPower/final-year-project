@@ -5,6 +5,20 @@ import datetime
 from datetime import timedelta, date
 import sys
 
+'''
+This script outputs the number of ips that are considered stable( i.e continuosly up for a given period) and those not considered
+stable. As well as taking account for what port the ip is found on
+
+A smaple command that can be proformed is as follows:
+python range.py 5/2/2018 5/6/2018 14 21 tmp.csv
+
+The date is structured as (day/month/year)
+With time as 24 hour
+
+This command will output the number of stable and non stable Ips between 5/2/2018T14 to 5/6/2018T21 i.e the only information we
+want is between those time times between those days
+'''
+
 #If need all info could seperate by using a delimiter and then splitting to convert back them if too heavy with nesting of arrays
 
 
@@ -28,7 +42,9 @@ endYear = end[2]
 startTime = sys.argv[3]
 endTime = sys.argv[4]
 
-print(startday,startmonth,startyear,endDay,endMonth, endYear,startTime, endTime)
+csvFile = sys.argv[5]
+
+#print(startday,startmonth,startyear,endDay,endMonth, endYear,startTime, endTime)
 
 start = datetime.date(startyear, startmonth, startday)#Actualy started on the 06/02/2018T00
 end = datetime.date(endYear, endMonth, endDay)
@@ -37,7 +53,7 @@ dateIsoSub = []
 datelist = pd.date_range(start, end, freq='1H').tolist()
 index = pd.Index(datelist)
 for x in index[:-1]:#loop through everything except the last element
-	
+
     dateIsoSub.append(x.isoformat()[:13])
     #break
 
@@ -53,14 +69,9 @@ for q in lenght:
     else:
         continue
 
-# print out hour
-#for y in dateIsoSub:
-  # print(y[11:])
-		#print(type(t))
 
 
-
-with open('tmp.csv') as csvfile:
+with open(csvFile) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
 
     mostCount =0
@@ -84,7 +95,7 @@ with open('tmp.csv') as csvfile:
     for t in dateIsoSub:
         stableIps.append([])
         dictionary[t] = []
-        with open('tmp.csv') as csvfile:
+        with open(csvFile) as csvfile:
             readCSV = csv.reader(csvfile, delimiter=',')
             for u in readCSV:
                 if u[-3][:13]==t: #compare dates
@@ -123,7 +134,7 @@ with open('tmp.csv') as csvfile:
     nonStableIps = []
     for t in difSet:
         #print(t)
-        with open('tmp.csv') as csvfile:
+        with open(csvFile) as csvfile:
             readCSV = csv.reader(csvfile, delimiter=',')
             for u in readCSV:
                 if u[0]+'P'+u[6]==t:

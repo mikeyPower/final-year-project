@@ -95,10 +95,7 @@ with open(file) as csvfile:
         if port != "80" and port != "443":
             print "Error - bad port: " + port
             continue
-        if port=="80" and ip not in thishour_port80:
-            thishour_port80.append(ip)
-        elif port=="443" and ip not in thishour_port443:
-            thishour_port443.append(ip)
+
         if hour!=thishour:
             # a new hour
             if verbose:
@@ -108,13 +105,20 @@ with open(file) as csvfile:
                 print
                 print "both:", thishour_both
                 print
-            # check who's got both
+            # check who's got both, don't remove while iterating on a list!
+            t80=list(thishour_port80)
+            t443=list(thishour_port443)
             for ip80 in thishour_port80:
                 if ip80 in thishour_port443:
                     if ip80 not in thishour_both:
                         thishour_both.append(ip80)
-                    thishour_port80.remove(ip80)
-                    thishour_port443.remove(ip80)
+                    t80.remove(ip80)
+                    t443.remove(ip80)
+            del thishour_port80
+            del thishour_port443
+            thishour_port80=t80
+            thishour_port443=t443
+
             if verbose:
                 print "80:", thishour_port80
                 print
@@ -123,12 +127,16 @@ with open(file) as csvfile:
                 print "both:", thishour_both
                 print
             # accumulate
-            hourlycounts[hour]=[len(thishour_port80),len(thishour_port443),len(thishour_both)]
+            hourlycounts[thishour]=[len(thishour_port80),len(thishour_port443),len(thishour_both)]
             # re-init
             thishour_port80=[]
             thishour_port443=[]
             thishour_both=[]
             thishour=hour
+        if port=="80" and ip not in thishour_port80:
+            thishour_port80.append(ip)
+        elif port=="443" and ip not in thishour_port443:
+            thishour_port443.append(ip)
 
         # accumulate details on this IP
         if ip not in ipdets:
@@ -144,6 +152,37 @@ with open(file) as csvfile:
         thisone[port] += 1
         hod=hourofday(hour)
         thisone['hours'][hod] += 1
+
+    # the last hour
+    if verbose:
+        print "80:", thishour_port80
+        print
+        print "443:", thishour_port443
+        print
+        print "both:", thishour_both
+        print
+    # check who's got both
+    t80=list(thishour_port80)
+    t443=list(thishour_port443)
+    for ip80 in thishour_port80:
+        if ip80 in thishour_port443:
+            if ip80 not in thishour_both:
+                thishour_both.append(ip80)
+            t80.remove(ip80)
+            t443.remove(ip80)
+    del thishour_port80
+    del thishour_port443
+    thishour_port80=t80
+    thishour_port443=t443
+    if verbose:
+        print "80:", thishour_port80
+        print
+        print "443:", thishour_port443
+        print
+        print "both:", thishour_both
+        print
+    # accumulate
+    hourlycounts[thishour]=[len(thishour_port80),len(thishour_port443),len(thishour_both)]
 
 print >>hour_fp, hour_f_header
 firsthour=""

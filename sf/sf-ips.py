@@ -142,8 +142,6 @@ with open(file) as csvfile:
         thisone[port] += 1
         hod=hourofday(hour)
         thisone['hours'][hod] += 1
-        #if ip == "134.226.106.143":
-            #print "Oddball: " + ip + " seen at " + str(hod) + " " + str(thisone['hours'])
 
 print >>hour_fp, hour_f_header
 for h in sorted(hourlycounts):

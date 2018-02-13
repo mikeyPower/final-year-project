@@ -5,11 +5,8 @@
 import sys
 import os
 import csv
-import dateutil.parser
-import pandas as pd
-import datetime
 import time
-from datetime import timedelta, date
+from datetime import datetime
 
 # map from date structure to just hour granularity
 def justhour(val):
@@ -23,6 +20,7 @@ def hourofday(val):
 
 # the timestamp, in time_t format
 now=str(int(time.time()))
+str_now=str(datetime.now())
 
 # has counts of IP's seen listening on which ports or both at that hour
 hour_f="hours." + now + ".csv"
@@ -38,6 +36,10 @@ allip_fp=open(allip_f,"w");
 regip_f="regips." + now + ".csv"
 regip_f_header="ip,obs_needed,firstseen,lastseen,count(80's),count(443's)"
 regip_fp=open(regip_f,"w");
+
+# sorta human readable summary
+summary_f="summary." + now + ".txt"
+summary_fp=open(summary_f,"w")
 
 # how often do we need to see an IP for it to be "regularly-seen" 
 # as a percentage of the number of hourly observations
@@ -144,7 +146,12 @@ with open(file) as csvfile:
         thisone['hours'][hod] += 1
 
 print >>hour_fp, hour_f_header
+firsthour=""
+lasthour=""
 for h in sorted(hourlycounts):
+    if firsthour=="":
+        firsthour=h
+    lasthour=h
     print >>hour_fp, h + "," +  str(hourlycounts[h][0]) + "," + str(hourlycounts[h][1]) + "," + str(hourlycounts[h][2])
 
 print >>allip_fp, allip_f_header
@@ -158,6 +165,16 @@ for det in sorted(ipdets):
 # split IPs into regular/irregular
 obs_needed=int(len(hourlycounts)*reg_percent/100)
 
+# counters
+reg_tot=0
+reg_80=0
+reg_443=0
+reg_both=0
+irreg_tot=0
+irreg_80=0
+irreg_443=0
+irreg_both=0
+
 print >>regip_fp, regip_f_header
 print >>irregip_fp, irregip_f_header
 for det in sorted(ipdets):
@@ -166,6 +183,13 @@ for det in sorted(ipdets):
     # a zero count is regular, but non-zero and < obs_needed is not...
     if (ipdets[det]['80']==0 or ipdets[det]['80'] >= obs_needed) \
             and (ipdets[det]['443']==0 or ipdets[det]['443'] >= obs_needed):
+        reg_tot += 1
+        if ipdets[det]['80'] > 0 and ipdets[det]['443']==0: 
+            reg_80 += 1
+        elif ipdets[det]['80'] == 0 and ipdets[det]['443']>0: 
+            reg_443 += 1
+        elif ipdets[det]['80'] > 0 and ipdets[det]['443']>0: 
+            reg_both += 1
         print >>regip_fp, det + "," + \
             str(obs_needed) + "," + \
             ipdets[det]['firstseen'] + "," + \
@@ -173,6 +197,13 @@ for det in sorted(ipdets):
             str(ipdets[det]['80']) + "," + \
             str(ipdets[det]['443']) 
     else:
+        irreg_tot += 1
+        if ipdets[det]['80'] > 0 and ipdets[det]['443']==0: 
+            irreg_80 += 1
+        elif ipdets[det]['80'] == 0 and ipdets[det]['443']>0: 
+            irreg_443 += 1
+        elif ipdets[det]['80'] > 0 and ipdets[det]['443']>0: 
+            irreg_both += 1
         hstring=""
         tot_obs=0
         for h in range(0,24):
@@ -185,4 +216,30 @@ for det in sorted(ipdets):
             str(ipdets[det]['80']) + "," + \
             str(ipdets[det]['443']) + "," +\
             str(tot_obs) + hstring 
+
+# summarise
+print >>summary_fp, "Ran " + sys.argv[0] + " at " + str_now + " (" + now + ")"
+print >>summary_fp, "Total observations slots = " + str(len(hourlycounts))
+print >>summary_fp, "\t first: " + firsthour 
+print >>summary_fp, "\t last: " + lasthour 
+print >>summary_fp, "Total ips seen = " + str(len(ipdets))
+print >>summary_fp, "IPs consider regular if seen " + \
+    str(reg_percent) + "% of the time: " +  \
+    str(obs_needed) + " from " + str(len(hourlycounts))
+print >>summary_fp, "Regular ips seen = " + str(reg_tot)
+print >>summary_fp, "\tport 80 only  = " + str(reg_80)
+print >>summary_fp, "\tport 443 only  = " + str(reg_443)
+print >>summary_fp, "\tboth  = " + str(reg_both)
+print >>summary_fp, "Irregular ips seen = " + str(irreg_tot)
+print >>summary_fp, "\tport 80 only  = " + str(irreg_80)
+print >>summary_fp, "\tport 443 only  = " + str(irreg_443)
+print >>summary_fp, "\tboth  = " + str(irreg_both)
+print >>summary_fp, "Files created:"
+print >>summary_fp, "\tthis: " + summary_f
+print >>summary_fp, "\thourly counts: " + hour_f
+print >>summary_fp, "\tall IP counts: " + allip_f
+print >>summary_fp, "\tregular IP counts: " + regip_f
+print >>summary_fp, "\tirregular IP counts/hours: " + irregip_f
+
+
 

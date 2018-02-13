@@ -78,52 +78,40 @@ with open(csvFile) as csvfile:
     mostDate =''
 
     dates = []
-    ips = []
     ports = []
 #create a list of times substring till the hour of the csv file
     for t in readCSV:
         dates.append(t[-3][:13])
-        ips.append(t[0])
         ports.append(t[6])
 
     ports = list(set(ports))
 
 #place same dates into a multi-dimensional array such that everything with the smame time gets placed together
-    stableIps = []
+
     dictionary = {}
-    count =0
     for t in dateIsoSub:
-        stableIps.append([])
-        dictionary[t] = []
         with open(csvFile) as csvfile:
             readCSV = csv.reader(csvfile, delimiter=',')
-            for u in readCSV:
-                if u[-3][:13]==t: #compare dates
-                    for i in ports:
-                        if i ==u[6]:
-
-                            stableIps[count].append(u[0]+'P'+u[6]) ##ipaddress + port number
-                            dictionary[t].append(u[0])
-                        else:
-                            continue
-                else:
-	               #break
-                    continue
-            count = count +1
-
+            dictionary[t] =[x[0]+'P'+x[6] for j, x in enumerate(readCSV) if x[-3][:13] == t]
+    #print(dictionary['2018-02-05T14'])
 
     #get the intersection of all the ips at certain times to find the most stableIps
-    intersectSet =stableIps[0]
-    for i in stableIps[1:]:
-		intersectSet = list(set(i).difference(intersectSet))
+    intersectSet =dictionary.values()[0]
+    for key, values in dictionary.items():
+
+        print(key)
+        if key == dictionary.keys()[0]: ##skip the first value in dictionary
+             continue
+        else:
+            intersectSet = list(set(values).difference(intersectSet))
     print(len(intersectSet))
 
 
 	#get the unstable ip address
     difSet = []
-    for i in stableIps:
+    for key, values in dictionary.items():
         #print(i)
-        differenceSet = list(set(i) - set(intersectSet))
+        differenceSet = list(set(values) - set(intersectSet))
         difSet.extend(differenceSet)
     print(len(difSet))
 
@@ -136,15 +124,4 @@ with open(csvFile) as csvfile:
         #print(t)
         with open(csvFile) as csvfile:
             readCSV = csv.reader(csvfile, delimiter=',')
-            for u in readCSV:
-                if u[0]+'P'+u[6]==t:
-                    #print(u)
-                    nonStableIps.append(u)
-                else:
-                    continue
-
-
-'''
-    for k in nonStableIps:
-        print(k)
-'''
+            nonStableIps = [x for i, x in enumerate(readCSV) if x[0]+'P'+x[6] == t]

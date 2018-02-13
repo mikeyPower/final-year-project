@@ -8,10 +8,6 @@ input.py 134.226.63.120 tmp.csv
 
 '''
 
-
-
-
-
 ip =  sys.argv[1]
 csvFile = sys.argv[2]
 
@@ -20,13 +16,7 @@ csvFile = sys.argv[2]
 
 with open(csvFile) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
-
-    ipMatch = []
-    for i in readCSV:
-        if i[0] == ip:
-            ipMatch.append(i)
-        else:
-            continue
+    ipMatch = [x for i, x in enumerate(readCSV) if x[0] == ip]
 
 
     for i in ipMatch:

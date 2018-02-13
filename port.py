@@ -22,27 +22,26 @@ with open(csvFile) as csvfile:
     ports = list(set(ports))
 
 
-    print(len(ports))
+    print('Number of Ports ',len(ports))
 
     #store each ip in a multi dimensial array so all ips listenning on port 80 are located at stableIps[0] etc
-    ips = []
-    count =0
+    dictionary = {}
     for t in ports:
-        ips.append([])
         with open(csvFile) as csvfile:
             readCSV = csv.reader(csvfile, delimiter=',')
-            for u in readCSV:
-                if u[6]==t:
-                    ips[count].append(u[0]) #could possible place the items as tuples if the nesting of arrays becomes a problem but unsure can i check for intersection and so what with tuples
-                else:
-	               #break
-                    continue
-            count = count +1
+             #could possible place the items as tuples if the nesting of arrays becomes a problem but unsure can i check for intersection and so what with tuples
+            dictionary[t] =[x[0] for j, x in enumerate(readCSV) if x[6] == t]
 
 
+    print(len(dictionary))
 #find ips that are listenning on all ports
-    intersectSet =ips[0]
-    print(len(intersectSet))
-    for i in ips[1:]:
-         intersectSet = list(set(i).difference(intersectSet))
+    intersectSet =dictionary.values()[0]
+    for key, values in dictionary.items():
+
+        print(key)
+        if key == dictionary.keys()[0]:
+             continue
+        else:
+            print(goal)
+            intersectSet = list(set(values).difference(intersectSet))
     print(len(intersectSet))

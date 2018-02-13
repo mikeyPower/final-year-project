@@ -46,7 +46,7 @@ for x in index[:-1]:#loop through everything except the last element
 
     dateIsoSub.append(x.isoformat()[:13])
     #break
-with open('tmp.csv') as csvfile:
+with open(csvFile) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     mostCount =0
     mostDate =''
@@ -72,7 +72,7 @@ with open('tmp.csv') as csvfile:
     print(results[maxIndex], dateIsoSub[maxIndex])
 
 #write all the ip address that have the timestamp that coralates with the most ip address in the college
-    with open('tmp.csv') as csvfile:
+    with open(csvFile) as csvfile:
         readCSV = csv.reader(csvfile, delimiter=',')
         open('peakIps.csv', 'w').close()
         open('notPeakIps.csv','w').close()

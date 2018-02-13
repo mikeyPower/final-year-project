@@ -1,6 +1,8 @@
 
 # a way to reduce my typing load:-)
 
+all: doit
+
 doit:
 	./sf-ips.py
 

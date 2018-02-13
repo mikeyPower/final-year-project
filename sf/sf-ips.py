@@ -68,6 +68,10 @@ if len(sys.argv)==2 and sys.argv[1] == 'test':
 if verbose:
     print "Reading from " + file
 
+if not os.path.isfile(file) or not os.access(file,os.R_OK):
+    print "Can't read input file: " + file + " - exiting"
+    sys.exit(1)
+
 with open(file) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     for line in readCSV:
@@ -144,7 +148,11 @@ obs_needed=int(len(hourlycounts)*reg_percent/100)
 print >>regip_fp, regip_f_header
 print >>irregip_fp, irregip_f_header
 for det in sorted(ipdets):
-    if ipdets[det]['80'] >= obs_needed or ipdets[det]['443'] >= obs_needed:
+    # if either port is regular...
+    # if ipdets[det]['80'] >= obs_needed or ipdets[det]['443'] >= obs_needed:
+    # a zero count is regular, but non-zero and < obs_needed is not...
+    if (ipdets[det]['80']==0 or ipdets[det]['80'] >= obs_needed) \
+            and (ipdets[det]['443']==0 or ipdets[det]['443'] >= obs_needed):
         print >>regip_fp, det + "," + \
             str(obs_needed) + "," + \
             ipdets[det]['firstseen'] + "," + \

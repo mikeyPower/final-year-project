@@ -15,6 +15,10 @@ from datetime import timedelta, date
 def justhour(val):
     return val[:13]
 
+def hourofday(val):
+    #print "hourofday: " + val + " gives: " + val[-2:]
+    return int(val[-2:])
+
 # our various output files, timestamped
 
 # the timestamp, in time_t format
@@ -42,6 +46,10 @@ reg_percent=90
 # all other IPs are "irregular"
 irregip_f="irregips." + now + ".csv"
 irregip_f_header="ip,obs_needed,firstseen,lastseen,count(80's),count(443's)"
+# include this total as a check of our calcs - should be sum of the two counts
+irregip_f_header += ",total of hourly obs"
+for h in range(0,24):
+    irregip_f_header += "," + str(h)
 irregip_fp=open(irregip_f,"w");
 
 # collect info per hour
@@ -119,16 +127,23 @@ with open(file) as csvfile:
             thishour_port443=[]
             thishour_both=[]
             thishour=hour
+
         # accumulate details on this IP
         if ip not in ipdets:
             ipdets[ip]={}
             ipdets[ip]['80']=0
             ipdets[ip]['443']=0
+            # the 24 hours in the day
+            ipdets[ip]['hours']=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         thisone=ipdets[ip]
         if 'firstseen' not in thisone:
             thisone['firstseen']=hour
         thisone['lastseen']=hour
         thisone[port] += 1
+        hod=hourofday(hour)
+        thisone['hours'][hod] += 1
+        #if ip == "134.226.106.143":
+            #print "Oddball: " + ip + " seen at " + str(hod) + " " + str(thisone['hours'])
 
 print >>hour_fp, hour_f_header
 for h in sorted(hourlycounts):
@@ -160,10 +175,16 @@ for det in sorted(ipdets):
             str(ipdets[det]['80']) + "," + \
             str(ipdets[det]['443']) 
     else:
+        hstring=""
+        tot_obs=0
+        for h in range(0,24):
+            hstring += "," + str(ipdets[det]['hours'][h])
+            tot_obs += ipdets[det]['hours'][h]
         print >>irregip_fp, det + "," + \
             str(obs_needed) + "," + \
             ipdets[det]['firstseen'] + "," + \
             ipdets[det]['lastseen'] + "," + \
             str(ipdets[det]['80']) + "," + \
-            str(ipdets[det]['443']) 
+            str(ipdets[det]['443']) + "," +\
+            str(tot_obs) + hstring 
 

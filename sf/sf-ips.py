@@ -3,6 +3,7 @@
 # modified by SF to count IPs and not IP/port combos
 
 import sys
+import os
 import csv
 import dateutil.parser
 import pandas as pd
@@ -30,7 +31,8 @@ thishour_port443=[]
 thishour_both=[]
 
 # full mode - real data not in repo
-file='~/data/tcd-surveys/TrinityIps.csv'
+home=os.path.expanduser('~')
+file=home+'/data/tcd-surveys/TrinityIps.csv'
 verbose=False
 
 # test mode
@@ -38,6 +40,9 @@ if len(sys.argv)==2 and sys.argv[1] == 'test':
     # use a short test file with 254 records, with synthetic data generated using the m100.sh script
     file='254recs.csv'
     verbose=True
+
+if verbose:
+    print "Reading from " + file
 
 with open(file) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')

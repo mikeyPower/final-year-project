@@ -29,7 +29,7 @@ with open(csvFile) as csvfile:
     count =0
     for t in ports:
         ips.append([])
-        with open('tmp.csv') as csvfile:
+        with open(csvFile) as csvfile:
             readCSV = csv.reader(csvfile, delimiter=',')
             for u in readCSV:
                 if u[6]==t:

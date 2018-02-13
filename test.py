@@ -4,18 +4,9 @@ import pandas as pd
 import datetime
 from datetime import timedelta, date
 import sys
-'''
-This script outputs the number of ips on both port 80 and 443 at a given time, writing the peak time all it's ips to a csv csv
-while also writing the lowest number of ips at a given time to a csv file
 
-example run:
-python peak-nonpeak.py 5/2/2018 5/6/2018 14 21 tmp.csv
+#python range.py 5/2/2018 5/6/2018 14 21 tmp.csv
 
-
-
-NOTE:
-Should give the option to specifiy what ports you want to see or all ports
-'''
 
 start = sys.argv[1]
 start = map(int,(start.split('/')))

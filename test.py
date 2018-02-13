@@ -14,24 +14,6 @@ for x in index:
 	dateIso.append(x.isoformat())
 	dateIsoSub.append(x.isoformat()[:13])
 
-'''
-print dateIsoSub
-for y in dateIso:
-	print(y)
-
-for single_date in (start + timedelta(n) for n in range(day_count)):
-  print x.strftime("%d/%m/%y %H:%M")
-
-def daterange(date1, date2):
-    for n in range(int ((date2 - date1).days)+1):
-        yield date1 + timedelta(n)
-
-start_dt = date(2015, 12, 20)
-end_dt = date(2016, 1, 11)
-for dt in daterange(start_dt, end_dt):
-   print(dt.strftime("%Y-%m-%d"))
-'''
-
 with open('tmp.csv') as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     mostCount =0
@@ -71,29 +53,3 @@ with open('tmp.csv') as csvfile:
             else:
                #break
                continue
-
-
-
-
-
-
-'''
-    for date in dateIsoSub:
-       count =0
-        readCSV = csv.reader(csvfile, delimiter=',')
-        for row in readCSV:
-            #print(row[-3][:13]+ "  "+date)
-            #break
-            if date == row[-3][:13]:
-                count = count +1
-                if count > mostCount:
-                   mostCount = count
-                   mostDate = date
-                   break
-                #return mostCount
-                else:
-                   break
-            else:
-			   break
-    print (`mostCount` +' '+mostDate)
-'''

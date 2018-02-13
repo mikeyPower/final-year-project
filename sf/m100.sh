@@ -2,7 +2,7 @@
 
 #set -x
 
-# make a 100 record test file with synthetic data
+# make a few-hundred-records test file with synthetic data
 
 # records should look like zmap output with "--output-fields=*", with these fields: 
 # saddr,saddr-raw,daddr,daddr-raw,ipid,ttl,sport,dport,seqnum,acknum,window,classification,success,repeat,cooldown,timestamp-str,timestamp-ts,timestamp-us
@@ -25,7 +25,7 @@ listeners()
 }
 
 # output file will have this many lines:-) 
-OFILE=254recs.csv
+OFILE=fewrecs.csv
 # don't entirely crap on an old one, give us 1 chance to fix
 if [ -f $OFILE ]
 then
@@ -36,9 +36,13 @@ fi
 slash24="192.0.2"
 scanner="192.0.2.1"
 decscanner=$(ip2dec "$scanner")
-# we'll use 20 pretend hosts
+# we'll use 20 pretend hosts, that we "regularly" see
 bottom=20
 top=40
+# we'll use 2 hosts that aren't seen regularly
+irbottom=55
+irtop=56
+
 # measurement times
 times="\
 	2018-02-05T19:00:12.386+0000 \
@@ -48,8 +52,12 @@ times="\
 	2018-02-05T23:00:12.386+0000 \
 "
 
+# the one time we see irregular hosts
+irtime="2018-02-05T21:00:12.386+0000"
+
 for scantime in $times
 do
+
 	for ((hnum=$bottom;hnum<=$top;hnum++))
 	do
 		ip=$slash24"."$hnum
@@ -73,8 +81,35 @@ do
 			echo "oops - something odd - exiting at $scantime, $hnum, $ports"
 			exit 1
 		fi
-
 	done
+
+	if [[ "$scantime" == "$irtime" ]]
+	then
+		for ((hnum=$irbottom;hnum<=$irtop;hnum++))
+		do
+			ip=$slash24"."$hnum
+			decip=$(ip2dec "$ip")
+			#echo "$scantime,$ip,$decip,$scanner,$decscanner"
+			ports=$(listeners)
+			if [[ "$ports" == "0" ]]
+			then
+				# just 80
+				echo "$ip,$decip,$scanner,$decscanner,10219,125,80,39178,4266143625,714081742,8192,synack,1,0,1,$scantime,1517871612,386503" >>$OFILE
+			elif [[ "$ports" == "1" ]]
+			then
+				# just 443
+				echo "$ip,$decip,$scanner,$decscanner,10219,125,443,39178,4266143625,714081742,8192,synack,1,0,1,$scantime,1517871612,386503" >>$OFILE
+			elif [[ "$ports" == "2" ]]
+			then
+				# both 
+				echo "$ip,$decip,$scanner,$decscanner,10219,125,80,39178,4266143625,714081742,8192,synack,1,0,1,$scantime,1517871612,386503" >>$OFILE
+				echo "$ip,$decip,$scanner,$decscanner,10219,125,443,39178,4266143625,714081742,8192,synack,1,0,1,$scantime,1517871612,386503" >>$OFILE
+			else
+				echo "oops - something odd - exiting at $scantime, $hnum, $ports"
+				exit 1
+			fi
+		done
+	fi
 done
 
 

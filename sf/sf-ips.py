@@ -13,15 +13,15 @@ from datetime import timedelta, date
 def justhour(val):
     return val[:13]
 
-start = datetime.date(2018, 2, 6)#started on the 06/02/2018T00
-end = datetime.date(2018, 2, 7)#Will finish on the 12/02/2018T23
-dateIso = []
-dateIsoSub = []
-datelist = pd.date_range(start, end, freq='1H').tolist()
-index = pd.Index(datelist)
-for x in index[:-1]:#loop through everything bar the last element in the list
-	dateIso.append(x.isoformat())
-	dateIsoSub.append(x.isoformat()[:13])
+#start = datetime.date(2018, 2, 6)#started on the 06/02/2018T00
+#end = datetime.date(2018, 2, 7)#Will finish on the 12/02/2018T23
+#dateIso = []
+#dateIsoSub = []
+#datelist = pd.date_range(start, end, freq='1H').tolist()
+#index = pd.Index(datelist)
+#for x in index[:-1]:#loop through everything bar the last element in the list
+	#dateIso.append(x.isoformat())
+	#dateIsoSub.append(x.isoformat()[:13])
 
 hourlycounts={}
 thishour=""
@@ -29,19 +29,14 @@ thishour_port80=[]
 thishour_port443=[]
 thishour_both=[]
 
-# full mode
-file='TrinityIps.csv'
+# full mode - real data not in repo
+file='~/data/tcd-surveys/TrinityIps.csv'
 verbose=False
-
 
 # test mode
 if len(sys.argv)==2 and sys.argv[1] == 'test':
-    # use a short test file, generated via:
-    #       head -1000 | tail -99 TrinityIps.csv >100recs.csv
-    #       tail -1 TrinityIps.csv >>100recs.csv
-    # the tail is so that we have at least one record from a different hours
-    # the bash script m100.sh does the above
-    file='100recs.csv'
+    # use a short test file with 254 records, with synthetic data generated using the m100.sh script
+    file='254recs.csv'
     verbose=True
 
 with open(file) as csvfile:

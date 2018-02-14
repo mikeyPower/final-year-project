@@ -45,6 +45,19 @@ index = pd.Index(datelist)
 for x in index[:-1]:#loop through everything except the last element
 
     dateIsoSub.append(x.isoformat()[:13])
+
+
+    lenght = dateIsoSub[:]
+    for q in lenght:
+    #print(q)
+        if q[11:] < startTime:
+        #print(y[11:])
+            dateIsoSub.remove(q)
+        elif q[11:] > endTime:
+            dateIsoSub.remove(q)
+        else:
+            continue
+
     #break
 with open(csvFile) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')

@@ -17,6 +17,9 @@ With time as 24 hour
 
 This command will output the number of stable and non stable Ips between 5/2/2018T14 to 5/6/2018T21 i.e the only information we
 want is between those time times between those days
+
+NOTE:
+Need to change range file name to something else as it's getting confuseed with other modules in order to import functions to other scripts
 '''
 
 #If need all info could seperate by using a delimiter and then splitting to convert back them if too heavy with nesting of arrays
@@ -45,29 +48,31 @@ endTime = sys.argv[4]
 csvFile = sys.argv[5]
 
 #print(startday,startmonth,startyear,endDay,endMonth, endYear,startTime, endTime)
+def dateRange(startday,startmonth,startyear,endDay,endMonth, endYear, startTime,endTime):
+    start = datetime.date(startyear, startmonth, startday)#Actualy started on the 06/02/2018T00
+    end = datetime.date(endYear, endMonth, endDay)
 
-start = datetime.date(startyear, startmonth, startday)#Actualy started on the 06/02/2018T00
-end = datetime.date(endYear, endMonth, endDay)
+    dateIsoSub = []
+    datelist = pd.date_range(start, end, freq='1H').tolist()
+    index = pd.Index(datelist)
+    for x in index[:-1]:#loop through everything except the last element
 
-dateIsoSub = []
-datelist = pd.date_range(start, end, freq='1H').tolist()
-index = pd.Index(datelist)
-for x in index[:-1]:#loop through everything except the last element
-
-    dateIsoSub.append(x.isoformat()[:13])
+        dateIsoSub.append(x.isoformat()[:13])
     #break
 
 
-lenght = dateIsoSub[:]
-for q in lenght:
+    lenght = dateIsoSub[:]
+    for q in lenght:
     #print(q)
-    if q[11:] < startTime:
+        if q[11:] < startTime:
         #print(y[11:])
-        dateIsoSub.remove(q)
-    elif q[11:] > endTime:
-        dateIsoSub.remove(q)
-    else:
-        continue
+            dateIsoSub.remove(q)
+        elif q[11:] > endTime:
+            dateIsoSub.remove(q)
+        else:
+            continue
+
+    return dateIsoSub
 
 
 
@@ -86,31 +91,30 @@ with open(csvFile) as csvfile:
 
     ports = list(set(ports))
 
-#place same dates into a multi-dimensional array such that everything with the smame time gets placed together
-
+#this creates a dictionary with the keys being the date and values being a list of ips with port number at those date
+    dateIsoSub = dateRange(startday,startmonth,startyear,endDay,endMonth, endYear, startTime,endTime)
     dictionary = {}
     for t in dateIsoSub:
         with open(csvFile) as csvfile:
             readCSV = csv.reader(csvfile, delimiter=',')
             dictionary[t] =[x[0]+'P'+x[6] for j, x in enumerate(readCSV) if x[-3][:13] == t]
-    #print(dictionary['2018-02-05T14'])
+    
 
     #get the intersection of all the ips at certain times to find the most stableIps
     intersectSet =dictionary.values()[0]
     for key, values in dictionary.items():
 
-        print(key)
+        #print(key)
         if key == dictionary.keys()[0]: ##skip the first value in dictionary
              continue
         else:
-            intersectSet = list(set(values).difference(intersectSet))
+            intersectSet = list(set(values)& set(intersectSet))
     print(len(intersectSet))
 
 
 	#get the unstable ip address
     difSet = []
     for key, values in dictionary.items():
-        #print(i)
         differenceSet = list(set(values) - set(intersectSet))
         difSet.extend(differenceSet)
     print(len(difSet))
@@ -121,7 +125,6 @@ with open(csvFile) as csvfile:
     #consistently up for the given range
     nonStableIps = []
     for t in difSet:
-        #print(t)
         with open(csvFile) as csvfile:
             readCSV = csv.reader(csvfile, delimiter=',')
             nonStableIps = [x for i, x in enumerate(readCSV) if x[0]+'P'+x[6] == t]

@@ -1,8 +1,5 @@
 import csv
-import dateutil.parser
-import pandas as pd
-import datetime
-from datetime import timedelta, date
+from functions import dateRange
 import sys
 '''
 This script outputs the number of ips on both port 80 and 443 at a given time, writing the peak time all it's ips to a csv csv
@@ -15,6 +12,7 @@ python peak-nonpeak.py 5/2/2018 5/6/2018 14 21 tmp.csv
 
 NOTE:
 Should give the option to specifiy what ports you want to see or all ports
+also remove duplicates using set()
 '''
 
 start = sys.argv[1]
@@ -34,29 +32,6 @@ endTime = sys.argv[4]
 
 csvFile = sys.argv[5]
 
-#print(startday,startmonth,startyear,endDay,endMonth, endYear,startTime, endTime)
-
-start = datetime.date(startyear, startmonth, startday)#Actualy started on the 06/02/2018T00
-end = datetime.date(endYear, endMonth, endDay)
-
-dateIsoSub = []
-datelist = pd.date_range(start, end, freq='1H').tolist()
-index = pd.Index(datelist)
-for x in index[:-1]:#loop through everything except the last element
-
-    dateIsoSub.append(x.isoformat()[:13])
-
-
-    lenght = dateIsoSub[:]
-    for q in lenght:
-    #print(q)
-        if q[11:] < startTime:
-        #print(y[11:])
-            dateIsoSub.remove(q)
-        elif q[11:] > endTime:
-            dateIsoSub.remove(q)
-        else:
-            continue
 
     #break
 with open(csvFile) as csvfile:
@@ -64,12 +39,11 @@ with open(csvFile) as csvfile:
     mostCount =0
     mostDate =''
 
-    dates = []
 #create a list of times substring till the hour of the csv file
-    for t in readCSV:
-        dates.append(t[-3][:13])
+    dates = [x[-3][:13] for i, x in enumerate(readCSV)]
 
 #count how many times each date occurence occurs within the dates array from 06/02/2018T00 - 12/02/2018T23
+    dateIsoSub = dateRange(startday,startmonth,startyear,endDay,endMonth, endYear, startTime,endTime)
     results = []
     for q in dateIsoSub:
         r = dates.count(q)

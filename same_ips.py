@@ -1,10 +1,6 @@
 import csv
-import dateutil.parser
-import pandas as pd
-import datetime
-from datetime import timedelta, date
 import sys
-
+from functions import dateRange
 '''
 This script outputs the number of ips that are considered stable( i.e continuosly up for a given period) and those not considered
 stable. As well as taking account for what port the ip is found on
@@ -19,7 +15,7 @@ This command will output the number of stable and non stable Ips between 5/2/201
 want is between those time times between those days
 
 NOTE:
-Need to change range file name to something else as it's getting confuseed with other modules in order to import functions to other scripts
+Duplicated Entries are removed with the use of sets()
 '''
 
 #If need all info could seperate by using a delimiter and then splitting to convert back them if too heavy with nesting of arrays
@@ -48,33 +44,7 @@ endTime = sys.argv[4]
 csvFile = sys.argv[5]
 
 #print(startday,startmonth,startyear,endDay,endMonth, endYear,startTime, endTime)
-def dateRange(startday,startmonth,startyear,endDay,endMonth, endYear, startTime,endTime):
-    start = datetime.date(startyear, startmonth, startday)#Actualy started on the 06/02/2018T00
-    end = datetime.date(endYear, endMonth, endDay)
-
-    dateIsoSub = []
-    datelist = pd.date_range(start, end, freq='1H').tolist()
-    index = pd.Index(datelist)
-    for x in index[:-1]:#loop through everything except the last element
-
-        dateIsoSub.append(x.isoformat()[:13])
-    #break
-
-
-    lenght = dateIsoSub[:]
-    for q in lenght:
-    #print(q)
-        if q[11:] < startTime:
-        #print(y[11:])
-            dateIsoSub.remove(q)
-        elif q[11:] > endTime:
-            dateIsoSub.remove(q)
-        else:
-            continue
-
-    return dateIsoSub
-
-
+dateIsoSub =dateRange(startday,startmonth,startyear,endDay,endMonth, endYear, startTime,endTime)
 
 with open(csvFile) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
@@ -82,14 +52,9 @@ with open(csvFile) as csvfile:
     mostCount =0
     mostDate =''
 
-    dates = []
-    ports = []
 #create a list of times substring till the hour of the csv file
-    for t in readCSV:
-        dates.append(t[-3][:13])
-        ports.append(t[6])
+    dates = [x[-3][:13] for i, x in enumerate(readCSV)]
 
-    ports = list(set(ports))
 
 #this creates a dictionary with the keys being the date and values being a list of ips with port number at those date
     dateIsoSub = dateRange(startday,startmonth,startyear,endDay,endMonth, endYear, startTime,endTime)
@@ -98,7 +63,7 @@ with open(csvFile) as csvfile:
         with open(csvFile) as csvfile:
             readCSV = csv.reader(csvfile, delimiter=',')
             dictionary[t] =[x[0]+'P'+x[6] for j, x in enumerate(readCSV) if x[-3][:13] == t]
-    
+
 
     #get the intersection of all the ips at certain times to find the most stableIps
     intersectSet =dictionary.values()[0]
@@ -109,7 +74,7 @@ with open(csvFile) as csvfile:
              continue
         else:
             intersectSet = list(set(values)& set(intersectSet))
-    print(len(intersectSet))
+    print('Number of ips that are constent',len(intersectSet))
 
 
 	#get the unstable ip address
@@ -117,7 +82,7 @@ with open(csvFile) as csvfile:
     for key, values in dictionary.items():
         differenceSet = list(set(values) - set(intersectSet))
         difSet.extend(differenceSet)
-    print(len(difSet))
+    print('Number of ips that are inconsistent',len(difSet))
 
     #for i in difSet:
     #    print(i)

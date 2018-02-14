@@ -4,7 +4,7 @@ import csv
 '''
 This script simple finds all occurance of a given ip and prints them to the screen
 
-input.py 134.226.63.120 tmp.csv
+Example: python find-ip-instances.py 134.226.63.120 tmp.csv
 
 '''
 

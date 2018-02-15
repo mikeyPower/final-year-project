@@ -41,7 +41,7 @@ regip_fp=open(regip_f,"w");
 summary_f="summary." + now + ".txt"
 summary_fp=open(summary_f,"w")
 
-# how often do we need to see an IP for it to be "regularly-seen" 
+# how often do we need to see an IP for it to be "regularly-seen"
 # as a percentage of the number of hourly observations
 reg_percent=90
 
@@ -199,7 +199,7 @@ for det in sorted(ipdets):
         ipdets[det]['firstseen'] + "," + \
         ipdets[det]['lastseen'] + "," + \
         str(ipdets[det]['80']) + "," + \
-        str(ipdets[det]['443']) 
+        str(ipdets[det]['443'])
 
 # split IPs into regular/irregular
 obs_needed=int(len(hourlycounts)*reg_percent/100)
@@ -223,25 +223,25 @@ for det in sorted(ipdets):
     if (ipdets[det]['80']==0 or ipdets[det]['80'] >= obs_needed) \
             and (ipdets[det]['443']==0 or ipdets[det]['443'] >= obs_needed):
         reg_tot += 1
-        if ipdets[det]['80'] > 0 and ipdets[det]['443']==0: 
+        if ipdets[det]['80'] > 0 and ipdets[det]['443']==0:
             reg_80 += 1
-        elif ipdets[det]['80'] == 0 and ipdets[det]['443']>0: 
+        elif ipdets[det]['80'] == 0 and ipdets[det]['443']>0:
             reg_443 += 1
-        elif ipdets[det]['80'] > 0 and ipdets[det]['443']>0: 
+        elif ipdets[det]['80'] > 0 and ipdets[det]['443']>0:
             reg_both += 1
         print >>regip_fp, det + "," + \
             str(obs_needed) + "," + \
             ipdets[det]['firstseen'] + "," + \
             ipdets[det]['lastseen'] + "," + \
             str(ipdets[det]['80']) + "," + \
-            str(ipdets[det]['443']) 
+            str(ipdets[det]['443'])
     else:
         irreg_tot += 1
-        if ipdets[det]['80'] > 0 and ipdets[det]['443']==0: 
+        if ipdets[det]['80'] > 0 and ipdets[det]['443']==0:
             irreg_80 += 1
-        elif ipdets[det]['80'] == 0 and ipdets[det]['443']>0: 
+        elif ipdets[det]['80'] == 0 and ipdets[det]['443']>0:
             irreg_443 += 1
-        elif ipdets[det]['80'] > 0 and ipdets[det]['443']>0: 
+        elif ipdets[det]['80'] > 0 and ipdets[det]['443']>0:
             irreg_both += 1
         hstring=""
         tot_obs=0
@@ -254,13 +254,13 @@ for det in sorted(ipdets):
             ipdets[det]['lastseen'] + "," + \
             str(ipdets[det]['80']) + "," + \
             str(ipdets[det]['443']) + "," +\
-            str(tot_obs) + hstring 
+            str(tot_obs) + hstring
 
 # summarise
 print >>summary_fp, "Ran " + sys.argv[0] + " at " + str_now + " (" + now + ")"
 print >>summary_fp, "Total observations slots = " + str(len(hourlycounts))
-print >>summary_fp, "\t first: " + firsthour 
-print >>summary_fp, "\t last: " + lasthour 
+print >>summary_fp, "\t first: " + firsthour
+print >>summary_fp, "\t last: " + lasthour
 print >>summary_fp, "Total ips seen = " + str(len(ipdets))
 print >>summary_fp, "IPs consider regular if seen " + \
     str(reg_percent) + "% of the time: " +  \
@@ -279,6 +279,3 @@ print >>summary_fp, "\thourly counts: " + hour_f
 print >>summary_fp, "\tall IP counts: " + allip_f
 print >>summary_fp, "\tregular IP counts: " + regip_f
 print >>summary_fp, "\tirregular IP counts/hours: " + irregip_f
-
-
-

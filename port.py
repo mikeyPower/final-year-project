@@ -120,30 +120,41 @@ with open(csvFile) as csvfile:
     #get all the unique port numbers
     ports = list(set(ports))
     #dates = list(set(dates))
+    port80 =0;
+    port443=0;
 
+    print('Number of ports ',len(ports))
 
-    print('Number of Ports ',len(ports))
-    #print('Number of dates ',len(dates))
-
-    #this creates a dictionary with the keys being the port number + the date and values being a list of ips at those specific port number and date
-    dictionary = {}
-    for v in dateIsoSub:
-        count = 0
-        for t in ports:
-            with open(csvFile) as csvfile:
-                readCSV = csv.reader(csvfile, delimiter=',')
+    #this creates a dictionary with the keys being the port number + the date and values being a list of ips at those specific port number and date#
+    with open("ports1.csv", "w") as myfile:
+        writer=csv.writer(myfile)
+        writer.writerow(['Time','Port 80', 'Port 443', 'Both'])
+        dictionary = {}
+        for v in dateIsoSub:
+            count = 0
+            for t in ports:
+                with open(csvFile) as csvfile:
+                    readCSV = csv.reader(csvfile, delimiter=',')
                 #print(t)
              #could possible place the items as tuples if the nesting of arrays becomes a problem but unsure can i check for intersection and so what with tuples
              #list(set()) will remove any duplicate ips
-                dictionary[t+'P'+v] =list(set([x[0] for j, x in enumerate(readCSV) if x[6] == t and x[-3][:13]==v]))
-                print('Number of ips listenning on Port ' +t+' at '+v ,len(dictionary[t+'P'+v]))
-                count = count +1
-                if count == len(ports):
-                    dictionary['80+433P'+v] = list(set(dictionary['80'+'P'+v]) & set(dictionary['443'+'P'+v]))
-                    print('Number of ips listenning on Both Port 80 and 443 at '+v  ,len(dictionary['80+433P'+v]))
-                else:
-                    continue
+                    dictionary[t+'P'+v] =list(set([x[0] for j, x in enumerate(readCSV) if x[6] == t and x[-3][:13]==v]))
 
+                    if  t == '80':
+                        port80 = len(dictionary[t+'P'+v])
+                    elif t == '443':
+                        port443 = len(dictionary[t+'P'+v])
+                    else:
+                        continue
+                    #print('Number of ips listenning on Port ' +t+' at '+v ,len(dictionary[t+'P'+v]))
+                    count = count +1
+                    if count == len(ports):
+                        dictionary['80+433P'+v] = list(set(dictionary['80'+'P'+v]) & set(dictionary['443'+'P'+v]))
+                        writer.writerow([v,port80,port443,len(dictionary['80+433P'+v])])
+                        #print('Number of ips listenning on Both Port 80 and 443 at '+v  ,len(dictionary['80+433P'+v]))
+                    else:
+                        continue
+        myfile.close()
 
 '''
     print(len(dictionary))

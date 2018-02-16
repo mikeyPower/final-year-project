@@ -14,4 +14,4 @@ newtest:
 	./sf-ips.py test
 
 clean:
-	rm -f ips.*.csv hours.*.csv regips.*.csv irregips.*.csv fewrecs.csv.bup summary.*.txt
+	rm -f ips.*.csv hours.*.csv regips.*.csv irregips.*.csv fewrecs.csv.bup summary.*.txt reverse.*.csv noreverse.*.csv rev-summary.*.txt

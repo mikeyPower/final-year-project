@@ -155,16 +155,3 @@ with open(csvFile) as csvfile:
                     else:
                         continue
         myfile.close()
-
-'''
-    print(len(dictionary))
-#find ips that are listenning on all ports
-    intersectSet =dictionary.values()[0]
-    print(dictionary.values()[0])
-    for key, values in dictionary.items():
-        if key == dictionary.keys()[0]:
-             continue
-        else:
-            intersectSet = list(set(values) & set(intersectSet))#.difference(intersectSet))
-    print('lenght',len(intersectSet))
-'''

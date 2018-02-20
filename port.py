@@ -26,7 +26,7 @@ countPortIndex =6
 with open(csvFile) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     readCSV.next() #Skip first line (Header line)
-    '''row1 = next(readCSV)   USE IF FILE HAS HEADER
+    '''row1 = next(readCSV)   
     for j in row1:
         if j == 'Port':
             #print('PORT 80 GUYS')

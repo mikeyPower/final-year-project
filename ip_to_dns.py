@@ -24,6 +24,7 @@ rdns=''
 #find out how many ips resolve to dns as well as those that don't
 dnsError=[]
 dnsMul=[]
+ips = []
 dictionary = {}
 dnsResolvedCount = 0
 noDnsCount =0;
@@ -43,30 +44,35 @@ with open(csvFile) as csvfile:
             writer1=csv.writer(myfile1)
             writer1.writerow(['Queried Ip','Port','Error'])
             for i in readCSV:
-                try:
-                    rdns=socket.gethostbyaddr(i[0])
-                            #dnsResolvedCount =dnsResolvedCount+1
-                            #writer.writerow([i[0],rdns[0], rdns[1], rdns[2]])
-                    #print(rdns[0])
-                    if rdns[0] in dictionary and i[0] not in dictionary[rdns[0]]:
-                        dictionary[rdns[0]].append(i[0])
-                        dnsResolvedCount =dnsResolvedCount+1
-                        writer.writerow([i[0],i[6],rdns[0], rdns[1], rdns[2]])
-                    elif rdns[0] not in dictionary:
-                        dictionary[rdns[0]] = [i[0]]
-                        dnsResolvedCount =dnsResolvedCount+1
-                        writer.writerow([i[0],i[6],rdns[0], rdns[1], rdns[2]])
-                    else:
-                        continue
+                if i[0] not in ips: #if the ip has already been checked no need to get Hostname
+                    ips.append(i[0])
+                    try:
+                        rdns=socket.gethostbyaddr(i[0])
+                                #dnsResolvedCount =dnsResolvedCount+1
+                                #writer.writerow([i[0],rdns[0], rdns[1], rdns[2]])
+                        #print(rdns[0])
+                        time.sleep(0.05)
+                        if rdns[0] in dictionary and i[0] not in dictionary[rdns[0]]:
+                            dictionary[rdns[0]].append(i[0])
+                            dnsResolvedCount =dnsResolvedCount+1
+                            writer.writerow([i[0],i[6],rdns[0], rdns[1], rdns[2]])
+                        elif rdns[0] not in dictionary:
+                            dictionary[rdns[0]] = [i[0]]
+                            dnsResolvedCount =dnsResolvedCount+1
+                            writer.writerow([i[0],i[6],rdns[0], rdns[1], rdns[2]])
+                        else:
+                            continue
 
-                except Exception as e:
-                    if i[0] not in dnsError:
-                        print >> sys.stderr, "dns exception " + str(e) + " for " + i[0]
-                        writer1.writerow([i[0],i[6], str(e)])
-                        noDnsCount = noDnsCount +1
-                        dnsError.append(i[0])
-                    else:
-                        continue
+                    except Exception as e:
+                        if i[0] not in dnsError:
+                            print >> sys.stderr, "dns exception " + str(e) + " for " + i[0]
+                            writer1.writerow([i[0],i[6], str(e)])
+                            noDnsCount = noDnsCount +1
+                            dnsError.append(i[0])
+                        else:
+                            continue
+                else:
+                    continue
 
 
         myfile1.close()
@@ -94,7 +100,7 @@ with open("multiple_ip_to_dns"+now+".csv", "w") as myfile2:
 summary_f="summary_dns_"+now+".txt"
 summary_fp=open(summary_f,"w")
 print >>summary_fp, "Ran " + sys.argv[0] + " at " + str_now + " (" + now + ")" +  " with file " + sys.argv[1]
-print >>summary_fp, str(noDnsCount+dnsResolvedCount) + " Unique ips found"
+print >>summary_fp, str(len(ips)) + " Unique ips found"
 print >>summary_fp, str(dnsResolvedCount) + " had reverse names"
 print >>summary_fp, str(noDnsCount) + " did not"
 print >>summary_fp, str(multiple_ip_to_dns_count) + " DNS had multipe ips"

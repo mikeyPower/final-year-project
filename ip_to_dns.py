@@ -1,5 +1,4 @@
 
-import dns.resolver
 import socket
 import sys
 from datetime import datetime
@@ -31,18 +30,24 @@ noDnsCount =0;
 
 with open(csvFile) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
+    readCSV.next() #Skip first line (Header line)
     #ipAddress = list(set([x[0]for i, x in enumerate(readCSV)]))
+    #for i in readCSV:
+    #    print(i)
+    #print(readCSV)
+    #print(len(ipAddress))
     with open("resolved_ip_to_dns"+now+".csv", "w") as myfile:
         writer=csv.writer(myfile)
         writer.writerow(['Queried Ip','Port','Hostname', 'alias-list', 'Ip'])
         with open("unresolved_ip_to_dns"+now+".csv", "w") as myfile1:
             writer1=csv.writer(myfile1)
-            writer1.writerow(['Queried Ip, Error'])
+            writer1.writerow(['Queried Ip','Port','Error'])
             for i in readCSV:
                 try:
                     rdns=socket.gethostbyaddr(i[0])
                             #dnsResolvedCount =dnsResolvedCount+1
                             #writer.writerow([i[0],rdns[0], rdns[1], rdns[2]])
+                    #print(rdns[0])
                     if rdns[0] in dictionary and i[0] not in dictionary[rdns[0]]:
                         dictionary[rdns[0]].append(i[0])
                         dnsResolvedCount =dnsResolvedCount+1
@@ -52,16 +57,18 @@ with open(csvFile) as csvfile:
                         dnsResolvedCount =dnsResolvedCount+1
                         writer.writerow([i[0],i[6],rdns[0], rdns[1], rdns[2]])
                     else:
-                        break
+                        continue
 
                 except Exception as e:
                     if i[0] not in dnsError:
                         print >> sys.stderr, "dns exception " + str(e) + " for " + i[0]
-                        writer1.writerow([i[0],i[6], e])
+                        writer1.writerow([i[0],i[6], str(e)])
                         noDnsCount = noDnsCount +1
                         dnsError.append(i[0])
                     else:
-                        break
+                        continue
+
+
         myfile1.close()
     myfile.close()
 
@@ -84,9 +91,9 @@ with open("multiple_ip_to_dns"+now+".csv", "w") as myfile2:
 
 
 #Print summary report
-summary_f="summary"+now+".txt"
+summary_f="summary_dns_"+now+".txt"
 summary_fp=open(summary_f,"w")
-print >>summary_fp, "Ran " + sys.argv[0] + " at " + str_now + " (" + now + ")"
+print >>summary_fp, "Ran " + sys.argv[0] + " at " + str_now + " (" + now + ")" +  " with file " + sys.argv[1]
 print >>summary_fp, str(noDnsCount+dnsResolvedCount) + " Unique ips found"
 print >>summary_fp, str(dnsResolvedCount) + " had reverse names"
 print >>summary_fp, str(noDnsCount) + " did not"

@@ -54,7 +54,7 @@ with open(csvFile) as csvfile:
                 if i[0] not in ips: #if the ip has already been checked no need to get Hostname
                     ips.append(i[0])
                     try:
-                        rdns=socket.gethostbyaddr(i[0]+".")
+                        rdns=socket.gethostbyaddr(i[0])
 
                         time.sleep(0.05)
 

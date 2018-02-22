@@ -32,10 +32,11 @@ with open(csvFile) as csvfile:
             if i[0] not in ips:
                 ips.append(i[0])
                 dictionary[i[0]] =[]
+                print(i[0])
                 try:
-                    for port in range(1,444):
+                    for port in range(80,100):
                         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                        sock.settimeout(2) #for hanging Connections
+                        sock.settimeout(0.5) #for hanging Connections
                         result = sock.connect_ex((i[0], port))
                         if result == 0:
                             dictionary[i[0]].append(port)
@@ -66,5 +67,5 @@ summary_fp=open(summary_f,"w")
 print >>summary_fp, "Ran " + sys.argv[0] + " at " + str_now + " (" + now + ")" +  " with file " + sys.argv[1]
 print >>summary_fp, "Files created:"
 print >>summary_fp, "\topen_ports_"+now+".csv"
-print >>summary_fp, "\tresolved_ip_to_dns"+now+".csv"
+print >>summary_fp, "\terror_open_ports_"+now+".csv"
 print >>summary_fp, str(len(ips)) + " Unique ips found"

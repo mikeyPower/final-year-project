@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import csv
 import sys
 from functions import dateRange

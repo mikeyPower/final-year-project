@@ -1,0 +1,20 @@
+# we control both sides
+
+# LE certs
+down.dsg.cs.tcd.ie
+basil.dsg.cs.tcd.ie
+
+# ancient unmaintained
+polly.dsg.cs.tcd.ie
+
+# 2006 era print
+greatbritain.dsg.cs.tcd.ie
+
+# slight caution - CNAME via CS proxy to miss-gatsby
+cs2014.scss.tcd.ie  
+
+# self-signed cert
+miss-gatsby.dsg.cs.tcd.ie
+
+# not safe but useful for names
+https://crt.sh/?q=%25.tcd.ie

@@ -35,16 +35,33 @@ if not os.path.isfile(file) or not os.access(file,os.R_OK):
 with open(file) as json_file:
     data = json.load(json_file)
 
-'''
-for key, value in data.items():
-    pprint("Key:")
-    pprint(key)
-#print(data)
+#Flatten Json as  would be accessible if indexing a dictionary
+def flatten_json(y):
+    out = {}
 
-'''
+    def flatten(x, name=''):
+        if type(x) is dict:
+            for a in x:
+                flatten(x[a], name + '['+"'"+a +"'"+ ']'+' ')
+        elif type(x) is list:
+            i = 0
+            for a in x:
+                flatten(a, name + '['+"'"+ str(i)+"'"+']' +' ')
+                i += 1
+        else:
+            out[name[:-1]] = x
+
+    flatten(y)
+    return out
+
+#Similar to jq method but will have to loop inorder to preint all raw
+print(data['data']['http']['response']['request']['tls_handshake']['server_certificates']['chain'][0]['raw'])
+
 
 #Print a flatten version of the json file
-pprint(flatten(data))
+pprint(flatten_json(data))
+
+#gets all values from a given key within the dict
 hash_algorithm = nested_lookup('hash_algorithm', data)
 
 

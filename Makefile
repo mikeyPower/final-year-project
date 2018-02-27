@@ -12,7 +12,7 @@ cleanOpen:
 	rm -f error_open_ports_*.csv open_ports_*.csv
 
 cleanJson:
-	rm -f json_test_*.csv summary_json_*.txt
+	rm -f zgrab_domain_port443_*.csv zgrab_domain_port443_summary_*.txt
 
 
 successIps:

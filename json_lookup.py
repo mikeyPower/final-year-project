@@ -29,7 +29,7 @@ inputfile = sys.argv[1]
 #if len(sys.argv)==3:
 outputFile = sys.argv[2]
 
-#port = sys.argv[3]
+port = sys.argv[3]
 '''
 if not os.path.isfile(file) or not os.access(file,os.R_OK):
     print"Can't read input file: " + file + " - exiting"
@@ -58,22 +58,63 @@ def flatten_json(y):
 
     flatten(y)
     return out
-#if port == '443':
+if port == '443':
+     #"['data'] ['http'] ['response'] ['request'] ['tls_handshake'] ['server_certificates'] ['certificate'] ['parsed'] ['issuer'] ['common_name'] ['0']
+      #"['data'] ['http'] ['response'] ['request'] ['tls_handshake'] ['server_certificates'] ['certificate'] ['parsed'] ['validation_level']"
+    try:
+        subject_cn=['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['subject']['common_name']
+    except:
+        subject_cn ='False'
+    try:
+        secure_renegotiation =data['data']['http']['response']['request']['tls_handshake']['server_hello']['secure_renegotiation']
+    except:
+        secure_renegotiation ='False'
+
+    try:
+        tls_version_name =data['data']['http']['response']['request']['tls_handshake']['server_hello']['version']['name']
+    except:
+        tls_version_name ='False'
+
+
+    try:
+        self_signed =data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['signature']['self_signed']
+
+    except:
+        self_signed='False'
+    try:
+        certificate_names=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['extensions']['subject_alt_name']['dns_names']
+    except:
+        certificate_names ='False'
+
+
+    try:
+        browser_trusted =data['data']['http']['response']['request']['tls_handshake']['server_certificates']['validation']['browser_trusted']
+
+    except:
+        browser_trusted ='False'
+
+    try:
+        cipher_suite = data['data']['http']['response']['request']['tls_handshake']['server_hello']['cipher_suite']['name']
+
+    except:
+        cipher_suite ='False'
+
+
 
 try:
     cache_control =data['data']['http']['response']['headers']['cache_control']
 except:
-    cache_control ='error'
+    cache_control ='False'
 
 try:
     expires =data['data']['http']['response']['headers']['expires']
 except:
-    expires ='error'
+    expires ='False'
 
 try:
     pragma =data['data']['http']['response']['headers']['pragma']
 except:
-    pragma ='error'
+    pragma ='False'
 
 try:
     connected =data['error']
@@ -83,65 +124,41 @@ except:
 try:
     domain =data['domain'].encode('utf8')
 except:
-    domain ='error'
+    domain ='False'
 
 try:
     server =data['data']['http']['response']['headers']['server']
 except:
-    server ='error'
+    server ='False'
 
 try:
     status_line =data['data']['http']['response']['status_line']
 except:
-    status_line='error'
-
-
-try:
-    secure_renegotiation =data['data']['http']['response']['request']['tls_handshake']['server_hello']['secure_renegotiation']
-except:
-    secure_renegotiation ='error'
+    status_line='False'
 
 try:
-    tls_version_name =data['data']['http']['response']['request']['tls_handshake']['server_hello']['version']['name']
+    location=data['data'] ['http'] ['response'] ['headers'] ['location']
 except:
-    tls_version_name ='error'
+    location='False'
 
-
-try:
-    self_signed =data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['signature']['self_signed']
-
-except:
-    self_signed='error'
-
-
-
-try:
-    certificate_names=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['names']
-except:
-    certificate_names ='error names'
-
-
-try:
-    browser_trusted =data['data']['http']['response']['request']['tls_handshake']['server_certificates']['validation']['browser_trusted']
-
-except:
-    browser_trusted ='error'
-
-try:
-    cipher_suite = data['data']['http']['response']['request']['tls_handshake']['server_hello']['cipher_suite']['name']
-
-except:
-    cipher_suite ='error'
 
 #else:
     #print('erroerfdsf')
+if port == '443':
+    with open(outputFile, "a") as myfile:
+        writer=csv.writer(myfile)
+        writer.writerow([domain,connected,server,status_line,cache_control,expires,pragma,location,secure_renegotiation,tls_version_name,self_signed,certificate_names,browser_trusted,cipher_suite])
 
-with open(outputFile, "a") as myfile:
-    writer=csv.writer(myfile)
-    writer.writerow([domain,connected,server,status_line,cache_control,expires,pragma,secure_renegotiation,tls_version_name,self_signed,certificate_names,browser_trusted,cipher_suite])
+    #Print a flatten version of the json file
+    myfile.close()
+else:
+    with open(outputFile, "a") as myfile1:
+        writer1=csv.writer(myfile1)
+        writer1.writerow([domain,connected,server,status_line,cache_control,expires,pragma,location])
 
-#Print a flatten version of the json file
-myfile.close()
+    #Print a flatten version of the json file
+    myfile1.close()
+
 pprint(flatten_json(data))
 
 

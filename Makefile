@@ -14,15 +14,6 @@ cleanOpen:
 cleanJson:
 	rm -f zgrab_domain_port443_*.csv zgrab_domain_port443_summary_*.txt
 
-
-successIps:
-	python ip_to_dns.py tmp.csv
-	python port.py resolved_ip_to_dns*.csv
-
-errorIp:
-	python ip_to_dns.py tmp.csv
-	python port.py unresolved_ip_to_dns*.csv
-
 port80:
 	python port.py tmp.csv
 	python ip_to_dns.py port_80_*.csv
@@ -30,3 +21,15 @@ port80:
 port443:
 	python port.py tmp.csv
 	python ip_to_dns.py port_443_*.csv
+
+json443:
+	#Still un constrcution 
+	python port.py tmp.csv
+	python ip_to_dns.py port_443_*.csv
+	./zgrab_domain resolved_ip_to_dns*.csv
+
+json80:
+		#Still un constrcution
+		python port.py tmp.csv
+		python ip_to_dns.py port_80_*.csv
+		./zgrab_domain resolved_ip_to_dns*.csv

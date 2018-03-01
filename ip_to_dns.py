@@ -93,7 +93,7 @@ with open(csvFile) as csvfile:
 multiple_ip_to_dns_count =0
 with open("multiple_ip_to_dns"+now+".csv", "w") as myfile2:
     writer2=csv.writer(myfile2)
-    writer2.writerow(['Queried Ip','Port'])
+    writer2.writerow(['DNS','IP list'])
     for i in dictionary:
 
         if len(dictionary[i]) > 1:

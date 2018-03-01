@@ -70,9 +70,9 @@ bothPorts =[]
 bothPorts = set(port80).intersection(port443)
 with open("both_ports_"+now+".csv", "w") as myfile2:
     writer2=csv.writer(myfile2)
-    writer2.writerow(['Ip'])
+    writer2.writerow(['Ip','Port'])
     for i in bothPorts:
-        writer2.writerow([i])
+        writer2.writerow([i,[80,443]])
 
 myfile2.close()
 

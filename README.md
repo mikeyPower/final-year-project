@@ -6,8 +6,14 @@
 
 2. Requirements doc (prerequisites for running programmes)
 
-3. Need to also make sure data is being duplicated
+3. Need to also make sure data is not being duplicated
 
+## Setting up Cron Job
+Ensure Path is included in order for cron environment to be same as user environment in order to run zmap
+
+    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+
+    0 * * * * /home/usr/zmap_job.sh
 
 ## Pretty Print Json to terminal
     python -m json.tool input.json
@@ -74,3 +80,4 @@ third parameter = port number of inputed domains/ips
 Output:
 
     --TO BE DONE--summary results
+

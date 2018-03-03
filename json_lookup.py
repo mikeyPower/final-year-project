@@ -1,15 +1,11 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 import os
-import socket
 import sys
 import csv
 import time
 import json
-import unicodedata
-from nested_lookup import nested_lookup
 from datetime import datetime
 from pprint import pprint
-from flatten_json import flatten
 '''
 #!/usr/bin/python3 (running in python 3) Will remove 'u' which is a unicode character
 
@@ -59,8 +55,12 @@ def flatten_json(y):
     flatten(y)
     return out
 if port == '443':
-     #"['data'] ['http'] ['response'] ['request'] ['tls_handshake'] ['server_certificates'] ['certificate'] ['parsed'] ['issuer'] ['common_name'] ['0']
+     try:
+         issuer=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['issuer']['common_name']
       #"['data'] ['http'] ['response'] ['request'] ['tls_handshake'] ['server_certificates'] ['certificate'] ['parsed'] ['validation_level']"
+  except:
+      issuer='False'
+
     try:
         subject_cn=['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['subject']['common_name']
     except:
@@ -122,9 +122,14 @@ except:
     connected ='True'
 
 try:
-    domain =data['domain'].encode('utf8')
+    domain =data['domain']#.encode('utf8')
 except:
     domain ='False'
+
+try:
+    ip =data['ip']#.encode('utf8')
+except:
+    ip ='False'
 
 try:
     server =data['data']['http']['response']['headers']['server']
@@ -142,44 +147,21 @@ except:
     location='False'
 
 
-#else:
-    #print('erroerfdsf')
+#Write results to csv file
 if port == '443':
     with open(outputFile, "a") as myfile:
         writer=csv.writer(myfile)
-        writer.writerow([domain,connected,server,status_line,cache_control,expires,pragma,location,secure_renegotiation,tls_version_name,self_signed,certificate_names,browser_trusted,cipher_suite])
+        writer.writerow([domain,ip,connected,server,status_line,cache_control,expires,pragma,location,
+        secure_renegotiation,tls_version_name,self_signed,certificate_names,browser_trusted,cipher_suite,issuer])
 
     #Print a flatten version of the json file
     myfile.close()
 else:
     with open(outputFile, "a") as myfile1:
         writer1=csv.writer(myfile1)
-        writer1.writerow([domain,connected,server,status_line,cache_control,expires,pragma,location])
+        writer1.writerow([domain,ip,connected,server,status_line,cache_control,expires,pragma,location])
 
-    #Print a flatten version of the json file
+
     myfile1.close()
-
-pprint(flatten_json(data))
-
-
-'''
-#gets all values from a given key within the dict
-hash_algorithm = nested_lookup('hash_algorithm', data)
-
-
-
-with open("json_test_"+now+".csv", "w") as myfile:
-    writer=csv.writer(myfile)
-    writer.writerow(['hash_algorithm'])
-    writer.writerow(hash_algorithm)
-myfile.close()
-
-
-
-#summary report
-summary_f="summary_json_"+now+".txt"
-summary_fp=open(summary_f,"w")
-print >>summary_fp, "Ran " + sys.argv[0] + " at " + str_now + " (" + now + ")" +  " with file " + sys.argv[1]
-print >>summary_fp, "Files created:"
-print >>summary_fp, "\tjson_test_"+now+".csv"
-'''
+#Print a flatten version of the json file
+#pprint(flatten_json(data))

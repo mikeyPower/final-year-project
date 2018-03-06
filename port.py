@@ -23,6 +23,7 @@ csvFile = sys.argv[1]
 ips = []
 port80 =[]
 port443 =[]
+dictionary={}
 countPortIndex =6
 with open(csvFile) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
@@ -53,13 +54,18 @@ with open(csvFile) as csvfile:
                 #find ips on port 443 checking for duplicates
                 elif i[countPortIndex] == '443' and i[0] not in port443:
                     port443.append(i[0])
-                    writer1.writerow(i)
-                else:
-                    continue
+                    writer1.writerow([i[0],i[6]])
+
 
                 #find the number of unique ips
                 if i[0] not in ips:
                     ips.append(i[0])
+
+
+                if (i[0] in dictionary) and (i[6] not in dictionary[i[0]]):
+                    dictionary[i[0]].append(i[6])
+                elif i[0] not in dictionary:
+                    dictionary[i[0]] = [i[6]]
                 else:
                     continue
         myfile1.close()
@@ -68,17 +74,32 @@ with open(csvFile) as csvfile:
 #Find number of Ips on both ports
 bothPorts =[]
 bothPorts = set(port80).intersection(port443)
+multipe_ports=0
 with open("both_ports_"+now+".csv", "w") as myfile2:
     writer2=csv.writer(myfile2)
     writer2.writerow(['Ip','Port'])
-    for i in bothPorts:
-        writer2.writerow([i,[80,443]])
+    with open("all_ip_ports_"+now+".csv", "w") as myfile3:
+        writer3=csv.writer(myfile3)
+        writer3.writerow(['Ip','Port'])
+        for i in dictionary:
 
+            if len(dictionary[i]) > 1:
+                writer2.writerow([i,dictionary[i]])
+                multipe_ports=multipe_ports+1
+
+            writer3.writerow([i,dictionary[i]])
+
+    myfile3.close()
 myfile2.close()
 
+#sanity check
+if multipe_ports == len(bothPorts) and (len(dictionary)==len(ips)):
+    print('yes')
+else:
+    print('Error')
 
 
-
+#summary of programme execution
 summary_f="summary_ports_"+now+".txt"
 summary_fp=open(summary_f,"w")
 print >>summary_fp, "Ran " + sys.argv[0] + " at " + str_now + " (" + now + ")" +  " with file " + sys.argv[1]

@@ -1,5 +1,5 @@
 #!/bin/bash
-#This script will run with a csv where the first column is domains
+#This script will run with a csv where the second column is domains
 #./zgrab_domain_port80.sh file1
 
 
@@ -11,8 +11,8 @@ echo "Domain,Ip,Connected,Server,Status Line,Cache Control,Expires,Pragma,Locati
 
 #Outputs of banner grabs will be outputted to /go/src/github.com/zmap/zgrab directory
 
-#Might have to remove header file from csv before piping it through
 #Could echo the port number depending on the file e.g. echo "${b[0]}"
+sed 1d $1
 
 while IFS=, read -a b;
 do
@@ -23,7 +23,7 @@ do
                 #  OR
     ./json_lookup.py ~/go/src/github.com/zmap/zgrab/banners.json zgrab_domain_p80_$TIME_STAMP.csv 80
     sleep .2
-done < $1
+done < sed 1d $1 #removing header line
 
 #Summary results
 echo 'Ran zgrab_domain.sh at '+ $TIME_STAMP >> zgrab_domain_summary_p80_$TIME_STAMP.txt

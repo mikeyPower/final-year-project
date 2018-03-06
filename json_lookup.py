@@ -154,7 +154,7 @@ if port == '443':
         writer.writerow([domain,ip,connected,server,status_line,cache_control,expires,pragma,location,
         secure_renegotiation,tls_version_name,self_signed,certificate_names,browser_trusted,cipher_suite,issuer])
 
-    #Print a flatten version of the json file
+    
     myfile.close()
 else:
     with open(outputFile, "a") as myfile1:

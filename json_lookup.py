@@ -6,6 +6,7 @@ import time
 import json
 from datetime import datetime
 from pprint import pprint
+#from Crypto.PublicKey.RSA import construct
 '''
 #!/usr/bin/python3 (running in python 3) Will remove 'u' which is a unicode character
 
@@ -54,67 +55,144 @@ def flatten_json(y):
 
     flatten(y)
     return out
+
+
+    #['data'] ['http'] ['response'] ['request'] ['tls_handshake'] ['server_key_exchange'] ['ecdh_params'] ['curve_id'] ['id']": 23,
+ #"['data'] ['http'] ['response'] ['request'] ['tls_handshake'] ['server_key_exchange'] ['ecdh_params'] ['curve_id'] ['name']": 'secp256r1',
+
+
+
+
+
+
+
 if port == '443':
-     try:
-         issuer=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['issuer']['common_name']
-      #"['data'] ['http'] ['response'] ['request'] ['tls_handshake'] ['server_certificates'] ['certificate'] ['parsed'] ['validation_level']"
-  except:
-      issuer='False'
+    try:
+        matches_domain=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['validation']['matches_domain']
+    except:
+        matches_domain='Not Present'
 
     try:
-        subject_cn=['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['subject']['common_name']
+        cert_start=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['validity']['start']
     except:
-        subject_cn ='False'
+        cert_start='Not Present'
+
+
+    try:
+        cert_end=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['validity']['end']
+    except:
+        cert_end='Not Present'
+
+    try:
+        cert_validity_length=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['validity']['length'] #in seconds
+    except:
+        cert_validity_length='Not Present'
+
+
+
+    try:
+        pk_length=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['subject_key_info']['rsa_public_key']['length']
+    except:
+        pk_length='Not Present'
+
+
+    try:
+        key_algorithm=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['subject_key_info']['key_algorithm']['name']
+    except:
+        key_algorithm='Not Present'
+
+    try:
+        public_key=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['subject_key_info']['fingerprint_sha256']
+    except:
+        public_key='Not Present'
+
+
+
+    try:
+        signature_algorithm=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['signature']['signature_algorithm']['name']
+    except:
+        signature_algorithm='Not Present'
+
+
+
+
+
+    try:
+
+        cert = data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['raw']
+        formatCert =cert
+        #cert_f="cert_raw.crt"
+        #cert_file=open(cert_f,"w")
+        #cert_file.write('-----BEGIN CERTIFICATE-----\n')
+        #cert_file.write(formatCert+'\n')
+        #cert_file.write('-----END CERTIFICATE-----\n')
+        #cert_file.close()
+
+        #print(formatCert)
+
+    except:
+        print('Error cert')
+    try:
+        issuer=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['issuer']['common_name']
+      #"['data'] ['http'] ['response'] ['request'] ['tls_handshake'] ['server_certificates'] ['certificate'] ['parsed'] ['validation_level']"
+    except:
+        issuer='Not Present'
+
+    try:
+
+        subject_cn=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['subject']['common_name']
+    except:
+        subject_cn ='Not Present'
     try:
         secure_renegotiation =data['data']['http']['response']['request']['tls_handshake']['server_hello']['secure_renegotiation']
     except:
-        secure_renegotiation ='False'
+        secure_renegotiation ='Not Present'
 
     try:
         tls_version_name =data['data']['http']['response']['request']['tls_handshake']['server_hello']['version']['name']
     except:
-        tls_version_name ='False'
+        tls_version_name ='Not Present'
 
 
     try:
         self_signed =data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['signature']['self_signed']
 
     except:
-        self_signed='False'
+        self_signed='Not Present'
     try:
         certificate_names=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['extensions']['subject_alt_name']['dns_names']
     except:
-        certificate_names ='False'
+        certificate_names ='Not Present'
 
 
     try:
         browser_trusted =data['data']['http']['response']['request']['tls_handshake']['server_certificates']['validation']['browser_trusted']
 
     except:
-        browser_trusted ='False'
+        browser_trusted ='Not Present'
 
     try:
         cipher_suite = data['data']['http']['response']['request']['tls_handshake']['server_hello']['cipher_suite']['name']
 
     except:
-        cipher_suite ='False'
+        cipher_suite ='Not Present'
 
 
 
 try:
     cache_control =data['data']['http']['response']['headers']['cache_control']
 except:
-    cache_control ='False'
+    cache_control ='Not Present'
 
 try:
     expires =data['data']['http']['response']['headers']['expires']
 except:
-    expires ='False'
+    expires ='Not Present'
 
 try:
     pragma =data['data']['http']['response']['headers']['pragma']
 except:
-    pragma ='False'
+    pragma ='Not Present'
 
 try:
     connected =data['error']
@@ -124,27 +202,27 @@ except:
 try:
     domain =data['domain']#.encode('utf8')
 except:
-    domain ='False'
+    domain ='Not Present'
 
 try:
     ip =data['ip']#.encode('utf8')
 except:
-    ip ='False'
+    ip ='Not Present'
 
 try:
     server =data['data']['http']['response']['headers']['server']
 except:
-    server ='False'
+    server ='Not Present'
 
 try:
     status_line =data['data']['http']['response']['status_line']
 except:
-    status_line='False'
+    status_line='Not Present'
 
 try:
     location=data['data'] ['http'] ['response'] ['headers'] ['location']
 except:
-    location='False'
+    location='Not Present'
 
 
 #Write results to csv file
@@ -152,9 +230,10 @@ if port == '443':
     with open(outputFile, "a") as myfile:
         writer=csv.writer(myfile)
         writer.writerow([domain,ip,connected,server,status_line,cache_control,expires,pragma,location,
-        secure_renegotiation,tls_version_name,self_signed,certificate_names,browser_trusted,cipher_suite,issuer])
+        secure_renegotiation,tls_version_name,self_signed,subject_cn,certificate_names,browser_trusted,cipher_suite,issuer,
+        matches_domain,cert_start,cert_end,cert_validity_length,public_key,pk_length,signature_algorithm,key_algorithm])
 
-    
+
     myfile.close()
 else:
     with open(outputFile, "a") as myfile1:
@@ -164,4 +243,4 @@ else:
 
     myfile1.close()
 #Print a flatten version of the json file
-#pprint(flatten_json(data))
+pprint(flatten_json(data))

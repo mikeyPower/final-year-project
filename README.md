@@ -92,7 +92,7 @@ third parameter = port number of inputed domains/ips (Default port 80)
 
     ./zgrab_domain_port80.sh <domain_input.csv>
     ./zgrab_domain_port443.sh <domain_input.csv>
-The above two scripts take their input from the reverse dns lookup or a csv file where the second column is a domain name
+The above two scripts take their input from the reverse dns lookup or a csv file where the third column is a domain name
 
 Each script specifies the port that the zgrab will be conducted on
 
@@ -127,5 +127,5 @@ This will continue until we've reached the last Ip address in the csv file
 ### Output:
    Each script produces two files, which are a csv file containing the information parsed from the zgrab as well as a summary report of the programme execution
 
-     zgrab_domain_p80_TIME_STAMP.csv (HEADER = Domain,Ip,Connected,Server,Status Line,CacheControl,Expires,Pragma,Location)
+     zgrab_domain_p80_TIME_STAMP.csv (HEADER = Domain,Ip,Connected,Server,Status Line,CacheControl,Header Expires,Pragma,Location)
      zgrab_domain_summary_p80_TIME_STAMP.txt

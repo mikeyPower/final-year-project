@@ -2,3 +2,5 @@ tmp.csv
 *.csv
 *.pyc
 *.json
+*.crt
+*.pem

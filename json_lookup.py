@@ -57,7 +57,6 @@ def flatten_json(y):
     return out
 
 
-    #['data'] ['http'] ['response'] ['request'] ['tls_handshake'] ['server_key_exchange'] ['ecdh_params'] ['curve_id'] ['id']": 23,
  #"['data'] ['http'] ['response'] ['request'] ['tls_handshake'] ['server_key_exchange'] ['ecdh_params'] ['curve_id'] ['name']": 'secp256r1',
 
 
@@ -67,6 +66,13 @@ def flatten_json(y):
 
 
 if port == '443':
+    try:
+        curve_id=data['data']['http'] ['response']['request']['tls_handshake']['server_key_exchange']['ecdh_params']['curve_id']['id']
+    except:
+        curve_id='Not Present'
+
+
+
     try:
         matches_domain=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['validation']['matches_domain']
     except:
@@ -131,7 +137,7 @@ if port == '443':
         #print(formatCert)
 
     except:
-        print('Error cert')
+        cert ='Not Present'
     try:
         issuer=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['issuer']['common_name']
       #"['data'] ['http'] ['response'] ['request'] ['tls_handshake'] ['server_certificates'] ['certificate'] ['parsed'] ['validation_level']"
@@ -231,7 +237,7 @@ if port == '443':
         writer=csv.writer(myfile)
         writer.writerow([domain,ip,connected,server,status_line,cache_control,expires,pragma,location,
         secure_renegotiation,tls_version_name,self_signed,subject_cn,certificate_names,browser_trusted,cipher_suite,issuer,
-        matches_domain,cert_start,cert_end,cert_validity_length,public_key,pk_length,signature_algorithm,key_algorithm])
+        matches_domain,cert_start,cert_end,cert_validity_length,public_key,pk_length,signature_algorithm,key_algorithm,curve_id])
 
 
     myfile.close()
@@ -243,4 +249,4 @@ else:
 
     myfile1.close()
 #Print a flatten version of the json file
-pprint(flatten_json(data))
+#pprint(flatten_json(data))

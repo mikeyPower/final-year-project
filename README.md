@@ -6,7 +6,6 @@
 
 2. Requirements doc (prerequisites for running programmes)
 
-3. Need to also make sure data is not being duplicated
 
 ## Setting up Cron Job
 Ensure environment path is included in order for cron environment to be same as user environment to successfully run zmap
@@ -129,3 +128,12 @@ This will continue until we've reached the last Ip address in the csv file
 
      zgrab_domain_p80_TIME_STAMP.csv (HEADER = Domain,Ip,Connected,Server,Status Line,CacheControl,Header Expires,Pragma,Location)
      zgrab_domain_summary_p80_TIME_STAMP.txt
+
+
+### Filtering:
+To filter the data taken from any of the above scripts dealing with ZGrab, the programme below will take a csv file, keyword 'ip' or 'domain' and port number 443 or 80
+
+    ./zgrab_parse.py zgrab_domain_p433_*.csv domain 443
+
+### Output:
+--TO BE DONE--

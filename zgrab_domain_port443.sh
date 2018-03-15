@@ -6,7 +6,7 @@
 #Get time stamp
 TIME_STAMP=$(date +%s)
 touch zgrab_domain_p443_$TIME_STAMP.csv
-touch zgrab_domain_p443_summary_$TIME_STAMP.txt
+touch summary_zgrab_domain_p443_$TIME_STAMP.txt
 echo "Domain,Ip,Connected,Server,Status Line,Cache Control,Header Expires,Pragma,\
 Location,Secure Regotitation,TlS Version,Self Signed,Subject Common Name,Certificate Alt Names,\
 Browser Trusted,Cipher,Issuer,Matches Domain,Cert Start,Cert End,Cert Validity Length,Public Key,\
@@ -27,8 +27,8 @@ do
 done < input.csv #removing header line
 
 #Summary results
-echo 'Ran zgrab_domain.sh at '+ $TIME_STAMP >> zgrab_domain_p443_summary_$TIME_STAMP.txt
-echo 'Input file: ' >> zgrab_domain_p443_summary_$TIME_STAMP.txt
-echo "$1" >> zgrab_domain_p443_summary_$TIME_STAMP.txt
-echo "Files created: " >> zgrab_domain_p443_summary_$TIME_STAMP.txt
-echo 'zgrab_domain_p443_'$TIME_STAMP.'csv' >> zgrab_domain_p443_summary_$TIME_STAMP.txt
+echo 'Ran zgrab_domain.sh at '+ $TIME_STAMP >> summary_zgrab_domain_p443_$TIME_STAMP.txt
+echo 'Input file: ' >> summary_zgrab_domain_p443_$TIME_STAMP.txt
+echo "$1" >> summary_zgrab_domain_p443_$TIME_STAMP.txt
+echo "Files created: " >> summary_zgrab_domain_p443_$TIME_STAMP.txt
+echo 'zgrab_domain_p443_'$TIME_STAMP.'csv' >> summary_zgrab_domain_p443_$TIME_STAMP.txt

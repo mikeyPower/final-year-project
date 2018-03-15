@@ -85,6 +85,7 @@ if port == '443':
 
 
     try:
+        # Need to check if the certificate is out of date 
         cert_end=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['validity']['end']
     except:
         cert_end='Not Present'

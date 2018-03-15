@@ -9,7 +9,9 @@ import os
 #Get timestamp of programme execution
 now=str(int(time.time()))
 str_now=str(datetime.now())
+
 csvFile = sys.argv[1]
+
 
 #create directory for outputted results
 try:
@@ -17,6 +19,7 @@ try:
 except OSError:
     if not os.path.isdir(path):
         raise
+
 
 if sys.argv[2] == 'domain':
     ipDomain = 0
@@ -52,10 +55,9 @@ with open(csvFile) as csvfile:
 
     for i in readCSV:
 
+        #ensure where not checking duplicates
         if i[ipDomain] not in ipsDomains:
 
-
-            #Get Public Keys
 
             ipsDomains.append(i[ipDomain])
             if port == 443:
@@ -343,17 +345,38 @@ with open('zgrab_parse_'+now+"/pragma_"+now+".csv", "w") as myfile:
         writer.writerow([i,len(pragma[i]),pragma[i]])
 myfile.close()
 
+serverNotPresent =0
+srNp=0
+with open('zgrab_parse_'+now+"/server_"+now+".csv", "w") as myfile:
+    writer=csv.writer(myfile)
+    writer.writerow(['Server','Number of Ips/Domains','Ip/Domain list'])
+    for i in server:
+        if i =='Not Present':
+            serverNotPresent =len(server['Not Present'])
+            srNp =1
+        writer.writerow([i,len(server[i]),server[i]])
+myfile.close()
+
+
+
+
 #summary of programme execution
 summary_f="summary_parse_"+now+".txt"
 summary_fp=open('zgrab_parse_'+now+'/'+summary_f,"w")
 print >>summary_fp, "Ran " + sys.argv[0] + " at " + str_now + " (" + now + ")" +  " with file " + sys.argv[1]+ " and  Arguments " +  sys.argv[2] +" "+ sys.argv[3]
 print >>summary_fp, "Files created:"
 print >>summary_fp, str(len(ipsDomains)) + " Unique Ips/Domains"
-#port80
+#port80 relavent fields
 print >>summary_fp, str(len(statusCode)-stNp) + " unique status code"
 print >>summary_fp, str(statusCodeNotPresent) + " Ips/Domains where status code fields not present"
+print >>summary_fp, str(len(server)-srNp) + " unique servers"
+print >>summary_fp, str(serverNotPresent) + " Ips/Domains where server field not present"
+print >>summary_fp, str(len(pragma)-pNp) + " unique pragma"
+print >>summary_fp, str(pragmaNotPresent) + " Ips/Domains where pragma field not present"
+print >>summary_fp, str(len(cacheControl)-cCNp) + " unique cache control"
+print >>summary_fp, str(cacheControlNotPresent) + " Ips/Domains where cache control field not present"
 
-#port443
+#port443 relavent fields
 if port == 443:
     print >>summary_fp, str(len(dictionaryPk)-pkNp) + " unique public Keys"
     print >>summary_fp, str(pKNotPresent) + " Ips/Domains where public Key fields not present"

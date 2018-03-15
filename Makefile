@@ -2,10 +2,10 @@
 clean:
 	rm -f  multiple_ip_to_dns*.csv unresolved_ip_to_dns*.csv summary*.txt resolved_ip_to_dns*.csv
 	rm -f port_443_*.csv port_80_*.csv both_ports*.csv error_open_ports_*.csv open_ports_*.csv json_test_*.csv
-	rm -f zgrab_domain_p443_*.csv zgrab_domain_p433_*.txt all_ip_ports_*.csv
-	rm -f zgrab_ip_p443_*.csv zgrab_ip_p443*.txt
-	rm -f zgrab_domain_p80_*.csv zgrab_domain_p80*.txt
-	rm -f zgrab_ip_p80_*.csv zgrab_ip_p80*.txt input.csv
+	rm -f zgrab_domain_p443_*.csv summary_zgrab_domain_p433*.txt all_ip_ports_*.csv
+	rm -f zgrab_ip_p443_*.csv summary_zgrab_ip_p443*.txt
+	rm -f zgrab_domain_p80_*.csv summary_zgrab_domain_p80*.txt
+	rm -f zgrab_ip_p80_*.csv summary_zgrab_ip_p80*.txt
 	rm -rf zgrab_parse_*
 
 cleanDns:
@@ -18,10 +18,10 @@ cleanOpen:
 	rm -f error_open_ports_*.csv open_ports_*.csv
 
 cleanJson:
-	rm -f zgrab_domain_p443_*.csv zgrab_domain_p433*.txt input.csv
-	rm -f zgrab_ip_p443_*.csv zgrab_ip_p443*.txt
-	rm -f zgrab_domain_p80_*.csv zgrab_domain_p80*.txt
-	rm -f zgrab_ip_p80_*.csv zgrab_ip_p80*.txt
+	rm -f zgrab_domain_p443_*.csv summary_zgrab_domain_p433*.txt input.csv
+	rm -f zgrab_ip_p443_*.csv summary_zgrab_ip_p443*.txt
+	rm -f zgrab_domain_p80_*.csv summary_zgrab_domain_p80*.txt
+	rm -f zgrab_ip_p80_*.csv summary_zgrab_ip_p80*.txt
 
 cleanParse:
 	rm -f summary_parse_*
@@ -52,3 +52,6 @@ jsonBothPorts:
 		python ip_to_dns.py both_ports*.csv
 		./zgrab_domain_port80.sh resolved_ip_to_dns*.csv #to see if they will redirect
 		./zgrab_ip_port80.sh unresolved_ip_to_dns*.csv
+
+zgrabDomain443:
+	./zgrab_domain_port443.sh safe-list.csv.test

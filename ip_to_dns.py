@@ -19,6 +19,15 @@ if len(sys.argv)==2:
 if not os.path.isfile(file) or not os.access(file,os.R_OK):
     print "Can't read input file: " + file + " - exiting"
     sys.exit(1)
+
+
+#create directory for outputted results
+try:
+    os.makedirs('ip_to_dns_'+now)
+except OSError:
+    if not os.path.isdir(path):
+        raise
+
 #the timestamp, in time_t format
 now=str(int(time.time()))
 str_now=str(datetime.now())
@@ -45,10 +54,10 @@ with open(csvFile) as csvfile:
     #for i in readCSV:
     #    print(i)
     #print(len(ipAddress))
-    with open("resolved_ip_to_dns"+now+".csv", "w") as myfile:
+    with open('ip_to_dns_'+now+"/resolved_ip_to_dns"+now+".csv", "w") as myfile:
         writer=csv.writer(myfile)
         writer.writerow(['Queried Ip','Port','Hostname', 'alias-list', 'Ip'])
-        with open("unresolved_ip_to_dns"+now+".csv", "w") as myfile1:
+        with open('ip_to_dns_'+now+"/unresolved_ip_to_dns"+now+".csv", "w") as myfile1:
             writer1=csv.writer(myfile1)
             writer1.writerow(['Queried Ip','Port','Error'])
             for i in readCSV:
@@ -91,7 +100,7 @@ with open(csvFile) as csvfile:
 
 #Find all dns that have multipe ips
 multiple_ip_to_dns_count =0
-with open("multiple_ip_to_dns"+now+".csv", "w") as myfile2:
+with open('ip_to_dns_'+now+"/multiple_ip_to_dns"+now+".csv", "w") as myfile2:
     writer2=csv.writer(myfile2)
     writer2.writerow(['DNS','IP list'])
     for i in dictionary:

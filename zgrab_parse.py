@@ -22,9 +22,9 @@ except OSError:
 
 
 if sys.argv[2] == 'domain':
-    ipDomain = 0
+    ipDomain = 1
 else:
-    ipDomain =1
+    ipDomain =2
 
 if sys.argv[3] == '443':
     port = 443
@@ -52,17 +52,17 @@ certificateAltNamesField=15
 browserTrustedField=16
 cipherField=17
 issuerField=18
-matchesDomainField=18
-certStartField=19
-certEndField=20
-certValidityLengthField=21
-certExpiredField=22
-publicKeyField=23
-publicKeyLengthField=24
-signatureAlgorithmField=25
-keyAlgorithmField=26
-curveIdField=27
-compressionMethodField=28
+matchesDomainField=19
+certStartField=20
+certEndField=21
+certValidityLengthField=22
+certExpiredField=23
+publicKeyField=24
+publicKeyLengthField=25
+signatureAlgorithmField=26
+keyAlgorithmField=27
+curveIdField=28
+compressionMethodField=29
 
 ipsDomains=[]
 dictionaryPk={}
@@ -96,10 +96,10 @@ with open(csvFile) as csvfile:
             ipsDomains.append(i[ipDomain])
             if port == 443:
 
-                if (i[21] in dictionaryPk) and (i[ipDomain] not in dictionaryPk[i[21]]):
-                    dictionaryPk[i[21]].append(i[ipDomain])
-                elif i[21] not in dictionaryPk:
-                    dictionaryPk[i[21]] = [i[ipDomain]]
+                if (i[publicKeyField] in dictionaryPk) and (i[ipDomain] not in dictionaryPk[i[publicKeyField]]):
+                    dictionaryPk[i[publicKeyField]].append(i[ipDomain])
+                elif i[publicKeyField] not in dictionaryPk:
+                    dictionaryPk[i[publicKeyField]] = [i[ipDomain]]
 
 
                 if (i[secureRecognitionField] in secureRegotitation) and (i[ipDomain] not in secureRegotitation[i[secureRecognitionField]]):
@@ -155,7 +155,7 @@ with open(csvFile) as csvfile:
 
                 if (i[compressionMethodField] in compressionMethod) and (i[ipDomain] not in compressionMethod[i[compressionMethodField]]):
                     compressionMethod[i[compressionMethodField]].append(i[ipDomain])
-                elif i[compressionMethodField] not in pKLength:
+                elif i[compressionMethodField] not in compressionMethod:
                     compressionMethod[i[compressionMethodField]] = [i[ipDomain]]
 
             if (i[serverField] in server) and (i[ipDomain] not in server[i[serverField]]):
@@ -339,11 +339,14 @@ if port == 443:
         writer=csv.writer(myfile)
         writer.writerow(['Compression Method','Number of Ips/Domains','Ip/Domain list'])
         for i in compressionMethod:
+            print(i)
             if i =='Not Present':
                 compressionMethodNotPresent=len(compressionMethod['Not Present'])
                 cMNp =1
             writer.writerow([i,len(compressionMethod[i]),compressionMethod[i]])
     myfile.close()
+
+
 
 statusCodeNotPresent =0
 stNp=0

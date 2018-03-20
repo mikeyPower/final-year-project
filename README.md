@@ -70,14 +70,14 @@ Four files are outputted from the execution above, they are as follows a csv fil
 
 first parameter = json produced from zgrab
 
-
 second parameter = output file
 
-third parameter = port number of inputed domains/ips (Default port 80)
+third parameter = port number of query (Default port 80)
+
+fourt parameter = list of ports that the ip/domain is open on
 
 
-
-     ./json_lookup.py ~/go/src/github.com/zmap/zgrab/banners.json   zgrab_domain_port443_$TIME_STAMP.csv 443
+     ./json_lookup.py ~/go/src/github.com/zmap/zgrab/banners.json   zgrab_domain_port443_$TIME_STAMP.csv 443 [80,443]
 
 
 ### Output:

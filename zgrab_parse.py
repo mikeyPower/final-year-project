@@ -31,6 +31,38 @@ if sys.argv[3] == '443':
 else:
     port =80
 
+
+
+timeField=0
+domainField =1
+ipField=2
+portField=3
+connectedField=4
+serverField=5
+statusLineField=6
+cacheControlField=7
+headerExpiresField=8
+pragmaField=9
+locationField=10
+secureRecognitionField=11
+tlSVersionField=12
+selfSignedField=13
+subjectCommonNameField=14
+certificateAltNamesField=15
+browserTrustedField=16
+cipherField=17
+issuerField=18
+matchesDomainField=18
+certStartField=19
+certEndField=20
+certValidityLengthField=21
+certExpiredField=22
+publicKeyField=23
+publicKeyLengthField=24
+signatureAlgorithmField=25
+keyAlgorithmField=26
+curveIdField=27
+
 ipsDomains=[]
 dictionaryPk={}
 statusCode={}
@@ -68,92 +100,92 @@ with open(csvFile) as csvfile:
                     dictionaryPk[i[21]] = [i[ipDomain]]
 
 
-                if (i[9] in secureRegotitation) and (i[ipDomain] not in secureRegotitation[i[9]]):
-                    secureRegotitation[i[9]].append(i[ipDomain])
-                elif i[9] not in secureRegotitation:
-                    secureRegotitation[i[9]] = [i[ipDomain]]
+                if (i[secureRecognitionField] in secureRegotitation) and (i[ipDomain] not in secureRegotitation[i[secureRecognitionField]]):
+                    secureRegotitation[i[secureRecognitionField]].append(i[ipDomain])
+                elif i[secureRecognitionField] not in secureRegotitation:
+                    secureRegotitation[i[secureRecognitionField]] = [i[ipDomain]]
 
 
-                if (i[10] in tls) and (i[ipDomain] not in tls[i[10]]):
-                    tls[i[10]].append(i[ipDomain])
-                elif i[10] not in tls:
-                    tls[i[10]] = [i[ipDomain]]
+                if (i[tlSVersionField] in tls) and (i[ipDomain] not in tls[i[tlSVersionField]]):
+                    tls[i[tlSVersionField]].append(i[ipDomain])
+                elif i[tlSVersionField] not in tls:
+                    tls[i[tlSVersionField]] = [i[ipDomain]]
 
-                if (i[11] in selfSigned) and (i[ipDomain] not in selfSigned[i[11]]):
-                    selfSigned[i[11]].append(i[ipDomain])
-                elif i[11] not in selfSigned:
-                    selfSigned[i[11]] = [i[ipDomain]]
-
-
-
-                if (i[14] in browserTrusted) and (i[ipDomain] not in browserTrusted[i[14]]):
-                    browserTrusted[i[14]].append(i[ipDomain])
-                elif i[14] not in browserTrusted:
-                    browserTrusted[i[14]] = [i[ipDomain]]
-
-
-                if (i[15] in cipherSuite) and (i[ipDomain] not in cipherSuite[i[15]]):
-                    cipherSuite[i[15]].append(i[ipDomain])
-                elif i[15] not in cipherSuite:
-                    cipherSuite[i[15]] = [i[ipDomain]]
-
-                if (i[-1] in curveId) and (i[ipDomain] not in curveId[i[-1]]):
-                    curveId[i[-1]].append(i[ipDomain])
-                elif i[-1] not in curveId:
-                    curveId[i[-1]] = [i[ipDomain]]
-
-
-                if (i[-2] in keyAlgorithm) and (i[ipDomain] not in keyAlgorithm[i[-2]]):
-                    keyAlgorithm[i[-2]].append(i[ipDomain])
-                elif i[-2] not in keyAlgorithm:
-                    keyAlgorithm[i[-2]] = [i[ipDomain]]
-
-
-                if (i[-3] in signatureAlgorithm) and (i[ipDomain] not in signatureAlgorithm[i[-3]]):
-                    signatureAlgorithm[i[-3]].append(i[ipDomain])
-                elif i[-4] not in signatureAlgorithm:
-                    signatureAlgorithm[i[-3]] = [i[ipDomain]]
-
-                if (i[-4] in pKLength) and (i[ipDomain] not in pKLength[i[-4]]):
-                    pKLength[i[-4]].append(i[ipDomain])
-                elif i[-4] not in pKLength:
-                    pKLength[i[-4]] = [i[ipDomain]]
+                if (i[selfSignedField] in selfSigned) and (i[ipDomain] not in selfSigned[i[selfSignedField]]):
+                    selfSigned[i[selfSignedField]].append(i[ipDomain])
+                elif i[selfSignedField] not in selfSigned:
+                    selfSigned[i[selfSignedField]] = [i[ipDomain]]
 
 
 
-            if (i[3] in server) and (i[ipDomain] not in server[i[3]]):
-                server[i[3]].append(i[ipDomain])
-            elif i[3] not in server:
-                server[i[3]] = [i[ipDomain]]
+                if (i[browserTrustedField] in browserTrusted) and (i[ipDomain] not in browserTrusted[i[browserTrustedField]]):
+                    browserTrusted[i[browserTrustedField]].append(i[ipDomain])
+                elif i[browserTrustedField] not in browserTrusted:
+                    browserTrusted[i[browserTrustedField]] = [i[ipDomain]]
 
 
-            if (i[4] in statusCode) and (i[ipDomain] not in statusCode[i[4]]):
-                statusCode[i[4]].append(i[ipDomain])
-            elif i[4] not in statusCode:
-                statusCode[i[4]] = [i[ipDomain]]
+                if (i[cipherField] in cipherSuite) and (i[ipDomain] not in cipherSuite[i[cipherField]]):
+                    cipherSuite[i[cipherField]].append(i[ipDomain])
+                elif i[cipherField] not in cipherSuite:
+                    cipherSuite[i[cipherField]] = [i[ipDomain]]
+
+                if (i[curveIdField] in curveId) and (i[ipDomain] not in curveId[i[curveIdField]]):
+                    curveId[i[curveIdField]].append(i[ipDomain])
+                elif i[curveIdField] not in curveId:
+                    curveId[i[curveIdField]] = [i[ipDomain]]
+
+
+                if (i[keyAlgorithmField] in keyAlgorithm) and (i[ipDomain] not in keyAlgorithm[i[keyAlgorithmField]]):
+                    keyAlgorithm[i[keyAlgorithmField]].append(i[ipDomain])
+                elif i[keyAlgorithmField] not in keyAlgorithm:
+                    keyAlgorithm[i[keyAlgorithmField]] = [i[ipDomain]]
+
+
+                if (i[signatureAlgorithmField] in signatureAlgorithm) and (i[ipDomain] not in signatureAlgorithm[i[signatureAlgorithmField]]):
+                    signatureAlgorithm[i[signatureAlgorithmField]].append(i[ipDomain])
+                elif i[signatureAlgorithmField] not in signatureAlgorithm:
+                    signatureAlgorithm[i[signatureAlgorithmField]] = [i[ipDomain]]
+
+                if (i[publicKeyLengthField] in pKLength) and (i[ipDomain] not in pKLength[i[publicKeyLengthField]]):
+                    pKLength[i[publicKeyLengthField]].append(i[ipDomain])
+                elif i[publicKeyLengthField] not in pKLength:
+                    pKLength[i[publicKeyLengthField]] = [i[ipDomain]]
 
 
 
-            if (i[5] in cacheControl) and (i[ipDomain] not in cacheControl[i[5]]):
-                cacheControl[i[5]].append(i[ipDomain])
-            elif i[5] not in cacheControl:
-                cacheControl[i[5]] = [i[ipDomain]]
-
-            if (i[6] in headerExpires) and (i[ipDomain] not in headerExpires[i[6]]):
-                headerExpires[i[6]].append(i[ipDomain])
-            elif i[6] not in headerExpires:
-                headerExpires[i[6]] = [i[ipDomain]]
+            if (i[serverField] in server) and (i[ipDomain] not in server[i[serverField]]):
+                server[i[serverField]].append(i[ipDomain])
+            elif i[serverField] not in server:
+                server[i[serverField]] = [i[ipDomain]]
 
 
-            if (i[7] in pragma) and (i[ipDomain] not in pragma[i[7]]):
-                pragma[i[7]].append(i[ipDomain])
-            elif i[7] not in pragma:
-                pragma[i[7]] = [i[ipDomain]]
+            if (i[statusLineField] in statusCode) and (i[ipDomain] not in statusCode[i[statusLineField]]):
+                statusCode[i[statusLineField]].append(i[ipDomain])
+            elif i[statusLineField] not in statusCode:
+                statusCode[i[statusLineField] = [i[ipDomain]]
 
-            if (i[8] in location) and (i[ipDomain] not in location[i[8]]):
-                location[i[8]].append(i[ipDomain])
-            elif i[8] not in location:
-                location[i[8]] = [i[ipDomain]]
+
+
+            if (i[cacheControlField] in cacheControl) and (i[ipDomain] not in cacheControl[i[cacheControlField]]):
+                cacheControl[i[cacheControlField]].append(i[ipDomain])
+            elif i[cache_control] not in cacheControl:
+                cacheControl[i[cacheControlField]] = [i[ipDomain]]
+
+            if (i[headerExpiresField] in headerExpires) and (i[ipDomain] not in headerExpires[i[headerExpires]]):
+                headerExpires[i[headerExpires]].append(i[ipDomain])
+            elif i[headerExpiresField] not in headerExpires:
+                headerExpires[i[headerExpiresField]] = [i[ipDomain]]
+
+
+            if (i[pragmaField] in pragma) and (i[ipDomain] not in pragma[i[pragmaField]]):
+                pragma[i[pragmaField]].append(i[ipDomain])
+            elif i[pragmaField] not in pragma:
+                pragma[i[pragmaField]] = [i[ipDomain]]
+
+            if (i[locationField] in location) and (i[ipDomain] not in location[i[locationField]):
+                location[i[locationField]].append(i[ipDomain])
+            elif i[locationField] not in location:
+                location[i[locationField]] = [i[ipDomain]]
 
 
 

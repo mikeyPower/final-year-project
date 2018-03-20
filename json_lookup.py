@@ -1,11 +1,14 @@
 #!/usr/bin/python3
+import dns.resolver
 import os
 import sys
 import csv
 import time
 import json
 from datetime import datetime
+import dateutil.parser
 from pprint import pprint
+import socket
 #from Crypto.PublicKey.RSA import construct
 '''
 #!/usr/bin/python3 (running in python 3) Will remove 'u' which is a unicode character
@@ -27,6 +30,9 @@ inputfile = sys.argv[1]
 outputFile = sys.argv[2]
 
 port = sys.argv[3]
+
+
+ports = sys.argv[4]
 '''
 if not os.path.isfile(file) or not os.access(file,os.R_OK):
     print"Can't read input file: " + file + " - exiting"
@@ -85,10 +91,11 @@ if port == '443':
 
 
     try:
-        # Need to check if the certificate is out of date 
+        # Need to check if the certificate is out of date
         cert_end=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['validity']['end']
     except:
         cert_end='Not Present'
+
 
     try:
         cert_validity_length=data['data']['http']['response']['request']['tls_handshake']['server_certificates']['certificate']['parsed']['validity']['length'] #in seconds
@@ -184,6 +191,12 @@ if port == '443':
     except:
         cipher_suite ='Not Present'
 
+    try:
+        compression_method =data['data']['http']['response']['request']['tls_handshake']['server_hello']['compression_method']
+    except:
+        compression_method ='Not Present'
+
+
 
 
 try:
@@ -232,20 +245,62 @@ except:
     location='Not Present'
 
 
+if domain == 'Not Present':
+    try:
+        #works in python 2 but not in python3 dash still missing will try other dns resolver
+        #print(ip)
+        rdns=socket.gethostbyaddr(ip)
+        domain ="'"+str(rdns[0])+"'"
+        #test = domain.encode('utf-8')
+        #print(test)
+        #print(str(rdns[0]))
+        print(rdns)
+        #print(domain)
+
+
+        #req = '.'.join(reversed(ip.split("."))) + ".in-addr.arpa"
+        #answers = dns.resolver.query(req, "PTR")
+        #print(answers[0])
+    except:
+        print('Ip To Dns Error')
+
+
+if ip == '<nil>':
+    try:
+        ipdns=socket.gethostbyname(domain)
+        ip=str(ipdns)
+    except:
+        print('Dns to Ip Error')
+
+
+cert_expired = 'Not Present'
+if cert_end != 'Not Present':
+    parsed1 = dateutil.parser.parse(cert_end[:-1])#remove z from isoformat time
+    parsed2 = dateutil.parser.parse(str_now)
+    #print(parsed1)
+    #print(parsed2)
+    if parsed2 > parsed1:
+        cert_expired = 'True'
+    else:
+        cert_expired = 'False'
+
+
+
 #Write results to csv file
 if port == '443':
     with open(outputFile, "a") as myfile:
         writer=csv.writer(myfile)
-        writer.writerow([domain,ip,connected,server,status_line,cache_control,expires,pragma,location,
+        writer.writerow([str_now,domain,ip,ports,connected,server,status_line,cache_control,expires,pragma,location,
         secure_renegotiation,tls_version_name,self_signed,subject_cn,certificate_names,browser_trusted,cipher_suite,issuer,
-        matches_domain,cert_start,cert_end,cert_validity_length,public_key,pk_length,signature_algorithm,key_algorithm,curve_id])
+        matches_domain,cert_start,cert_end,cert_validity_length,cert_expired,public_key,pk_length,
+        signature_algorithm,key_algorithm,curve_id,compression_method])
 
 
     myfile.close()
 else:
     with open(outputFile, "a") as myfile1:
         writer1=csv.writer(myfile1)
-        writer1.writerow([domain,ip,connected,server,status_line,cache_control,expires,pragma,location])
+        writer1.writerow([str_now,domain,ip,ports,connected,server,status_line,cache_control,expires,pragma,location])
 
 
     myfile1.close()

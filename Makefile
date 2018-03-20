@@ -1,19 +1,19 @@
 
 clean:
 	rm -f  multiple_ip_to_dns*.csv unresolved_ip_to_dns*.csv summary*.txt resolved_ip_to_dns*.csv
-	rm -f port_443_*.csv port_80_*.csv both_ports*.csv error_open_ports_*.csv open_ports_*.csv json_test_*.csv
+	rm -f just_port_443_*.csv just_port_80_*.csv both_ports*.csv error_open_ports_*.csv open_ports_*.csv json_test_*.csv
 	rm -f zgrab_domain_p443_*.csv summary_zgrab_domain_p433*.txt all_ip_ports_*.csv
 	rm -f zgrab_ip_p443_*.csv summary_zgrab_ip_p443*.txt
 	rm -f zgrab_domain_p80_*.csv summary_zgrab_domain_p80*.txt
 	rm -f zgrab_ip_p80_*.csv summary_zgrab_ip_p80*.txt
-	rm -rf zgrab_parse_*
+	rm -rf zgrab_parse_* port_*
 
 cleanDns:
 	rm -f  multiple_ip_to_dns*.csv unresolved_ip_to_dns*.csv summary_dns*.txt resolved_ip_to_dns*.csv
 
 cleanPort:
-	rm -f port_443_*.csv port_80_*.csv both_ports*.csv summary_port*.txt all_ip_ports_*.csv
-
+	rm -f just_port_443_*.csv just_port_80_*.csv both_ports*.csv summary_port*.txt all_ip_ports_*.csv
+	rm -rf port_*
 cleanOpen:
 	rm -f error_open_ports_*.csv open_ports_*.csv
 

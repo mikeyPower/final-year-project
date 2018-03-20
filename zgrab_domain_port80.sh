@@ -7,7 +7,7 @@
 TIME_STAMP=$(date +%s)
 touch zgrab_domain_p80_$TIME_STAMP.csv
 touch summary_zgrab_domain_p80_$TIME_STAMP.txt
-echo "Domain,Ip,Connected,Server,Status Line,Cache Control,Header Expires,Pragma,Location" >> zgrab_domain_p80_$TIME_STAMP.csv
+echo "Time,Domain,Ip,Port,Connected,Server,Status Line,Cache Control,Header Expires,Pragma,Location" >> zgrab_domain_p80_$TIME_STAMP.csv
 
 #Outputs of banner grabs will be outputted to /go/src/github.com/zmap/zgrab directory
 
@@ -20,7 +20,7 @@ do
 
   #  (cd ~/go/src/github.com/zmap/zgrab && cat banners.json | jq '.data.http.response.request.tls_handshake.server_certificates.chain[1].raw', 'Stuff'>> summary_TIME_STAMP.csv)
                 #  OR
-    ./json_lookup.py ~/go/src/github.com/zmap/zgrab/banners.json zgrab_domain_p80_$TIME_STAMP.csv 80
+    ./json_lookup.py ~/go/src/github.com/zmap/zgrab/banners.json zgrab_domain_p80_$TIME_STAMP.csv 80 ${b[1]}
     sleep .2
 done < input.csv #removing header line
 

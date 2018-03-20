@@ -1,7 +1,7 @@
 Ip,Port,Domain Name
-134.226.36.81,,down.dsg.cs.tcd.ie
-134.226.36.138,,basil.dsg.cs.tcd.ie
-134.226.36.147,,polly.dsg.cs.tcd.ie
-134.226.36.104,,greatbritain.dsg.cs.tcd.ie
-134.226.56.21,,cs2014.scss.tcd.ie
-134.226.36.150,,miss-gatsby.dsg.cs.tcd.ie
+134.226.36.81,80,down.dsg.cs.tcd.ie
+134.226.36.138,80,basil.dsg.cs.tcd.ie
+134.226.36.147,443,polly.dsg.cs.tcd.ie
+134.226.36.104,443,greatbritain.dsg.cs.tcd.ie
+134.226.56.21,443,cs2014.scss.tcd.ie
+134.226.36.150,80,miss-gatsby.dsg.cs.tcd.ie

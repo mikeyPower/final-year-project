@@ -62,6 +62,7 @@ publicKeyLengthField=24
 signatureAlgorithmField=25
 keyAlgorithmField=26
 curveIdField=27
+compressionMethodField=28
 
 ipsDomains=[]
 dictionaryPk={}
@@ -75,6 +76,7 @@ keyAlgorithm ={}
 signatureAlgorithm={}
 pKLength ={}
 curveId={}
+compressionMethod={}
 server ={}
 cacheControl={}
 headerExpires={}
@@ -151,7 +153,10 @@ with open(csvFile) as csvfile:
                 elif i[publicKeyLengthField] not in pKLength:
                     pKLength[i[publicKeyLengthField]] = [i[ipDomain]]
 
-
+                if (i[compressionMethodField] in compressionMethod) and (i[ipDomain] not in compressionMethod[i[compressionMethodField]]):
+                    compressionMethod[i[compressionMethodField]].append(i[ipDomain])
+                elif i[compressionMethodField] not in pKLength:
+                    compressionMethod[i[compressionMethodField]] = [i[ipDomain]]
 
             if (i[serverField] in server) and (i[ipDomain] not in server[i[serverField]]):
                 server[i[serverField]].append(i[ipDomain])
@@ -162,17 +167,17 @@ with open(csvFile) as csvfile:
             if (i[statusLineField] in statusCode) and (i[ipDomain] not in statusCode[i[statusLineField]]):
                 statusCode[i[statusLineField]].append(i[ipDomain])
             elif i[statusLineField] not in statusCode:
-                statusCode[i[statusLineField] = [i[ipDomain]]
+                statusCode[i[statusLineField]] = [i[ipDomain]]
 
 
 
             if (i[cacheControlField] in cacheControl) and (i[ipDomain] not in cacheControl[i[cacheControlField]]):
                 cacheControl[i[cacheControlField]].append(i[ipDomain])
-            elif i[cache_control] not in cacheControl:
+            elif i[cacheControlField] not in cacheControl:
                 cacheControl[i[cacheControlField]] = [i[ipDomain]]
 
-            if (i[headerExpiresField] in headerExpires) and (i[ipDomain] not in headerExpires[i[headerExpires]]):
-                headerExpires[i[headerExpires]].append(i[ipDomain])
+            if (i[headerExpiresField] in headerExpires) and (i[ipDomain] not in headerExpires[i[headerExpiresField]]):
+                headerExpires[i[headerExpiresField]].append(i[ipDomain])
             elif i[headerExpiresField] not in headerExpires:
                 headerExpires[i[headerExpiresField]] = [i[ipDomain]]
 
@@ -182,7 +187,7 @@ with open(csvFile) as csvfile:
             elif i[pragmaField] not in pragma:
                 pragma[i[pragmaField]] = [i[ipDomain]]
 
-            if (i[locationField] in location) and (i[ipDomain] not in location[i[locationField]):
+            if (i[locationField] in location) and (i[ipDomain] not in location[i[locationField]]):
                 location[i[locationField]].append(i[ipDomain])
             elif i[locationField] not in location:
                 location[i[locationField]] = [i[ipDomain]]
@@ -328,6 +333,18 @@ if port == 443:
             writer.writerow([i,len(curveId[i]),curveId[i]])
     myfile.close()
 
+    compressionMethodNotPresent=0
+    cMNp=0
+    with open('zgrab_parse_'+now+"/compression_method_"+now+".csv", "w") as myfile:
+        writer=csv.writer(myfile)
+        writer.writerow(['Compression Method','Number of Ips/Domains','Ip/Domain list'])
+        for i in compressionMethod:
+            if i =='Not Present':
+                compressionMethodNotPresent=len(compressionMethod['Not Present'])
+                cMNp =1
+            writer.writerow([i,len(compressionMethod[i]),compressionMethod[i]])
+    myfile.close()
+
 statusCodeNotPresent =0
 stNp=0
 with open('zgrab_parse_'+now+"/status_codes_"+now+".csv", "w") as myfile:
@@ -431,3 +448,5 @@ if port == 443:
     print >>summary_fp, str(selfSignedNotPresent) + " Ips/Domains where self signed field not Present"
     print >>summary_fp, str(len(curveId)-cINp) + " unique curve Ids present"
     print >>summary_fp, str(curveIdNotPresent) + " Ips/domain where curve Id field not present"
+    print >>summary_fp, str(len(compressionMethod)-cMNp) + " unique Compression Methods present"
+    print >>summary_fp, str(compressionMethodNotPresent) + " Ips/domain where Compression Method field not present"

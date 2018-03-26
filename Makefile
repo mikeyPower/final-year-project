@@ -6,7 +6,7 @@ clean:
 	rm -f zgrab_ip_p443_*.csv summary_zgrab_ip_p443*.txt
 	rm -f zgrab_domain_p80_*.csv summary_zgrab_domain_p80*.txt
 	rm -f zgrab_ip_p80_*.csv summary_zgrab_ip_p80*.txt
-	rm -rf zgrab_parse_*
+	rm -rf zgrab_parse_* port_*
 
 cleanDns:
 	rm -f  multiple_ip_to_dns*.csv unresolved_ip_to_dns*.csv summary_dns*.txt resolved_ip_to_dns*.csv
@@ -28,7 +28,7 @@ cleanParse:
 	rm -rf zgrab_parse_*
 
 port80:
-	python port.py tmp.csv
+	./port.py tmp.csv
 	python ip_to_dns.py port_80_*.csv
 
 port443:

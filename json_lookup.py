@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import dns.resolver
+#import dns.resolver
 import os
 import sys
 import csv
@@ -197,6 +197,18 @@ if port == '443':
         compression_method ='Not Present'
 
 
+    cert_expired = 'Not Present'
+    if cert_end != 'Not Present':
+        parsed1 = dateutil.parser.parse(cert_end[:-1])#remove z from isoformat time
+        parsed2 = dateutil.parser.parse(str_now)
+        #print(parsed1)
+        #print(parsed2)
+        if parsed2 > parsed1:
+            cert_expired = 'True'
+        else:
+            cert_expired = 'False'
+
+
 
 
 try:
@@ -250,11 +262,11 @@ if domain == 'Not Present':
         #works in python 2 but not in python3 dash still missing will try other dns resolver
         #print(ip)
         rdns=socket.gethostbyaddr(ip)
-        domain ="'"+str(rdns[0])+"'"
+        domain =str(rdns[0])
         #test = domain.encode('utf-8')
         #print(test)
         #print(str(rdns[0]))
-        print(rdns)
+        #print(rdns)
         #print(domain)
 
 
@@ -262,7 +274,7 @@ if domain == 'Not Present':
         #answers = dns.resolver.query(req, "PTR")
         #print(answers[0])
     except:
-        print('Ip To Dns Error')
+        domain="unresolved"
 
 
 if ip == '<nil>':
@@ -270,19 +282,8 @@ if ip == '<nil>':
         ipdns=socket.gethostbyname(domain)
         ip=str(ipdns)
     except:
-        print('Dns to Ip Error')
+        ip == 'unresolved'
 
-
-cert_expired = 'Not Present'
-if cert_end != 'Not Present':
-    parsed1 = dateutil.parser.parse(cert_end[:-1])#remove z from isoformat time
-    parsed2 = dateutil.parser.parse(str_now)
-    #print(parsed1)
-    #print(parsed2)
-    if parsed2 > parsed1:
-        cert_expired = 'True'
-    else:
-        cert_expired = 'False'
 
 
 

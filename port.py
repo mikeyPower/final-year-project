@@ -37,34 +37,28 @@ countPortIndex =6
 with open(csvFile) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     readCSV.next() #Skip first line (Header line)
-
-
-
     for i in readCSV:
+        if i[0]+':'+i[6] not in ips:
+            ips.append(i[0]+':'+i[6])
+            #find ips on port 80 checking for duplicates
+            if i[countPortIndex] == '80' and  i[0] not in port80:
+                port80.append(i[0])
 
-        #find ips on port 80 checking for duplicates
-        if i[countPortIndex] == '80' and  i[0] not in port80:
-            port80.append(i[0])
-
-            #writer.writerow([i[0],i[6]])
-        #find ips on port 443 checking for duplicates
-        elif i[countPortIndex] == '443' and i[0] not in port443:
-            port443.append(i[0])
-            #writer1.writerow([i[0],i[6]])
-
-
-        #find the number of unique ips
-        if i[0] not in ips:
-            ips.append(i[0])
+            #find ips on port 443 checking for duplicates
+            elif i[countPortIndex] == '443' and i[0] not in port443:
+                port443.append(i[0])
 
 
-        if (i[0] in dictionary) and (i[6] not in dictionary[i[0]]):
-            dictionary[i[0]].append(i[6])
-        elif i[0] not in dictionary:
-            dictionary[i[0]] = [i[6]]
+            #find the number of unique ips
+
+            if (i[0] in dictionary) and (i[6] not in dictionary[i[0]]):
+                dictionary[i[0]].append(i[6])
+            elif i[0] not in dictionary:
+                dictionary[i[0]] = [i[6]]
+            else:
+                continue
         else:
             continue
-
 #Find number of Ips on both ports
 bothPorts =[]
 bothPorts = set(port80).intersection(port443)
@@ -83,25 +77,36 @@ with open("port_"+now+"/both_ports_"+now+".csv", "w") as myfile2:
             with open("port_"+now+"/just_port_443_"+now+".csv", "w") as myfile5:
                 writer5=csv.writer(myfile5)
                 writer5.writerow(['Ip','Port'])
-                for i in dictionary:
-
-                    if len(dictionary[i]) > 1:
-                        writer2.writerow([i,dictionary[i]])
-                        multipe_ports=multipe_ports+1
-                    elif len(dictionary[i]) == 1 and dictionary[i] == ['80']:
-                        writer4.writerow([i,dictionary[i]])
-                        just80 = just80 +1
-                    elif len(dictionary[i]) == 1 and dictionary[i] == ['443']:
-                        writer5.writerow([i,dictionary[i]])
-                        just443 = just443+1
-                    writer3.writerow([i,dictionary[i]])
+                with open("port_"+now+"/port_443_"+now+".csv", "w") as myfile1:
+                    writer1=csv.writer(myfile1)
+                    writer1.writerow(['Ip','Port'])
+                    with open("port_"+now+"/port_80_"+now+".csv", "w") as myfile0:
+                        writer0=csv.writer(myfile0)
+                        writer0.writerow(['Ip','Port'])
+                        for i in dictionary:
+                            if len(dictionary[i]) > 1:
+                                writer2.writerow([i,dictionary[i]])
+                                writer0.writerow([i,dictionary[i]])
+                                writer1.writerow([i,dictionary[i]])
+                                multipe_ports=multipe_ports+1
+                            elif len(dictionary[i]) == 1 and dictionary[i] == ['80']:
+                                writer4.writerow([i,dictionary[i]])
+                                writer0.writerow([i,dictionary[i]])
+                                just80 = just80 +1
+                            elif len(dictionary[i]) == 1 and dictionary[i] == ['443']:
+                                writer5.writerow([i,dictionary[i]])
+                                writer1.writerow([i,dictionary[i]])
+                                just443 = just443+1
+                            writer3.writerow([i,dictionary[i]])
+                    myfile0.close()
+                myfile1.close()
             myfile5.close()
         myfile4.close()
     myfile3.close()
 myfile2.close()
 
 #sanity check
-if multipe_ports == len(bothPorts) and (len(dictionary)==len(ips)):
+if multipe_ports == len(bothPorts) and (len(dictionary)==just443+just80+multipe_ports):
     print('yes')
 else:
     print('Error')
@@ -112,10 +117,14 @@ summary_f="port_"+now+"/summary_ports_"+now+".txt"
 summary_fp=open(summary_f,"w")
 print >>summary_fp, "Ran " + sys.argv[0] + " at " + str_now + " (" + now + ")" +  " with file " + sys.argv[1]
 print >>summary_fp, "Files created:"
-print >>summary_fp, "\tp=just_port_80_"+now+".csv"
+print >>summary_fp, "\tjust_port_80_"+now+".csv"
 print >>summary_fp, "\tjust_port_443_"+now+".csv"
+print >>summary_fp, "\tport_80_"+now+".csv"
+print >>summary_fp, "\tport_443_"+now+".csv"
 print >>summary_fp, "\tboth_ports_"+now+".csv"
-print >>summary_fp, str(len(ips)) + " Unique Ips"
+print >>summary_fp, str(len(dictionary)) + " Unique Ips"
 print >>summary_fp, str(just80) + " Number of Ips only on port 80"
 print >>summary_fp, str(just443) + " Number of Ips only on port 443"
+print >>summary_fp, str(len(port80)) + " Number of Ips on port 80"
+print >>summary_fp, str(len(port443)) + " Number of Ips on port 443"
 print >>summary_fp, str(len(bothPorts)) + " Number of Ips on both ports"

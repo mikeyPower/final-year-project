@@ -3,14 +3,13 @@
 
 #Get time stamp
 TIME_STAMP=$(date +%s)
-touch zgrab_ip_p443_$TIME_STAMP.csv
-
+#touch zgrab_ip_p443_$TIME_STAMP.csv
 touch summary_zgrab_ip_p443_$TIME_STAMP.txt
 
 echo "Time,Domain,Ip,Port,Connected,Server,Status Line,Cache Control,Header Expires,Pragma,Location,\
 Secure Regotitation,TlS Version,Self Signed,Subject Common Name,Certificate Alt Names,Browser Trusted,\
 Cipher,Issuer,Matches Domain,Cert Start,Cert End,Cert Validity Length,Cert Expired,Public Key,Public Key Length,\
-Signature Algorithm,Key Algorithm,Curve Id,Compression Method" >> zgrab_ip_p443_$TIME_STAMP.csv
+Signature Algorithm,Key Algorithm,Curve Id,Compression Method" > $2
 
 #Outputs of banner grabs will be outputted to /go/src/github.com/zmap/zgrab directory
 
@@ -22,13 +21,13 @@ do
 
     (cd ~/go/src/github.com/zmap/zgrab && echo "${b[0]}" | ./zgrab --port 443 --tls --http="/" --output-file=banners.json)
 
-    ./json_lookup.py ~/go/src/github.com/zmap/zgrab/banners.json zgrab_ip_p443_$TIME_STAMP.csv 443 ${b[1]}
+    ./json_lookup.py ~/go/src/github.com/zmap/zgrab/banners.json $2 443 ${b[1]}
 
 done < input.csv #removing header line
 
 #Summary results
-echo 'Ran zgrab_domain.sh at '+ $TIME_STAMP >> summary_zgrab_ip_p443_$TIME_STAMP.txt
+echo 'Ran zgrab_domain.sh at '$(date -d @$TIME_STAMP +"%d-%m-%Y %T") >> summary_zgrab_ip_p443_$TIME_STAMP.txt
 echo 'Input file: ' >> summary_zgrab_ip_p443_$TIME_STAMP.txt
 echo "$1" >> summary_zgrab_ip_p443_$TIME_STAMP.txt
 echo "Files created:" >> summary_zgrab_ip_p443_$TIME_STAMP.txt
-echo 'zgrab_domain_port443_'$TIME_STAMP'.csv' >> summary_zgrab_ip_p443_$TIME_STAMP.txt
+echo $2 >> summary_zgrab_ip_p443_$TIME_STAMP.txt

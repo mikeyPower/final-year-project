@@ -16,12 +16,12 @@ sed 1d $1 > input.csv
 while IFS=, read -a b;
 do
 
-    (cd ~/go/src/github.com/zmap/zgrab && echo "${b[0]}" | ./zgrab --port 80 --http="/" --output-file=banners.json)
+    (cd ~/go/src/github.com/zmap/zgrab && echo "${b[0]}" | ./zgrab --port 80 --http="/" --timeout 5 --output-file=banners.json)
 
   #  (cd ~/go/src/github.com/zmap/zgrab && cat banners.json | jq '.data.http.response.request.tls_handshake.server_certificates.chain[1].raw', 'Stuff'>> summary_TIME_STAMP.csv)
                 #  OR
     ./json_lookup.py ~/go/src/github.com/zmap/zgrab/banners.json $2 80 ${b[1]}
-    sleep .2
+
 done < input.csv #removing header line
 
 #Summary results

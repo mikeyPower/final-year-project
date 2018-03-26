@@ -85,17 +85,17 @@ with open("port_"+now+"/both_ports_"+now+".csv", "w") as myfile2:
                         writer0.writerow(['Ip','Port'])
                         for i in dictionary:
                             if len(dictionary[i]) > 1:
-                                writer2.writerow([i,dictionary[i]])
-                                writer0.writerow([i,dictionary[i]])
-                                writer1.writerow([i,dictionary[i]])
+                                writer2.writerow([i,"80_43"])
+                                writer0.writerow([i,"80_443"])
+                                writer1.writerow([i,"80_443"])
                                 multipe_ports=multipe_ports+1
                             elif len(dictionary[i]) == 1 and dictionary[i] == ['80']:
-                                writer4.writerow([i,dictionary[i]])
-                                writer0.writerow([i,dictionary[i]])
+                                writer4.writerow([i,"80"])
+                                writer0.writerow([i,"80"])
                                 just80 = just80 +1
                             elif len(dictionary[i]) == 1 and dictionary[i] == ['443']:
-                                writer5.writerow([i,dictionary[i]])
-                                writer1.writerow([i,dictionary[i]])
+                                writer5.writerow([i,"443"])
+                                writer1.writerow([i,"443"])
                                 just443 = just443+1
                             writer3.writerow([i,dictionary[i]])
                     myfile0.close()

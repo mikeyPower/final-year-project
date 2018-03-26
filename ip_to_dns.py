@@ -21,6 +21,10 @@ if not os.path.isfile(file) or not os.access(file,os.R_OK):
     sys.exit(1)
 
 
+#the timestamp, in time_t format
+now=str(int(time.time()))
+str_now=str(datetime.now())
+
 #create directory for outputted results
 try:
     os.makedirs('ip_to_dns_'+now)
@@ -28,9 +32,6 @@ except OSError:
     if not os.path.isdir(path):
         raise
 
-#the timestamp, in time_t format
-now=str(int(time.time()))
-str_now=str(datetime.now())
 
 #csv file input
 csvFile=sys.argv[1]
@@ -113,13 +114,14 @@ with open('ip_to_dns_'+now+"/multiple_ip_to_dns"+now+".csv", "w") as myfile2:
 
 
 #Print summary report
-summary_f="summary_dns_"+now+".txt"
+summary_f="ip_to_dns_"+now+"/summary_dns_"+now+".txt"
 summary_fp=open(summary_f,"w")
 print >>summary_fp, "Ran " + sys.argv[0] + " at " + str_now + " (" + now + ")" +  " with file " + sys.argv[1]
 print >>summary_fp, "Files created:"
 print >>summary_fp, "\tmultiple_ip_to_dns"+now+".csv"
 print >>summary_fp, "\tresolved_ip_to_dns"+now+".csv"
 print >>summary_fp, "\tunresolved_ip_to_dns"+now+".csv"
+print >>summary_fp, "\tsummary_dns_"+now+".txt"
 print >>summary_fp, str(len(ips)) + " Unique ips found"
 print >>summary_fp, str(dnsResolvedCount) + " had reverse names"
 print >>summary_fp, str(noDnsCount) + " did not"

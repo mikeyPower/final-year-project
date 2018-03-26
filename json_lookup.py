@@ -33,7 +33,7 @@ port = sys.argv[3]
 
 
 ports = sys.argv[4]
-print(str(sys.argv[4]))
+#print(str(sys.argv[4]))
 '''
 if not os.path.isfile(file) or not os.access(file,os.R_OK):
     print"Can't read input file: " + file + " - exiting"

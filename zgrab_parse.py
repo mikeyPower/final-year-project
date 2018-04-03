@@ -23,8 +23,11 @@ except OSError:
 
 if sys.argv[2] == 'domain':
     ipDomain = 1
+    legend ='Domain'
 else:
     ipDomain =2
+    legend ='Ip'
+
 
 if sys.argv[3] == '443':
     port = 443
@@ -339,7 +342,7 @@ if port == 443:
         writer=csv.writer(myfile)
         writer.writerow(['Compression Method','Number of Ips/Domains','Ip/Domain list'])
         for i in compressionMethod:
-            print(i)
+            #print(i)
             if i =='Not Present':
                 compressionMethodNotPresent=len(compressionMethod['Not Present'])
                 cMNp =1

@@ -19,6 +19,7 @@ ipField=2
 #So ip:statusLine we will filter by
 notAliveIp=[]
 aliveIp=[]
+ips=[]
 with open(csvFile) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     with open("alive_ips_"+now+".csv", "w") as myfile1:
@@ -31,6 +32,7 @@ with open(csvFile) as csvfile:
             'Cipher','Issuer','Matches Domain','Cert Start','Cert End','Cert Validity Length','Cert Expired','Public Key','Public Key Length',
             'Signature Algorithm','Key Algorithm','Curve Id','Compression Method'])
         for i in readCSV:
+            ips.append(i[ipField])
             if (i[ipField] not in notAliveIp) and (i[statusLine] == 'Not Present'):
                 notAliveIp.append(i[ipField])
 
@@ -40,8 +42,8 @@ with open(csvFile) as csvfile:
     myfile1.close()
 
 
-defNotAliveIp =[]
-defNotAliveIP = list(set(aliveIp) - set(notAliveIp))
+defNotAliveIp = list(set(ips) - set(aliveIp))
+#print(otherSet)
 
 #Print summary report
 summary_f="summary_ips_alive_"+now+".txt"
@@ -50,6 +52,6 @@ print >>summary_fp, "Ran " + sys.argv[0] + " at " + str_now + " (" + now + ")" +
 print >>summary_fp, "Files created:"
 print >>summary_fp, "\talive_ips_"+now+".csv"
 print >>summary_fp, "\tsummary_ips_alive_"+now+".txt"
+print >>summary_fp, str(len(set(ips))) + " Unique Ips"
 print >>summary_fp, str(len(aliveIp)) + " ips on"
 print >>summary_fp, str(len(defNotAliveIp)) + " ips not on"
-print >>summary_fp, str(len(notAliveIp)) + " ips not on overall"

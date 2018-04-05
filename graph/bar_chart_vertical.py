@@ -42,7 +42,7 @@ for i,j,k,l in zip(y_pos,y_col,color_list,x_col):
     rects=ax1.bar(i, int(j), align='center', alpha=0.5,color=k,label=l)
     for rect in rects:
         height = rect.get_height()
-        ax1.text(rect.get_x() + rect.get_width()/2., 1.015*height,
+        ax1.text(rect.get_x() + rect.get_width()/2., 1.005*height,
                 '%d' % int(height),
                 ha='center', va='bottom')
     #ax1.text(i, int(j), str(j), color='blue', fontweight='bold')
@@ -63,4 +63,5 @@ axes.set_ylim([ymin,ymax])
 plt.legend(x_col, loc="best")#bbox_to_anchor=(1, 0.5))
 
 
-plt.show()
+#plt.show()
+plt.savefig("test.svg")

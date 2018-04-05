@@ -27,6 +27,9 @@ cleanParse:
 	rm -f summary_parse_*
 	rm -rf zgrab_parse_*
 
+cleanAlive:
+	rm -rf summary_ips_alive_*.txt alive_ips_*.csv
+
 port80:
 	./port.py tmp.csv
 	python ip_to_dns.py port_80_*.csv

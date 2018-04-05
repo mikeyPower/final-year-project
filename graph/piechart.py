@@ -23,6 +23,7 @@ with open(csvFile) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     a=readCSV.next() #Skip first line (Header line)
     for i in readCSV:
+        #print(i)
         x_col=x_col+(i[0],)
         y_col.append(int(i[1]))
 
@@ -52,7 +53,7 @@ fig1, ax1 = plt.subplots()
 patches, texts, autotexts = ax1.pie(y_col, explode=None, autopct='%1.1f%%',
 shadow=True, startangle=90, colors=color_list)
 ax1.axis('equal')
-#fig1.set_facecolor('w') #change canvas color
+fig1.set_facecolor('w') #change canvas color
 plt.title(a[0])
 
 #Change font size
@@ -69,6 +70,6 @@ plt.setp(texts, fontproperties=proptease)
 
 
 #plt.legend(patches, zip(x_col,percent), loc="best",bbox_to_anchor=(0.8, 0.5)) display name and percentage
-plt.legend(patches, x_col, loc="best",bbox_to_anchor=(0.8, 0.85),prop={'size':10})
+plt.legend(patches, x_col, loc="best",bbox_to_anchor=(0.8, 0.85),prop={'size':None})
 
 plt.show() # Equal aspect ratio ensures that pie is drawn as a circle.

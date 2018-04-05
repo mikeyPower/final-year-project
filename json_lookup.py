@@ -209,10 +209,10 @@ if port == '443':
         else:
             cert_expired = 'False'
 
-try:
-    body=data['data']['http']['response']['body']
-except:
-    body='Not Present'
+#try:
+#    body=data['data']['http']['response']['body']
+#except:
+#    body='Not Present'
 
 try:
     cache_control =data['data']['http']['response']['headers']['cache_control']
@@ -297,13 +297,13 @@ if port == '443':
         writer.writerow([str_now,domain,ip,ports,connected,server,status_line,cache_control,expires,pragma,location,
         secure_renegotiation,tls_version_name,self_signed,subject_cn,certificate_names,browser_trusted,cipher_suite,issuer,
         matches_domain,cert_start,cert_end,cert_validity_length,cert_expired,public_key,pk_length,
-        signature_algorithm,key_algorithm,curve_id,compression_method,body])
+        signature_algorithm,key_algorithm,curve_id,compression_method])
 
     myfile.close()
 else:
     with open(outputFile, "a") as myfile1:
         writer1=csv.writer(myfile1)
-        writer1.writerow([str_now,domain,ip,ports,connected,server,status_line,cache_control,expires,pragma,location,body])
+        writer1.writerow([str_now,domain,ip,ports,connected,server,status_line,cache_control,expires,pragma,location])
 
 
     myfile1.close()

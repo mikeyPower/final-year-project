@@ -9,7 +9,7 @@ touch summary_zgrab_ip_p443_$TIME_STAMP.txt
 echo "Time,Domain,Ip,Port,Connected,Server,Status Line,Cache Control,Header Expires,Pragma,Location,\
 Secure Regotitation,TlS Version,Self Signed,Subject Common Name,Certificate Alt Names,Browser Trusted,\
 Cipher,Issuer,Matches Domain,Cert Start,Cert End,Cert Validity Length,Cert Expired,Public Key,Public Key Length,\
-Signature Algorithm,Key Algorithm,Curve Id,Compression Method" > $2
+Signature Algorithm,Key Algorithm,Curve Id,Compression Method,Body" > $2
 
 #Outputs of banner grabs will be outputted to /go/src/github.com/zmap/zgrab directory
 

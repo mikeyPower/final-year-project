@@ -20,25 +20,32 @@ ipField=2
 notAliveIp=[]
 aliveIp=[]
 ips=[]
+numberOfFields=0
+csv.field_size_limit(sys.maxsize)
 with open(csvFile) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     with open("alive_ips_"+now+".csv", "w") as myfile1:
         writer1=csv.writer(myfile1)
         if port == '80':
-            writer1.writerow(['Time','Domain','Ip','Port','Connected','Server','Status Line','Cache Control','Header Expires','Pragma','Location'])
+            numberOfFields=12
+            writer1.writerow(['Time','Domain','Ip','Port','Connected','Server','Status Line','Cache Control','Header Expires','Pragma','Location','Body'])
         else:
+	    numberOfFields=31
             writer1.writerow(['Time','Domain','Ip','Port','Connected','Server','Status Line','Cache Control','Header Expires','Pragma','Location',
             'Secure Regotitation','TlS Version','Self Signed','Subject Common Name','Certificate Alt Names','Browser Trusted',
             'Cipher','Issuer','Matches Domain','Cert Start','Cert End','Cert Validity Length','Cert Expired','Public Key','Public Key Length',
-            'Signature Algorithm','Key Algorithm','Curve Id','Compression Method'])
+            'Signature Algorithm','Key Algorithm','Curve Id','Compression Method','Body'])
         for i in readCSV:
             ips.append(i[ipField])
             if (i[ipField] not in notAliveIp) and (i[statusLine] == 'Not Present'):
-                notAliveIp.append(i[ipField])
+            	notAliveIp.append(i[ipField])
 
             elif (i[ipField] not in aliveIp) and (i[statusLine] != 'Not Present'):
-                writer1.writerow(i)
-                aliveIp.append(i[ipField])
+                if len(i) ==numberOfFields:
+		   	
+		    writer1.writerow(i)
+                    aliveIp.append(i[ipField])
+		
     myfile1.close()
 
 

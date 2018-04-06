@@ -1,6 +1,4 @@
-#!/bin/bash
-#This script will run with a csv where the second column is domains
-#./zgrab_domain_port80.sh file1
+#!/bin/bash This script will run with a csv where the second column is domains ./zgrab_domain_port80.sh file1
 
 
 #Get time stamp

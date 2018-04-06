@@ -5,7 +5,7 @@
 TIME_STAMP=$(date +%s)
 #touch zgrab_domain_p80_$TIME_STAMP.csv
 touch summary_zgrab_domain_p80_$TIME_STAMP.txt
-echo "Time,Domain,Ip,Port,Connected,Server,Status Line,Cache Control,Header Expires,Pragma,Location,Body" > $2
+echo "Time,Domain,Ip,Port,Connected,Server,Status Line,Cache Control,Header Expires,Pragma,Location" > $2
 
 #Outputs of banner grabs will be outputted to /go/src/github.com/zmap/zgrab directory
 

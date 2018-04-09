@@ -22,6 +22,14 @@ In production might swap over to jq instead, testing both methods?
 now=str(int(time.time()))
 str_now=str(datetime.now())
 
+#create directory for outputted results
+try:
+    os.makedirs('html_pages')
+except OSError:
+    if not os.path.isdir(path):
+        raise
+
+
 
 #if len(sys.argv)==2:
 inputfile = sys.argv[1]
@@ -288,7 +296,10 @@ if ip == '<nil>':
     except:
         ip == 'unresolved'
 
-
+if body!='Not Present':
+    file1 = open(str("html_pages/"+ip+'.txt'),'w')
+    file1.write(body)
+    file1.close()
 
 
 #Write results to csv file

@@ -24,15 +24,14 @@ numberOfFields=0
 csv.field_size_limit(sys.maxsize)
 
 with open(csvFile) as csvfile:
-   # readCSV = csv.reader(csvfile, delimiter=',')
-    readCSV = csv.reader(x.replace('\0', '') for x in csvfile)
+    readCSV = csv.reader(csvfile, delimiter=',')
     with open("alive_ips_"+now+".csv", "w") as myfile1:
         writer1=csv.writer(myfile1)
         if port == '80':
             numberOfFields=12
             writer1.writerow(['Time','Domain','Ip','Port','Connected','Server','Status Line','Cache Control','Header Expires','Pragma','Location','Body'])
         else:
-	    numberOfFields=31
+	        numberOfFields=31
             writer1.writerow(['Time','Domain','Ip','Port','Connected','Server','Status Line','Cache Control','Header Expires','Pragma','Location',
             'Secure Regotitation','TlS Version','Self Signed','Subject Common Name','Certificate Alt Names','Browser Trusted',
             'Cipher','Issuer','Matches Domain','Cert Start','Cert End','Cert Validity Length','Cert Expired','Public Key','Public Key Length',
@@ -43,11 +42,11 @@ with open(csvFile) as csvfile:
             	notAliveIp.append(i[ipField])
 
             elif (i[ipField] not in aliveIp) and (i[statusLine] != 'Not Present'):
-                if len(i) ==numberOfFields:
-		    print(len(i))	
-		    writer1.writerow(i)
-                    aliveIp.append(i[ipField])
-		
+                if len(i) ==numberOfFields :
+                    if len(i) != 'Not Present':
+		                writer1.writerow(i)
+                        aliveIp.append(i[ipField])
+
     myfile1.close()
 
 

@@ -297,7 +297,7 @@ if ip == '<nil>':
         ip == 'unresolved'
 
 if body!='Not Present':
-    file1 = open(str("html_pages/"+ip+'.txt'),'w')
+    file1 = open(str("html_pages/"+ip+'_'+ports+'.txt'),'w')
     file1.write(body)
     file1.close()
 

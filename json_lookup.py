@@ -256,7 +256,7 @@ except:
     status_line='Not Present'
 
 try:
-    location=data['data'] ['http'] ['response'] ['headers'] ['location']
+    location=data['data']['http']['response']['headers']['location']
 except:
     location='Not Present'
 

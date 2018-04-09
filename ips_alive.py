@@ -22,6 +22,7 @@ aliveIp=[]
 ips=[]
 numberOfFields=0
 csv.field_size_limit(sys.maxsize)
+
 with open(csvFile) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     with open("alive_ips_"+now+".csv", "w") as myfile1:

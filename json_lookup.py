@@ -23,11 +23,11 @@ now=str(int(time.time()))
 str_now=str(datetime.now())
 
 #create directory for outputted results
-try:
-    os.makedirs('html_pages')
-except OSError:
-    if not os.path.isdir(path):
-        raise
+#try:
+#   os.makedirs('html_pages')
+#except OSError:
+#    if not os.path.isdir(path):
+#        raise
 
 
 
@@ -296,8 +296,8 @@ if ip == '<nil>':
     except:
         ip == 'unresolved'
 
-if body!='Not Present':
-    file1 = open(str("html_pages/"+ip+'_'+ports+'.txt'),'w')
+if body != 'Not Present':
+    file1 = open(str("html_pages/"+str(ip)+'_'+str(port)+'.txt'),'w')
     file1.write(body)
     file1.close()
 

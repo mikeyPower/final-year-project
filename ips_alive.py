@@ -12,8 +12,16 @@ str_now=str(datetime.now())
 
 csvFile = sys.argv[1]
 
+type = sys.argv[3]
+if type == 'ip':
+   field = 2 
+else:
+    field = 1
+
+
 port = sys.argv[2]
 statusLine=6
+domainField=1
 ipField=2
 portField=3
 #if status line is 'Not Present' we know it is off/dead
@@ -39,15 +47,15 @@ with open(csvFile) as csvfile:
             'Cipher','Issuer','Matches Domain','Cert Start','Cert End','Cert Validity Length','Cert Expired','Public Key','Public Key Length',
             'Signature Algorithm','Key Algorithm','Curve Id','Compression Method','Body'])
         for i in readCSV:
-            ips.append(i[ipField]+':'+i[portField])
-            if (i[ipField]+':'+i[portField] not in notAliveIp) and (i[statusLine] == 'Not Present'):
-            	notAliveIp.append(i[ipField]+':'+i[portField])
+            ips.append(i[field]+':'+i[portField])
+            if (i[field]+':'+i[portField] not in notAliveIp) and (i[statusLine] == 'Not Present'):
+            	notAliveIp.append(i[field]+':'+i[portField])
 
-            elif (i[ipField]+':'+i[portField] not in aliveIp) and (i[statusLine] != 'Not Present'):
+            elif (i[field]+':'+i[portField] not in aliveIp) and (i[statusLine] != 'Not Present'):
                 if len(i) ==numberOfFields :
                     if i[len(i)-1] != 'Not Present':
                         writer1.writerow(i)
-                        aliveIp.append(i[ipField]+':'+i[portField])
+                        aliveIp.append(i[field]+':'+i[portField])
 
     myfile1.close()
 
@@ -55,12 +63,14 @@ with open(csvFile) as csvfile:
 defNotAliveIp = list(set(ips) - set(aliveIp))
 with open("not_alive_ips_"+now+".csv", "w") as myfile2:
     writer2=csv.writer(myfile2,quoting=csv.QUOTE_NONE,escapechar='\r')
-    writer2.writerow(['Ip','Port'])
+    writer2.writerow([type,'Port'])
     for i in defNotAliveIp:
         j= i.split(':')
-        #print(i.split(':'))
+        line = j[0]
+        line = line.replace('\r', '')
+       # print(i.split(':'))
         #print(j[1])
-        writer2.writerow([j[0],j[1]])
+        writer2.writerow(['<nil>',j[1],line])
 myfile2.close()
 
 #print(otherSet)

@@ -30,6 +30,10 @@ cleanParse:
 cleanAlive:
 	rm -rf summary_ips_alive_*.txt alive_ips_*.csv
 
+
+cleanBothPorts:
+	rm -rf summary_ips_both_ports_*.txt ips_both_ports_*.csv
+
 port80:
 	./port.py tmp.csv
 	python ip_to_dns.py port_80_*.csv

@@ -36,8 +36,27 @@ for name, hex in matplotlib.colors.cnames.iteritems():#and count < len(y_col):
     color_list.append(name)
 
 
+
+sns.set()
+
+
+#http://www.color-hex.com/color-palette/5361
+cols =['#ffb3ba',
+    '#bae1ff',
+	'#ffdfba',
+	'#ffffba',
+	'#baffc9']
+
+
+#http://www.color-hex.com/color-palette/45191
+cols1=['#4aac59',
+	'#4348e6',
+	'#4e1b7b',
+	'#fffa99',
+	'#727272']
+
 fig1, ax1 = plt.subplots()
-for i,j,k,l in zip(y_pos,y_col,color_list,x_col):
+for i,j,k,l in zip(y_pos,y_col,cols1,x_col):
 
     rects=ax1.bar(i, int(j), align='center', alpha=0.5,color=k,label=l)
     for rect in rects:
@@ -47,9 +66,9 @@ for i,j,k,l in zip(y_pos,y_col,color_list,x_col):
                 ha='center', va='bottom')
     #ax1.text(i, int(j), str(j), color='blue', fontweight='bold')
 plt.xticks(y_pos, x_col,fontsize=None, rotation=0)#rotation=90
-plt.ylabel('Number of Ips')
-plt.xlabel('')
-plt.title(a[0])
+plt.ylabel(a[1])
+plt.xlabel(a[0])
+plt.title('Ips to Ports')
 
 ymin = 0
 ymax = max(y_col)+50
@@ -57,11 +76,11 @@ axes = plt.gca()
 #axes.set_xlim([xmin,xmax])
 axes.set_ylim([ymin,ymax])
 
-# Shrink current axis by 20%
+#Shrink current axis by 20%
 #box = ax1.get_position()
 #ax1.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 plt.legend(x_col, loc="best")#bbox_to_anchor=(1, 0.5))
 
 
 #plt.show()
-plt.savefig("test.svg")
+plt.savefig("Ips to Ports.svg")

@@ -14,6 +14,7 @@ from matplotlib import cm
 now=str(int(time.time()))
 str_now=str(datetime.now())
 
+#Filter data to plot 
 x_col=()
 y_col=[]
 csvFile = sys.argv[1]

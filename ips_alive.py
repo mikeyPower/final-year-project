@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import csv
 import sys
-from functions import dateRange
+#from functions import dateRange
 from datetime import datetime
 import time
 import os
@@ -15,6 +15,7 @@ csvFile = sys.argv[1]
 port = sys.argv[2]
 statusLine=6
 ipField=2
+portField=3
 #if status line is 'Not Present' we know it is off/dead
 #So ip:statusLine we will filter by
 notAliveIp=[]
@@ -38,20 +39,30 @@ with open(csvFile) as csvfile:
             'Cipher','Issuer','Matches Domain','Cert Start','Cert End','Cert Validity Length','Cert Expired','Public Key','Public Key Length',
             'Signature Algorithm','Key Algorithm','Curve Id','Compression Method','Body'])
         for i in readCSV:
-            ips.append(i[ipField])
-            if (i[ipField] not in notAliveIp) and (i[statusLine] == 'Not Present'):
-            	notAliveIp.append(i[ipField])
+            ips.append(i[ipField]+':'+i[portField])
+            if (i[ipField]+':'+i[portField] not in notAliveIp) and (i[statusLine] == 'Not Present'):
+            	notAliveIp.append(i[ipField]+':'+i[portField])
 
-            elif (i[ipField] not in aliveIp) and (i[statusLine] != 'Not Present'):
+            elif (i[ipField]+':'+i[portField] not in aliveIp) and (i[statusLine] != 'Not Present'):
                 if len(i) ==numberOfFields :
                     if i[len(i)-1] != 'Not Present':
                         writer1.writerow(i)
-                        aliveIp.append(i[ipField])
+                        aliveIp.append(i[ipField]+':'+i[portField])
 
     myfile1.close()
 
 
 defNotAliveIp = list(set(ips) - set(aliveIp))
+with open("not_alive_ips_"+now+".csv", "w") as myfile2:
+    writer2=csv.writer(myfile2,quoting=csv.QUOTE_NONE,escapechar='\r')
+    writer2.writerow(['Ip','Port'])
+    for i in defNotAliveIp:
+        j= i.split(':')
+        #print(i.split(':'))
+        #print(j[1])
+        writer2.writerow([j[0],j[1]])
+myfile2.close()
+
 #print(otherSet)
 
 #Print summary report

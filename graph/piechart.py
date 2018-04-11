@@ -16,6 +16,7 @@ from matplotlib import cm
 now=str(int(time.time()))
 str_now=str(datetime.now())
 
+#Filter data to plot
 x_col=()
 y_col=[]
 csvFile = sys.argv[1]
@@ -27,7 +28,7 @@ with open(csvFile) as csvfile:
         x_col=x_col+(i[0],)
         y_col.append(int(i[1]))
 
-
+sns.set()
 #sns.set_style("whitegrid")
 
 #Calculate percentage of each segement to one decimal place
@@ -46,14 +47,26 @@ for name, hex in matplotlib.colors.cnames.iteritems():
 # Pie chart, where the slices will be ordered and plotted counter-clockwise:
 explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
 
-#a=np.random.random(40)
-#cs=cm.Set1(np.arange(40)/40.)
+#http://www.color-hex.com/color-palette/5361
+cols =['#ffb3ba',
+    '#bae1ff',
+	'#ffdfba',
+	'#ffffba',
+	'#baffc9']
+
+
+#http://www.color-hex.com/color-palette/45191
+cols1=['#4aac59',
+	'#4348e6',
+	'#4e1b7b',
+	'#fffa99',
+	'#727272']
 
 fig1, ax1 = plt.subplots()
 patches, texts, autotexts = ax1.pie(y_col, explode=None, autopct='%1.1f%%',
-shadow=True, startangle=90, colors=color_list)
+shadow=True, startangle=90, colors=cols1)#,labels=x_col)
 ax1.axis('equal')
-fig1.set_facecolor('w') #change canvas color
+#fig1.set_facecolor('w') #change canvas color
 plt.title(a[0])
 
 #Change font size
@@ -63,13 +76,13 @@ plt.setp(autotexts, fontproperties=proptease)
 plt.setp(texts, fontproperties=proptease)
 
 
-#plot legend
-# Shrink current axis by 20%
+#Shrink current axis by 20%
 #box = ax1.get_position()
 #ax1.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 
 
 #plt.legend(patches, zip(x_col,percent), loc="best",bbox_to_anchor=(0.8, 0.5)) display name and percentage
-plt.legend(patches, x_col, loc="best",bbox_to_anchor=(0.8, 0.85),prop={'size':None})
+plt.legend(patches, x_col, loc="best")#bbox_to_anchor=(0.8, 0.85),prop={'size':None})
 
-plt.show() # Equal aspect ratio ensures that pie is drawn as a circle.
+#plt.show() # Equal aspect ratio ensures that pie is drawn as a circle.
+plt.savefig("Ips to Hostname.svg")

@@ -67,7 +67,7 @@ with open("not_alive_ips_"+now+".csv", "w") as myfile2:
     for i in defNotAliveIp:
         j= i.split(':')
         line = j[0]
-        line = line.replace('\r', '')
+        line = line.rstrip()
        # print(i.split(':'))
         #print(j[1])
         writer2.writerow(['<nil>',j[1],line])

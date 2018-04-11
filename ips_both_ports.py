@@ -2,14 +2,16 @@
 import os
 import sys
 import csv
+from datetime import datetime
 import time
-
 
 #Get timestamp of programme execution
 now=str(int(time.time()))
 str_now=str(datetime.now())
 
 csvFile = sys.argv[1]
+
+csv.field_size_limit(sys.maxsize)
 
 ipField=2
 portField=3
@@ -27,9 +29,13 @@ with open(csvFile) as csvfile:
 
 
                 ips.append(i[ipField])
-                if i[portField] == '80_443':
+            #    print(i[portField],type(i[portField]),len(i[portField]))
+            #rstrip is used to get rid of trailling whitespace e.g '\r' etc
+                if i[portField].rstrip() == '80_443':
+                    print('yes')
                     writer1.writerow(i)
                     both_ports.append(i[ipField])
+    myfile1.close()
 
 
 

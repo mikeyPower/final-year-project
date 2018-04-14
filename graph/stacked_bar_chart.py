@@ -14,7 +14,7 @@ from matplotlib import cm
 now=str(int(time.time()))
 str_now=str(datetime.now())
 
-#Filter data to plot 
+#Filter data to plot
 x_col=()
 y_col=[]
 csvFile = sys.argv[1]
@@ -42,7 +42,7 @@ fig1, ax1 = plt.subplots()
 for i,j,k,l in zip(y_pos,y_col,color_list,x_col):
 #ax1.bar(y_pos, performance, align='center', alpha=0.5,color=color_list,label=x_col)
     #print(i, j,k,l)
-    rects=ax1.bar(i, int(j), align='center', alpha=0.5,color='navy',label=l)
+    rects=ax1.bar(i, int(j), align='center', alpha=0.8,color='navy',label=l)
     for rect in rects:
         height = rect.get_height()
         ax1.text(rect.get_x() + rect.get_width()/2., 1.05*height,

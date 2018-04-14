@@ -16,16 +16,19 @@ import matplotlib
 now=str(int(time.time()))
 str_now=str(datetime.now())
 
-#Filter data to plot
 x_col=()
 y_col=[]
+y_col1=[]
 csvFile = sys.argv[1]
+
+
 with open(csvFile) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     a=readCSV.next() #Skip first line (Header line)
     for i in readCSV:
         x_col=x_col+(i[0],)
         y_col.append(int(i[1]))
+        y_col1.append(int(i[2]))
 
 y_pos = np.arange(len(x_col))
 
@@ -34,41 +37,63 @@ color_list=[]
 for name, hex in matplotlib.colors.cnames.iteritems():#and count < len(y_col):
     color_list.append(name)
 
+
+
+#sns.set()
 sns.set_style("ticks")
+
 
 cols2=['#e6194b','#3cb44b',	'#0082c8', '#f58231','#911eb4',
 	'#46f0f0',	'#f032e6'	,'#d2f53c'	,'#fabebe',	'#008080'	,'#e6beff'	,'#aa6e28',
      '#fffac8',	'#800000',	'#aaffc3',	'#808000',	'#000080',	'#808080', '#FFFFFF','#000000','#ffe119']
 
+#Plot graph
 fig1, ax1 = plt.subplots()
-for i,j,k,l in zip(y_pos,y_col,cols2,x_col):
 
-    #print(i, j,k,l)
-    rects=ax1.barh(i, int(j),align='center', alpha=0.8,color=k,label=l)
-    #for rect in rects:
-    #    height = rect.get_height()
-    #    ax1.text(i, j,
-        #        '%d' % int(height),
-        #        ha='center', va='bottom')
-ax1.set_yticks(y_pos)
-#ax1.set_yticklabels(x_col)
-#plt.yticks(fontsize=4.5)
-plt.xlabel('Number of IP addresses')
-plt.ylabel('Status Codes')
-plt.title('Request of IP addresses on Both Ports to Port 80')
+#width of bar
+width = 0.35
+
+label=['Regualar','Irregular']
+rects1=ax1.bar(y_pos-width/2, y_col, align='center', width=width,alpha=0.8,color=cols2[0],label=label[0])
+
+rects2=ax1.bar(y_pos+width/2, y_col1, align='center', width=width,alpha=0.8,color=cols2[1],label=label[1])
 
 
-ax1.yaxis.set_ticks_position('left')
-ax1.xaxis.set_ticks_position('bottom')
+plt.xticks(y_pos, x_col,fontsize=None, rotation=0)
 
+#label y-axis
+plt.ylabel('Number of IP addresses')
+
+#label x-axis
+plt.xlabel('Ports')
+
+
+#label title
+plt.title('Regular vs Irregular IP addresses')
+
+
+
+#Set axis limits
+#ymin = 0
+#ymax = max(y_col)+50
+#axes = plt.gca()
+#axes.set_xlim([xmin,xmax])
+#axes.set_ylim([ymin,ymax])
 
 #Shrink current axis by 20%
 #box = ax1.get_position()
 #ax1.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 
-#plot legend
-plt.legend(x_col, loc="best",prop={'size':10})#bbox_to_anchor=(1, 0.5))
+#Plot legend
+plt.legend(label, loc="best")#bbox_to_anchor=(1, 0.5))
+
+#Remove top and right spines
+#sns.despine(ax=ax1)
+
+#set ticks position to be only at left and bottom position
+ax1.yaxis.set_ticks_position('left')
+ax1.xaxis.set_ticks_position('bottom')
 
 
 #plt.show()
-plt.savefig("Request of IP addresses on Both Ports to Port 80.svg")
+plt.savefig("Regular vs Irregular IP addresses.svg")

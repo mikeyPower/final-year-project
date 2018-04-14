@@ -62,9 +62,14 @@ cols1=['#4aac59',
 	'#fffa99',
 	'#727272']
 
+
+cols2=['#e6194b','#3cb44b',	'#0082c8', '#f58231','#911eb4',
+	'#46f0f0',	'#f032e6'	,'#d2f53c'	,'#fabebe',	'#008080'	,'#e6beff'	,'#aa6e28',
+     '#fffac8',	'#800000',	'#aaffc3',	'#808000',	'#000080',	'#808080', '#FFFFFF','#000000','#ffe119']
+
 fig1, ax1 = plt.subplots()
 patches, texts, autotexts = ax1.pie(y_col, explode=None, autopct='%1.1f%%',
-shadow=True, startangle=90, colors=cols1)#,labels=x_col)
+shadow=False, startangle=90, colors=cols2,alpha=0.8)#,labels=x_col)
 ax1.axis('equal')
 #fig1.set_facecolor('w') #change canvas color
 plt.title(a[0])

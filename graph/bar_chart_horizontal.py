@@ -51,11 +51,18 @@ for i,j,k,l in zip(y_pos,y_col,cols2,x_col):
         #        '%d' % int(height),
         #        ha='center', va='bottom')
 ax1.set_yticks(y_pos)
-#ax1.set_yticklabels(x_col)
+ax1.set_yticklabels(x_col)
 #plt.yticks(fontsize=4.5)
+
+#pick an x-axis label
 plt.xlabel('Number of IP addresses')
-plt.ylabel('Status Codes')
-plt.title('Request of IP addresses on Both Ports to Port 80')
+
+#pick a y-axis label
+#plt.ylabel(a[0])
+
+#Pick a title
+#plt.title('Request of IP addresses on Both Ports to Port 80')
+#plt.title('TLS versions In TCD')
 
 
 ax1.yaxis.set_ticks_position('left')
@@ -67,8 +74,9 @@ ax1.xaxis.set_ticks_position('bottom')
 #ax1.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 
 #plot legend
-plt.legend(x_col, loc="best",prop={'size':10})#bbox_to_anchor=(1, 0.5))
+#plt.legend(x_col, loc="best",prop={'size':10})#bbox_to_anchor=(1, 0.5))
 
 
 #plt.show()
-plt.savefig("Request of IP addresses on Both Ports to Port 80.svg")
+#plt.savefig("Request of IP addresses on Both Ports to Port 80.png")
+plt.savefig("TLS versions In TCD.png")

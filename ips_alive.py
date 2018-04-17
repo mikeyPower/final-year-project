@@ -14,12 +14,14 @@ csvFile = sys.argv[1]
 
 type = sys.argv[3]
 if type == 'ip':
-   field = 2 
+   field = 2
 else:
     field = 1
 
 
 port = sys.argv[2]
+
+html = sys.argv[4]
 statusLine=6
 domainField=1
 ipField=2
@@ -52,10 +54,14 @@ with open(csvFile) as csvfile:
             	notAliveIp.append(i[field]+':'+i[portField])
 
             elif (i[field]+':'+i[portField] not in aliveIp) and (i[statusLine] != 'Not Present'):
-                if len(i) ==numberOfFields :
-                    if i[len(i)-1] != 'Not Present':
-                        writer1.writerow(i)
-                        aliveIp.append(i[field]+':'+i[portField])
+                if html == 'html':
+                    if len(i) ==numberOfFields :
+                        if i[len(i)-1] != 'Not Present':
+                            writer1.writerow(i)
+                            aliveIp.append(i[field]+':'+i[portField])
+                else:
+                    writer1.writerow(i)
+                    aliveIp.append(i[field]+':'+i[portField])
 
     myfile1.close()
 

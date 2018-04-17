@@ -74,7 +74,7 @@ for i,j,k,l in zip(y_pos,y_col,cols2,x_col):
                 ha='center', va='bottom')
 
 
-plt.xticks(y_pos, x_col,fontsize=None, rotation=45)
+plt.xticks(y_pos, x_col,fontsize=None, rotation=0)
 
 #label y-axis
 plt.ylabel('Number of IP addresses')
@@ -84,8 +84,8 @@ plt.ylabel('Number of IP addresses')
 
 
 #label title
-#plt.title('IP addresses to Ports')
-plt.title('Request of IP addresses on Both Ports to Port 80')
+plt.title('IP addresses to Ports')
+#plt.title('Request of IP addresses on Both Ports to Port 80')
 
 
 
@@ -111,6 +111,6 @@ ax1.yaxis.set_ticks_position('left')
 ax1.xaxis.set_ticks_position('bottom')
 
 
-plt.show()
-#plt.savefig("Ips to Ports.svg")
+#plt.show()
+plt.savefig("IP addresses to Ports.png")
 #plt.savefig("Request of IP addresses on Both Ports to Port 80.svg")

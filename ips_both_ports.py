@@ -32,7 +32,7 @@ with open(csvFile) as csvfile:
             #    print(i[portField],type(i[portField]),len(i[portField]))
             #rstrip is used to get rid of trailling whitespace e.g '\r' etc
                 if i[portField].rstrip() == '80_443':
-                    print('yes')
+                    #print('yes')
                     writer1.writerow(i)
                     both_ports.append(i[ipField])
     myfile1.close()

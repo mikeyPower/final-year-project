@@ -69,7 +69,7 @@ cols2=['#e6194b','#3cb44b',	'#0082c8', '#f58231','#911eb4',
 
 fig1, ax1 = plt.subplots()
 patches, texts, autotexts = ax1.pie(y_col, explode=None, autopct='%1.1f%%',
-shadow=False, startangle=90, colors=cols2,alpha=0.8)#,labels=x_col)
+shadow=False, startangle=90, colors=cols2)#,labels=x_col)
 ax1.axis('equal')
 #fig1.set_facecolor('w') #change canvas color
 plt.title(a[0])
@@ -90,4 +90,4 @@ plt.setp(texts, fontproperties=proptease)
 plt.legend(patches, x_col, loc="best")#bbox_to_anchor=(0.8, 0.85),prop={'size':None})
 
 #plt.show() # Equal aspect ratio ensures that pie is drawn as a circle.
-plt.savefig("Ips to Hostname.svg")
+plt.savefig("Ips to Hostname.png")

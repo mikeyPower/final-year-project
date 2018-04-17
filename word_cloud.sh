@@ -13,7 +13,7 @@ do
   IP_ADDR=${f::-4}
   #echo $IP_ADDR
   #cat $f
-  
+
 cat $f | grep -io 'title=.*>' | sed -e 's/title /\ntitle /g' | sed -e 's/title=['"'"'"]//' -e 's/["'"'"'].*$//' -e '/^$/ d' > words.txt
 cat $f | grep -io "<title>[^<]*" | sed -e 's/<[^>]*>//g' >> words.txt
 cat $f | grep -io '<a .*href=.*>' | sed -e 's/<a /\n<a /g' | sed -e 's/<a .*href=['"'"'"]//' -e 's/["'"'"'].*$//' -e '/^$/ d' >> words.txt

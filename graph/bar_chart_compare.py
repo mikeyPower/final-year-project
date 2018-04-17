@@ -96,4 +96,4 @@ ax1.xaxis.set_ticks_position('bottom')
 
 
 #plt.show()
-plt.savefig("Regular vs Irregular IP addresses.svg")
+plt.savefig("Regular vs Irregular IP addresses.png")

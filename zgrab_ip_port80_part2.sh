@@ -1,6 +1,4 @@
-#!/bin/bash
-#This script will run with a csv where the first column is ip
-#./zgrab_ip_port80.sh file1
+#!/bin/bash This script will run with a csv where the first column is ip ./zgrab_ip_port80.sh file1
 
 
 #Get time stamp
@@ -16,7 +14,7 @@ sed 1d $1 > ~/fyp/final-year-project/input4_part2.csv
 while IFS=, read -a b;
 do
 
-    (cd ~/go/src/github.com/zmap/zgrab && echo "${b[0]}" | ./zgrab --port 80 --http="/" --timeout 4 --output-file=banners4_part2.json)
+    (cd ~/go/src/github.com/zmap/zgrab && echo "${b[0]}" | ./zgrab --port 80 --http="/" --timeout 5 --output-file=banners4_part2.json)
 
     ~/fyp/final-year-project/json_lookup.py ~/go/src/github.com/zmap/zgrab/banners4_part2.json $2 80 ${b[1]}
 

@@ -16,7 +16,7 @@ sed 1d $1 > ~/fyp/final-year-project/input4.csv
 while IFS=, read -a b;
 do
 
-    (cd ~/go/src/github.com/zmap/zgrab && echo "${b[0]}" | ./zgrab --port 80 --http="/" --timeout 4 --output-file=banners4.json)
+    (cd ~/go/src/github.com/zmap/zgrab && echo "${b[0]}" | ./zgrab --port 80 --http="/" --timeout 5 --output-file=banners4.json)
 
     ~/fyp/final-year-project/json_lookup.py ~/go/src/github.com/zmap/zgrab/banners4.json $2 80 ${b[1]}
 

@@ -82,7 +82,7 @@ for i,j,k,l in zip(y_pos,y_col,cols2,x_col):
     #            ha='center', va='bottom')
 
 
-plt.xticks(y_pos, x_col,fontsize=None, rotation=0)
+plt.xticks(y_pos, x_col,fontsize=8, rotation=45)
 
 #label y-axis
 plt.ylabel('Number of IP addresses')
@@ -121,5 +121,5 @@ ax1.xaxis.set_ticks_position('bottom')
 
 
 #plt.show()
-plt.savefig("IP addresses to Ports.svg")
+plt.savefig("Cipher Suites.svg")
 #plt.savefig("Request of IP addresses on Both Ports to Port 80.svg")

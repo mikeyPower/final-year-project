@@ -83,14 +83,14 @@ cols3 =['#8dd3c7',
 fig1, ax1 = plt.subplots()
 #fig1.patch.set_alpha(0.3)
 patches, texts, autotexts = ax1.pie(y_col, explode=None, autopct='%1.1f%%',
-shadow=False, startangle=90, colors=cols1)#,labels=x_col)
+shadow=False, startangle=90, colors=cols1)#,labels=x_col)#,labels=x_col)
 ax1.axis('equal')
 #fig1.set_facecolor('w') #change canvas color
-plt.title(a[0])
+plt.title(a[0],y=1.05)
 
 #Change font size
 proptease = fm.FontProperties()
-#proptease.set_size('small')
+#proptease.set_size(8)
 plt.setp(autotexts, fontproperties=proptease)
 plt.setp(texts, fontproperties=proptease)
 
@@ -101,7 +101,7 @@ plt.setp(texts, fontproperties=proptease)
 
 
 #plt.legend(patches, zip(x_col,percent), loc="best",bbox_to_anchor=(0.8, 0.5)) display name and percentage
-plt.legend(patches, x_col, loc="best")#bbox_to_anchor=(0.8, 0.85),prop={'size':None})
+plt.legend(patches, x_col,loc='best')#,bbox_to_anchor=(0.8, 0.5),prop={'size':8})
 
 #plt.show() # Equal aspect ratio ensures that pie is drawn as a circle.
-plt.savefig("Ips to Hostname.svg")
+plt.savefig("Certificate Expired.png")

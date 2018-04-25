@@ -79,6 +79,14 @@ keyAlgorithm ={}
 signatureAlgorithm={}
 pKLength ={}
 curveId={}
+#####
+matchesDomain={}
+certValidityLength={}
+certExpired={}
+certStart={}
+certEnd={}
+issuer={}
+#####
 compressionMethod={}
 server ={}
 cacheControl={}
@@ -160,6 +168,42 @@ with open(csvFile) as csvfile:
                     compressionMethod[i[compressionMethodField]].append(i[ipDomain])
                 elif i[compressionMethodField] not in compressionMethod:
                     compressionMethod[i[compressionMethodField]] = [i[ipDomain]]
+
+                if (i[matchesDomainField] in matchesDomain) and (i[ipDomain] not in matchesDomain[i[matchesDomainField]]):
+                    matchesDomain[i[matchesDomainField]].append(i[ipDomain])
+                elif i[matchesDomainField] not in matchesDomain:
+                    matchesDomain[i[matchesDomainField]] = [i[ipDomain]]
+
+                if (i[certValidityLengthField] in certValidityLength) and (i[ipDomain] not in certValidityLength[i[certValidityLengthField]]):
+                    certValidityLength[i[certValidityLengthField]].append(i[ipDomain])
+                elif i[certValidityLengthField] not in certValidityLength:
+                    certValidityLength[i[certValidityLengthField]] = [i[ipDomain]]
+
+
+                if (i[certExpiredField] in certExpired) and (i[certExpiredField] not in certExpired[i[certExpiredField]]):
+                    certExpired[i[certExpiredField]].append(i[ipDomain])
+                elif i[certExpiredField] not in certExpired:
+                    certExpired[i[certExpiredField]] = [i[ipDomain]]
+
+                if (i[certStartField] in certStart) and (i[certStartField] not in certStart[i[certStartField]]):
+                    certStart[i[certStartField]].append(i[ipDomain])
+                elif i[certStartField] not in certStart:
+                    certStart[i[certStartField]] = [i[ipDomain]]
+
+                if (i[certEndField] in certEnd) and (i[certEndField] not in certEnd[i[certEndField]]):
+                    certEnd[i[certEndField]].append(i[ipDomain])
+                elif i[certEndField] not in certEnd:
+                    certEnd[i[certEndField]] = [i[ipDomain]]
+
+                if (i[issuerField] in issuer) and (i[issuerField] not in issuer[i[issuerField]]):
+                    issuer[i[issuerField]].append(i[ipDomain])
+                elif i[issuerField] not in issuer:
+                    issuer[i[issuerField]] = [i[ipDomain]]
+
+
+
+
+
 
             if (i[serverField] in server) and (i[ipDomain] not in server[i[serverField]]):
                 server[i[serverField]].append(i[ipDomain])
@@ -348,6 +392,89 @@ if port == 443:
                 cMNp =1
             writer.writerow([i,len(compressionMethod[i]),compressionMethod[i]])
     myfile.close()
+
+
+
+    matchesDomainFieldNotPresent=0
+    mdNp=0
+    with open('zgrab_parse_'+now+"/matches_domain_"+now+".csv", "w") as myfile:
+        writer=csv.writer(myfile)
+        writer.writerow(['Matces Domain','Number of Ips/Domains','Ip/Domain list'])
+        for i in matchesDomain:
+            #print(i)
+            if i =='Not Present':
+                matchesDomainFieldNotPresent=len(matchesDomain['Not Present'])
+                mdNp =1
+            writer.writerow([i,len(matchesDomain[i]),matchesDomain[i]])
+    myfile.close()
+
+
+    certValidityLengthFieldNotPresent=0
+    cvNp=0
+    with open('zgrab_parse_'+now+"/cert_validity_length_"+now+".csv", "w") as myfile:
+        writer=csv.writer(myfile)
+        writer.writerow(['Cert Validity','Number of Ips/Domains','Ip/Domain list'])
+        for i in certValidityLength:
+            #print(i)
+            if i =='Not Present':
+                certValidityLengthFieldNotPresent=len(certValidityLength['Not Present'])
+                cvNp =1
+            writer.writerow([i,len(certValidityLength[i]),certValidityLength[i]])
+    myfile.close()
+
+    certExpiredFieldNotPresent=0
+    ceNp=0
+    with open('zgrab_parse_'+now+"/cert_expired_"+now+".csv", "w") as myfile:
+        writer=csv.writer(myfile)
+        writer.writerow(['Cert Expired','Number of Ips/Domains','Ip/Domain list'])
+        for i in certExpired:
+            #print(i)
+            if i =='Not Present':
+                certExpiredFieldNotPresent=len(certExpired['Not Present'])
+                ceNp =1
+            writer.writerow([i,len(certExpired[i]),certExpired[i]])
+    myfile.close()
+
+    certStartFieldNotPresent=0
+    csNp=0
+    with open('zgrab_parse_'+now+"/cert_start_"+now+".csv", "w") as myfile:
+        writer=csv.writer(myfile)
+        writer.writerow(['Cert Start','Number of Ips/Domains','Ip/Domain list'])
+        for i in certStart:
+            #print(i)
+            if i =='Not Present':
+                certStartFieldNotPresent=len(certStart['Not Present'])
+                csNp =1
+            writer.writerow([i,len(certStart[i]),certStart[i]])
+    myfile.close()
+
+    certEndFieldNotPresent=0
+    cefNp=0
+    with open('zgrab_parse_'+now+"/cert_end_"+now+".csv", "w") as myfile:
+        writer=csv.writer(myfile)
+        writer.writerow(['Cert End','Number of Ips/Domains','Ip/Domain list'])
+        for i in certEnd:
+            #print(i)
+            if i =='Not Present':
+                certEndFieldNotPresent=len(certEnd['Not Present'])
+                cefNp =1
+            writer.writerow([i,len(certEnd[i]),certEnd[i]])
+    myfile.close()
+
+
+    issuerFieldNotPresent=0
+    ifNp=0
+    with open('zgrab_parse_'+now+"/issuer_"+now+".csv", "w") as myfile:
+        writer=csv.writer(myfile)
+        writer.writerow(['Issuer','Number of Ips/Domains','Ip/Domain list'])
+        for i in issuer:
+            #print(i)
+            if i =='Not Present':
+                issuerFieldNotPresent=len(issuer['Not Present'])
+                ifNp =1
+            writer.writerow([i,len(issuer[i]),issuer[i]])
+    myfile.close()
+
 
 
 

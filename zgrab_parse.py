@@ -227,9 +227,9 @@ if port == 443:
     secureRNotPresent = 0
     sNp=0
     secureR=0
-    with open('zgrab_parse_'+now+"/secure_recognition_"+now+".csv", "w") as myfile:
+    with open('zgrab_parse_'+now+"/secure_renegotiation_"+now+".csv", "w") as myfile:
         writer=csv.writer(myfile)
-        writer.writerow(['Secure recognition','Number of Ips/Domains','Ip/Domain list'])
+        writer.writerow(['Secure renegotiation','Number of Ips/Domains','Ip/Domain list'])
         for i in secureRegotitation:
             if i =='Not Present':
                 secureRNotPresent=len(secureRegotitation['Not Present'])

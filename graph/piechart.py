@@ -47,29 +47,43 @@ for name, hex in matplotlib.colors.cnames.iteritems():
 # Pie chart, where the slices will be ordered and plotted counter-clockwise:
 explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
 
-#http://www.color-hex.com/color-palette/5361
-cols =['#ffb3ba',
-    '#bae1ff',
-	'#ffdfba',
-	'#ffffba',
-	'#baffc9']
+#http://colorbrewer2.org/#type=qualitative&scheme=Set1&n=8
+#Before lightenning
+#cols1=['#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf']
+#http://pinetools.com/lighten-color used to lighten with value 20 of lightenning
 
-
-#http://www.color-hex.com/color-palette/45191
-cols1=['#4aac59',
-	'#4348e6',
-	'#4e1b7b',
-	'#fffa99',
-	'#727272']
+#After lightenning
+cols1=['#ea4748',
+'#5898cd',
+'#6ec06c',
+'#af6db9',
+'#ff9832',
+'#ffff5b',
+'#cf713b',
+'#f89acb']
 
 
 cols2=['#e6194b','#3cb44b',	'#0082c8', '#f58231','#911eb4',
 	'#46f0f0',	'#f032e6'	,'#d2f53c'	,'#fabebe',	'#008080'	,'#e6beff'	,'#aa6e28',
      '#fffac8',	'#800000',	'#aaffc3',	'#808000',	'#000080',	'#808080', '#FFFFFF','#000000','#ffe119']
 
+cols3 =['#8dd3c7',
+'#ffffb3',
+'#bebada',
+'#fb8072',
+'#80b1d3',
+'#fdb462',
+'#b3de69',
+'#fccde5',
+'#d9d9d9',
+'#bc80bd',
+'#ccebc5',
+'#ffed6f']
+
 fig1, ax1 = plt.subplots()
+#fig1.patch.set_alpha(0.3)
 patches, texts, autotexts = ax1.pie(y_col, explode=None, autopct='%1.1f%%',
-shadow=False, startangle=90, colors=cols2)#,labels=x_col)
+shadow=False, startangle=90, colors=cols1)#,labels=x_col)
 ax1.axis('equal')
 #fig1.set_facecolor('w') #change canvas color
 plt.title(a[0])
@@ -90,4 +104,4 @@ plt.setp(texts, fontproperties=proptease)
 plt.legend(patches, x_col, loc="best")#bbox_to_anchor=(0.8, 0.85),prop={'size':None})
 
 #plt.show() # Equal aspect ratio ensures that pie is drawn as a circle.
-plt.savefig("Ips to Hostname.png")
+plt.savefig("Ips to Hostname.svg")

@@ -42,6 +42,17 @@ for name, hex in matplotlib.colors.cnames.iteritems():#and count < len(y_col):
 #sns.set()
 sns.set_style("ticks")
 
+#http://colorbrewer2.org/#type=qualitative&scheme=Set1&n=8
+#After lightenning
+cols1=['#ea4748',
+'#5898cd',
+'#6ec06c',
+'#af6db9',
+'#ff9832',
+'#ffff5b',
+'#cf713b',
+'#f89acb']
+
 
 cols2=['#e6194b','#3cb44b',	'#0082c8', '#f58231','#911eb4',
 	'#46f0f0',	'#f032e6'	,'#d2f53c'	,'#fabebe',	'#008080'	,'#e6beff'	,'#aa6e28',
@@ -54,9 +65,9 @@ fig1, ax1 = plt.subplots()
 width = 0.35
 
 label=['Regualar','Irregular']
-rects1=ax1.bar(y_pos-width/2, y_col, align='center', width=width,alpha=0.8,color=cols2[0],label=label[0])
+rects1=ax1.bar(y_pos-width/2, y_col, align='center', width=width,color=cols1[0],label=label[0])
 
-rects2=ax1.bar(y_pos+width/2, y_col1, align='center', width=width,alpha=0.8,color=cols2[1],label=label[1])
+rects2=ax1.bar(y_pos+width/2, y_col1, align='center', width=width,color=cols1[1],label=label[1])
 
 
 plt.xticks(y_pos, x_col,fontsize=None, rotation=0)
@@ -96,4 +107,4 @@ ax1.xaxis.set_ticks_position('bottom')
 
 
 #plt.show()
-plt.savefig("Regular vs Irregular IP addresses.png")
+plt.savefig("Regular vs Irregular IP addresses.svg")

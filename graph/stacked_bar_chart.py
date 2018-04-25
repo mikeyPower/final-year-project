@@ -37,6 +37,15 @@ color_list=[]
 for name, hex in matplotlib.colors.cnames.iteritems():#and count < len(y_col):
     color_list.append(name)
 
+#After lightenning
+cols1=['#ea4748',
+'#5898cd',
+'#6ec06c',
+'#af6db9',
+'#ff9832',
+'#ffff5b',
+'#cf713b',
+'#f89acb']
 
 fig1, ax1 = plt.subplots()
 for i,j,k,l in zip(y_pos,y_col,color_list,x_col):

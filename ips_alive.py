@@ -12,14 +12,15 @@ str_now=str(datetime.now())
 
 csvFile = sys.argv[1]
 
+
+port = sys.argv[2]
+
 type = sys.argv[3]
 if type == 'ip':
    field = 2
 else:
     field = 1
 
-
-port = sys.argv[2]
 
 html = sys.argv[4]
 statusLine=6

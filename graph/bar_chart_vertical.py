@@ -42,36 +42,44 @@ for name, hex in matplotlib.colors.cnames.iteritems():#and count < len(y_col):
 #sns.set()
 sns.set_style("ticks")
 
-#http://www.color-hex.com/color-palette/5361
-cols =['#ffb3ba',
-    '#bae1ff',
-	'#ffdfba',
-	'#ffffba',
-	'#baffc9']
-
-
-#http://www.color-hex.com/color-palette/45191
-cols1=['#4aac59',
-	'#4348e6',
-	'#4e1b7b',
-	'#fffa99',
-	'#727272']
+#After lightenning
+cols1=['#ea4748',
+'#5898cd',
+'#6ec06c',
+'#af6db9',
+'#ff9832',
+'#ffff5b',
+'#cf713b',
+'#f89acb']
 
 cols2=['#e6194b','#3cb44b',	'#0082c8', '#f58231','#911eb4',
 	'#46f0f0',	'#f032e6'	,'#d2f53c'	,'#fabebe',	'#008080'	,'#e6beff'	,'#aa6e28',
      '#fffac8',	'#800000',	'#aaffc3',	'#808000',	'#000080',	'#808080', '#FFFFFF','#000000','#ffe119']
+
+cols3 =['#8dd3c7',
+'#ffffb3',
+'#bebada',
+'#fb8072',#red
+'#80b1d3',#blue
+'#fdb462',
+'#b3de69',
+'#fccde5',
+'#d9d9d9',
+'#bc80bd',
+'#ccebc5',
+'#ffed6f']
 
 #Plot graph
 fig1, ax1 = plt.subplots()
 
 for i,j,k,l in zip(y_pos,y_col,cols2,x_col):
 
-    rects=ax1.bar(i, int(j), align='center', alpha=0.8,color=k,label=l)
+    rects=ax1.bar(i, int(j), align='center',color=cols1[0],label=l)
     for rect in rects:
         height = rect.get_height()
-        ax1.text(rect.get_x() + rect.get_width()/2., 1.005*height,
-                '%d' % int(height),
-                ha='center', va='bottom')
+    #    ax1.text(rect.get_x() + rect.get_width()/2., 1.005*height,
+    #            '%d' % int(height),
+    #            ha='center', va='bottom')
 
 
 plt.xticks(y_pos, x_col,fontsize=None, rotation=0)
@@ -81,6 +89,7 @@ plt.ylabel('Number of IP addresses')
 
 #label x-axis
 #plt.xlabel('Status Codes')
+plt.xlabel('Ports')
 
 
 #label title
@@ -112,5 +121,5 @@ ax1.xaxis.set_ticks_position('bottom')
 
 
 #plt.show()
-plt.savefig("IP addresses to Ports.png")
+plt.savefig("IP addresses to Ports.svg")
 #plt.savefig("Request of IP addresses on Both Ports to Port 80.svg")

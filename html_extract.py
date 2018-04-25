@@ -28,10 +28,10 @@ with open(csvFile) as csvfile:
     readCSV.next() #ignore header file
 
     for i in readCSV:
-        print(len(i))
+        #print(len(i))
         file1 = open(str("html_"+now+"/"+i[2]+'.txt'),'w')
         file1.write(i[-1])
-        print(i[-1])
+        #print(i[-1])
         file1.close()
 
 

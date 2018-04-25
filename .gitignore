@@ -4,6 +4,5 @@ tmp.csv
 *.json
 *.crt
 *.pem
-*.svg
 *.png
 *.txt

@@ -32,6 +32,7 @@ with open(csvFile) as csvfile:
 
         '''
         #slit the iso time format in order to find hour
+        #for average day
         j=i[0].split('T')
 
         x_col.append(dateutil.parser.parse(i[0]))
@@ -45,6 +46,7 @@ with open(csvFile) as csvfile:
         elif j[1] not in dictionary:
             dictionary[j[1]] = [int(i[1])+int(i[2])+int(i[3])]
             '''
+#Used for Maximum Irregular ip addresses with copy irreg_ips============
         column = 0
         length = length +1
         for k in i:
@@ -53,7 +55,7 @@ with open(csvFile) as csvfile:
                 noIPs[column]=noIPs[column]+1
             column = column +1
 
-
+#======================================================================
 
 print(length)
 column=0
@@ -83,6 +85,11 @@ print(averageNoOfIps)
 #current_palette =sns.set_palette("husl")
 sns.set_style("ticks")
 
+#http://colorbrewer2.org/#type=qualitative&scheme=Set1&n=8
+#see pie chrt for original
+#After lightenning
+cols1=['#ea4748','#5898cd','#6ec06c','#af6db9','#ff9832','#ffff5b','#cf713b','#f89acb']
+
 
 
 
@@ -95,8 +102,8 @@ cols2=['#e6194b','#3cb44b',	'#0082c8', '#f58231','#911eb4',
 
 
 fig, ax = plt.subplots()
-plt.xlabel('Time')
-
+#plt.xlabel('Time (Date:Hour:Minute)')
+plt.xlabel('Time (Hour:Minute)')
 #Pick a y-labe
 #plt.ylabel('Number of IP addresses')
 plt.ylabel('Number of Times Seen')
@@ -110,12 +117,12 @@ plt.ylabel('Number of Times Seen')
 plt.title('Total number occurences of Irregular IP addresses')
 
 # plot graph
-#ax.plot(x_col,y_col1,c=cols2[0],linestyle='dashed', marker='o',alpha=0.8) #Port80 Only
-#ax.plot(x_col,y_col2,c=cols2[1],linestyle='dashed', marker='o',alpha=0.8) #Port 443 Only
-#ax.plot(x_col,y_col3,c=cols2[2],linestyle='dashed', marker='o',alpha=0.8) #Both Ports
-#ax.plot(hours,averageNoOfIps,c=cols2[3],linestyle='dashed', marker='o') #average day  of Trinity
-#ax.plot(hoursNew,noIPs,c=cols2[4],linestyle='dashed', marker='o',alpha=.8) #Maximum Number of Irregular IP addresses In an Average Day
-ax.plot(hoursNew,counts,c=cols2[9],linestyle='dashed', marker='o',alpha=0.8) #Total number of occurences of Irregular Ip addresses on Average
+#ax.plot(x_col,y_col1,c=cols1[0],linestyle='dashed', marker='o')#,alpha=0.8) #Port80 Only
+#ax.plot(x_col,y_col2,c=cols1[1],linestyle='dashed', marker='o')#,alpha=0.8) #Port 443 Only
+#ax.plot(x_col,y_col3,c=cols1[2],linestyle='dashed', marker='o')#,alpha=0.8) #Both Ports
+#ax.plot(hours,averageNoOfIps,c=cols1[3],linestyle='dashed', marker='o') #average day  of Trinity
+#ax.plot(hoursNew,noIPs,c=cols1[4],linestyle='dashed', marker='o')#,alpha=.8) #Maximum Number of Irregular IP addresses In an Average Day
+ax.plot(hoursNew,counts,c=cols1[6],linestyle='dashed', marker='o')#,alpha=0.8) #Total number of occurences of Irregular Ip addresses on Average
 
 #format date on x axis
 #xfmt = mdates.DateFormatter('%d-%m-%y %H:%M')#show day month year hours minutes
@@ -134,9 +141,9 @@ ax.xaxis.set_ticks_position('bottom')
 
 plt.gcf().autofmt_xdate()
 #plt.show()
-#plt.savefig("Variation in Ip addresses on Port 80 over Time.png")
-#plt.savefig("Variation in IP addresses on Port 443 over Time.png")
-#plt.savefig("Variation in Ip addresses on Both Ports over Time.png")
-#plt.savefig("Average Day in Trinity College Dublin.png")
-#plt.savefig("Maximum Number of Irregular IP addresses In an Average Day.png")
-plt.savefig("Total number occurences of Irregular IP addresses on Average.png")
+#plt.savefig("Variation in Ip addresses on Port 80 over Time.svg")
+#plt.savefig("Variation in IP addresses on Port 443 over Time.svg")
+#plt.savefig("Variation in Ip addresses on Both Ports over Time.svg")
+#plt.savefig("Average Day in Trinity College Dublin.svg")
+#plt.savefig("Maximum Number of Irregular IP addresses In an Average Day.svg")
+plt.savefig("Total number occurences of Irregular IP addresses on Average.svg")

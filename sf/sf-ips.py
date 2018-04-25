@@ -65,8 +65,7 @@ thishour_both=[]
 ipdets={}
 
 # full mode - real data not in repo
-home=os.path.expanduser('~')
-file=home+'/data/tcd-surveys/trinityIps.csv'
+file='/home/michael/Desktop/zmap-scripts/final-year-project/sf/copyTrinityIps.csv'
 verbose=False
 
 # test mode

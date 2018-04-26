@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650) (preloaded format=pdflatex 2018.4.23)  26 APR 2018 19:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650) (preloaded format=pdflatex 2018.4.23)  26 APR 2018 21:29
 entering extended mode
 **./final-year-report.tex
 (final-year-report.tex
@@ -716,41 +716,89 @@ ic file (type pdf)
 Package pdftex.def Info: pdf_images/TotalNumberOccurencesOfIrregularIPaddresses
 OnAverage.pdf  used on input line 364.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [30 <./pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf>] [31 
-<./pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf>]
+ [30 <./pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf>]
+<pdf_images/IpstoHostname.pdf, id=162, 722.7pt x 542.025pt>
+File: pdf_images/IpstoHostname.pdf Graphic file (type pdf)
+<use pdf_images/IpstoHostname.pdf>
+Package pdftex.def Info: pdf_images/IpstoHostname.pdf  used on input line 368.
+(pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
+ [31 <./pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf>]
+<pdf_images/ZMapVsZGrab.pdf, id=168, 722.7pt x 542.025pt>
+File: pdf_images/ZMapVsZGrab.pdf Graphic file (type pdf)
+<use pdf_images/ZMapVsZGrab.pdf>
+Package pdftex.def Info: pdf_images/ZMapVsZGrab.pdf  used on input line 372.
+(pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
+ [32 <./pdf_images/IpstoHostname.pdf>]
+<pdf_images/TLSVersionsInTCD.pdf, id=174, 722.7pt x 542.025pt>
+File: pdf_images/TLSVersionsInTCD.pdf Graphic file (type pdf)
+<use pdf_images/TLSVersionsInTCD.pdf>
+Package pdftex.def Info: pdf_images/TLSVersionsInTCD.pdf  used on input line 37
+8.
+(pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
+ [33 <./pdf_images/ZMapVsZGrab.pdf>]
+<pdf_images/signatureAlgorithms.pdf, id=180, 722.7pt x 542.025pt>
+File: pdf_images/signatureAlgorithms.pdf Graphic file (type pdf)
+<use pdf_images/signatureAlgorithms.pdf>
+Package pdftex.def Info: pdf_images/signatureAlgorithms.pdf  used on input line
+ 383.
+(pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
+ [34 <./pdf_images/TLSVersionsInTCD.pdf>]
+<pdf_images/CipherSuitesInTCD.pdf, id=186, 722.7pt x 542.025pt>
+File: pdf_images/CipherSuitesInTCD.pdf Graphic file (type pdf)
+<use pdf_images/CipherSuitesInTCD.pdf>
+Package pdftex.def Info: pdf_images/CipherSuitesInTCD.pdf  used on input line 3
+89.
+(pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
+ [35 <./pdf_images/signatureAlgorithms.pdf>]
+<pdf_images/BrowserTrusted.pdf, id=193, 722.7pt x 542.025pt>
+File: pdf_images/BrowserTrusted.pdf Graphic file (type pdf)
+<use pdf_images/BrowserTrusted.pdf>
+Package pdftex.def Info: pdf_images/BrowserTrusted.pdf  used on input line 393.
+
+(pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
+ [36 <./pdf_images/CipherSuitesInTCD.pdf>]
+<pdf_images/CertificateExpired.pdf, id=199, 722.7pt x 542.025pt>
+File: pdf_images/CertificateExpired.pdf Graphic file (type pdf)
+<use pdf_images/CertificateExpired.pdf>
+Package pdftex.def Info: pdf_images/CertificateExpired.pdf  used on input line 
+397.
+(pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
+
+[37 <./pdf_images/BrowserTrusted.pdf>] [38 <./pdf_images/CertificateExpired.pdf
+>]
 Chapter 7.
-[32
+[39
 
 ]
 Chapter 8.
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--373
+Underfull \hbox (badness 10000) in paragraph at lines 404--405
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 374--375
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 376--377
+Underfull \hbox (badness 10000) in paragraph at lines 408--409
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--379
+Underfull \hbox (badness 10000) in paragraph at lines 410--411
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 380--381
+Underfull \hbox (badness 10000) in paragraph at lines 412--413
 
  []
 
-[33
+[40
 
-] (final-year-report.bbl [34]
+] (final-year-report.bbl [41]
 Underfull \hbox (badness 2142) in paragraph at lines 4--7
 []\OT1/ptm/m/sc/12 Conallen, J.  \OT1/ptm/m/n/12 Modeling web application archi
 tectures with uml.
@@ -761,7 +809,7 @@ Underfull \hbox (badness 2165) in paragraph at lines 13--17
 []\OT1/ptm/m/sc/12 Durumeric, Z., Adrian, D., Mirian, A., Bailey, M., and
  []
 
-[35
+[42
 
 ]
 Underfull \hbox (badness 3179) in paragraph at lines 54--59
@@ -785,13 +833,13 @@ Underfull \hbox (badness 1888) in paragraph at lines 61--65
 EEE Pacific Rim
  []
 
-[36]) [37]
+[43]) [44]
 Appendix A.
-[38
+[45
 
 ]
 Appendix B.
-[39
+[46
 
 ] (final-year-report.aux)
 
@@ -799,10 +847,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4300 strings out of 494894
- 68774 string characters out of 3178612
+ 4335 strings out of 494894
+ 70063 string characters out of 3178612
  156279 words of memory out of 3000000
- 7788 multiletter control sequences out of 15000+200000
+ 7816 multiletter control sequences out of 15000+200000
  32917 words of font info for 58 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
  48i,6n,58p,2380b,280s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -818,9 +866,9 @@ s/install/fonts/type1/urw/times/utmb8a.pfb></home/michael/.miktex/texmfs/instal
 l/fonts/type1/urw/times/utmr8a.pfb></home/michael/.miktex/texmfs/install/fonts/
 type1/urw/times/utmr8a.pfb></home/michael/.miktex/texmfs/install/fonts/type1/ur
 w/times/utmri8a.pfb>
-Output written on final-year-report.pdf (47 pages, 958212 bytes).
+Output written on final-year-report.pdf (54 pages, 1101775 bytes).
 PDF statistics:
- 246 PDF objects out of 1000 (max. 8388607)
+ 289 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

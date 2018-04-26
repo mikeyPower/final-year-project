@@ -305,7 +305,7 @@ Another result comparison could be seeing sites vulnerable to FREAK Attack \cite
 vandersloot2016toward7
 
 
-
+\section{ZMap Results} 
 \begin{center}
 \includegraphics[scale=.5]{pdf_images/VariationInIpAddressesOnPort80OverTime}
 \end{center}
@@ -358,7 +358,26 @@ Off-Peak time are 1 am and 5 am with 1221 Ips being present on Average
 \begin{center}
 \includegraphics[scale=.5]{pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay}
 \end{center}
+Going back to the Irregular Ip addresses the highest time that we can see that most of the Irregular IP addresses being present at some point over the time of the scans is 470 IP addresses at 3pm
 
+\begin{center}
+\includegraphics[scale=.5]{pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage}
+\end{center}
+
+\begin{center}
+\includegraphics[scale=.5]{pdf_images/IpstoHostname}
+\end{center}
+\section{ZGrab Results} 
+\begin{center}
+\includegraphics[scale=.5]{pdf_images/ZMapVsZGrab}
+\end{center}
+
+
+
+\begin{center}
+\includegraphics[scale=.5]{pdf_images/
+TLSVersionsInTCD}
+\end{center}
 \chapter{Conclusion}
 \cite{turner2014transport} page 62,63
 

@@ -375,8 +375,26 @@ Going back to the Irregular Ip addresses the highest time that we can see that m
 
 
 \begin{center}
-\includegraphics[scale=.5]{pdf_images/
-TLSVersionsInTCD}
+\includegraphics[scale=.5]{pdf_images/TLSVersionsInTCD}
+\end{center}
+
+
+\begin{center}
+\includegraphics[scale=.5]{pdf_images/signatureAlgorithms}
+\end{center}
+
+
+
+\begin{center}
+\includegraphics[scale=.5]{pdf_images/CipherSuitesInTCD}
+\end{center}
+
+\begin{center}
+\includegraphics[scale=.5]{pdf_images/BrowserTrusted}
+\end{center}
+
+\begin{center}
+\includegraphics[scale=.5]{pdf_images/CertificateExpired}
 \end{center}
 \chapter{Conclusion}
 \cite{turner2014transport} page 62,63

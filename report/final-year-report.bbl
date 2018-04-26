@@ -1,0 +1,82 @@
+\begin{thebibliography}{10}
+
+\bibitem{conallen1999modeling}
+{\sc Conallen, J.}
+\newblock Modeling web application architectures with uml.
+\newblock {\em Communications of the ACM 42}, 10 (1999), 63--70.
+
+\bibitem{dierks2014transport}
+{\sc Dierks, T.}
+\newblock The transport layer security (tls) protocol version 1.3.
+
+\bibitem{durumeric2015search}
+{\sc Durumeric, Z., Adrian, D., Mirian, A., Bailey, M., and Halderman, J.~A.}
+\newblock A search engine backed by internet-wide scanning.
+\newblock In {\em Proceedings of the 22nd ACM SIGSAC Conference on Computer and
+  Communications Security\/} (2015), ACM, pp.~542--553.
+
+\bibitem{durumeric2014internet}
+{\sc Durumeric, Z., Bailey, M., and Halderman, J.~A.}
+\newblock An internet-wide view of internet-wide scanning.
+\newblock In {\em USENIX Security Symposium\/} (2014), pp.~65--78.
+
+\bibitem{durumeric2013analysis}
+{\sc Durumeric, Z., Kasten, J., Bailey, M., and Halderman, J.~A.}
+\newblock Analysis of the https certificate ecosystem.
+\newblock In {\em Proceedings of the 2013 conference on Internet measurement
+  conference\/} (2013), ACM, pp.~291--304.
+
+\bibitem{censysWeb}
+{\sc Durumeric, Z., Wustrow, E., and Halderman, J.~A.}
+\newblock censys, https://censys.io/.
+
+\bibitem{durumeric2013zmap}
+{\sc Durumeric, Z., Wustrow, E., and Halderman, J.~A.}
+\newblock Zmap: Fast internet-wide scanning and its security applications.
+
+\bibitem{zmapGithub}
+{\sc Durumeric, Z., Wustrow, E., and Halderman, J.~A.}
+\newblock Zmap, https://github.com/zmap/zmap/blob/master/readme.md.
+
+\bibitem{kondo2014penetration}
+{\sc Kondo, T.~S., and Mselle, L.~J.}
+\newblock Penetration testing with banner grabbers and packet sniffers.
+\newblock {\em Journal of Emerging Trends in Computing and Information Sciences
+  5}, 4 (2014).
+
+\bibitem{lee2003detection}
+{\sc Lee, C.~B., Roedel, C., and Silenok, E.}
+\newblock Detection and characterization of port scan attacks.
+\newblock {\em Univeristy of California, Department of Computer Science and
+  Engineering\/} (2003).
+
+\bibitem{lee2016implementation}
+{\sc Lee, S., Im, S.-y., Shin, S.-H., Roh, B.-h., and Lee, C.}
+\newblock Implementation and vulnerability test of stealth port scanning
+  attacks using zmap of censys engine.
+\newblock In {\em Information and Communication Technology Convergence (ICTC),
+  2016 International Conference on\/} (2016), IEEE, pp.~681--683.
+
+\bibitem{mendes2008assessing}
+{\sc Mendes, N., Neto, A.~A., Dur{\~a}es, J., Vieira, M., and Madeira, H.}
+\newblock Assessing and comparing security of web servers.
+\newblock In {\em Dependable Computing, 2008. PRDC'08. 14th IEEE Pacific Rim
+  International Symposium on\/} (2008), IEEE, pp.~313--322.
+
+\bibitem{tlsDemoServer}
+{\sc mirleft}.
+\newblock Ocaml-tls demo server, https://tls.nqsb.io/.
+
+\bibitem{turner2014transport}
+{\sc Turner, S.}
+\newblock Transport layer security.
+\newblock {\em IEEE Internet Computing 18}, 6 (2014), 60--63.
+
+\bibitem{vandersloot2016towards}
+{\sc VanderSloot, B., Amann, J., Bernhard, M., Durumeric, Z., Bailey, M., and
+  Halderman, J.~A.}
+\newblock Towards a complete view of the certificate ecosystem.
+\newblock In {\em Proceedings of the 2016 Internet Measurement Conference\/}
+  (2016), ACM, pp.~543--549.
+
+\end{thebibliography}

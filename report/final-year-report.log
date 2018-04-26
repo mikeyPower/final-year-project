@@ -1,0 +1,695 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650) (preloaded format=pdflatex 2018.4.23)  26 APR 2018 13:17
+entering extended mode
+**./final-year-report.tex
+(final-year-report.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 0 language(s) loaded.
+(/home/michael/.miktex/texmfs/install/tex/latex/base/report.cls
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+(/home/michael/.miktex/texmfs/install/tex/latex/base/leqno.clo
+File: leqno.clo 2016/12/29 v1.2a Standard LaTeX option (left equation numbers)
+)
+(/home/michael/.miktex/texmfs/install/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/home/michael/.miktex/texmfs/install/tex/generic/babel/babel.sty
+Package: babel 2018/02/14 3.18 The Babel package
+
+(/home/michael/.miktex/texmfs/install/tex/generic/babel/switch.def
+File: switch.def 2018/02/14 3.18 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+(/home/michael/.miktex/texmfs/install/tex/latex/arabi/bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(/home/michael/.miktex/texmfs/install/tex/latex/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+
+(/home/michael/.miktex/texmfs/install/tex/generic/babel/babel.def
+File: babel.def 2018/02/14 3.18 Babel common definitions
+\babel@savecnt=\count89
+\U@D=\dimen103
+
+(/home/michael/.miktex/texmfs/install/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count90
+)
+\l@british = a dialect from \language\l@english 
+\l@UKenglish = a dialect from \language\l@english 
+\l@american = a dialect from \language\l@english 
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+(/home/michael/.miktex/texmfs/install/tex/latex/base/inputenc.sty
+Package: inputenc 2018/04/06 v1.3b Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+)
+(/home/michael/.miktex/texmfs/install/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/home/michael/.miktex/texmfs/install/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/home/michael/.miktex/texmfs/install/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/home/michael/.miktex/texmfs/install/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/home/michael/.miktex/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/home/michael/.miktex/texmfs/install/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+(/home/michael/.miktex/texmfs/install/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2018/04/08 v1.1 Adjusting TeX boxes (trim, clip, ...)
+
+(/home/michael/.miktex/texmfs/install/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/home/michael/.miktex/texmfs/install/tex/generic/xkeyval/xkeyval.tex
+(/home/michael/.miktex/texmfs/install/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks17
+\XKV@tempa@toks=\toks18
+)
+\XKV@depth=\count91
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/home/michael/.miktex/texmfs/install/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(/home/michael/.miktex/texmfs/install/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
+
+(/home/michael/.miktex/texmfs/install/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box26
+)
+\tc@llx=\dimen106
+\tc@lly=\dimen107
+\tc@urx=\dimen108
+\tc@ury=\dimen109
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(/home/michael/.miktex/texmfs/install/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2018/04/08 v2.1 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen110
+\adjbox@Height=\dimen111
+\adjbox@Depth=\dimen112
+\adjbox@Totalheight=\dimen113
+\adjbox@pwidth=\dimen114
+\adjbox@pheight=\dimen115
+\adjbox@pdepth=\dimen116
+\adjbox@ptotalheight=\dimen117
+
+(/home/michael/.miktex/texmfs/install/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count92
+)
+(/home/michael/.miktex/texmfs/install/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box27
+\sift@deathcycles=\count93
+\@vwid@loff=\dimen118
+\@vwid@roff=\dimen119
+))
+(/home/michael/.miktex/texmfs/install/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/home/michael/.miktex/texmfs/install/tex/latex/svg/svg.sty
+Package: svg 2017/11/29 v2.01 (include SVG pictures)
+
+(/home/michael/.miktex/texmfs/install/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2018/03/30 v3.25 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+(/home/michael/.miktex/texmfs/install/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2018/03/30 v3.25 KOMA-Script package (loading files)
+))
+(/home/michael/.miktex/texmfs/install/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/home/michael/.miktex/texmfs/install/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/home/michael/.miktex/texmfs/install/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+(/home/michael/.miktex/texmfs/install/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/home/michael/.miktex/texmfs/install/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/home/michael/.miktex/texmfs/install/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/home/michael/.miktex/texmfs/install/tex/latex/tools/shellesc.sty
+Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 69.
+)
+\c@svg@param@lastpage=\count94
+\c@svg@param@currpage=\count95
+)
+(/home/michael/.miktex/texmfs/install/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/home/michael/.miktex/texmfs/install/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/home/michael/.miktex/texmfs/install/tex/latex/oberdiek/transparent.sty
+Package: transparent 2016/05/16 v1.1 Transparency via pdfTeX's color stack (HO)
+
+
+(/home/michael/.miktex/texmfs/install/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+))
+
+LaTeX Warning: Unused global option(s):
+    [a4wide].
+
+(final-year-report.aux)
+\openout1 = `final-year-report.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 14.
+
+(/home/michael/.miktex/texmfs/install/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+(/home/michael/.miktex/texmfs/install/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count96
+\scratchdimen=\dimen120
+\scratchbox=\box28
+\nofMPsegments=\count97
+\nofMParguments=\count98
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count99
+\MPscratchDim=\dimen121
+\MPnumerator=\count100
+\makeMPintoPDFobject=\count101
+\everyMPtoPDFconversion=\toks20
+) (/home/michael/.miktex/texmfs/install/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/home/michael/.miktex/texmfs/install/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/home/michael/.miktex/texmfs/install/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/home/michael/.miktex/texmfs/install/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/home/michael/.miktex/texmfs/install/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/home/michael/.miktex/texmfs/install/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 20.
+
+(/home/michael/.miktex/texmfs/install/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+<images/trinitycollege.pdf, id=1, 597.23125pt x 845.1575pt>
+File: images/trinitycollege.pdf Graphic file (type pdf)
+<use images/trinitycollege.pdf>
+Package pdftex.def Info: images/trinitycollege.pdf  used on input line 25.
+(pdftex.def)             Requested size: 71.66466pt x 101.41452pt.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 34.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 34.
+LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <17.28> not available
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 34.
+LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <17.28> not available
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 34.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 49.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 49.
+ [1
+
+{/home/michael/.miktex/texmfs/data/pdftex/config/pdftex.map} <./images/trinityc
+ollege.pdf>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 64.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 64.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 64.
+ [2
+
+] [3
+
+] [4
+
+] (final-year-report.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+ [5
+
+])
+\tf@toc=\write3
+\openout3 = `final-year-report.toc'.
+
+ [6] (final-year-report.lof)
+\tf@lof=\write4
+\openout4 = `final-year-report.lof'.
+
+ [7
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 98--100
+
+ []
+
+[1]
+Chapter 1.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 107.
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 115.
+
+(/home/michael/.miktex/texmfs/install/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 115.
+ [1
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
+
+[2] [3]
+Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--146
+
+ []
+
+
+Overfull \hbox (18.22437pt too wide) in paragraph at lines 147--148
+[]\OT1/ptm/m/n/12 Web servers play a significant role in terms of the overall w
+orkings of web applications
+ []
+
+[4
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
+
+ []
+
+<images/tls_demo.png, id=48, 205.5178pt x 561.59813pt>
+File: images/tls_demo.png Graphic file (type png)
+<use images/tls_demo.png>
+Package pdftex.def Info: images/tls_demo.png  used on input line 152.
+(pdftex.def)             Requested size: 102.75865pt x 280.79837pt.
+[5]
+Overfull \hbox (3.88423pt too wide) in paragraph at lines 154--156
+\OT1/ptm/m/n/12 random byte string. Next a \OT1/ptm/m/it/12 Certificate \OT1/pt
+m/m/n/12 is sent from the server to the Client whenever
+ []
+
+[6 <./images/tls_demo.png>] [7]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 167.
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--172
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--178
+
+ []
+
+[8]
+<images/zmap_architecture.png, id=65, 927.465pt x 337.26pt>
+File: images/zmap_architecture.png Graphic file (type png)
+<use images/zmap_architecture.png>
+Package pdftex.def Info: images/zmap_architecture.png  used on input line 181.
+(pdftex.def)             Requested size: 370.97943pt x 134.9016pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
+
+ []
+
+
+Overfull \hbox (2.82732pt too wide) in paragraph at lines 187--189
+\OT1/ptm/m/n/12 addresses are excluded according to a configuration file which 
+omits sites/IP ranges
+ []
+
+
+Overfull \hbox (6.77602pt too wide) in paragraph at lines 187--189
+\OT1/ptm/m/n/12 packets clearly not initiated by the scan by cross checking the
+ source and destination
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--189
+
+ []
+
+[9 <./images/zmap_architecture.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 190--193
+
+ []
+
+[10]
+Overfull \hbox (2.24088pt too wide) in paragraph at lines 208--209
+\OT1/ptm/m/n/12 network by establishing a connection and observing the output f
+rom the connection
+ []
+
+[11]
+Overfull \hbox (2.04897pt too wide) in paragraph at lines 214--215
+\OT1/ptm/m/n/12 the ZGrab . ZGrab can be also be used inconjuction with ZMap to
+ grab information
+ []
+
+[12]
+Chapter 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
+
+ []
+
+[13
+
+]
+Overfull \hbox (11.51674pt too wide) in paragraph at lines 220--221
+\OT1/ptm/m/n/12 CAs by leaf certificates issued, with GoDaddy.com, Inc accounti
+ng for 31% adoption
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
+
+ []
+
+[14]
+Overfull \hbox (7.78328pt too wide) in paragraph at lines 223--225
+\OT1/ptm/m/n/12 ZMap that helps information security practitioners answer secur
+ity related questions
+ []
+
+
+Overfull \hbox (15.0084pt too wide) in paragraph at lines 223--225
+\OT1/ptm/m/n/12 regularly probe every public IP address and popular domain name
+s through horizontal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--225
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
+
+ []
+
+
+Overfull \hbox (13.4243pt too wide) in paragraph at lines 229--230
+[]\OT1/ptm/m/n/12 Researchers at Ajou University, have implemented ZMap within 
+their own University
+ []
+
+
+Overfull \hbox (2.72037pt too wide) in paragraph at lines 229--230
+\OT1/ptm/m/n/12 scanning techniques are implemented by creating specific probe 
+modules for ZMap
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
+
+ []
+
+[16] [17]
+Chapter 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
+
+ []
+
+[18
+
+] [19]
+Chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
+
+ []
+
+[20
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
+
+ []
+
+[21]
+Chapter 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
+
+ []
+
+[22
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
+
+ []
+
+
+LaTeX Warning: Citation `vandersloot2016toward' on page 23 undefined on input l
+ine 273.
+
+[23]
+Chapter 7.
+[24
+
+]
+Chapter 8.
+
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+
+ []
+
+[25
+
+] (final-year-report.bbl [26]
+Underfull \hbox (badness 2142) in paragraph at lines 4--7
+[]\OT1/ptm/m/sc/12 Conallen, J.  \OT1/ptm/m/n/12 Modeling web application archi
+tectures with uml.
+ []
+
+
+Underfull \hbox (badness 2165) in paragraph at lines 13--17
+[]\OT1/ptm/m/sc/12 Durumeric, Z., Adrian, D., Mirian, A., Bailey, M., and
+ []
+
+[27
+
+]
+Underfull \hbox (badness 3179) in paragraph at lines 54--59
+[]\OT1/ptm/m/sc/12 Lee, S., Im, S.-y., Shin, S.-H., Roh, B.-h., and Lee, C.
+ []
+
+
+Underfull \hbox (badness 3907) in paragraph at lines 61--65
+[]\OT1/ptm/m/sc/12 Mendes, N., Neto, A. A., Dur[]aes, J., Vieira, M., and
+ []
+
+
+Underfull \hbox (badness 1852) in paragraph at lines 61--65
+\OT1/ptm/m/sc/12 Madeira, H.  \OT1/ptm/m/n/12 Assessing and comparing security 
+of web servers.
+ []
+
+
+Underfull \hbox (badness 1888) in paragraph at lines 61--65
+\OT1/ptm/m/n/12 In \OT1/ptm/m/it/12 Dependable Computing, 2008. PRDC'08. 14th I
+EEE Pacific Rim
+ []
+
+[28]) [29]
+Appendix A.
+[30
+
+]
+Appendix B.
+[31
+
+] (final-year-report.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4259 strings out of 494894
+ 66284 string characters out of 3178612
+ 156279 words of memory out of 3000000
+ 7756 multiletter control sequences out of 15000+200000
+ 32917 words of font info for 58 fonts, out of 3000000 for 9000
+ 0 hyphenation exceptions out of 8191
+ 48i,6n,58p,2380b,280s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/michael/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmmi12.p
+k> </home/michael/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmr8.pk>
+ </home/michael/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk>{
+/home/michael/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc} </home/michae
+l/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi720/cmsy10.pk></home/michael
+/.miktex/texmfs/install/fonts/type1/urw/helvetic/uhvb8a.pfb></home/michael/.mik
+tex/texmfs/install/fonts/type1/urw/helvetic/uhvbo8a.pfb></home/michael/.miktex/
+texmfs/install/fonts/type1/urw/helvetic/uhvr8a.pfb></home/michael/.miktex/texmf
+s/install/fonts/type1/urw/times/utmb8a.pfb></home/michael/.miktex/texmfs/instal
+l/fonts/type1/urw/times/utmr8a.pfb></home/michael/.miktex/texmfs/install/fonts/
+type1/urw/times/utmr8a.pfb></home/michael/.miktex/texmfs/install/fonts/type1/ur
+w/times/utmri8a.pfb>
+Output written on final-year-report.pdf (39 pages, 248074 bytes).
+PDF statistics:
+ 197 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+

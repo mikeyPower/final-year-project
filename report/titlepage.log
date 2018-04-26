@@ -1,0 +1,257 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650) (preloaded format=pdflatex 2018.4.23)  23 APR 2018 11:42
+entering extended mode
+**./titlepage.tex
+(titlepage.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 0 language(s) loaded.
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2 \begin{center}
+                  
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 2--2
+[] 
+ []
+
+! Undefined control sequence.
+l.4 {\Large
+            University of Dublin}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (41.06953pt too wide) in paragraph at lines 4--5
+ \OT1/cmss/m/n/10 University 
+ []
+
+
+Overfull \hbox (8.05559pt too wide) in paragraph at lines 4--5
+ \OT1/cmss/m/n/10 of 
+ []
+
+
+Overfull \hbox (27.50005pt too wide) in paragraph at lines 4--5
+ \OT1/cmss/m/n/10 Dublin 
+ []
+
+! Undefined control sequence.
+l.8 \includegraphics
+                    [scale=0.12]{trinitycollege.pdf}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (120.7224pt too wide) in paragraph at lines 8--9
+ []\OT1/cmss/m/n/10 [scale=0.12]trinitycollege.pdf 
+ []
+
+! Undefined control sequence.
+l.12 {\Huge
+            TRINITY COLLEGE}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (39.37517pt too wide) in paragraph at lines 12--13
+ []\OT1/cmss/m/n/10 TRINITY 
+ []
+
+
+Overfull \hbox (43.19453pt too wide) in paragraph at lines 12--13
+ \OT1/cmss/m/n/10 COLLEGE 
+ []
+
+! Undefined control sequence.
+<argument>  \Large 
+                   \emph \projecttitle 
+l.16 \textbf{ \Large \emph \projecttitle}
+                                         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/bx/n' instead on input line 16.
+
+! Undefined control sequence.
+<recently read> \projecttitle 
+                              
+l.16 \textbf{ \Large \emph \projecttitle}
+                                         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.20 \authorname
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.22 \degreetitle
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.44449pt too wide) in paragraph at lines 24--25
+ []\OT1/cmss/m/n/10 Final 
+ []
+
+
+Overfull \hbox (18.22226pt too wide) in paragraph at lines 24--25
+ \OT1/cmss/m/n/10 Year 
+ []
+
+
+Overfull \hbox (29.97227pt too wide) in paragraph at lines 24--25
+ \OT1/cmss/m/n/10 Project 
+ []
+
+
+Overfull \hbox (19.75003pt too wide) in paragraph at lines 24--25
+ \OT1/cmss/m/n/10 April 
+ []
+
+
+Overfull \hbox (20.00006pt too wide) in paragraph at lines 24--25
+ \OT1/cmss/m/n/10 2013 
+ []
+
+! Undefined control sequence.
+l.26 Supervisor: \supervisorname
+                                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (45.77788pt too wide) in paragraph at lines 26--27
+ []\OT1/cmss/m/n/10 Supervisor: 
+ []
+
+! Undefined control sequence.
+l.30 \large
+           {School of Computer Science and Statistics
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (27.83339pt too wide) in paragraph at lines 30--31
+ []\OT1/cmss/m/n/10 School 
+ []
+
+
+Overfull \hbox (8.05559pt too wide) in paragraph at lines 30--31
+ \OT1/cmss/m/n/10 of 
+ []
+
+
+Overfull \hbox (41.13896pt too wide) in paragraph at lines 30--31
+ \OT1/cmss/m/n/10 Computer 
+ []
+
+
+Overfull \hbox (30.8889pt too wide) in paragraph at lines 30--31
+ \OT1/cmss/m/n/10 Science 
+ []
+
+
+Overfull \hbox (15.13892pt too wide) in paragraph at lines 30--31
+ \OT1/cmss/m/n/10 and 
+ []
+
+
+Overfull \hbox (38.08336pt too wide) in paragraph at lines 30--31
+ \OT1/cmss/m/n/10 Statistics 
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 31.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 31.
+
+Overfull \hbox (32.81949pt too wide) in paragraph at lines 32--35
+ []\OT1/cmss/m/n/10 O'Reilly 
+ []
+
+
+Overfull \hbox (37.38893pt too wide) in paragraph at lines 32--35
+ \OT1/cmss/m/n/10 Institute, 
+ []
+
+
+Overfull \hbox (27.27782pt too wide) in paragraph at lines 32--35
+ \OT1/cmss/m/n/10 Trinity 
+ []
+
+
+Overfull \hbox (32.83337pt too wide) in paragraph at lines 32--35
+ \OT1/cmss/m/n/10 College, 
+ []
+
+
+Overfull \hbox (27.50005pt too wide) in paragraph at lines 32--35
+ \OT1/cmss/m/n/10 Dublin 
+ []
+
+
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 32--35
+ \OT1/cmss/m/n/10 2, 
+ []
+
+
+Overfull \hbox (28.16673pt too wide) in paragraph at lines 32--35
+ \OT1/cmss/m/n/10 Ireland 
+ []
+
+)
+! Emergency stop.
+<*> ./titlepage.tex
+                   
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 18 strings out of 494894
+ 292 string characters out of 3178612
+ 52296 words of memory out of 3000000
+ 3738 multiletter control sequences out of 15000+200000
+ 4239 words of font info for 16 fonts, out of 3000000 for 9000
+ 0 hyphenation exceptions out of 8191
+ 18i,1n,12p,74b,169s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

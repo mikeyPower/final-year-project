@@ -96,7 +96,7 @@ To be done
 
 \begin{abstract}
 \noindent
-As the number of internet devices grows, so to does the difficultly to monitor these devices effectively. This report details the use of ZMap a port scanner and ZGrab an application banner grabber within Trinity College Dublin To survey Web Servers. System administrators have often hundreds of hosts to consider when monitoring Web Servers. The use of the above tools to audit these Web Servers in order to deal with security issues that if left unattended could potential lead to devastating effects is of the utmost importance for any organisation that aims to mitigate these risks, as well as using these tools to study vulnerabilities in order to better defend from attacks, since the availability of tools such as these leads to the potential of attackers finding vulnerability hosts. Scanning at an Internet wide level has shown great promise for uncovering security problems \cite{durumeric2015search} thus the same should be true at a University Campus level.\\
+As the number of internet devices grows, so to does the difficultly to monitor these devices effectively. This report details the use of ZMap a port scanner and ZGrab an application banner grabber within Trinity College Dublin To survey Web Servers. System administrators have often hundreds of hosts to consider when monitoring Web Servers. The use of the above tools to audit these Web Servers in order to deal with security issues that if left unattended could potential lead to further problems is of the utmost importance for any organisation that aims to mitigate these risks, as well as using these tools to study vulnerabilities in order to better defend from attacks, since the availability of tools such as these leads to the potential of attackers finding vulnerability hosts. Scanning at an Internet wide level has shown great promise for uncovering security problems \cite{durumeric2015search} thus the same should be true at a University Campus level.\\
 
 As well as deploying and testing the tool within Trinity College Dublin, I also hope to be able to interpret the output, and communicate that to site owners/system admins in order to help make their web a bit better and more secure.
 
@@ -105,6 +105,10 @@ As well as deploying and testing the tool within Trinity College Dublin, I also 
 
 \chapter{Introduction}
 \section{Goals of Report} 
+!!!!!!!!!!!!!!!MIND TENSE USED (PAST OR FUTURE), PICK ONE AND KEEP IT, ALSO MIND THE USE OF I WHEN DESCRIBING THE REPORT!!!!!!!!!!!!!!!\\
+
+
+
 As with any device that is connected to the internet, the  security of these systems is of concern. Even when following strict policies,  miss configurations of servers can lead to possible issues which could significant impact. The aim of this project is to deploy a local instance of ZMap and ZGrab within Trinity College Dublin, running scans on both port 80 and 443 in order to survey web servers, in an effort to build a picture of what the current state of Web Servers within the college campus looks like.\\
 
 I will also outline the steps that I've taken in order for other organisations and institutions to replicate what I've done here within Trinity College Dublin.\\
@@ -114,11 +118,11 @@ This goal will be analysed with the following questions in mind:
 \begin{itemize}
   \item Which IP addresses are listening on port 80, port 443 and both ports?
   \item The variation in the number of host on at a certain time?
-  \item How many IP addresses resolve to a Hostname?
-  \item What make of servers are being used?
+  \item How many IP addresses have a Hostname?
+  \item What make of servers are being used !!!!!!!!!!!!!!! MORE ABOUT WHO ARE THESE IPS THAT ARE UP, TRYING TO CATEGORISE (WEB IMAGE MONITOR ETC)!!!!!!!!!!!!!!!?
   \item What does the current state of Certificates look like within the college?
   \item Are there any out of date versions of TLS being used?
-  \item For those IP addresses that don't resolve to a Hostname, do their certificates lead to one?
+  \item For those IP addresses that don't have a Hostname, do their certificates lead to one?
   \item What Signature and Key Algorithms are being used?
   \item Is secure renegotiation false for any IP addresses?
   \item Are there any public keys that are used across multiple IP addresses?
@@ -140,12 +144,21 @@ The remainder of this report is organized as follows:\\
 
 
 \chapter{Background}
+!!!!!!!!!!!!!!! 
 \section{Web Server}
+!!!!!!!!!!!!!!!REFERENCE RFC FOR HTTP, OR ANY OTHER PORT MENTIONED!!!!!!!!!!!!!!!\\
+
+
+
+
 Web servers are one of components that make up the overall web-application architecture. 
 Communication between between a web server and a clients browser is done typical through a protocol called Hyper Text Transfer Protocol or HTTP for short. The general way in which a Client initiates communication between a web server is through a Web Browser such as Chrome or Firefox, The browser sends a request to the web sever of some resource typically a web page or some other file type, if the resource doesn't exist an error is returned to the client, generally in the form of a 404 or some other status code. As well as handling request, the server may sometimes be required to handle processing of forms inputted by the client\cite{conallen1999modeling}. Almost any device that is connected to the internet can host a web server, such as a printer or mobile phone. \\
 
 Web servers play a significant role in terms of the overall workings of web applications and security issues relating to web servers can come in a number of ways such as being incorrectly configured\cite{mendes2008assessing} along with lack of privilege management.
 \section{Transport Layer Security}
+!!!!!!!!!!!!!!!TALK ABOUT THE THINGS WE ARE LOOKING FOR IN THE TLS, CIPHER SUITE, VERSION ETC!!!!!!!!!!!!!!!\\
+
+
 TLS or SSL as it may sometimes be referred to is a protocol that allows secure communication between a client and server over the Internet, which is typically between a Browser and Web Server. Over the years there have been many versions of TLS/SSL implementations, the first being in 1994 when Netscape developed SSL 1.O however this was never released publicly as it was vulnerable to replay attack\cite{turner2014transport}. This drove the development of SSL 2.0 in 1995, but along with its predecessor it too had problems. Then in 1996 SSL 3.0 was distributed to combat the issues with SSL 2.0 gaining a large popularity in the process \cite{turner2014transport}. In mid 1996 development of these protocols moved to the Internet Engineering Task Force and so too did the name of the protocol changing from SSL to TLS. To date there have been four releases of TLS with TLSv1 being released in 1999, TLSv1.1 in 2006, TLSv1.2 in 2008\cite{turner2014transport} and in 2014 a draft of TLSv1.3 was developed
  \cite{dierks2014transport}.\\
  \begin{center}
@@ -154,6 +167,7 @@ TLS or SSL as it may sometimes be referred to is a protocol that allows secure c
 In order for a secure connection to be established the client first sends a \textit{Client Hello} message which includes the version of TLS supported by the client a random byte string that is used for calculations later on in the handshake such as generating the pre-master secret,  along with the list of cipher suites and compression methods in order of the clients preference \cite{tlsDemoServer}. As well as this the client sends an empty session identifier\cite{turner2014transport}.
 The server responds with a \textit{ServerHello} message indicating the version of TLS that will be used along with the appropriate cipher suite, compression method and session Identifier. The server also generates its own random byte string. Next a \textit{Certificate} is sent from the server to the Client whenever the key exchange method uses certificates. This certificate message contains a chain of certificates which the client will use to validate the server says who they say they are. Following this a Server Key Exchange Message is sent if the certificate sent by the server lacks sufficient data for the client to exchange a premaster secret.The Server then sends a \textit{ServerHello Done} message to the Client to signal that the client can now continue with its turn of the key exchange related messages. The Client now sends a \textit{ClientKeyExchange} message to the server which includes the pre-master secret created by the client. Both the Client and the Server send a \textit{ChangeCipherSpec} message to alert each other that all future exchanges within this session will be encrypted with the chosen cipher suite and keys. Finally the Client sends a \textit{Finished} Message to the Server and likewise The Server sends a \textit{Finished } message to the Client, both of theses exchanges are used in order to verify that the key exchange and authentication process were successful as well as indicating that each respective part of the TLS handshake is complete. From this point on all \textit{ApplicationData} exchange between the client and server is protected based on the current connection state \cite{tlsDemoServer}\cite{turner2014transport}
 \section{Port Scanning} 
+!!!!!!!!!!!!!!!!!!!!!!!!!GIVE A MENTION TO OTHER SCANNERS NMAP ETC AS THEHER ARE OTHERS OUT THERE!!!!!!!!!!!!!!!\\
 Port scanners are tools that are used to check for devices on open ports, these tools could be used by system administrator to monitor devices on a network or by a malicious party hoping to find vulnerable devices to infect. \\
 There are three main grades of port scans.
 \begin{enumerate}
@@ -165,6 +179,14 @@ The horizontal scan is one in which a single port is scanned against multiple ho
 The Block scan is a combination of vertical and horizontal scans.\cite{lee2003detection}
 \end{enumerate}
 \subsection{ZMap}
+!!!!!!!!!!!!!!!REFERENCE UDP, BACKNET ANYTHING THAT IS NOT OBVIOUS FOR FURTHER CLARIFICATION OR ANYTHING THAT IS GOING TO BE TALKED ABOUT IN THE RESULTS!!!!!!!!!!!!!\\
+
+
+!!!!!!!!!!!!!! SHOW AND DESCRIBE SAMEPLE OUTPUT !!!!!!!!!!!!!\\
+
+
+
+
 ZMap is an open-source network scanner optimized for efficiently performing
 Internet-scale network surveys \cite{durumeric2013zmap}, developed in 2013 by Zakir Durumeric, Eric Wustrow and J. Alex Halderman at the University of Michigan they have been able to effectively diminish the time required to scan the IPv4 address space to a matter of minutes. The architecture allows sending and receiving components
 to run asynchronously and enables a single source machine to comprehensively scan every host in the public IPv4
@@ -209,6 +231,8 @@ Banner grabbing is a technique used to gain information about a device on a netw
 
 
 \subsection{ZGrab}
+!!!!!!!!!!!!!! SHOW AND DESCRIBE SAMEPLE OUTPUT !!!!!!!!!!!!!\\
+
 ZGrab is one such banner grabber implemented in go that allows user to perform various application handshakes for a number of different protocols such as HTTP, HTTPS, SSH as well as SMTP to name a few. ZGrab connects to the host by opening up a TCP connection. ZGab outputs the information in raw JSON format retrieving all the information about the connection handshake such as SSL/TLS information as well as response codes.\cite{durumeric2015search}
 
 For example When performing a TLS handshake with a host, ZGrab offers the cipher suites implemented by the Golang TLS library and logs the chosen cipher suite\cite{durumeric2015search} rather than using the chosen cipher suite of the source machine performing the ZGrab . ZGrab can be also be used inconjuction with ZMap to grab information simultaneous while a host being scanned or independently of ZMap by passing the host directly into ZGrab. Instructions are passed to ZGrab much in the same way of ZMap via a command line interface (CLI)
@@ -231,6 +255,12 @@ Researchers at Ajou University, have  implemented ZMap within their own Universi
 This report differs from previous studies in terms of the scope of our dataset as well as the direct line of the questions we intend to answer in order to highlight the state of Web Servers within TCD.
 
 \chapter{Design}
+!!!!!!!!!!!!!!!TALK ABOUT THE PYTHON CODE, LIKE EXTRACTING THE FIELDS FOR THE ZGRABS WITH THE EXCEPTIONS SO PEOPLE LOOKING AT THE CODE KNOW WHAT I WAS DOING ECT!!!!!!!!!!!!!!!\\
+
+
+
+
+
 The design of the scans consisted of two horizontal set of scans on port 80 and port 443 between 05/03/2018 -  31/03/2018 running every hour throughout the set of scans we discovered 1,710 IP addresses in total with x IP addresses on port 80 and y IP addresses on Port 443\\
 
 With the IP addresses found a further set of Banner grabs were conducted on the results of the horizontal scans, theses banner grabs were done every 2 hours to account for the length of time to adequately complete 1,710 banner grabs
@@ -254,6 +284,7 @@ Similarly for the ZGrabs I’ve implement much in the same for the ZMap scans, t
 
 
 \chapter{Results}
+
 For Comparison of Some results e.g average host per hour look at page 5 and 6 of \cite{durumeric2013zmap}\\
 
 Other comparison \cite{durumeric2015search} page 9 percentage of cipher suites being used could have a new column with TCD figure 5\\
@@ -272,6 +303,62 @@ Another result comparison looking at ips/hosts sharing multiple public keys, cer
 
 Another result comparison could be seeing sites vulnerable to FREAK Attack \cite{vandersloot2016toward} page 54\\
 vandersloot2016toward7
+
+
+
+\begin{center}
+\includegraphics[scale=.5]{pdf_images/VariationInIpAddressesOnPort80OverTime}
+\end{center}
+02-03-2018  to 16-03-2018 no scans detected as this was during the snow period which caused a power cut and the scan cutting out which
+
+We can also see a particular high count of IP addresses on the 12-02-2018 this actually due to a scan failure on port 443 thus having no other IP to compare against 
+
+All in all the  we can say that the Number of IP addresses on Port 80 is pretty predictable over time getting as low as 350 on the weekends while during the week being on average around 440 IP addresses 
+\begin{center}
+\includegraphics[scale=.5]{pdf_images/VariationInIpAddressesOnPort443OverTime}
+\end{center}
+As we can tell from this as to why on the 12th the number of IP addresses on Port 80 is so high is due to the port 443 scan failing
+
+Another interesting thing to note is that on average the number of IP addresses drop from around 150 to somewhere around 100 
+\begin{center}
+\includegraphics[scale=.5]{pdf_images/VariationInIpAddressesOnBothPortsOverTime}
+\end{center}
+This graph tells much of the same story the other two graphs tell
+
+
+\begin{center}
+\includegraphics[scale=.5]{pdf_images/IPaddressestoPorts}
+\end{center}
+
+
+\begin{center}
+\includegraphics[scale=.5]{pdf_images/RegularVsIrregularIPaddresses}
+\end{center}
+IPs consider regular if seen 90\% of the time: so 744 from 827 observational slots
+
+Regular ips seen = 1190
+    port 80 only  = 336
+    port 443 only  = 136
+    both  = 718
+Irregular ips seen = 524
+    port 80 only  = 175
+    port 443 only  = 10
+    both  = 339
+
+
+\begin{center}
+\includegraphics[scale=.5]{pdf_images/AverageDayinTrinityCollegeDublin}
+\end{center}
+
+We can see that the high period in time is around 11am to 4pm
+
+Peak time on Average is 12pm midday with 1311 Ips being present on Average
+Off-Peak time are 1 am and 5 am with 1221 Ips being present on Average 
+
+\begin{center}
+\includegraphics[scale=.5]{pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay}
+\end{center}
+
 \chapter{Conclusion}
 \cite{turner2014transport} page 62,63
 

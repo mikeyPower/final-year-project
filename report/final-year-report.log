@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650) (preloaded format=pdflatex 2018.4.23)  26 APR 2018 21:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650) (preloaded format=pdflatex 2018.4.23)  28 APR 2018 01:04
 entering extended mode
 **./final-year-report.tex
 (final-year-report.tex
@@ -651,154 +651,243 @@ Underfull \hbox (badness 10000) in paragraph at lines 302--303
 LaTeX Warning: Citation `vandersloot2016toward' on page 23 undefined on input l
 ine 304.
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--306
+
+ []
+
+
+Overfull \hbox (12.66466pt too wide) in paragraph at lines 313--314
+\OT1/ptm/m/n/12 !!!!!!!!!!!!!!!!!FIND PERIODS WHEN SERVER WAS DOWN !!!!!!!!!!!!
+!!!!!!!!!!!!! 
+ []
+
 <pdf_images/VariationInIpAddressesOnPort80OverTime.pdf, id=114, 722.7pt x 542.0
 25pt>
 File: pdf_images/VariationInIpAddressesOnPort80OverTime.pdf Graphic file (type 
 pdf)
 <use pdf_images/VariationInIpAddressesOnPort80OverTime.pdf>
 Package pdftex.def Info: pdf_images/VariationInIpAddressesOnPort80OverTime.pdf 
- used on input line 310.
+ used on input line 316.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (2.97331pt too wide) in paragraph at lines 321--341
+\OT1/ptm/m/n/12 during the snow period which caused a power cut in the college,
+ downing Stephen's
+ []
+
 [23]
-<pdf_images/VariationInIpAddressesOnPort443OverTime.pdf, id=119, 722.7pt x 542.
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
+
+ []
+
+[24 <./pdf_images/VariationInIpAddressesOnPort80OverTime.pdf>]
+<pdf_images/VariationInIpAddressesOnPort443OverTime.pdf, id=124, 722.7pt x 542.
 025pt>
 File: pdf_images/VariationInIpAddressesOnPort443OverTime.pdf Graphic file (type
  pdf)
 <use pdf_images/VariationInIpAddressesOnPort443OverTime.pdf>
 Package pdftex.def Info: pdf_images/VariationInIpAddressesOnPort443OverTime.pdf
-  used on input line 318.
+  used on input line 345.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [24 <./pdf_images/VariationInIpAddressesOnPort80OverTime.pdf>]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 <pdf_images/VariationInIpAddressesOnBothPortsOverTime.pdf, id=125, 722.7pt x 54
 2.025pt>
 File: pdf_images/VariationInIpAddressesOnBothPortsOverTime.pdf Graphic file (ty
 pe pdf)
 <use pdf_images/VariationInIpAddressesOnBothPortsOverTime.pdf>
 Package pdftex.def Info: pdf_images/VariationInIpAddressesOnBothPortsOverTime.p
-df  used on input line 324.
+df  used on input line 357.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [25 <./pdf_images/VariationInIpAddressesOnPort443OverTime.pdf>]
-<pdf_images/IPaddressestoPorts.pdf, id=131, 722.7pt x 542.025pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--362
+
+ []
+
+<pdf_images/IPaddressestoPorts.pdf, id=126, 722.7pt x 542.025pt>
 File: pdf_images/IPaddressestoPorts.pdf Graphic file (type pdf)
 <use pdf_images/IPaddressestoPorts.pdf>
 Package pdftex.def Info: pdf_images/IPaddressestoPorts.pdf  used on input line 
-330.
+367.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [26 <./pdf_images/VariationInIpAddressesOnBothPortsOverTime.pdf>]
-<pdf_images/RegularVsIrregularIPaddresses.pdf, id=137, 722.7pt x 542.025pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
+
+ []
+
+[25]
+<pdf_images/RegularVsIrregularIPaddresses.pdf, id=130, 722.7pt x 542.025pt>
 File: pdf_images/RegularVsIrregularIPaddresses.pdf Graphic file (type pdf)
 <use pdf_images/RegularVsIrregularIPaddresses.pdf>
 Package pdftex.def Info: pdf_images/RegularVsIrregularIPaddresses.pdf  used on 
-input line 335.
+input line 376.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [27 <./pdf_images/IPaddressestoPorts.pdf>]
-<pdf_images/AverageDayinTrinityCollegeDublin.pdf, id=143, 722.7pt x 542.025pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[26 <./pdf_images/VariationInIpAddressesOnPort443OverTime.pdf>]
+<pdf_images/AverageDayinTrinityCollegeDublin.pdf, id=136, 722.7pt x 542.025pt>
 File: pdf_images/AverageDayinTrinityCollegeDublin.pdf Graphic file (type pdf)
 <use pdf_images/AverageDayinTrinityCollegeDublin.pdf>
 Package pdftex.def Info: pdf_images/AverageDayinTrinityCollegeDublin.pdf  used 
-on input line 350.
+on input line 388.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [28 <./pdf_images/RegularVsIrregularIPaddresses.pdf>]
-<pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf, id=149, 722.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[27 <./pdf_images/VariationInIpAddressesOnBothPortsOverTime.pdf>]
+<pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf, id=142, 722.
 7pt x 542.025pt>
 File: pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf Graphic 
 file (type pdf)
 <use pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf>
 Package pdftex.def Info: pdf_images/MaximumNumberOfIrregularIPaddressesInAnAver
-ageDay.pdf  used on input line 359.
+ageDay.pdf  used on input line 398.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [29 <./pdf_images/AverageDayinTrinityCollegeDublin.pdf>]
-<pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf, id=156, 7
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[28 <./pdf_images/IPaddressestoPorts.pdf>]
+<pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf, id=148, 7
 22.7pt x 542.025pt>
 File: pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf Graph
 ic file (type pdf)
 <use pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf>
 Package pdftex.def Info: pdf_images/TotalNumberOccurencesOfIrregularIPaddresses
-OnAverage.pdf  used on input line 364.
+OnAverage.pdf  used on input line 405.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [30 <./pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf>]
-<pdf_images/IpstoHostname.pdf, id=162, 722.7pt x 542.025pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 411--412
+
+ []
+
+[29 <./pdf_images/RegularVsIrregularIPaddresses.pdf>]
+<pdf_images/IpstoHostname.pdf, id=155, 722.7pt x 542.025pt>
 File: pdf_images/IpstoHostname.pdf Graphic file (type pdf)
 <use pdf_images/IpstoHostname.pdf>
-Package pdftex.def Info: pdf_images/IpstoHostname.pdf  used on input line 368.
+Package pdftex.def Info: pdf_images/IpstoHostname.pdf  used on input line 415.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [31 <./pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf>]
-<pdf_images/ZMapVsZGrab.pdf, id=168, 722.7pt x 542.025pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<pdf_images/ZMapVsZGrab.pdf, id=156, 722.7pt x 542.025pt>
 File: pdf_images/ZMapVsZGrab.pdf Graphic file (type pdf)
 <use pdf_images/ZMapVsZGrab.pdf>
-Package pdftex.def Info: pdf_images/ZMapVsZGrab.pdf  used on input line 372.
+Package pdftex.def Info: pdf_images/ZMapVsZGrab.pdf  used on input line 419.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [32 <./pdf_images/IpstoHostname.pdf>]
-<pdf_images/TLSVersionsInTCD.pdf, id=174, 722.7pt x 542.025pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
+
+ []
+
+<pdf_images/TLSVersionsInTCD.pdf, id=157, 722.7pt x 542.025pt>
 File: pdf_images/TLSVersionsInTCD.pdf Graphic file (type pdf)
 <use pdf_images/TLSVersionsInTCD.pdf>
-Package pdftex.def Info: pdf_images/TLSVersionsInTCD.pdf  used on input line 37
-8.
+Package pdftex.def Info: pdf_images/TLSVersionsInTCD.pdf  used on input line 42
+7.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [33 <./pdf_images/ZMapVsZGrab.pdf>]
-<pdf_images/signatureAlgorithms.pdf, id=180, 722.7pt x 542.025pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<pdf_images/signatureAlgorithms.pdf, id=158, 722.7pt x 542.025pt>
 File: pdf_images/signatureAlgorithms.pdf Graphic file (type pdf)
 <use pdf_images/signatureAlgorithms.pdf>
 Package pdftex.def Info: pdf_images/signatureAlgorithms.pdf  used on input line
- 383.
+ 432.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [34 <./pdf_images/TLSVersionsInTCD.pdf>]
-<pdf_images/CipherSuitesInTCD.pdf, id=186, 722.7pt x 542.025pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<pdf_images/CipherSuitesInTCD.pdf, id=159, 722.7pt x 542.025pt>
 File: pdf_images/CipherSuitesInTCD.pdf Graphic file (type pdf)
 <use pdf_images/CipherSuitesInTCD.pdf>
-Package pdftex.def Info: pdf_images/CipherSuitesInTCD.pdf  used on input line 3
-89.
+Package pdftex.def Info: pdf_images/CipherSuitesInTCD.pdf  used on input line 4
+38.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [35 <./pdf_images/signatureAlgorithms.pdf>]
-<pdf_images/BrowserTrusted.pdf, id=193, 722.7pt x 542.025pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<pdf_images/BrowserTrusted.pdf, id=160, 722.7pt x 542.025pt>
 File: pdf_images/BrowserTrusted.pdf Graphic file (type pdf)
 <use pdf_images/BrowserTrusted.pdf>
-Package pdftex.def Info: pdf_images/BrowserTrusted.pdf  used on input line 393.
+Package pdftex.def Info: pdf_images/BrowserTrusted.pdf  used on input line 442.
 
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [36 <./pdf_images/CipherSuitesInTCD.pdf>]
-<pdf_images/CertificateExpired.pdf, id=199, 722.7pt x 542.025pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<pdf_images/CertificateExpired.pdf, id=161, 722.7pt x 542.025pt>
 File: pdf_images/CertificateExpired.pdf Graphic file (type pdf)
 <use pdf_images/CertificateExpired.pdf>
 Package pdftex.def Info: pdf_images/CertificateExpired.pdf  used on input line 
-397.
+446.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
 
-[37 <./pdf_images/BrowserTrusted.pdf>] [38 <./pdf_images/CertificateExpired.pdf
->]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[30 <./pdf_images/AverageDayinTrinityCollegeDublin.pdf>] [31 <./pdf_images/Maxi
+mumNumberOfIrregularIPaddressesInAnAverageDay.pdf>] [32 <./pdf_images/TotalNumb
+erOccurencesOfIrregularIPaddressesOnAverage.pdf>] [33 <./pdf_images/IpstoHostna
+me.pdf>] [34 <./pdf_images/ZMapVsZGrab.pdf>] [35 <./pdf_images/TLSVersionsInTCD
+.pdf>] [36 <./pdf_images/signatureAlgorithms.pdf>] [37 <./pdf_images/CipherSuit
+esInTCD.pdf>] [38 <./pdf_images/BrowserTrusted.pdf>] [39 <./pdf_images/Certific
+ateExpired.pdf>]
 Chapter 7.
-[39
+[40
 
 ]
 Chapter 8.
 
-Underfull \hbox (badness 10000) in paragraph at lines 404--405
+Underfull \hbox (badness 10000) in paragraph at lines 453--454
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 406--407
+Underfull \hbox (badness 10000) in paragraph at lines 455--456
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 408--409
+Underfull \hbox (badness 10000) in paragraph at lines 457--458
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--411
+Underfull \hbox (badness 10000) in paragraph at lines 459--460
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 412--413
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
 
  []
 
-[40
+[41
 
-] (final-year-report.bbl [41]
+] (final-year-report.bbl [42]
 Underfull \hbox (badness 2142) in paragraph at lines 4--7
 []\OT1/ptm/m/sc/12 Conallen, J.  \OT1/ptm/m/n/12 Modeling web application archi
 tectures with uml.
@@ -809,7 +898,7 @@ Underfull \hbox (badness 2165) in paragraph at lines 13--17
 []\OT1/ptm/m/sc/12 Durumeric, Z., Adrian, D., Mirian, A., Bailey, M., and
  []
 
-[42
+[43
 
 ]
 Underfull \hbox (badness 3179) in paragraph at lines 54--59
@@ -833,13 +922,13 @@ Underfull \hbox (badness 1888) in paragraph at lines 61--65
 EEE Pacific Rim
  []
 
-[43]) [44]
+[44]) [45]
 Appendix A.
-[45
+[46
 
 ]
 Appendix B.
-[46
+[47
 
 ] (final-year-report.aux)
 
@@ -847,13 +936,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4335 strings out of 494894
- 70063 string characters out of 3178612
- 156279 words of memory out of 3000000
- 7816 multiletter control sequences out of 15000+200000
+ 4344 strings out of 494894
+ 70204 string characters out of 3178612
+ 158378 words of memory out of 3000000
+ 7825 multiletter control sequences out of 15000+200000
  32917 words of font info for 58 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 48i,6n,58p,2380b,280s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 48i,9n,58p,2378b,280s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/michael/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmmi12.p
 k> </home/michael/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmr8.pk>
  </home/michael/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk>{
@@ -866,9 +955,9 @@ s/install/fonts/type1/urw/times/utmb8a.pfb></home/michael/.miktex/texmfs/instal
 l/fonts/type1/urw/times/utmr8a.pfb></home/michael/.miktex/texmfs/install/fonts/
 type1/urw/times/utmr8a.pfb></home/michael/.miktex/texmfs/install/fonts/type1/ur
 w/times/utmri8a.pfb>
-Output written on final-year-report.pdf (54 pages, 1101775 bytes).
+Output written on final-year-report.pdf (55 pages, 1106134 bytes).
 PDF statistics:
- 289 PDF objects out of 1000 (max. 8388607)
+ 293 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

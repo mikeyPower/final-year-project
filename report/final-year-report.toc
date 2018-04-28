@@ -16,9 +16,9 @@
 \contentsline {section}{\numberline {4.3}Challenges}{19}
 \contentsline {chapter}{\numberline {5}Implementation}{20}
 \contentsline {chapter}{\numberline {6}Results}{22}
-\contentsline {section}{\numberline {6.1}ZMap Results}{24}
-\contentsline {section}{\numberline {6.2}ZGrab Results}{33}
-\contentsline {chapter}{\numberline {7}Conclusion}{39}
-\contentsline {chapter}{\numberline {8}Future Work}{40}
-\contentsline {chapter}{\numberline {A}A first appendix}{45}
-\contentsline {chapter}{\numberline {B}A sample of the questionnaire form used}{46}
+\contentsline {section}{\numberline {6.1}ZMap Results}{23}
+\contentsline {section}{\numberline {6.2}ZGrab Results}{30}
+\contentsline {chapter}{\numberline {7}Conclusion}{40}
+\contentsline {chapter}{\numberline {8}Future Work}{41}
+\contentsline {chapter}{\numberline {A}A first appendix}{46}
+\contentsline {chapter}{\numberline {B}A sample of the questionnaire form used}{47}

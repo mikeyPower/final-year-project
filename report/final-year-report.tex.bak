@@ -96,7 +96,7 @@ To be done
 
 \begin{abstract}
 \noindent
-As the number of internet devices grows, so to does the difficultly to monitor these devices effectively. This report details the use of ZMap a port scanner and ZGrab an application banner grabber within Trinity College Dublin To survey Web Servers. System administrators have often hundreds of hosts to consider when monitoring Web Servers. The use of the above tools to audit these Web Servers in order to deal with security issues that if left unattended could potential lead to further problems is of the utmost importance for any organisation that aims to mitigate these risks, as well as using these tools to study vulnerabilities in order to better defend from attacks, since the availability of tools such as these leads to the potential of attackers finding vulnerability hosts. Scanning at an Internet wide level has shown great promise for uncovering security problems \cite{durumeric2015search} thus the same should be true at a University Campus level.\\
+As the number of Internet devices grows, so to does the difficultly to monitor these devices effectively. This report details the use of ZMap a port scanner and ZGrab an application banner grabber within Trinity College Dublin To survey Web Servers. System administrators have often hundreds of hosts to consider when monitoring Web Servers. The use of the above tools to audit these Web Servers in order to deal with security issues that if left unattended could potential lead to further problems is of the utmost importance for any organization that aims to mitigate these risks, as well as using these tools to study vulnerabilities in order to better defend from attacks, since the availability of tools such as these leads to the potential of attackers finding vulnerability hosts. Scanning at an Internet wide level has shown great promise for uncovering security problems \cite{durumeric2015search} thus the same should be true at a University Campus level.\\
 
 As well as deploying and testing the tool within Trinity College Dublin, I also hope to be able to interpret the output, and communicate that to site owners/system admins in order to help make their web a bit better and more secure.
 
@@ -109,12 +109,12 @@ As well as deploying and testing the tool within Trinity College Dublin, I also 
 
 
 
-As with any device that is connected to the internet, the  security of these systems is of concern. Even when following strict policies,  miss configurations of servers can lead to possible issues which could significant impact. The aim of this project is to deploy a local instance of ZMap and ZGrab within Trinity College Dublin, running scans on both port 80 and 443 in order to survey web servers, in an effort to build a picture of what the current state of Web Servers within the college campus looks like.\\
+As with any device that is connected to the Internet, the  security of these systems is of concern. Even when following strict policies,  miss configurations of servers can lead to possible issues which could significant impact. The aim of this project is to deploy a local instance of ZMap and ZGrab within Trinity College Dublin, running scans on both port 80 and 443 in order to survey web servers, in an effort to build a picture of what the current state of Web Servers within the college campus looks like.\\
 
-I will also outline the steps that I've taken in order for other organisations and institutions to replicate what I've done here within Trinity College Dublin.\\
+I will also outline the steps that I've taken in order for other organizations and institutions to replicate what I've done here within Trinity College Dublin.\\
 
 
-This goal will be analysed with the following questions in mind:
+This goal will be analyzed with the following questions in mind:
 \begin{itemize}
   \item Which IP addresses are listening on port 80, port 443 and both ports?
   \item The variation in the number of host on at a certain time?
@@ -134,7 +134,7 @@ This goal will be analysed with the following questions in mind:
 The remainder of this report is organized as follows:\\
 \begin{itemize}
 \item\textbf{Chapter 2} provides the reader with the required background information.
-\item\textbf{Chapter 3} shows other relavent work conducted in this area.
+\item\textbf{Chapter 3} shows other relevant work conducted in this area.
 \item\textbf{Chapter 4} explains the overall design of the investigation as well as the ethical concerns around it.
 \item\textbf{Chapter 5} details the implementation of ZMap and ZGrab within Trinity College Dublin as well as describing the various programs and scripts used to gather the data.
 \item\textbf{Chapter 6} presents the results of the scans conducted.
@@ -152,7 +152,7 @@ The remainder of this report is organized as follows:\\
 
 
 Web servers are one of components that make up the overall web-application architecture. 
-Communication between between a web server and a clients browser is done typical through a protocol called Hyper Text Transfer Protocol or HTTP for short. The general way in which a Client initiates communication between a web server is through a Web Browser such as Chrome or Firefox, The browser sends a request to the web sever of some resource typically a web page or some other file type, if the resource doesn't exist an error is returned to the client, generally in the form of a 404 or some other status code. As well as handling request, the server may sometimes be required to handle processing of forms inputted by the client\cite{conallen1999modeling}. Almost any device that is connected to the internet can host a web server, such as a printer or mobile phone. \\
+Communication between between a web server and a clients browser is done typical through a protocol called Hyper Text Transfer Protocol or HTTP for short. The general way in which a Client initiates communication between a web server is through a Web Browser such as Chrome or Firefox, The browser sends a request to the web sever of some resource typically a web page or some other file type, if the resource doesn't exist an error is returned to the client, generally in the form of a 404 or some other status code. As well as handling request, the server may sometimes be required to handle processing of forms inputted by the client\cite{conallen1999modeling}. Almost any device that is connected to the Internet can host a web server, such as a printer or mobile phone. \\
 
 Web servers play a significant role in terms of the overall workings of web applications and security issues relating to web servers can come in a number of ways such as being incorrectly configured\cite{mendes2008assessing} along with lack of privilege management.
 \section{Transport Layer Security}
@@ -195,7 +195,7 @@ address space for a particular open TCP port in under 45 mins using a 1 Gbps Eth
 
 In order to randomise the scans conducted on the target address space, ZMap remains stateless. To avoid keeping state ZMap sends a fixed number of probs per target with the default sending only one probe.\cite{durumeric2013zmap}\\
 
-One of the problems of internet wide scanning is that it uses a large amount of bandwidth,
+One of the problems of Internet wide scanning is that it uses a large amount of bandwidth,
 the creators of ZMap have introduced seven points in relation to the best practices when conducting these scans\cite{durumeric2013zmap} page 12. \\
 
 
@@ -239,18 +239,18 @@ For example When performing a TLS handshake with a host, ZGrab offers the cipher
 
 
 \chapter{Related Work}
-Other similar scanning works can be seen with Zakir Durumeric, Michael Bailey and J. Alex Halderman the creators of ZMap/ZGrab at the University of Michigan,  where in 2014 \cite{durumeric2014internet}, they published a paper relating to the overall environment of scanners on the Internet by analysing a years worth of data from January 1st 2013 up until May 1st 2014 from a large network telescope revolving around scanning activity with a scan being defined as an "instance where a source contacted at least 100 unique addresses in our darknet(.0018\% of the public IPv4 address space) on the same port and protocol at the minimum estimated Internet-wide scan rate of 10 packets per second (pps)", they also investigated the way in which organisations were protected themselves against these scans if at all. Motivations behind the many of scans that they discovered were in relation to academic research, while a large proportion of scans were targetting services with know vulnerabilities (e.g. SQL serves). Throughout this period 10.8 million scans from 1.76 million hosts were detected with the distribution of the scans found being 56.4\% TCP SYN packets, 35.0\% UDP packets, and 8.6\% ICMP echo request packets. The HTTP and HTTPS are among the highest in terms of number of scans found on these protocols which in relation to my own project are the protocols most familiar with port 80 and 443. With malicious users and attackers having the ability to use these tools for various rouge purposes scan detection plays a huge part in defending organisations however according to this paper the vast majority don't regard scanning as a significant threat, that being said within 24 hours of new vulnerabilities being released on devices, they discovered an increase in the number of scans conducted on the ports commonly associated with those devices for example regarding the disclosure of the Heart-bleed Bug which was discovered in March 2014 and publicly disclosed on April 7th 2014. The vulnerability itself allows attackers to remotely dump arbitrary private data from many common and popular servers that support TLS. In the week following the public disclosure 53 scans from 27 host targetting HTTPS were observed, prior to the disclosure of the vulnerability 29 scans from 16 hosts were observed targetting HTTPS.\\
+Other similar scanning works can be seen with Zakir Durumeric, Michael Bailey and J. Alex Halderman the creators of ZMap/ZGrab at the University of Michigan,  where in 2014 \cite{durumeric2014internet}, they published a paper relating to the overall environment of scanners on the Internet by analysing a years worth of data from January 1st 2013 up until May 1st 2014 from a large network telescope revolving around scanning activity with a scan being defined as an "instance where a source contacted at least 100 unique addresses in our darknet(.0018\% of the public IPv4 address space) on the same port and protocol at the minimum estimated Internet-wide scan rate of 10 packets per second (pps)", they also investigated the way in which organisations were protected themselves against these scans if at all. Motivations behind the many of scans that they discovered were in relation to academic research, while a large proportion of scans were targetting services with know vulnerabilities (e.g. SQL serves). Throughout this period 10.8 million scans from 1.76 million hosts were detected with the distribution of the scans found being 56.4\% TCP SYN packets, 35.0\% UDP packets, and 8.6\% ICMP echo request packets. The HTTP and HTTPS are among the highest in terms of number of scans found on these protocols which in relation to my own project are the protocols most familiar with port 80 and 443. With malicious users and attackers having the ability to use these tools for various rouge purposes scan detection plays a huge part in defending organisations however according to this paper the vast majority don't regard scanning as a significant threat, that being said within 24 hours of new vulnerabilities being released on devices, they discovered an increase in the number of scans conducted on the ports commonly associated with those devices for example regarding the disclosure of the Heart-bleed Bug which was discovered in March 2014 and publicly disclosed on April 7th 2014. The vulnerability itself allows attackers to remotely dump arbitrary private data from many common and popular servers that support TLS. In the week following the public disclosure 53 scans from 27 host targeting HTTPS were observed, prior to the disclosure of the vulnerability 29 scans from 16 hosts were observed targeting HTTPS.\\
 
 The University of Michigan performs regular scans for HTTPS hosts\cite{durumeric2014internet} in order to track the certificate authority ecosystems in an effort to analyse TLS certificates and the Certificate Authorities that sign them. Between the periods of April 2012 and June 2013 they managed to collect 33.6 million unique X.509 Certificates of which 6.2 million were browser trusted as well as identifying the most common CAs by leaf certificates issued, with GoDaddy.com, Inc accounting for 31\% adoption rate of the HTTPS protocol throughout their scans with an increase of 23\% in the Alexa Top 1 million websites and  10.9\% increase in the number of browser-trusted certificates. Keys and Signatures were also tracked to highlight how ZMap could also be used to mitigate risk and act as defensive tool for researchers but this also has the flip side effect of an attacker using this tool to locate hosts suffering from a new vulnerability within minutes.\cite{durumeric2013zmap}  With the research still finding some Certificate Authorities still using MD5 to sign their certificates \cite{durumeric2013analysis}. Within the scope of my own project, I will also be investigating the certificates found within the University, looking at certain parameters such as the signature algorithm used to sign the certificate along with the number of self signed and browser trusted certificates within the University.  \\
 
 
 Censys begun in 2015 and is a platform created by the same team that designed ZMap that helps information security practitioners answer security related questions in an effort to discover new threats and assess there impact they may have. They regularly probe every public IP address and popular domain names through horizontal scans of the IPv4 address space, curating data over time to see changes in protocol adaption for example, and make it accessible through an interactive search engine and API that allows users to ask questions such as "what percentage of HTTPS servers support SSLv3" by eliminating the labour intensive process of analysing gigabytes of data as well as lowering the barrier to entry for researchers who might not have the performance capabilities to perform these scans.\cite{durumeric2015search} they have also played a central role in the discovery or analysis of some of the most significant Internet-scale vulnerabilities: FREAK, Logjam, DROWN, Heart bleed, and the Mirai botnet. Today however Censys has moved out of the University of Michigan and into it's own company in order to better serve and expand their capabilities to research offering more enhanced services, technical support, and an even more complete and powerful view of the Internet \cite{censysWeb}.
-Censys could also be used to identify public facing devices that may have been intended to be private within a network but unintentional found it's way to public internet or be used to calculate the risk that known public facing device could have on an organisation \cite{durumeric2015search} by using their website to investigate such questions.\\
+Censys could also be used to identify public facing devices that may have been intended to be private within a network but unintentional found it's way to public INTERNET or be used to calculate the risk that known public facing device could have on an organisation \cite{durumeric2015search} by using their website to investigate such questions.\\
 
 
 In conjunction with researchers at the University of Michigan, researchers at The International Computer Science Institute and the University of Illinois Urban-Champaign in 2016 have conducted similar HTTPS surveys but by analysing certificates from a large body of sources instead of just one with an aim to obtain a better perspective of the HTTPS ecosystem. In total they combined 8 different data sets observing nearly 17 million unique browser trusted certificates which were valid during August 29 to September 8, 2016 which was the investigation period of their study. Of the 8 datasets analysed Censys(38\%) and CT logs(90.5\%) accounted for 99.4\% coverage of all certificates observed. They are currently working with both parties in order to reduce the discrepancy between either source in order to make each one more or less a near comprehensive view of trusted HTTPS certificates\cite{vandersloot2016towards}.\\
 
-Researchers at Ajou University, have  implemented ZMap within their own University campus in aid of identifying hosts and comparing various scanning techniques such as FIN and Xmas Scans for identifying hosts by conducting scans on a number of ports including port 25 (smtp) , 80(http) and 443 (https). These optional scanning techniques are implemented by creating specific probe modules for ZMap \cite{lee2016implementation}. Some of the hosts they discovered included old web servers of a printers which allowed them to instruct the printer to print test pages as well as gaining access to  password protected content of the printer with default passwords of the known devices still in use and common on the internet. While this Report on the other hand uses exclusive SYN scanning the default for ZMap with an aim to identifying regular and irregular Hosts running on port 80 and 443 as well analysing the current configurations of these Web Servers within the university, I was hope to discover similar devices on these ports that were found in Ajou University among others.\\ 
+Researchers at Ajou University, have  implemented ZMap within their own University campus in aid of identifying hosts and comparing various scanning techniques such as FIN and Xmas Scans for identifying hosts by conducting scans on a number of ports including port 25 (smtp) , 80(http) and 443 (https). These optional scanning techniques are implemented by creating specific probe modules for ZMap \cite{lee2016implementation}. Some of the hosts they discovered included old web servers of a printers which allowed them to instruct the printer to print test pages as well as gaining access to  password protected content of the printer with default passwords of the known devices still in use and common on the Internet. While this Report on the other hand uses exclusive SYN scanning the default for ZMap with an aim to identifying regular and irregular Hosts running on port 80 and 443 as well analysing the current configurations of these Web Servers within the university, I was hope to discover similar devices on these ports that were found in Ajou University among others.\\ 
 
 This report differs from previous studies in terms of the scope of our dataset as well as the direct line of the questions we intend to answer in order to highlight the state of Web Servers within TCD.
 
@@ -280,7 +280,7 @@ In order to determine what IP address resolved to hostname I used the socket lib
 
 -- Take about trial runs with Stephens machines in order to figure out what to look out for\\
 
-Similarly for the ZGrabs I’ve implement much in the same for the ZMap scans, two scripts One for the IP address on Port 80 and another for the IP address on Port 443 
+Similarly for the ZGrabs I've implement much in the same for the ZMap scans, two scripts One for the IP address on Port 80 and another for the IP address on Port 443 
 
 
 \chapter{Results}
@@ -301,101 +301,150 @@ Another result comparison could be looking at signature algorithms, algorithms u
 
 Another result comparison looking at ips/hosts sharing multiple public keys, certs e.g Stephens Research and \cite{durumeric2013analysis} page 10\\
 
-Another result comparison could be seeing sites vulnerable to FREAK Attack \cite{vandersloot2016toward} page 54\\
-vandersloot2016toward7
+Another result comparison could be seeing sites vulnerable to FREAK Attack \cite{vandersloot2016toward} page 54
+vandersloot2016toward7\\
+
+
+In this section we will
+present the results of the scans and use them to answer the questions outlined in section 1, in order to better understand the state of Web Servers in the college.
 
 
 \section{ZMap Results} 
-\begin{center}
+!!!!!!!!!!!!!!!!!FIND PERIODS WHEN SERVER WAS DOWN !!!!!!!!!!!!!!!!!!!!!!!!!
+
+\begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/VariationInIpAddressesOnPort80OverTime}
-\end{center}
-02-03-2018  to 16-03-2018 no scans detected as this was during the snow period which caused a power cut and the scan cutting out which
+\caption{a nice plot}
+\label{fig:port80ZMap}
+\end{figure}
 
-We can also see a particular high count of IP addresses on the 12-02-2018 this actually due to a scan failure on port 443 thus having no other IP to compare against 
+The ZMap scans took place between the 5th of February at 8pm up until and including the 26th of March at 6pm. However as we can see in figure \ref{fig:port80ZMap} during the periods 
+02-03-2018  up until 16-03-2018 no scans were detected as this was during the snow period which caused a power cut in the college, downing  Stephen's Server that was conducting the ZMap Scans on both Port 80 and 443. In absence of this there was a total of 827 observational periods in which the ZMap scans took place. We can also see in figure \ref{fig:port80ZMap} an exceptional high count of 1116 IP addresses was recorded on the 13th of February at 1am (2018-02-13T01), this high count was due to an unknown failure of the ZMap scan on port 443, as within this observational slice there were no subsequent IP addresses on port 443 to compare against. 
+\begin{table}
+\centering
+\begin{tabular}{||c c c c ||} 
+ \hline
+  & Port 80 (only) & Port 443 (only) & Both Ports \\ [0.5ex] 
+ \hline\hline
+ Monday & 367 & 383 & 377  \\ 
+ Tuesday & 378 & 383 & 377 \\
+ Wednesday & 377 & 383 & 377 \\
+ Thursday & 372 & 383 & 377  \\
+ Friday & 383 & 383 & 377 \\
+ Saturday & 352 & 383 & 377\\
+ Sunday & 349 & 383 & 377\\[1ex] 
+ \hline
+\end{tabular}
+\caption{Average Number of IP addresses across week}
+\label{table:1}
+\end{table}
 
-All in all the  we can say that the Number of IP addresses on Port 80 is pretty predictable over time getting as low as 350 on the weekends while during the week being on average around 440 IP addresses 
-\begin{center}
+Another intriguing  point to note is that the count of IP addresses throughout the week is steady, with the number of IP addresses on port 80 (only) rising throughout the weekdays and falling at the weekend.\\
+
+\begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/VariationInIpAddressesOnPort443OverTime}
-\end{center}
-As we can tell from this as to why on the 12th the number of IP addresses on Port 80 is so high is due to the port 443 scan failing
+\caption{a nice plot1}
+\label{fig:port443ZMap}
+\end{figure}
 
-Another interesting thing to note is that on average the number of IP addresses drop from around 150 to somewhere around 100 
-\begin{center}
+
+
+From figure \ref{fig:port443ZMap} we can see the failed scan that appeared on the 13th of Feburary at 1am which lead to the overly high count of IP addresses on port 80 (only) for this observational slice.
+
+Another interesting incident that was observed is the drop in the average number of IP addresses from 145 before the server was cut off to to 105 after the server was back up and running. 
+
+\begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/VariationInIpAddressesOnBothPortsOverTime}
-\end{center}
-This graph tells much of the same story the other two graphs tell
+\caption{a nice plot1}
+\label{fig:portsBothZMap}
+\end{figure}
+From figure \ref{fig:portsBothZMap} we can see a similar trend that was observed in the figure \ref{fig:port80ZMap} with a higher number of IP addresses being present throughout the weekday and falling at the weekend.\\
+
+There is also no dramatic change in the average number of IP addresses being present before and after the server cut off that was seen in figure \ref{fig:port443ZMap}
 
 
-\begin{center}
+\begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/IPaddressestoPorts}
-\end{center}
+\caption{a nice plot1}
+\label{fig:ports}
+\end{figure}
+In all there was a total of 1714 unique IP addresses that were seen throughout the ZMap scans, from figure \ref{fig:ports} we can see a breakdown of the 3 main categories of IP addresses Port 80 (only) which are IP addresses that are were only observed on Port 80 and no other port, Port 443 which were IP addresses only observed on Port 443 and no other port, and finally Both Ports which consisted of IP addresses that were on both Port 80 and 443 at some point throughout the ZMap scans.\\
 
+We recorded 511 IP addresses on port 80 alone, followed by 146 IP addresses on port 443 and lastly 1057 IP addresses on Both ports.
 
-\begin{center}
+\begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/RegularVsIrregularIPaddresses}
-\end{center}
-IPs consider regular if seen 90\% of the time: so 744 from 827 observational slots
+\caption{a nice plot1}
+\label{fig:portsIrreg}
+\end{figure}
 
-Regular ips seen = 1190
-    port 80 only  = 336
-    port 443 only  = 136
-    both  = 718
-Irregular ips seen = 524
-    port 80 only  = 175
-    port 443 only  = 10
-    both  = 339
+From the scans (figure \ref{fig:average_day}) we noticed a number of irregularities in terms of the number of IP addresses that would be up at any given hour, to investigate this aspect of the data we decided to filter the IP addresses in terms of those that are regular which in our case is 
+IP addresses that are seen 90\% of the time which is 744 from 827 observational slots. Everything else is consider an Irregular IP address.
+
+The above figure \ref{fig:portsIrreg} shows the comparison between each port category, with a total of 1190 IP addresses being Regular with 336 being on Port 80 (only), 136 on Port 443 (only) and 718 being on Both Ports. Similarly we observed that 524 of the total IP addresses observed in the scans are Irregular, with 175 of those being on Port 80 (only), 10 being on Port 443 (only) and 339 on Both Ports.
 
 
-\begin{center}
+\begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/AverageDayinTrinityCollegeDublin}
-\end{center}
+\caption{a nice plot1}
+\label{fig:average_day}
+\end{figure}
+When looking at all the IP addresses on average over a 24 hour period as we can see in figure \ref{fig:average_day} there is a large count of IP addresses between 11am to 4pm 
 
-We can see that the high period in time is around 11am to 4pm
+Peak time on Average in the college is 12pm midday with 1311 IP addresses being present
+Off-Peak time are 1 am and 5 am with both counting 1221 IP addresses being present. 
 
-Peak time on Average is 12pm midday with 1311 Ips being present on Average
-Off-Peak time are 1 am and 5 am with 1221 Ips being present on Average 
-
-\begin{center}
+\begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay}
-\end{center}
-Going back to the Irregular Ip addresses the highest time that we can see that most of the Irregular IP addresses being present at some point over the time of the scans is 470 IP addresses at 3pm
+\caption{a nice plot1}
+\label{fig:irreg_ips}
+\end{figure}
+When analysing the hour that an Irregular IP address has ever been on such as in figure \ref{fig:irreg_ips} we see that at some point over the time of the scans particularly at 3pm there has been 470 of the 524 Irregular IP addresses active at this hour throughout the ZMap scans. On the opposite scale 259 IP addresses have be present at 5am at some point in time over the series of scans conducted. This might lead us to believe that the majority of Irregular IP address occurs at 5pm which is not the case when we look at the individual occurrences in figure \ref{fig:irreg_occurence}.
 
-\begin{center}
+\begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage}
-\end{center}
+\caption{a nice plot1}
+\label{fig:irreg_occurence}
+\end{figure}
+When counting each occurence of an IP address on either port we see in figure \ref{fig:irreg_occurence} that there is a large discrepancy between the number of occurrence of an IP and the hour that each IP appears. For example we see in figure \ref{fig:irreg_occurence} that the number of occurrences that happen at 1am is 16014 where as at 3pm, 8777 occurrences have taken place throughout the ZMap scanning period which is the second largest number of occurrences. This large difference on further inspection of the data is due to 27 Unique IP address of which only 10 were on port 80 (only), 1 on port 443 (only) and 16 on both ports.
 
-\begin{center}
+!!!!!!!!!!!!!!!!!!!!!!! Include a table of the top 27 IP addresses (excluding the  actually IP address) and discuss these results further !!!!!!!!!!!!!!!!!!!!!\\
+
+
+\begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/IpstoHostname}
-\end{center}
+\end{figure}
 \section{ZGrab Results} 
-\begin{center}
+\begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/ZMapVsZGrab}
-\end{center}
+\end{figure}
+
+!!!!!!!!!!!!!!!!!!!!! MIGHT HAVE TO REDO GRAPH ABOVE !!!!!!!!!!!!!!\\
 
 
 
-\begin{center}
+\begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/TLSVersionsInTCD}
-\end{center}
+\end{figure}
 
 
-\begin{center}
+\begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/signatureAlgorithms}
-\end{center}
+\end{figure}
 
 
 
-\begin{center}
+\begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/CipherSuitesInTCD}
-\end{center}
+\end{figure}
 
-\begin{center}
+\begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/BrowserTrusted}
-\end{center}
+\end{figure}
 
-\begin{center}
+\begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/CertificateExpired}
-\end{center}
+\end{figure}
 \chapter{Conclusion}
 \cite{turner2014transport} page 62,63
 
@@ -421,9 +470,8 @@ Along with the point regarding infrastructure deployment I could also make some 
 \appendix
 \chapter{A first appendix}
 
-the program parameters were \ldots
+blah blah \ldots
 
-the following table lists all the people who contributed questionnaire responses \ldots
 
 \chapter{A sample of the questionnaire form used}
 

@@ -62,6 +62,10 @@
 \newblock In {\em Information and Communication Technology Convergence (ICTC),
   2016 International Conference on\/} (2016), IEEE, pp.~681--683.
 
+\bibitem{matplotlib}
+{\sc matplotlib}.
+\newblock matplotlib,https://matplotlib.org/.
+
 \bibitem{mendes2008assessing}
 {\sc Mendes, N., Neto, A.~A., Dur{\~a}es, J., Vieira, M., and Madeira, H.}
 \newblock Assessing and comparing security of web servers.
@@ -81,6 +85,15 @@
 {\sc owasp}.
 \newblock Transport layer protection cheat sheet,
   https://www.owasp.org/index.php/.
+
+\bibitem{popov2015prohibiting}
+{\sc Popov, A.}
+\newblock Prohibiting rc4 cipher suites.
+\newblock {\em Computer Science 2355\/} (2015), 152--164.
+
+\bibitem{socket}
+{\sc socket}.
+\newblock scoket,https://docs.python.org/2/library/socket.html.
 
 \bibitem{md5}
 {\sc ssllabs}.

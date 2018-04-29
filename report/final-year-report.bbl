@@ -38,6 +38,11 @@
 {\sc Durumeric, Z., Wustrow, E., and Halderman, J.~A.}
 \newblock Zmap, https://github.com/zmap/zmap/blob/master/readme.md.
 
+\bibitem{holz2015summarizing}
+{\sc Holz, R., Sheffer, Y., and Saint-Andre, P.}
+\newblock Summarizing known attacks on transport layer security (tls) and
+  datagram tls (dtls).
+
 \bibitem{kondo2014penetration}
 {\sc Kondo, T.~S., and Mselle, L.~J.}
 \newblock Penetration testing with banner grabbers and packet sniffers.
@@ -67,10 +72,34 @@
 {\sc mirleft}.
 \newblock Ocaml-tls demo server, https://tls.nqsb.io/.
 
+\bibitem{moller2014poodle}
+{\sc M{\"o}ller, B., Duong, T., and Kotowicz, K.}
+\newblock This poodle bites: exploiting the ssl 3.0 fallback.
+\newblock {\em Security Advisory\/} (2014).
+
+\bibitem{owaspTLS_SSL}
+{\sc owasp}.
+\newblock Transport layer protection cheat sheet,
+  https://www.owasp.org/index.php/.
+
+\bibitem{md5}
+{\sc ssllabs}.
+\newblock md5,http://www.win.tue.nl/hashclash/rogue-ca/.
+
+\bibitem{ssllabs}
+{\sc ssllabs}.
+\newblock Transport layer protection cheat
+  sheet,https://github.com/ssllabs/research/wiki/ssl-and-tls-deployment-best-practices.
+
 \bibitem{turner2014transport}
 {\sc Turner, S.}
 \newblock Transport layer security.
 \newblock {\em IEEE Internet Computing 18}, 6 (2014), 60--63.
+
+\bibitem{turner2011updated}
+{\sc Turner, S., and Chen, L.}
+\newblock Updated security considerations for the md5 message-digest and the
+  hmac-md5 algorithms.
 
 \bibitem{vandersloot2016towards}
 {\sc VanderSloot, B., Amann, J., Bernhard, M., Durumeric, Z., Bailey, M., and

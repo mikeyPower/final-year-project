@@ -104,7 +104,7 @@ As well as deploying and testing the tool within Trinity College Dublin, I also 
 
 
 \chapter{Introduction}
-\section{Goals of Report} 
+\section{Goals of Report}
 !!!!!!!!!!!!!!!MIND TENSE USED (PAST OR FUTURE), PICK ONE AND KEEP IT, ALSO MIND THE USE OF I WHEN DESCRIBING THE REPORT!!!!!!!!!!!!!!!\\
 
 
@@ -128,9 +128,9 @@ This goal will be analyzed with the following questions in mind:
   \item Are there any public keys that are used across multiple IP addresses?
   \item The variation in public key lengths?
   \item How many IP addresses are managing redirects correctly?
-  
+ 
 \end{itemize}
-\section{Outline} 
+\section{Outline}
 The remainder of this report is organized as follows:\\
 \begin{itemize}
 \item\textbf{Chapter 2} provides the reader with the required background information.
@@ -144,14 +144,14 @@ The remainder of this report is organized as follows:\\
 
 
 \chapter{Background}
-!!!!!!!!!!!!!!! 
+!!!!!!!!!!!!!!!
 \section{Web Server}
 !!!!!!!!!!!!!!!REFERENCE RFC FOR HTTP, OR ANY OTHER PORT MENTIONED!!!!!!!!!!!!!!!\\
 
 
 
 
-Web servers are one of components that make up the overall web-application architecture. 
+Web servers are one of components that make up the overall web-application architecture.
 Communication between between a web server and a clients browser is done typical through a protocol called Hyper Text Transfer Protocol or HTTP for short. The general way in which a Client initiates communication between a web server is through a Web Browser such as Chrome or Firefox, The browser sends a request to the web sever of some resource typically a web page or some other file type, if the resource doesn't exist an error is returned to the client, generally in the form of a 404 or some other status code. As well as handling request, the server may sometimes be required to handle processing of forms inputted by the client\cite{conallen1999modeling}. Almost any device that is connected to the Internet can host a web server, such as a printer or mobile phone. \\
 
 Web servers play a significant role in terms of the overall workings of web applications and security issues relating to web servers can come in a number of ways such as being incorrectly configured\cite{mendes2008assessing} along with lack of privilege management.
@@ -166,7 +166,7 @@ TLS or SSL as it may sometimes be referred to is a protocol that allows secure c
 \end{center}
 In order for a secure connection to be established the client first sends a \textit{Client Hello} message which includes the version of TLS supported by the client a random byte string that is used for calculations later on in the handshake such as generating the pre-master secret,  along with the list of cipher suites and compression methods in order of the clients preference \cite{tlsDemoServer}. As well as this the client sends an empty session identifier\cite{turner2014transport}.
 The server responds with a \textit{ServerHello} message indicating the version of TLS that will be used along with the appropriate cipher suite, compression method and session Identifier. The server also generates its own random byte string. Next a \textit{Certificate} is sent from the server to the Client whenever the key exchange method uses certificates. This certificate message contains a chain of certificates which the client will use to validate the server says who they say they are. Following this a Server Key Exchange Message is sent if the certificate sent by the server lacks sufficient data for the client to exchange a premaster secret.The Server then sends a \textit{ServerHello Done} message to the Client to signal that the client can now continue with its turn of the key exchange related messages. The Client now sends a \textit{ClientKeyExchange} message to the server which includes the pre-master secret created by the client. Both the Client and the Server send a \textit{ChangeCipherSpec} message to alert each other that all future exchanges within this session will be encrypted with the chosen cipher suite and keys. Finally the Client sends a \textit{Finished} Message to the Server and likewise The Server sends a \textit{Finished } message to the Client, both of theses exchanges are used in order to verify that the key exchange and authentication process were successful as well as indicating that each respective part of the TLS handshake is complete. From this point on all \textit{ApplicationData} exchange between the client and server is protected based on the current connection state \cite{tlsDemoServer}\cite{turner2014transport}
-\section{Port Scanning} 
+\section{Port Scanning}
 !!!!!!!!!!!!!!!!!!!!!!!!!GIVE A MENTION TO OTHER SCANNERS NMAP ETC AS THEHER ARE OTHERS OUT THERE!!!!!!!!!!!!!!!\\
 Port scanners are tools that are used to check for devices on open ports, these tools could be used by system administrator to monitor devices on a network or by a malicious party hoping to find vulnerable devices to infect. \\
 There are three main grades of port scans.
@@ -226,7 +226,7 @@ exchanged (a SYN, a SYN-ACK reply, and a RST from
 the scanner which will close the connection)\cite{durumeric2013zmap}.
 
 
-\section{Banner Grabbing} 
+\section{Banner Grabbing}
 Banner grabbing is a technique used to gain information about a device on a network by establishing a connection and observing the output from the connection \cite{kondo2014penetration}. System Administrators can use these tools designed for this application to take inventory of the devices and services on their network. Attackers can also use banner grabbing tools in order to find network devices that are using known applications with well documented vulnerability (MD5 for example)
 
 
@@ -250,37 +250,46 @@ Censys could also be used to identify public facing devices that may have been i
 
 In conjunction with researchers at the University of Michigan, researchers at The International Computer Science Institute and the University of Illinois Urban-Champaign in 2016 have conducted similar HTTPS surveys but by analysing certificates from a large body of sources instead of just one with an aim to obtain a better perspective of the HTTPS ecosystem. In total they combined 8 different data sets observing nearly 17 million unique browser trusted certificates which were valid during August 29 to September 8, 2016 which was the investigation period of their study. Of the 8 datasets analysed Censys(38\%) and CT logs(90.5\%) accounted for 99.4\% coverage of all certificates observed. They are currently working with both parties in order to reduce the discrepancy between either source in order to make each one more or less a near comprehensive view of trusted HTTPS certificates\cite{vandersloot2016towards}.\\
 
-Researchers at Ajou University, have  implemented ZMap within their own University campus in aid of identifying hosts and comparing various scanning techniques such as FIN and Xmas Scans for identifying hosts by conducting scans on a number of ports including port 25 (smtp) , 80(http) and 443 (https). These optional scanning techniques are implemented by creating specific probe modules for ZMap \cite{lee2016implementation}. Some of the hosts they discovered included old web servers of a printers which allowed them to instruct the printer to print test pages as well as gaining access to  password protected content of the printer with default passwords of the known devices still in use and common on the Internet. While this Report on the other hand uses exclusive SYN scanning the default for ZMap with an aim to identifying regular and irregular Hosts running on port 80 and 443 as well analysing the current configurations of these Web Servers within the university, I was hope to discover similar devices on these ports that were found in Ajou University among others.\\ 
+Researchers at Ajou University, have  implemented ZMap within their own University campus in aid of identifying hosts and comparing various scanning techniques such as FIN and Xmas Scans for identifying hosts by conducting scans on a number of ports including port 25 (smtp) , 80(http) and 443 (https). These optional scanning techniques are implemented by creating specific probe modules for ZMap \cite{lee2016implementation}. Some of the hosts they discovered included old web servers of a printers which allowed them to instruct the printer to print test pages as well as gaining access to  password protected content of the printer with default passwords of the known devices still in use and common on the Internet. While this Report on the other hand uses exclusive SYN scanning the default for ZMap with an aim to identifying regular and irregular Hosts running on port 80 and 443 as well analysing the current configurations of these Web Servers within the university, I was hope to discover similar devices on these ports that were found in Ajou University among others.\\
 
 This report differs from previous studies in terms of the scope of our dataset as well as the direct line of the questions we intend to answer in order to highlight the state of Web Servers within TCD.
 
 \chapter{Design}
+
+\section{Overview}
+\begin{figure}[h!]
+\includegraphics[scale=.5]{pdf_images/design}
+\caption{a nice plot}
+\label{fig:design}
+\end{figure}
+
+As we can see from figure \ref{fig:design} in section 1 highlighted in blue,
+the design of the scans consisted of two horizontal set of scans on port 80 and port 443 that would run every hour being executed by a scheduler. After this we would analyse the raw data outputted by ZMap in section 2 in green, once we discovered which IP addresses were listening on which Port along with which IP had an associated host name by doing a reverse DNS lookup in order for us to conduct the ZGrab scans with a domain lookup. Once the data was sufficiently analysed, we conducted 4 sets of ZGrab scans, which were a domain lookup on port 80, a domain lookup on port 443, IP banner grab on port 80 as well as port 443, seen in section 3 of figure \ref{fig:design}. Lastly the output of the ZGrab scans would be analysed looking for certain fields that would be of interest.
+
+\section{Technologies Used}
+\section{Ethics}
+
+
+As with any type of scanning work that is being conducted, there are a number of ethical considerations to be aware included how the scans should be conducted. We informed the system administrators within the college, stating the extinct of the scans that we were conducting. We also decided to limit the port that would be scanned to port 80 and port 443 to limit the strain that the scans could potentionally have on the network. While there are no codes of conduct as of yet in relation to scanning network, the creators of ZMap offer a few useful best practice guidelines when performing scans\cite{durumeric2015search}  \cite{durumeric2013zmap}.\\
+
+Another consideration to account for is the releasing of data, since the majority of hosts are not publicly visible, for this reason no individual IP addresses are released in the report.
+\section{Challenges}
+\chapter{Implementation}
+
 !!!!!!!!!!!!!!!TALK ABOUT THE PYTHON CODE, LIKE EXTRACTING THE FIELDS FOR THE ZGRABS WITH THE EXCEPTIONS SO PEOPLE LOOKING AT THE CODE KNOW WHAT I WAS DOING ECT!!!!!!!!!!!!!!!\\
 
 
-
-
-
-The design of the scans consisted of two horizontal set of scans on port 80 and port 443 between 05/03/2018 -  31/03/2018 running every hour throughout the set of scans we discovered 1,710 IP addresses in total with x IP addresses on port 80 and y IP addresses on Port 443\\
-
-With the IP addresses found a further set of Banner grabs were conducted on the results of the horizontal scans, theses banner grabs were done every 2 hours to account for the length of time to adequately complete 1,710 banner grabs
-
-\section{Technologies Used} 
-\section{Ethics} 
-see \cite{durumeric2015search} page 2 good internet citizenship as well as ZMap 7 points for conducting scans
-\section{Challenges}
-\chapter{Implementation}
-To implement the ZMap scans I wrote two scripts that would then be setup on a cron job to run every hour outputting the results to a csv file 
+To implement the ZMap scans I wrote two scripts that would then be setup on a cron job to run every hour outputting the results to a csv file
 
 To differentiate which IP addresses were listening on to one or more ports I created a python programme to find what IP addresses were listening on Port 80 and which IP addresses were listening on Port 443 doing this I was able to get the intersection of the Two to determine the number that were listening on both Ports. The way in which I found out which IP addresses were actually listening to only port 80, port 443 and which were listening to both ports I used a key value dictionary to determine this with the key being the IP address and value being a list of Ports that particular IP address was one for example an IP address that was listening to only port 80 would have a value of [‘80’] likewise for an IP address that was only listening to port 443 would have a value of [‘443’] and for an IP address that was on Both ports would have a value of [‘80’,’443’] .
 
-In order to determine what IP address resolved to hostname I used the socket library within python to do a reverse DNS lookup in order to convert the IP addresses to hostnames (Talk about purpose of getting a hostname)\\ 
+In order to determine what IP address resolved to hostname I used the socket library within python to do a reverse DNS lookup in order to convert the IP addresses to hostnames (Talk about purpose of getting a hostname)\\
 
 
 
 -- Take about trial runs with Stephens machines in order to figure out what to look out for\\
 
-Similarly for the ZGrabs I've implement much in the same for the ZMap scans, two scripts One for the IP address on Port 80 and another for the IP address on Port 443 
+Similarly for the ZGrabs I've implement much in the same for the ZMap scans, two scripts One for the IP address on Port 80 and another for the IP address on Port 443
 
 
 \chapter{Results}
@@ -295,7 +304,7 @@ Another comparison can be found with trying to see how many scans are necessary 
 
 Another result comparison could be trying to identify CA that sign certs who have had security issues in the past \cite{durumeric2013analysis} page 6\\
 
-Another result comparison could be looking at key lengths \cite{durumeric2013analysis} page 7 and 8, also look for a paper with recommendations of cryptographic algorithms and key lengths\\ 
+Another result comparison could be looking at key lengths \cite{durumeric2013analysis} page 7 and 8, also look for a paper with recommendations of cryptographic algorithms and key lengths\\
 
 Another result comparison could be looking at signature algorithms, algorithms used to sign the certificates \cite{durumeric2013analysis} page 9\\
 
@@ -309,7 +318,7 @@ In this section we will
 present the results of the scans and use them to answer the questions outlined in section 1, in order to better understand the state of Web Servers in the college.
 
 
-\section{ZMap Results} 
+\section{ZMap Results}
 !!!!!!!!!!!!!!!!!FIND PERIODS WHEN SERVER WAS DOWN !!!!!!!!!!!!!!!!!!!!!!!!!
 
 \begin{figure}[h!]
@@ -318,21 +327,21 @@ present the results of the scans and use them to answer the questions outlined i
 \label{fig:port80ZMap}
 \end{figure}
 
-The ZMap scans took place between the 5th of February at 8pm up until and including the 26th of March at 6pm. However as we can see in figure \ref{fig:port80ZMap} during the periods 
-02-03-2018  up until 16-03-2018 no scans were detected as this was during the snow period which caused a power cut in the college, downing  Stephen's Server that was conducting the ZMap Scans on both Port 80 and 443. In absence of this there was a total of 827 observational periods in which the ZMap scans took place. We can also see in figure \ref{fig:port80ZMap} an exceptional high count of 1116 IP addresses was recorded on the 13th of February at 1am (2018-02-13T01), this high count was due to an unknown failure of the ZMap scan on port 443, as within this observational slice there were no subsequent IP addresses on port 443 to compare against. 
+The ZMap scans took place between the 5th of February at 8pm up until and including the 26th of March at 6pm. However as we can see in figure \ref{fig:port80ZMap} during the periods
+02-03-2018  up until 16-03-2018 no scans were detected as this was during the snow period which caused a power cut in the college, downing  Stephen's Server that was conducting the ZMap Scans on both Port 80 and 443. In absence of this there was a total of 827 observational periods in which the ZMap scans took place. We can also see in figure \ref{fig:port80ZMap} an exceptional high count of 1116 IP addresses was recorded on the 13th of February at 1am (2018-02-13T01), this high count was due to an unknown failure of the ZMap scan on port 443, as within this observational slice there were no subsequent IP addresses on port 443 to compare against.
 \begin{table}
 \centering
-\begin{tabular}{||c c c c ||} 
+\begin{tabular}{||c c c c ||}
  \hline
-  & Port 80 (only) & Port 443 (only) & Both Ports \\ [0.5ex] 
+  & Port 80 (only) & Port 443 (only) & Both Ports \\ [0.5ex]
  \hline\hline
- Monday & 367 & 383 & 377  \\ 
+ Monday & 367 & 383 & 377  \\
  Tuesday & 378 & 383 & 377 \\
  Wednesday & 377 & 383 & 377 \\
  Thursday & 372 & 383 & 377  \\
  Friday & 383 & 383 & 377 \\
  Saturday & 352 & 383 & 377\\
- Sunday & 349 & 383 & 377\\[1ex] 
+ Sunday & 349 & 383 & 377\\[1ex]
  \hline
 \end{tabular}
 \caption{Average Number of IP addresses across week}
@@ -351,7 +360,7 @@ Another intriguing  point to note is that the count of IP addresses throughout t
 
 From figure \ref{fig:port443ZMap} we can see the failed scan that appeared on the 13th of Feburary at 1am which lead to the overly high count of IP addresses on port 80 (only) for this observational slice.
 
-Another interesting incident that was observed is the drop in the average number of IP addresses from 145 before the server was cut off to to 105 after the server was back up and running. 
+Another interesting incident that was observed is the drop in the average number of IP addresses from 145 before the server was cut off to to 105 after the server was back up and running.
 
 \begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/VariationInIpAddressesOnBothPortsOverTime}
@@ -378,7 +387,7 @@ We recorded 511 IP addresses on port 80 alone, followed by 146 IP addresses on p
 \label{fig:portsIrreg}
 \end{figure}
 
-From the scans (figure \ref{fig:average_day}) we noticed a number of irregularities in terms of the number of IP addresses that would be up at any given hour, to investigate this aspect of the data we decided to filter the IP addresses in terms of those that are regular which in our case is 
+From the scans (figure \ref{fig:average_day}) we noticed a number of irregularities in terms of the number of IP addresses that would be up at any given hour, to investigate this aspect of the data we decided to filter the IP addresses in terms of those that are regular which in our case is
 IP addresses that are seen 90\% of the time which is 744 from 827 observational slots. Everything else is consider an Irregular IP address.
 
 The above figure \ref{fig:portsIrreg} shows the comparison between each port category, with a total of 1190 IP addresses being Regular with 336 being on Port 80 (only), 136 on Port 443 (only) and 718 being on Both Ports. Similarly we observed that 524 of the total IP addresses observed in the scans are Irregular, with 175 of those being on Port 80 (only), 10 being on Port 443 (only) and 339 on Both Ports.
@@ -389,10 +398,10 @@ The above figure \ref{fig:portsIrreg} shows the comparison between each port cat
 \caption{a nice plot1}
 \label{fig:average_day}
 \end{figure}
-When looking at all the IP addresses on average over a 24 hour period as we can see in figure \ref{fig:average_day} there is a large count of IP addresses between 11am to 4pm 
+When looking at all the IP addresses on average over a 24 hour period as we can see in figure \ref{fig:average_day} there is a large count of IP addresses between 11am to 4pm
 
 Peak time on Average in the college is 12pm midday with 1311 IP addresses being present
-Off-Peak time are 1 am and 5 am with both counting 1221 IP addresses being present. 
+Off-Peak time are 1 am and 5 am with both counting 1221 IP addresses being present.
 
 \begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay}
@@ -408,13 +417,39 @@ When analysing the hour that an Irregular IP address has ever been on such as in
 \end{figure}
 When counting each occurence of an IP address on either port we see in figure \ref{fig:irreg_occurence} that there is a large discrepancy between the number of occurrence of an IP and the hour that each IP appears. For example we see in figure \ref{fig:irreg_occurence} that the number of occurrences that happen at 1am is 16014 where as at 3pm, 8777 occurrences have taken place throughout the ZMap scanning period which is the second largest number of occurrences. This large difference on further inspection of the data is due to 27 Unique IP address of which only 10 were on port 80 (only), 1 on port 443 (only) and 16 on both ports.
 
-!!!!!!!!!!!!!!!!!!!!!!! Include a table of the top 27 IP addresses (excluding the  actually IP address) and discuss these results further !!!!!!!!!!!!!!!!!!!!!\\
 
 
+\begin{table}
+\centering
+\begin{tabular}{|| c c ||}
+ \hline
+  Total Occurrences & Occurrences at 1am  \\ [0.5ex]
+ \hline\hline
+ 1520 & 720  \\
+ 1496 & 720 \\
+ 1354 & 716 \\
+ 1294 & 710  \\
+ 1444 & 710 \\
+ 1159 & 702 \\
+ 1018 & 698 \\
+ 729 & 688  \\
+ 1633 & 390 \\
+ 1446 & 388 \\[1ex]
+ \hline
+\end{tabular}
+\caption{Top 10 Irregular IP addresses seen at 1am }
+\label{table:2}
+\end{table}
+
+From figure \ref{table:2} we can see that the vast majority of occurrences at 1am account for a major period of the overall number of occurrences. of these 27 that cause this large difference, 17 of them have 50\% or greater with the number of occurrences that are seen at 1am compared to every other day in the week combined.
+ 
+
+!!!!!!!!!!!!!!!!!!!!!!RE DO IPS TO HOSTNAME PIECHART !!!!!!!!!!!!!!!!!!!!
 \begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/IpstoHostname}
+
 \end{figure}
-\section{ZGrab Results} 
+\section{ZGrab Results}
 \begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/ZMapVsZGrab}
 \end{figure}
@@ -425,14 +460,21 @@ When counting each occurence of an IP address on either port we see in figure \r
 
 \begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/TLSVersionsInTCD}
+\caption{a nice plot1}
+\label{fig:TLS_SSL}
 \end{figure}
+
+Over the course of the banner grabs we have found 3 different versions of TLS/SSL being implemented in the college to provide encryption of data. It turns out that SSL 3.0 is still being used despite the fact that it is inherently broken and suffers from various attacks such as POODLE\cite{holz2015summarizing} \cite{moller2014poodle} and many organisations \cite{ssllabs} advise not to use it  but use TLSv1.2 instead. One of the reasons as to why this old implementation of SSL/TLS is still being used, might be the fact that many legacy web browser such as IE6/XP only support SSL 3.0 and thus switching off support for SSL 3.0 would prevent browsers from working with the site \cite{owaspTLS_SSL}. Next we have TLSv1.0 which is the next version of TLS after SSLv3.0, similar advise is given with regards to the use of TLSv1.0 as it too is also a legacy protocol that suffers from problems such as the BEAST attack\cite{holz2015summarizing} which is an vulnerability in the implementation of the Cipher Block Chaining (CBC) in TLSv1.0. The most secure of the TLS versions found in the college has the greatest number of IP addresses (366) that are using it, to secure their communication. No version of TLS1.1 was ever discovered throughout the ZGrabs.
 
 
 \begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/signatureAlgorithms}
+\caption{a nice plot1}
+\label{fig:signatureAlgorithms}
 \end{figure}
 
-
+One of the more surprising discoveries is the prevalence of MD5 hash function. In total we found 273 unique IP addresses that are using MD5withRSA to sign their certificates. According to the Internet Engineering Task Force MD5 is no longer acceptable where collision resistance is required
+such as digital signatures \cite{turner2011updated} this is due to the fact that MD5 hash functions allows the construction of different messages with the same MD5 hash resulting in a collision \cite{md5}. Along with MD5 being fundamental broken, SHA1 is also now insecure. Both of these signature algorithms in figure \ref{fig:signatureAlgorithms} used to sign certificates account for 63.7\% of 799 IP addresses in the college using unsecured hashing functions.\cite{ssllabs}. With the remaining 290 IP addresses possessing certificates signed with SHA256 which is the recommend signature algorithm to use\cite{ssllabs}.
 
 \begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/CipherSuitesInTCD}
@@ -479,3 +521,4 @@ blah blah
 
 
 \end{document}
+

@@ -1,5 +1,13 @@
 \begin{thebibliography}{10}
 
+\bibitem{acer2017wild}
+{\sc Acer, M.~E., Stark, E., Felt, A.~P., Fahl, S., Bhargava, R., Dev, B.,
+  Braithwaite, M., Sleevi, R., and Tabriz, P.}
+\newblock Where the wild warnings are: Root causes of chrome https certificate
+  errors.
+\newblock In {\em Proceedings of the 2017 ACM SIGSAC Conference on Computer and
+  Communications Security\/} (2017), ACM, pp.~1407--1420.
+
 \bibitem{berners1996hypertext}
 {\sc Berners-Lee, T., Fielding, R., and Frystyk, H.}
 \newblock Hypertext transfer protocol--http/1.0.
@@ -34,6 +42,14 @@
 \bibitem{censysWeb}
 {\sc Durumeric, Z., Wustrow, E., and Halderman, J.~A.}
 \newblock censys, https://censys.io/.
+
+\bibitem{zgrabGithub}
+{\sc Durumeric, Z., Wustrow, E., and Halderman, J.~A.}
+\newblock Zgrab, https://github.com/zmap/zgrab.
+
+\bibitem{zgrab2Github}
+{\sc Durumeric, Z., Wustrow, E., and Halderman, J.~A.}
+\newblock Zgrab, https://github.com/zmap/zgrab2.
 
 \bibitem{durumeric2013zmap}
 {\sc Durumeric, Z., Wustrow, E., and Halderman, J.~A.}

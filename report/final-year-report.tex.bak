@@ -150,6 +150,9 @@ The remainder of this report is organized as follows:\\
 !!!!!!!!!!!!!!!REFERENCE RFC FOR HTTP, OR ANY OTHER PORT MENTIONED!!!!!!!!!!!!!!!\\
 
 
+!!!!!!!!!!!!!!!!!!!!!MIGHT MENTION WHAT A PORT, IP ADDRESS, HTTP AND HTTPS IS !!!!!!!!!!!!!!!!!!!!!
+
+
 
 
 Web servers are one of components that make up the overall web-application architecture.
@@ -239,7 +242,7 @@ ZGrab is one such banner grabber implemented in go that allows user to perform v
 
 For example When performing a TLS handshake with a host, ZGrab offers the cipher suites implemented by the Golang TLS library and logs the chosen cipher suite\cite{durumeric2015search} rather than using the chosen cipher suite of the source machine performing the ZGrab . ZGrab can be also be used inconjuction with ZMap to grab information simultaneous while a host being scanned or independently of ZMap by passing the host directly into ZGrab. Instructions are passed to ZGrab much in the same way of ZMap via a command line interface (CLI).\\
 
-In terms of the actual banner grab there are a number of aspects of a web server that we are interested in when we conduct are ZGrab application layer scans in order to see the contrast and similarities the underlying information of the web Servers are to each other scans they are as follows:
+In terms of the actual banner grab there are a number of aspects of a web server that we are interested in when we conduct are ZGrab application layer scans in order to see the contrast and similarities underlying the information of the web Servers are to each other scans they are as follows:
 
 \begin{itemize}
   \item Ciphersuite being used to provide encryption of data between the client and server.
@@ -247,7 +250,7 @@ In terms of the actual banner grab there are a number of aspects of a web server
   \item TLS/SSL verison being used to provide secure communication between the client and server.
   \item The Public Key of the Web server embedded in the certificate.
   \item The length of the Public Key.
-  \item Certificate start and end date.
+  \item Certificate start and end date, to see when the certificate was issued and also when it expires.
   \item the Signature Algorithm used to sign the certificate.
   \item If the Certificate is self signed or not.
   A self signed certificate is a Certificate that has not been Issued and signed by a Certificate Authority rather the issuer who has created the certificate has signed it themselves with their own private key \cite{housley1998internet}.
@@ -335,6 +338,10 @@ To Implement the ZGrab scans took a bit more care as different types of machines
 
 These banner grabs that were conducted helped us in order to see the difference of the JSON outputs that ZGrab gives. Similarly for the ZGrabs I've implement much in the same for the ZMap scans, instead here we are also doing the domain lookups as well on port 80 and port 443. To extract the fields I was interested in I implemented a pyhton programme that would take the JSON output of the ZGrab and collect those fields we wanted. In order to take account for the fields that could be present in any practicular ZGrab output, exception handling was conducted on fields were attempting to extract the fields, this was also necessary due to the fact that if certain IP wasn't on at the time a ZGrab was being conducted an error would be outputted in the JSON file along with the IP of the ZGrab that was just executed, with the fields we were concerned with being absent.
 \section{Challenges}
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!! TAKE ABOUT ZGRAB DOCUMENTATION !!!!!!!!!!!!!!!!!!!!!!!!!
+
+
 One of the Challenges that was encountered is the scheduling of the cron jobs for ZGrab. Throughout ZGrab's conducted not all of the original IP addresses that were found in the ZMap scan presented themselves in the ZGrab data this can be contributed to a number of different reasons, One of these is the fact that the college has a number of IP address that are up less than 90\% of the time period for which ZMap scans were conducted as well as ZMap being run every hour on the hour, where as in the original scheduling of ZGrab they were set up to run for every 2 hours on the hour and as a result the hours on either side might have have presented themselves with IP address that are only in those slots. The reason this was done to run every 2 hours was due to ZGrab taking some time to complete a banner grab especially when an IP or domain wasn't up causing ZGrab to wait for a default of 10 seconds before attempting to abandon the connection. Releasing this I decided to reduce the default timeout to 5 seconds as  well as running multiple ZGrabs over smaller list of IPs or domains every hour rather than a single ZGrab being conducted for instance on the either list of IP addresses on port 443 but rather splitting that list of IP addresses on port 443 into 2/3 smaller list with a dedicated ZGrab Script being executed by the crontab. These methods improved the proformance of the ZGrab allowing us to implement more frequent ZGrabs on smaller lists.
 
 \chapter{Results}
@@ -556,7 +563,6 @@ From figure \ref{fig:certExpired} we can see that 18.8\% which is 150 IP address
 
 
 \chapter{Conclusion}
-\cite{turner2014transport} page 62,63
 
 \cite{mendes2008assessing} page 316\\
 
@@ -565,23 +571,22 @@ Within this project I’ve introduced both ZMap a high speed port scanner and ZG
 
 This project has allowed me to gain a deep understanding of the underlying technologies that aim to make the web more secure. Throughout this project I've been able to investigate interesting security topics such POODLE, BEAST and MD5 collisions.\\
 
-The methodologies and design of the scans adopted in this project should allow other institutions and organisations who intend to replicate similar results presented here within their own private network as well as avoiding the challenges incurred in this journey.
+The methodologies and design of the scans adopted in this project should allow other institutions and organisations who intend to replicate similar results presented here within their own private network as well as avoiding the challenges incurred in this journey.\\
+
+With regards to IP addresses on port 443, the version of TLS used and the way it is configured is ultimatley up to the site owners and administrators to ensure that their servers are configured properly the approach taken in this project could be used to identify miss configured servers. For example over time cryptographic algorithms weaken, the methods used within this project could be implemented to locate servers offering weak cipher suites so that the correct configurations can be made. 
 
 \chapter{Future Work}
 While this report has demonstrated the use of ZMap and ZGrab on port 80 and port 443, there are many worthwhile areas of future work that could investigated.\\
 
 Would be beneficial if we could find out the total number of host on port 80 and port 443 from system admins to determine whether or not the scans detecting all host on port 80 and port 443 in order to judge the successfulness of ZMap\\
 
-Looking at the adoption rate of protocols within the college similarly done by \cite{durumeric2013zmap} page 9 and \cite{durumeric2013analysis} page 11.\\
-
-Talk about what I have done could be used as a infrastructure in order for other universities to survey their own web servers as well as maybe having the ability to automate it with alerts being sent out if a certain type of cipher suite is found or old version of TLS is discovered\cite{durumeric2015search} page 5 talks about something similar\\
-
-Scanning IPv6 address space within the college \cite{durumeric2013zmap} page 14\\
-
-Investigate the detection capabilities of ZMap \cite{lee2003detection} page 2\\
+Similarly to research discussed in Related Work \cite{durumeric2013zmap} \cite{durumeric2013analysis} it would be fascinating to see the adoption rate or change over time of IP addresses listening port 80 (HTTP) to ones listening on port 443 (HTTPS). This could carried out by running the scans implemented within this project over a longer time period to see these changes if at all any as well as investigating the possible reasons behind this, for example one reason could be the fact that Google now ranks sites implementing TLS/SSL as higher.\\
 
 
-Along with the point regarding infrastructure deployment I could also make some sort of application around what I have done but giving a score based off of security flaws present, with each Ip/Host getting a score based on how well configured they are \cite{mendes2008assessing} page 315
+This report only detailed scans conducted on port 80 and port 443, in would be interesting to implement scanning on further ports in order to expand the view of activity that is currently on the college network.\\
+
+Further expansion on the code produced within this project could be expanded in other to provide institutions/ organisations an easy to install application that would package the entire design, filtering and graphing of the scans conducted as well as producing daily summaries of the network in terms of number IP addresses listening and also notifying the user of any vulnerabilites or weak cipher suites being used such as servers using null cipher suite for example. This could also be extended to provide a ranking of the most secure web servers and more importantly the most vulnerable by using a weighting system similar to other researches \cite{mendes2008assessing} who have developed metrics for assessing web server which consist of a list of security recommendations that were taken from a set of interviews from security experts. The question of what database to use is a difficult question as discovered through the ZGrab scans that certain JSON objects produced could have a different number of fields, so if a certain field were not accounted for the schema of the database would not be compatible. Within the github of ZGrab \cite{zgrabGithub} there is the schema of all the fields that could be given out in the output of JSON file which could then be parsed with python code similar to what was produced in this project accounting for all the possible fields and then stored in a sqlLite database for example. One problem with this is that it those not take for the account of the possible updates to ZGrab which could involve the changing of the schema produced in the output of the JSON file along with this the creators are currently developing ZGrab 2.0 \cite{zgrab2Github} which will replace the current ZGrab, at the time of writing this report it's unsure at the moment what changes there will be between the two versions. While there doesn't seem to be clear cut solution to implement an application that is scalable, this would be an evaluable en devour.
+
 
 \bibliographystyle{acm}
 \bibliography{reference}

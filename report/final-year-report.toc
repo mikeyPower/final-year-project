@@ -20,8 +20,8 @@
 \contentsline {section}{\numberline {5.4}Challenges}{24}
 \contentsline {chapter}{\numberline {6}Results}{26}
 \contentsline {section}{\numberline {6.1}ZMap Results}{27}
-\contentsline {section}{\numberline {6.2}ZGrab Results}{34}
-\contentsline {chapter}{\numberline {7}Conclusion}{45}
-\contentsline {chapter}{\numberline {8}Future Work}{46}
-\contentsline {chapter}{\numberline {A}A first appendix}{51}
-\contentsline {chapter}{\numberline {B}A sample of the questionnaire form used}{52}
+\contentsline {section}{\numberline {6.2}ZGrab Results}{38}
+\contentsline {chapter}{\numberline {7}Conclusion}{46}
+\contentsline {chapter}{\numberline {8}Future Work}{47}
+\contentsline {chapter}{\numberline {A}A first appendix}{52}
+\contentsline {chapter}{\numberline {B}A sample of the questionnaire form used}{53}

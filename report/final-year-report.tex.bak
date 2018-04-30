@@ -10,6 +10,7 @@
 %\doublespacing
 \linespread{1.5}
 \usepackage{svg}
+\usepackage{float}
 
 \begin{document}
 
@@ -31,7 +32,7 @@
 
 \vspace{80pt}
 
-\textbf{ \Large \emph A Survey of Web Servers in Trinity College Dublin}
+\textbf{ \Large \emph A Survey of Web Servers in\\ Trinity College Dublin}
 
 \vspace{30pt}
 
@@ -345,7 +346,7 @@ present the results of the scans and use them to answer the questions outlined i
 \section{ZMap Results}
 !!!!!!!!!!!!!!!!!FIND PERIODS WHEN SERVER WAS DOWN !!!!!!!!!!!!!!!!!!!!!!!!!
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \includegraphics[scale=.5]{pdf_images/VariationInIpAddressesOnPort80OverTime}
 \caption{a nice plot}
 \label{fig:port80ZMap}
@@ -374,7 +375,7 @@ The ZMap scans took place between the 5th of February at 8pm up until and includ
 
 Another intriguing  point to note is that the count of IP addresses throughout the week is steady, with the number of IP addresses on port 80 (only) rising throughout the weekdays and falling at the weekend.\\
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \includegraphics[scale=.5]{pdf_images/VariationInIpAddressesOnPort443OverTime}
 \caption{a nice plot1}
 \label{fig:port443ZMap}
@@ -386,7 +387,7 @@ From figure \ref{fig:port443ZMap} we can see the failed scan that appeared on th
 
 Another interesting incident that was observed is the drop in the average number of IP addresses from 145 before the server was cut off to to 105 after the server was back up and running.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \includegraphics[scale=.5]{pdf_images/VariationInIpAddressesOnBothPortsOverTime}
 \caption{a nice plot1}
 \label{fig:portsBothZMap}
@@ -396,7 +397,7 @@ From figure \ref{fig:portsBothZMap} we can see a similar trend that was observed
 There is also no dramatic change in the average number of IP addresses being present before and after the server cut off that was seen in figure \ref{fig:port443ZMap}
 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \includegraphics[scale=.5]{pdf_images/IPaddressestoPorts}
 \caption{a nice plot1}
 \label{fig:ports}
@@ -405,7 +406,7 @@ In all there was a total of 1714 unique IP addresses that were seen throughout t
 
 We recorded 511 IP addresses on port 80 alone, followed by 146 IP addresses on port 443 and lastly 1057 IP addresses on Both ports.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \includegraphics[scale=.5]{pdf_images/RegularVsIrregularIPaddresses}
 \caption{a nice plot1}
 \label{fig:portsIrreg}
@@ -417,7 +418,7 @@ IP addresses that are seen 90\% of the time which is 744 from 827 observational 
 The above figure \ref{fig:portsIrreg} shows the comparison between each port category, with a total of 1190 IP addresses being Regular with 336 being on Port 80 (only), 136 on Port 443 (only) and 718 being on Both Ports. Similarly we observed that 524 of the total IP addresses observed in the scans are Irregular, with 175 of those being on Port 80 (only), 10 being on Port 443 (only) and 339 on Both Ports.
 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \includegraphics[scale=.5]{pdf_images/AverageDayinTrinityCollegeDublin}
 \caption{a nice plot1}
 \label{fig:average_day}
@@ -427,14 +428,14 @@ When looking at all the IP addresses on average over a 24 hour period as we can 
 Peak time on Average in the college is 12pm midday with 1311 IP addresses being present
 Off-Peak time are 1 am and 5 am with both counting 1221 IP addresses being present.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \includegraphics[scale=.5]{pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay}
 \caption{a nice plot1}
 \label{fig:irreg_ips}
 \end{figure}
 When analysing the hour that an Irregular IP address has ever been on such as in figure \ref{fig:irreg_ips} we see that at some point over the time of the scans particularly at 3pm there has been 470 of the 524 Irregular IP addresses active at this hour throughout the ZMap scans. On the opposite scale 259 IP addresses have be present at 5am at some point in time over the series of scans conducted. This might lead us to believe that the majority of Irregular IP address occurs at 5pm which is not the case when we look at the individual occurrences in figure \ref{fig:irreg_occurence}.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \includegraphics[scale=.5]{pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage}
 \caption{a nice plot1}
 \label{fig:irreg_occurence}
@@ -474,15 +475,22 @@ From figure \ref{table:2} we can see that the vast majority of occurrences at 1a
 
 \end{figure}
 \section{ZGrab Results}
-\begin{figure}[h!]
+\begin{figure}[H]
 \includegraphics[scale=.5]{pdf_images/ZMapVsZGrab}
+\caption{a nice plot1}
+\label{fig:zmap_vs_zgrab}
 \end{figure}
 
 !!!!!!!!!!!!!!!!!!!!! MIGHT HAVE TO REDO GRAPH ABOVE !!!!!!!!!!!!!!\\
 
+!!!!!!!!!!!!!!!!!!!! Also state how many Irregular IP addresses we gathered !!!!!!!!!!!!!!!!!!!!!!
 
 
-\begin{figure}[h!]
+The ZGrab scans were first conducted on the 2018-03-27 at 18:00 and finishing on 2018-04-23 at 15:00. In total we managed to collect service information of 1497 unique IP addresses. With 442 being only on port 80, 130 being on Port 443 only and 925 being open on both ports. The IP addresses that were open on both ports in the ZMap scans were not always found in our ZGrab scans. Of the 925 IP addresses that are open on both ports 669 of those we managed to collect service information being on port 443, 924 of the 925 IP addresses we managed to collect service information regarding port 80. These results seen in figure \ref{fig:zmap_vs_zgrab} show that not all the IP addresses original scanned in the ZMap scans were present in the ZGrab scans, the main reasons for this were outlined in the Challenges subsection within the Implementation Chapter  
+
+
+
+\begin{figure}[H]
 \includegraphics[scale=.5]{pdf_images/TLSVersionsInTCD}
 \caption{a nice plot1}
 \label{fig:TLS_SSL}
@@ -491,7 +499,7 @@ From figure \ref{table:2} we can see that the vast majority of occurrences at 1a
 Over the course of the banner grabs we have found 3 different versions of TLS/SSL being implemented in the college to provide encryption of data. It turns out that SSL 3.0 is still being used despite the fact that it is inherently broken and suffers from various attacks such as POODLE\cite{holz2015summarizing} \cite{moller2014poodle} and many organisations \cite{ssllabs} advise not to use it  but use TLSv1.2 instead. One of the reasons as to why this old implementation of SSL/TLS is still being used, might be the fact that many legacy web browser such as IE6/XP only support SSL 3.0 and thus switching off support for SSL 3.0 would prevent browsers from working with the site \cite{owaspTLS_SSL}. Next we have TLSv1.0 which is the next version of TLS after SSLv3.0, similar advise is given with regards to the use of TLSv1.0 as it too is also a legacy protocol that suffers from problems such as the BEAST attack\cite{holz2015summarizing} which is an vulnerability in the implementation of the Cipher Block Chaining (CBC) in TLSv1.0. The most secure of the TLS versions found in the college has the greatest number of IP addresses (366) that are using it, to secure their communication. No version of TLS1.1 was ever discovered throughout the ZGrabs.
 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \includegraphics[scale=.5]{pdf_images/signatureAlgorithms}
 \caption{a nice plot1}
 \label{fig:signatureAlgorithms}
@@ -500,7 +508,7 @@ Over the course of the banner grabs we have found 3 different versions of TLS/SS
 One of the more surprising discoveries is the prevalence of MD5 hash function. In total we found 273 unique IP addresses that are using MD5withRSA to sign their certificates. According to the Internet Engineering Task Force MD5 is no longer acceptable where collision resistance is required
 such as digital signatures \cite{turner2011updated} this is due to the fact that MD5 hash functions allows the construction of different messages with the same MD5 hash resulting in a collision \cite{md5}. Along with MD5 being fundamental broken, SHA1 is also now insecure. Both of these signature algorithms in figure \ref{fig:signatureAlgorithms} used to sign certificates account for 63.7\% of 799 IP addresses in the college using unsecured hashing functions.\cite{ssllabs}. With the remaining 290 IP addresses possessing certificates signed with SHA256 which is the recommend signature algorithm to use\cite{ssllabs}.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \includegraphics[scale=.5]{pdf_images/CipherSuitesInTCD}
 \caption{a nice plot1}
 \label{fig:cipherSuites}
@@ -508,7 +516,7 @@ such as digital signatures \cite{turner2011updated} this is due to the fact that
 
 As we can see in figure \ref{fig:cipherSuites} $TLS_RSA_WITH_RC4_128_SHA$ is by far the most widely used cipher suite in the college, even though community at large advise against RC4 cipher suites as the bytes used to encrypt plaintext is not as random as one would hope resulting in attackers being able to exploit the bias in the keystream that encrypyt the plaintext, uncovering previous encrypted plaintext messages \cite{popov2015prohibiting}. The most least wide cipher suite found is  $TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA$ with only a single IP address offering up this in cipher suite to be used.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \includegraphics[scale=.5]{pdf_images/BrowserTrusted}
 \caption{a nice plot1}
 \label{fig:browserTrusted}
@@ -517,11 +525,13 @@ Of the certificates we managed to collect only 133 were browser trusted. Further
  
 
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \includegraphics[scale=.5]{pdf_images/CertificateExpired}
 \caption{a nice plot1}
 \label{fig:certExpired}
 \end{figure}
+
+From figure \ref{fig:certExpired} we can see that 18.8\% which is 150 IP addresses have certificates that are out of date with the most recent certificate expiring in 2018-03-16T15:49:14Z this certificate turned out to be a self signed cert, in terms of certificates that are signed by a CA the most expired on 2018-02-14T15:25:09Z. On the other scale the oldest expired certificates is a self signed cert with it's expire set to 1972-12-31T00:05:01Z, once in terms certs signed by CA the oldest being a cert that expired on 2014-08-01T23:59:59Z. One of the interesting findings in terms of the expired certificates is that there are 17 IP addresses with self signed certificates all of whom have certificate expired on 2007-01-01T00:00:00Z while also having their certificated beginning on the 2002-01-01T00:00:00Z, they also share the same public key length of 1024 bits as well as being signed with MD5withRSA along with the same cipher suite of $TLS_RSA_WITH_RC4_128_SHA$ all of these IP addresses turned out to be web servers of printer devices (print servers) specifically HP printers. What's interesting about this is that these devices could be an example of an employee being in charge of maintaining these devices and on leaving forgetting to mention that they exist. It also shows us that there is a good chance since these certificates haven't been updated that devices themselves could be using out of date software.
 
 
 

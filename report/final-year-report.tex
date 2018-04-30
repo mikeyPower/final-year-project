@@ -166,7 +166,8 @@ TLS or SSL as it may sometimes be referred to is a protocol that allows secure c
 \includegraphics[scale=.5]{images/tls_demo.png}
 \end{center}
 In order for a secure connection to be established the client first sends a \textit{Client Hello} message which includes the version of TLS supported by the client a random byte string that is used for calculations later on in the handshake such as generating the pre-master secret,  along with the list of cipher suites and compression methods in order of the clients preference \cite{tlsDemoServer}. As well as this the client sends an empty session identifier\cite{turner2014transport}.
-The server responds with a \textit{ServerHello} message indicating the version of TLS that will be used along with the appropriate cipher suite, compression method and session Identifier. The server also generates its own random byte string. Next a \textit{Certificate} is sent from the server to the Client whenever the key exchange method uses certificates. This certificate message contains a chain of certificates which the client will use to validate the server says who they say they are. Following this a Server Key Exchange Message is sent if the certificate sent by the server lacks sufficient data for the client to exchange a premaster secret.The Server then sends a \textit{ServerHello Done} message to the Client to signal that the client can now continue with its turn of the key exchange related messages. The Client now sends a \textit{ClientKeyExchange} message to the server which includes the pre-master secret created by the client. Both the Client and the Server send a \textit{ChangeCipherSpec} message to alert each other that all future exchanges within this session will be encrypted with the chosen cipher suite and keys. Finally the Client sends a \textit{Finished} Message to the Server and likewise The Server sends a \textit{Finished } message to the Client, both of theses exchanges are used in order to verify that the key exchange and authentication process were successful as well as indicating that each respective part of the TLS handshake is complete. From this point on all \textit{ApplicationData} exchange between the client and server is protected based on the current connection state \cite{tlsDemoServer}\cite{turner2014transport}
+The server responds with a \textit{ServerHello} message indicating the version of TLS that will be used along with the appropriate cipher suite, compression method and session Identifier. The server also generates its own random byte string. Next a \textit{Certificate} is sent from the server to the Client whenever the key exchange method uses certificates. This certificate message contains a chain of certificates which the client will use to validate the server says who they say they are. Following this a Server Key Exchange Message is sent if the certificate sent by the server lacks sufficient data for the client to exchange a premaster secret.The Server then sends a \textit{ServerHello Done} message to the Client to signal that the client can now continue with its turn of the key exchange related messages. The Client now sends a \textit{ClientKeyExchange} message to the server which includes the pre-master secret created by the client. Both the Client and the Server send a \textit{ChangeCipherSpec} message to alert each other that all future exchanges within this session will be encrypted with the chosen cipher suite and keys. Finally the Client sends a \textit{Finished} Message to the Server and likewise The Server sends a \textit{Finished } message to the Client, both of theses exchanges are used in order to verify that the key exchange and authentication process were successful as well as indicating that each respective part of the TLS handshake is complete. From this point on all \textit{ApplicationData} exchange between the client and server is protected based on the current connection state \cite{tlsDemoServer}\cite{turner2014transport}\\
+
 \section{Port Scanning}
 !!!!!!!!!!!!!!!!!!!!!!!!!GIVE A MENTION TO OTHER SCANNERS NMAP ETC AS THEHER ARE OTHERS OUT THERE!!!!!!!!!!!!!!!\\
 Port scanners are tools that are used to check for devices on open ports, these tools could be used by system administrator to monitor devices on a network or by a malicious party hoping to find vulnerable devices to infect. \\
@@ -236,7 +237,26 @@ Banner grabbing is a technique used to gain information about a device on a netw
 
 ZGrab is one such banner grabber implemented in go that allows user to perform various application handshakes for a number of different protocols such as HTTP, HTTPS, SSH as well as SMTP to name a few. ZGrab connects to the host by opening up a TCP connection. ZGab outputs the information in raw JSON format retrieving all the information about the connection handshake such as SSL/TLS information as well as response codes.\cite{durumeric2015search}
 
-For example When performing a TLS handshake with a host, ZGrab offers the cipher suites implemented by the Golang TLS library and logs the chosen cipher suite\cite{durumeric2015search} rather than using the chosen cipher suite of the source machine performing the ZGrab . ZGrab can be also be used inconjuction with ZMap to grab information simultaneous while a host being scanned or independently of ZMap by passing the host directly into ZGrab. Instructions are passed to ZGrab much in the same way of ZMap via a command line interface (CLI)
+For example When performing a TLS handshake with a host, ZGrab offers the cipher suites implemented by the Golang TLS library and logs the chosen cipher suite\cite{durumeric2015search} rather than using the chosen cipher suite of the source machine performing the ZGrab . ZGrab can be also be used inconjuction with ZMap to grab information simultaneous while a host being scanned or independently of ZMap by passing the host directly into ZGrab. Instructions are passed to ZGrab much in the same way of ZMap via a command line interface (CLI).\\
+
+In terms of the actual banner grab there are a number of aspects of a web server that we are interested in when we conduct are ZGrab application layer scans in order to see the contrast and similarities the underlying information of the web Servers are to each other scans they are as follows:
+
+\begin{itemize}
+  \item Ciphersuite being used to provide encryption of data between the client and server.
+  \item Key Exchange Method used to exchanged cryptographic keys between the client and server.
+  \item TLS/SSL verison being used to provide secure communication between the client and server.
+  \item The Public Key of the Web server embedded in the certificate.
+  \item The length of the Public Key.
+  \item Certificate start and end date.
+  \item the Signature Algorithm used to sign the certificate.
+  \item If the Certificate is self signed or not.
+  A self signed certificate is a Certificate that has not been Issued and signed by a Certificate Authority rather the issuer who has created the certificate has signed it themselves with their own private key \cite{housley1998internet}.
+  \item Browser Trusted field to see if the certificate is verified by the browser. This is done by the browser who attempts to build a chain of trust from the certificate to a root certificate on the client. The root trust store on the client contains a set of root certificates from trusted CAs to validate against. The browser also checks that the certificate has the correct hostname and the certificate has not become expired \cite{acer2017wild}. If at any point there is a failure in the validation process, this means that the browser is unsure of who the proper identity of the server actually is. 
+  \item The Status code and Reason Phrase, The status code itself is a three digit integer that is received by the client as a response from the server, the phrase is a short description for the user \cite{fielding1999hypertext} \cite{berners1996hypertext}
+  \item HTML body of the web server's root page
+  
+ 
+\end{itemize}
 
 
 \chapter{Related Work}
@@ -538,8 +558,18 @@ From figure \ref{fig:certExpired} we can see that 18.8\% which is 150 IP address
 \chapter{Conclusion}
 \cite{turner2014transport} page 62,63
 
-\cite{mendes2008assessing} page 316
+\cite{mendes2008assessing} page 316\\
+
+This project investigates the state of Web Servers within Trinity College Dublin. 
+Within this project I’ve introduced both ZMap a high speed port scanner and ZGrab an application banner grabber. I’ve also showed how these applications can be used to effectively answers questions regarding the current state of web servers within TCD such as to what was presented here in Chapter 1.\\
+
+This project has allowed me to gain a deep understanding of the underlying technologies that aim to make the web more secure. Throughout this project I've been able to investigate interesting security topics such POODLE, BEAST and MD5 collisions.\\
+
+The methodologies and design of the scans adopted in this project should allow other institutions and organisations who intend to replicate similar results presented here within their own private network as well as avoiding the challenges incurred in this journey.
+
 \chapter{Future Work}
+While this report has demonstrated the use of ZMap and ZGrab on port 80 and port 443, there are many worthwhile areas of future work that could investigated.\\
+
 Would be beneficial if we could find out the total number of host on port 80 and port 443 from system admins to determine whether or not the scans detecting all host on port 80 and port 443 in order to judge the successfulness of ZMap\\
 
 Looking at the adoption rate of protocols within the college similarly done by \cite{durumeric2013zmap} page 9 and \cite{durumeric2013analysis} page 11.\\

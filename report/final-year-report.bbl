@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{berners1996hypertext}
+{\sc Berners-Lee, T., Fielding, R., and Frystyk, H.}
+\newblock Hypertext transfer protocol--http/1.0.
+\newblock Tech. rep., 1996.
+
 \bibitem{conallen1999modeling}
 {\sc Conallen, J.}
 \newblock Modeling web application architectures with uml.
@@ -38,10 +43,22 @@
 {\sc Durumeric, Z., Wustrow, E., and Halderman, J.~A.}
 \newblock Zmap, https://github.com/zmap/zmap/blob/master/readme.md.
 
+\bibitem{fielding1999hypertext}
+{\sc Fielding, R., Gettys, J., Mogul, J., Frystyk, H., Masinter, L., Leach, P.,
+  and Berners-Lee, T.}
+\newblock Hypertext transfer protocol--http/1.1.
+\newblock Tech. rep., 1999.
+
 \bibitem{holz2015summarizing}
 {\sc Holz, R., Sheffer, Y., and Saint-Andre, P.}
 \newblock Summarizing known attacks on transport layer security (tls) and
   datagram tls (dtls).
+
+\bibitem{housley1998internet}
+{\sc Housley, R., Ford, W., Polk, W., and Solo, D.}
+\newblock Internet x. 509 public key infrastructure certificate and crl
+  profile.
+\newblock Tech. rep., 1998.
 
 \bibitem{kondo2014penetration}
 {\sc Kondo, T.~S., and Mselle, L.~J.}

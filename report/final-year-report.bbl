@@ -18,6 +18,12 @@
 \newblock Modeling web application architectures with uml.
 \newblock {\em Communications of the ACM 42}, 10 (1999), 63--70.
 
+\bibitem{cotton2011internet}
+{\sc Cotton, M., Eggert, L., Touch, J., Westerlund, M., and Cheshire, S.}
+\newblock Internet assigned numbers authority (iana) procedures for the
+  management of the service name and transport protocol port number registry.
+\newblock Tech. rep., 2011.
+
 \bibitem{dierks2014transport}
 {\sc Dierks, T.}
 \newblock The transport layer security (tls) protocol version 1.3.
@@ -76,6 +82,12 @@
   profile.
 \newblock Tech. rep., 1998.
 
+\bibitem{khan2016transport}
+{\sc Khan, I.~U., and Hassan, M.~A.}
+\newblock Transport layer protocols and services.
+\newblock {\em International Journal of Research in Computer and Communication
+  Technology, IJRCCT 5\/} (2016).
+
 \bibitem{kondo2014penetration}
 {\sc Kondo, T.~S., and Mselle, L.~J.}
 \newblock Penetration testing with banner grabbers and packet sniffers.
@@ -94,6 +106,12 @@
   attacks using zmap of censys engine.
 \newblock In {\em Information and Communication Technology Convergence (ICTC),
   2016 International Conference on\/} (2016), IEEE, pp.~681--683.
+
+\bibitem{lyon2009nmap}
+{\sc Lyon, G.~F.}
+\newblock {\em Nmap network scanning: The official Nmap project guide to
+  network discovery and security scanning}.
+\newblock Insecure, 2009.
 
 \bibitem{matplotlib}
 {\sc matplotlib}.
@@ -123,6 +141,10 @@
 {\sc Popov, A.}
 \newblock Prohibiting rc4 cipher suites.
 \newblock {\em Computer Science 2355\/} (2015), 152--164.
+
+\bibitem{rescorla2000http}
+{\sc Rescorla, E.}
+\newblock Http over tls.
 
 \bibitem{socket}
 {\sc socket}.

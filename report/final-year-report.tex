@@ -159,10 +159,23 @@ Web servers are one of components that make up the overall web-application archi
 Communication between between a web server and a clients browser is done typical through a protocol called Hyper Text Transfer Protocol or HTTP for short. The general way in which a Client initiates communication between a web server is through a Web Browser such as Chrome or Firefox, The browser sends a request to the web sever of some resource typically a web page or some other file type, if the resource doesn't exist an error is returned to the client, generally in the form of a 404 or some other status code. As well as handling request, the server may sometimes be required to handle processing of forms inputted by the client\cite{conallen1999modeling}. Almost any device that is connected to the Internet can host a web server, such as a printer or mobile phone. \\
 
 Web servers play a significant role in terms of the overall workings of web applications and security issues relating to web servers can come in a number of ways such as being incorrectly configured\cite{mendes2008assessing} along with lack of privilege management.
+\section{Port}
+Port numbers are the original and most extensively used means for application and service identification on the Internet. Ports are 16-bit numbers, and the combination of source and destination port umbers together with the IP addresses of the communicating end systems uniquely identifies a session of a given transport protocol \cite{cotton2011internet} such as TCP(Transmission control protocol) which provides reliability and safety of packets sent  or UDP (User Datagram Protocol) unlike TCP does not gurentee delivery of packets, this is widely used in streaming of videos. \cite{khan2016transport}. Some Port numbers are also known by their associated service names or protocol used for the communication such as "https" for port number 443 and "http" (as well as "www" and "www-http") for port number 80. In total you there are 65535 ports with Port 0 being reserved. There are three distinct ranges of Port numbers:
+
+\begin{itemize}
+\item the System Ports, also known as the Well Known Ports, from 0-1023
+      (assigned by IANA)
+\item the User Ports, also known as the Registered Ports, from 1024-
+      49151 (assigned by IANA)
+\item the Dynamic Ports, also known as the Private or Ephemeral Ports,
+      from 49152-65535 (never assigned)
+\end{itemize}
+\section{HTTP and HTTPS}
+The Hypertext transfer Protocol (HTTP) is application layer protocol most commonly associated with the world wide web ("www"). HTTP connections are made on Port 80, HTTP does not encrypt the data that is exchanged between the client and server \cite{fielding1999hypertext}. This is solved with HTTPS or HTTP over TLS which provides a secure session between the client and server encrypting the data exchange between the two parties \cite{rescorla2000http}. 
+
+
+
 \section{Transport Layer Security}
-!!!!!!!!!!!!!!!TALK ABOUT THE THINGS WE ARE LOOKING FOR IN THE TLS, CIPHER SUITE, VERSION ETC!!!!!!!!!!!!!!!\\
-
-
 TLS or SSL as it may sometimes be referred to is a protocol that allows secure communication between a client and server over the Internet, which is typically between a Browser and Web Server. Over the years there have been many versions of TLS/SSL implementations, the first being in 1994 when Netscape developed SSL 1.O however this was never released publicly as it was vulnerable to replay attack\cite{turner2014transport}. This drove the development of SSL 2.0 in 1995, but along with its predecessor it too had problems. Then in 1996 SSL 3.0 was distributed to combat the issues with SSL 2.0 gaining a large popularity in the process \cite{turner2014transport}. In mid 1996 development of these protocols moved to the Internet Engineering Task Force and so too did the name of the protocol changing from SSL to TLS. To date there have been four releases of TLS with TLSv1 being released in 1999, TLSv1.1 in 2006, TLSv1.2 in 2008\cite{turner2014transport} and in 2014 a draft of TLSv1.3 was developed
  \cite{dierks2014transport}.\\
  \begin{center}
@@ -172,8 +185,8 @@ In order for a secure connection to be established the client first sends a \tex
 The server responds with a \textit{ServerHello} message indicating the version of TLS that will be used along with the appropriate cipher suite, compression method and session Identifier. The server also generates its own random byte string. Next a \textit{Certificate} is sent from the server to the Client whenever the key exchange method uses certificates. This certificate message contains a chain of certificates which the client will use to validate the server says who they say they are. Following this a Server Key Exchange Message is sent if the certificate sent by the server lacks sufficient data for the client to exchange a premaster secret.The Server then sends a \textit{ServerHello Done} message to the Client to signal that the client can now continue with its turn of the key exchange related messages. The Client now sends a \textit{ClientKeyExchange} message to the server which includes the pre-master secret created by the client. Both the Client and the Server send a \textit{ChangeCipherSpec} message to alert each other that all future exchanges within this session will be encrypted with the chosen cipher suite and keys. Finally the Client sends a \textit{Finished} Message to the Server and likewise The Server sends a \textit{Finished } message to the Client, both of theses exchanges are used in order to verify that the key exchange and authentication process were successful as well as indicating that each respective part of the TLS handshake is complete. From this point on all \textit{ApplicationData} exchange between the client and server is protected based on the current connection state \cite{tlsDemoServer}\cite{turner2014transport}\\
 
 \section{Port Scanning}
-!!!!!!!!!!!!!!!!!!!!!!!!!GIVE A MENTION TO OTHER SCANNERS NMAP ETC AS THEHER ARE OTHERS OUT THERE!!!!!!!!!!!!!!!\\
-Port scanners are tools that are used to check for devices on open ports, these tools could be used by system administrator to monitor devices on a network or by a malicious party hoping to find vulnerable devices to infect. \\
+
+Port scanners are tools that are used to check for devices on open ports, these tools could be used by system administrator to monitor devices on a network or by a malicious party hoping to find vulnerable devices to infect.\\
 There are three main grades of port scans.
 \begin{enumerate}
 \item\textbf{Vertical Scans:}
@@ -183,6 +196,8 @@ The horizontal scan is one in which a single port is scanned against multiple ho
 \item\textbf{Block Scans:}
 The Block scan is a combination of vertical and horizontal scans.\cite{lee2003detection}
 \end{enumerate}
+
+There are a number Port Scanning tools that are widely available such as Nmap \cite{lyon2009nmap}, within in this project we exclusively use ZMap \cite{durumeric2013zmap} to conduct the Port scans.
 \subsection{ZMap}
 !!!!!!!!!!!!!!!REFERENCE UDP, BACKNET ANYTHING THAT IS NOT OBVIOUS FOR FURTHER CLARIFICATION OR ANYTHING THAT IS GOING TO BE TALKED ABOUT IN THE RESULTS!!!!!!!!!!!!!\\
 
@@ -499,6 +514,10 @@ From figure \ref{table:2} we can see that the vast majority of occurrences at 1a
 !!!!!!!!!!!!!!!!!!!!!!RE DO IPS TO HOSTNAME PIECHART !!!!!!!!!!!!!!!!!!!!
 \begin{figure}[h!]
 \includegraphics[scale=.5]{pdf_images/IpstoHostname}
+
+
+
+
 
 \end{figure}
 \section{ZGrab Results}

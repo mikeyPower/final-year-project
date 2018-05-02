@@ -13,8 +13,8 @@
 \contentsline {subsection}{\numberline {2.6.1}ZGrab}{14}
 \contentsline {chapter}{\numberline {3}Related Work}{17}
 \contentsline {chapter}{\numberline {4}Design}{22}
-\contentsline {section}{\numberline {4.1}Overview}{22}
-\contentsline {section}{\numberline {4.2}Ethics}{23}
+\contentsline {section}{\numberline {4.1}Overview}{23}
+\contentsline {section}{\numberline {4.2}Ethics}{24}
 \contentsline {chapter}{\numberline {5}Implementation}{25}
 \contentsline {section}{\numberline {5.1}Technologies Used}{25}
 \contentsline {section}{\numberline {5.2}ZMap Implementation}{26}
@@ -36,5 +36,5 @@
 \contentsline {subsection}{\numberline {6.2.8}Categorizing the Servers}{54}
 \contentsline {chapter}{\numberline {7}Conclusion}{56}
 \contentsline {chapter}{\numberline {8}Future Work}{58}
-\contentsline {chapter}{\numberline {A}A first appendix}{66}
-\contentsline {chapter}{\numberline {B}A sample of the questionnaire form used}{67}
+\contentsline {chapter}{\numberline {A}A first appendix}{67}
+\contentsline {chapter}{\numberline {B}A sample of the questionnaire form used}{68}

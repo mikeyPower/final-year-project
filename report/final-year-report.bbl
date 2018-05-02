@@ -50,6 +50,13 @@
 \newblock An internet-wide view of internet-wide scanning.
 \newblock In {\em USENIX Security Symposium\/} (2014), pp.~65--78.
 
+\bibitem{durumeric2014matter}
+{\sc Durumeric, Z., Kasten, J., Adrian, D., Halderman, J.~A., Bailey, M., Li,
+  F., Weaver, N., Amann, J., Beekman, J., Payer, M., et~al.}
+\newblock The matter of heartbleed.
+\newblock In {\em Proceedings of the 2014 Conference on Internet Measurement
+  Conference\/} (2014), ACM, pp.~475--488.
+
 \bibitem{durumeric2013analysis}
 {\sc Durumeric, Z., Kasten, J., Bailey, M., and Halderman, J.~A.}
 \newblock Analysis of the https certificate ecosystem.
@@ -195,6 +202,10 @@
 {\sc ssllabs}.
 \newblock Transport layer protection cheat
   sheet,https://github.com/ssllabs/research/wiki/ssl-and-tls-deployment-best-practices.
+
+\bibitem{top20161}
+{\sc Top, A.}
+\newblock 1,000,000 sites, 2016.
 
 \bibitem{turner2014transport}
 {\sc Turner, S.}

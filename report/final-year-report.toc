@@ -21,9 +21,9 @@
 \contentsline {section}{\numberline {5.3}ZGrab Implementation}{27}
 \contentsline {section}{\numberline {5.4}Challenges}{28}
 \contentsline {chapter}{\numberline {6}Results}{30}
-\contentsline {section}{\numberline {6.1}ZMap Results}{31}
+\contentsline {section}{\numberline {6.1}ZMap Results}{32}
 \contentsline {subsection}{\numberline {6.1.1}Variation In IP addresses}{32}
-\contentsline {subsection}{\numberline {6.1.2}Port Distribution}{36}
+\contentsline {subsection}{\numberline {6.1.2}Port Distribution}{37}
 \contentsline {subsection}{\numberline {6.1.3}Domain Names}{42}
 \contentsline {section}{\numberline {6.2}ZGrab Results}{43}
 \contentsline {subsection}{\numberline {6.2.1}Response Codes}{44}

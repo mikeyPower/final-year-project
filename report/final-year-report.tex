@@ -379,13 +379,10 @@ Another result comparison could be seeing sites vulnerable to FREAK Attack \cite
 vandersloot2016toward7\\
 
 
-In this section we will
-present the results of the scans and use them to answer the questions outlined in section 1, in order to better understand the state of Web Servers in the college.
+This Chapter we present the results of the scans and use them to answer the questions outlined in section 1, in order to better understand the state of Web Servers in the college.
 
 
 \section{ZMap Results}
-!!!!!!!!!!!!!!!!!FIND PERIODS WHEN SERVER WAS DOWN !!!!!!!!!!!!!!!!!!!!!!!!!
-
 
 \subsection{Variation In IP addresses}
 \begin{figure}[H]
@@ -395,26 +392,9 @@ present the results of the scans and use them to answer the questions outlined i
 \label{fig:port80ZMap}
 \end{figure}
 
-The ZMap scans took place between the 5th of February at 8pm up until and including the 26th of March at 6pm. However as we can see in figure \ref{fig:port80ZMap} during the periods
-02-03-2018  up until 16-03-2018 no scans were detected as this was during the snow period which caused a power cut in the college, downing  Stephen's Server that was conducting the ZMap Scans on both Port 80 and 443. In absence of this there was a total of 827 observational periods in which the ZMap scans took place. We can also see in figure \ref{fig:port80ZMap} an exceptional high count of 1116 IP addresses was recorded on the 13th of February at 1am (2018-02-13T01), this high count was due to an unknown failure of the ZMap scan on port 443, as within this observational slice there were no subsequent IP addresses on port 443 to compare against.
-\begin{table}
-\centering
-\begin{tabular}{||c c c c ||}
- \hline
-  & Port 80 (only) & Port 443 (only) & Both Ports \\ [0.5ex]
- \hline\hline
- Monday & 367 & 383 & 377  \\
- Tuesday & 378 & 383 & 377 \\
- Wednesday & 377 & 383 & 377 \\
- Thursday & 372 & 383 & 377  \\
- Friday & 383 & 383 & 377 \\
- Saturday & 352 & 383 & 377\\
- Sunday & 349 & 383 & 377\\[1ex]
- \hline
-\end{tabular}
-\caption{Average Number of IP addresses across week}
-\label{table:1}
-\end{table}
+The ZMap scans took place between the 5th of February at 8pm up until and including the 26th of March at 6pm when the last scan occurred. However as we can see in figure \ref{fig:port80ZMap} between
+2nd of March at 2am, 2018  up until the 16th of March at 12am, 2018 no scans were detected this was partly due to extreme weather which caused a power cut in the college, downing server that was conducting the ZMap Scans on both Port 80 and 443, the scans were resumed on 16th of March at 1am. In absence of this period there was a total of 827 observational periods in which the ZMap scans took place. An exceptional high count of 1116 IP addresses was recorded on the 13th of February at 1am as seen in figure \ref{fig:port80ZMap}, this high count was due to an unknown failure of the ZMap scan on port 443 at the same time, as within this observational slice there were no subsequent IP addresses on port 443 to compare against thus all those found were only seen on port 80.
+
 
 Another intriguing  point to note is that the count of IP addresses throughout the week is steady, with the number of IP addresses on port 80 (only) rising throughout the weekdays and falling at the weekend.\\
 
@@ -427,9 +407,7 @@ Another intriguing  point to note is that the count of IP addresses throughout t
 
 
 
-From figure \ref{fig:port443ZMap} we can see the failed scan that appeared on the 13th of Feburary at 1am which lead to the overly high count of IP addresses on port 80 (only) for this observational slice.
-
-Another interesting incident that was observed is the drop in the average number of IP addresses from 145 before the server was cut off to to 105 after the server was back up and running.
+From figure \ref{fig:port443ZMap} the failed scan that appeared on the 13th of Feburary at 1am which lead to the overly high count of IP addresses on port 80 (only) for this observational slice can be seen. As the scan period edged nearer the second half of the term an obvious drop in the average number of IP addresses from 145 before the server was cut off to to 105 after the server was back up and running.
 
 \begin{figure}[H]
 \centering
@@ -437,9 +415,38 @@ Another interesting incident that was observed is the drop in the average number
 \caption{a nice plot1}
 \label{fig:portsBothZMap}
 \end{figure}
-From figure \ref{fig:portsBothZMap} we can see a similar trend that was observed in the figure \ref{fig:port80ZMap} with a higher number of IP addresses being present throughout the weekday and falling at the weekend.\\
+From figure \ref{fig:portsBothZMap} there is a similar trend that was observed in the figure \ref{fig:port80ZMap} with a higher number of IP addresses being present throughout the weekday where possible student projects are running along with other servers used for different purposes such as printers and falling at the weekend when these machines are possible powered off. There is no dramatic change in the average number of IP addresses being present before and after the server cut off that was seen in figure \ref{fig:port443ZMap}.
 
-There is also no dramatic change in the average number of IP addresses being present before and after the server cut off that was seen in figure \ref{fig:port443ZMap}
+\begin{table}[H]
+\centering
+\begin{tabular}{||c c c c ||}
+ \hline
+  & Port 80 (only) & Port 443 (only) & Both Ports \\ [0.5ex]
+ \hline\hline
+ Monday & 367 & 129 & 759  \\
+ Tuesday & 378 & 136 & 776 \\
+ Wednesday & 377 & 136 & 749 \\
+ Thursday & 372 & 135 & 772  \\
+ Friday & 383 & 130 & 766 \\
+ Saturday & 352 & 127 & 732\\
+ Sunday & 349 & 126 & 732\\[1ex]
+ \hline
+\end{tabular}
+\caption{Average Number of IP addresses across week}
+\label{table:1}
+\end{table}
+
+An average number of IP addresses on each port is presented in table \ref{table:1} with Tuesday seeing the highest activity than any other day in the week, with Sunday containing the lowest count of IP addresses on average.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.5]{pdf_images/AverageDayinTrinityCollegeDublin}
+\caption{a nice plot1}
+\label{fig:average_day}
+\end{figure}
+When taking a look at all the IP addresses on average over a 24 hour period as we can see in figure \ref{fig:average_day} there is a large count of IP addresses between 11am to 4pm period. Peak time on average in the college is 12pm midday with 1311 IP addresses being present
+Off-Peak time are 1 am and 5 am with both counting 1221 IP addresses being present on average.
+ 
 
 \subsection{Port Distribution}
 \begin{figure}[H]
@@ -448,9 +455,7 @@ There is also no dramatic change in the average number of IP addresses being pre
 \caption{a nice plot1}
 \label{fig:ports}
 \end{figure}
-In all there was a total of 1714 unique IP addresses that were seen throughout the ZMap scans, from figure \ref{fig:ports} we can see a breakdown of the 3 main categories of IP addresses Port 80 (only) which are IP addresses that are were only observed on Port 80 and no other port, Port 443 which were IP addresses only observed on Port 443 and no other port, and finally Both Ports which consisted of IP addresses that were on both Port 80 and 443 at some point throughout the ZMap scans.\\
-
-We recorded 511 IP addresses on port 80 alone, followed by 146 IP addresses on port 443 and lastly 1057 IP addresses on Both ports.
+In all there was a total of 1714 unique IP addresses that were seen throughout the ZMap scans, from figure \ref{fig:ports} there was a recorded 511 IP addresses on port 80 alone, followed by 146 IP addresses on port 443 and lastly 1057 IP addresses on Both ports.
 
 \begin{figure}[H]
 \centering
@@ -459,22 +464,10 @@ We recorded 511 IP addresses on port 80 alone, followed by 146 IP addresses on p
 \label{fig:portsIrreg}
 \end{figure}
 
-From the scans (figure \ref{fig:average_day}) we noticed a number of irregularities in terms of the number of IP addresses that would be up at any given hour, to investigate this aspect of the data we decided to filter the IP addresses in terms of those that are regular which in our case is
-IP addresses that are seen 90\% of the time which is 744 from 827 observational slots. Everything else is consider an Irregular IP address.
+From figure \ref{fig:average_day} there were noticeable irregularities in terms of the number of IP addresses that were up at any given hour, to investigate this aspect of the data, a further parameter was introduced to filter the IP addresses in terms of those that are regular which in this case is
+IP addresses that are seen 90\% of the time of the total observational periods (744 from 827 observational slots). Everything that falls below this were consider an Irregular IP address.\\
 
-The above figure \ref{fig:portsIrreg} shows the comparison between each port category, with a total of 1190 IP addresses being Regular with 336 being on Port 80 (only), 136 on Port 443 (only) and 718 being on Both Ports. Similarly we observed that 524 of the total IP addresses observed in the scans are Irregular, with 175 of those being on Port 80 (only), 10 being on Port 443 (only) and 339 on Both Ports.
-
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=.5]{pdf_images/AverageDayinTrinityCollegeDublin}
-\caption{a nice plot1}
-\label{fig:average_day}
-\end{figure}
-When looking at all the IP addresses on average over a 24 hour period as we can see in figure \ref{fig:average_day} there is a large count of IP addresses between 11am to 4pm
-
-Peak time on Average in the college is 12pm midday with 1311 IP addresses being present
-Off-Peak time are 1 am and 5 am with both counting 1221 IP addresses being present.
+The above figure \ref{fig:portsIrreg} shows the comparison between each port category, with a total of 1190 IP addresses being Regular. This breaks down into 336 being on Port 80 (only), 136 on Port 443 (only) and 718 being on Both Ports. Similarly with Irregular IP addresses totaling 524, with 175 of those being on Port 80 (only), 10 being on Port 443 (only) and 339 on Both Ports.
 
 \begin{figure}[H]
 \centering
@@ -482,7 +475,7 @@ Off-Peak time are 1 am and 5 am with both counting 1221 IP addresses being prese
 \caption{a nice plot1}
 \label{fig:irreg_ips}
 \end{figure}
-When analysing the hour that an Irregular IP address has ever been on such as in figure \ref{fig:irreg_ips} we see that at some point over the time of the scans particularly at 3pm there has been 470 of the 524 Irregular IP addresses active at this hour throughout the ZMap scans. On the opposite scale 259 IP addresses have be present at 5am at some point in time over the series of scans conducted. This might lead us to believe that the majority of Irregular IP address occurs at 5pm which is not the case when we look at the individual occurrences in figure \ref{fig:irreg_occurence}.
+When analysing the hour that an Irregular IP address has ever been active on such as in figure \ref{fig:irreg_ips} at some point over the time of the scans particularly at 3pm there has been 470 of the 524 Irregular IP addresses active at some point this hour throughout the entire ZMap scans. On the opposite scale 259 IP addresses have be present at 5am at some point in time over the series of scans conducted. This might lead us to believe that the majority of Irregular IP addresses appear at 5pm which is not the case when investigating the total Irregular occurrences as seen in figure \ref{fig:irreg_occurence}.
 
 \begin{figure}[H]
 \centering
@@ -490,7 +483,7 @@ When analysing the hour that an Irregular IP address has ever been on such as in
 \caption{a nice plot1}
 \label{fig:irreg_occurence}
 \end{figure}
-When counting each occurence of an IP address on either port we see in figure \ref{fig:irreg_occurence} that there is a large discrepancy between the number of occurrence of an IP and the hour that each IP appears. For example we see in figure \ref{fig:irreg_occurence} that the number of occurrences that happen at 1am is 16014 where as at 3pm, 8777 occurrences have taken place throughout the ZMap scanning period which is the second largest number of occurrences. This large difference on further inspection of the data is due to 27 Unique IP address of which only 10 were on port 80 (only), 1 on port 443 (only) and 16 on both ports.
+When counting each occurrence of an Irregular IP address on either port we see in figure \ref{fig:irreg_occurence} that there is a large discrepancy between the number of occurrence of an IP and the hour that each IP appears. For example we see in figure \ref{fig:irreg_occurence} that the number of occurrences that happen at 1am is 16014 where as at 3pm, 8777 occurrences have taken place throughout the ZMap scanning period which is the second largest number of occurrences. This large difference on further inspection of the data is due to 27 Unique IP address of which only 10 were on port 80 (only), 1 on port 443 (only) and 16 on both ports.
 
 
 

@@ -310,56 +310,52 @@ As we can see from figure \ref{fig:design} in section 1 highlighted in blue,
 the design of the scans consisted of two horizontal set of scans on port 80 and port 443 that would run every hour being executed by a scheduler. After this, the analysis of the raw data outputted by ZMap would take place next within section 2 in green. Once discovered which IP addresses were listening on which Port along with what IP addresses had an associated host name by doing a reverse DNS lookup in order for the ZGrab scans with the domain lookup option enabled to be conducted. Once the data was sufficiently analysed for the purpose of ZGrab scans, 4 sets of ZGrab scans were carried out, these consisted of a ZGrab domain lookup on port 80, a ZGrab domain lookup on port 443, IP ZGrab scan on port 80 as well as port 443 as seen in section 3 of figure \ref{fig:design}. Lastly the output of the ZGrab scans would be analysed looking for certain fields that would be of interest as outlined in Chapter 2.
 
 \section{Ethics}
-As with any type of scanning work that is being conducted, there are a number of ethical considerations to be aware included how the scans should be conducted. We informed the system administrators within the college, stating the intent of the scans that we were conducting. We also decided to limit the port that would be scanned to port 80 and port 443 to limit the strain that the scans could potentionally have on the network. While there are no codes of conduct as of yet in relation to scanning network, the creators of ZMap offer a few useful best practice guidelines when performing scans\cite{durumeric2015search}  \cite{durumeric2013zmap}.\\
+As with any type of scanning work that is being conducted, there are a number of ethical considerations to be aware, including how the scans should be conducted and who to inform of there existence. Prior to scanning we informed the system administrators within the college, stating the intent of the scans that were being conducted. We also decided to limit the number of ports that would be scanned to just port 80 and port 443 as a measure of precaution that the scans could potentially have the strain on the network. While there are no codes of conduct as of yet in relation to network scanning, the creators of ZMap offer a few useful best practice guidelines when performing such scans\cite{durumeric2015search} \cite{durumeric2013zmap}.\\
 
-Another consideration to account for is the releasing of data, since the majority of hosts are not publicly visible, for this reason no individual IP addresses are released in the report.
+Another consideration to account for is the releasing of data, since the majority of IP addresses are not publicly visible and to keep anonymity no individual IP addresses or domain names are released in this report.
 \chapter{Implementation}
-
-!!!!!!!!!!!!!!!put in Github link in this section!!!!!!!!!!!!!!!\\
-
-This chapter will cover the implementation of the scans and banner grabs conducted in this project
+This chapter will cover the implementation of the scans conducted within Trinity College Dublin. It will also give useful information to help others understand the challenges that occurred throughout this project, so others carrying out future scanning projects can avoid. All the code used can be found at the github account attached \cite{michaelGithub}.
 \section{Technologies Used}
-The majority of this project was implemented in Python and Shell scripts, here I list the main technologies used:
+The majority of this project was implemented in Python and Shell scripts, here are a list of the main technologies used:
 \begin{itemize}
-  \item ZMap as discussed earlier is a port scanner that finds IP addresses listening on a port by searching an IP/IP range against the desired port.
+  \item ZMap as discussed earlier is a port scanner that finds IP addresses listening on a port by searching either a single IP or range of IP addresses against the desired port.
   \item ZGrab is used to perform the banner grabs of the IP addresses found.
-  \item Crontab was used to automate/schedule both the ZMap and ZGrab.
-  \item The majority of Python code was used to analyse and sort the data , as well leverage some libraries with python such as the socket library \cite{socket} to perform both DNS and reverse DNS lookup.
+  \item Crontab was used to automate/schedule both the ZMap and ZGrab scans.
+  \item The majority of Python code was used to analyse and sort the data, as well leverage some libraries with python such as the socket library \cite{socket} to perform both DNS and reverse DNS lookup.
   \item Shell Scripts programmes were used to package ZMap and ZGrab in order for it to run with crontab.
-  \item Matplotlib \cite{matplotlib} is a python library used to plot the graphs in this report.
+  \item Matplotlib \cite{matplotlib} is a python 2D plotting library used to generate the graphs in this report.
 \end{itemize}
 
 \section{ZMap Implementation}
 In order to implement the ZMap scans as discussed in the design in Chapter 4, I packaged ZMap within a Shell Script that would be set to run every hour on the hour by crontab which is a time based Scheduler in linux. The ouput of the two ZMap scans would be appended to a csv file lying in the server.\\
 
-To differentiate which IP addresses were listening on to one or more ports I created a python programme to find what IP addresses were listening on Port 80 and which IP addresses were listening on Port 443 doing this I was able to get the intersection of the Two to determine the number that were listening on both Ports. The way in which I found out which IP addresses were actually listening to only port 80, port 443 and which were listening to both ports I used a key value dictionary to determine this with the key being the IP address and value being a list of Ports that particular IP address was one for example an IP address that was listening to only port 80 would have a value of [‘80’] likewise for an IP address that was only listening to port 443 would have a value of [‘443’] and for an IP address that was on Both ports would have a value of [‘80’,’443’] .
+To differentiate which IP addresses were listening on to one or more ports I created a python programme to find what IP addresses were listening on Port 80 and which IP addresses were listening on Port 443 doing this I was able to get the intersection of the two sets to determine the number of IP addresses that were listening on both Ports. The way in which I found out which IP addresses were actually listening to only port 80, port 443 and which were listening to both ports I used a key value dictionary to determine this with the key being the IP address and value being a list of Ports that particular IP address was one for example an IP address that was listening to only port 80 would have a value of [‘80’] likewise for an IP address that was only listening to port 443 would have a value of [‘443’] and for an IP address that was on Both ports would have a value of [‘80’,’443’] .
 
-In order to determine what IP address resolved to hostname in order to do a ZGrab with a domain to determine if there where any different Certificate Alt names between the IP lookup and its corresponding Domain Name. To implement this I used the socket library within python to do a reverse DNS lookup to obtain the hostnames.\\
+In order to determine what IP address resolved to a hostname so as too do a ZGrab with a domain lookup to determine if there where any different Certificate Alt names between the IP lookup result and its corresponding Domain Name lookup result. To implement this the socket library within python provided the capabilities too implement a reverse DNS lookup to obtain the hostnames.\\
 
 
 \section{ZGrab Implementation}
-
-To Implement the ZGrab scans took a bit more care as different types of machines would have different fields present in some and not in others, this was discovered by testing a few machines which we controlled on both sides in order to get a collection that would be of interest to us. These machines were as follows:
+To Implement the ZGrab scans fully took a bit more care as different types of hosts would have different fields present in some and not in others, this was discovered by testing a collection of hosts which were controlled on both sides in order to get a varied sample of preliminary test results that would be used to implement a python programme to extract the fields that were of interest within this project.\\
+These hosts were as follows:
 
 \begin{itemize}
-  \item A site that was signed by A Certificate Authority.
-  \item One that was self Signed.
+  \item A host that was signed by a Certificate Authority.
+  \item A host that had a self signed certificate.
   \item A 2006 printer on Port 80.
-  \item A site that wasn't being maintained.
-  \item As well as a two IP addresses on Port 80 and 443.
- 
+  \item A host that wasn't being maintained.
+  \item As well as a random host on Port 80 and 443.
 \end{itemize}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.3,trim={0 17cm 0 0},clip]{pdf_images/error_zgrab}
+\caption{a nice plot}
+\label{fig:zgrab_error}
+\end{figure}
 
-
-!!!!!!!!!!!!!!!PLACE ERROR FILE OF ZGRAB JSON OUTPUT AS AN EXAMPLE!!!!!!!!!!!!!!!\\
-
-These banner grabs that were conducted helped us in order to see the difference of the JSON outputs that ZGrab gives. Similarly for the ZGrabs I've implement much in the same for the ZMap scans, instead here we are also doing the domain lookups as well on port 80 and port 443. To extract the fields I was interested in I implemented a pyhton programme that would take the JSON output of the ZGrab and collect those fields we wanted. In order to take account for the fields that could be present in any practicular ZGrab output, exception handling was conducted on fields were attempting to extract the fields, this was also necessary due to the fact that if certain IP wasn't on at the time a ZGrab was being conducted an error would be outputted in the JSON file along with the IP of the ZGrab that was just executed, with the fields we were concerned with being absent.
+These banner grabs that were conducted helped in order to see the difference of the JSON outputs that ZGrab gives. Similarly the ZGrab scans were implemented much in the same for the ZMap scans, except the ZGrab scans were also doing scans on hostnames as well as IP addresses on port 80 and port 443. To extract the fields that were of interest a pyhton programme was implemented that would take the JSON output of the ZGrab and collect those fields we wanted. In order to take account for the fields that could be either present or missing in any particular ZGrab output, exception handling was conducted on all fields being extracted, this was also necessary due to the fact that if certain IP wasn't on at the time a ZGrab scan was being conducted an error would be outputted in the JSON file along with either the IP or hostname present which is dependent on the lookup method used for ZGrab scan that was just executed, with the vast majority of fields of interest being absent as seen in figure \ref{fig:zgrab_error}.
 \section{Challenges}
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!! TAKE ABOUT ZGRAB DOCUMENTATION !!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-One of the Challenges that was encountered is the scheduling of the cron jobs for ZGrab. Throughout ZGrab's conducted not all of the original IP addresses that were found in the ZMap scan presented themselves in the ZGrab data this can be contributed to a number of different reasons, One of these is the fact that the college has a number of IP address that are up less than 90\% of the time period for which ZMap scans were conducted as well as ZMap being run every hour on the hour, where as in the original scheduling of ZGrab they were set up to run for every 2 hours on the hour and as a result the hours on either side might have have presented themselves with IP address that are only in those slots. The reason this was done to run every 2 hours was due to ZGrab taking some time to complete a banner grab especially when an IP or domain wasn't up causing ZGrab to wait for a default of 10 seconds before attempting to abandon the connection. Releasing this I decided to reduce the default timeout to 5 seconds as  well as running multiple ZGrabs over smaller list of IPs or domains every hour rather than a single ZGrab being conducted for instance on the either list of IP addresses on port 443 but rather splitting that list of IP addresses on port 443 into 2/3 smaller list with a dedicated ZGrab Script being executed by the crontab. These methods improved the proformance of the ZGrab allowing us to implement more frequent ZGrabs on smaller lists.
+One of the Challenges encountered within this product concerned the scheduling of the cron jobs for the ZGrab scans. Throughout the ZGrab scans conducted not all of the original IP addresses that were found in the ZMap scan presented themselves in the ZGrab data this can be contributed to a number of different reasons, One of these is the fact that the college has a number of IP address that are up less than 90\% of the time period for which ZMap scans were conducted as well as ZMap being run every hour on the hour, where as in the original scheduling of ZGrab they were set up to run for every 2 hours on the hour and as a result the hours on either side might have have presented themselves with IP addresses that are only in those slots. The reason the cron job was scheduled to run every 2 hours was due to ZGrab taking some time to complete a banner grab especially when an IP or domain wasn't up, causing ZGrab to wait for a default of 10 seconds before attempting to abandon the connection for example to complete a ZGrab scan of all the IP address on port 80 for some instances took over 1 hour and 30 minutes to finish, which when original set to run for every hour would cause the crontab to execute the script containing the ZGrab before the previous one had time to finish losing all the data before it could be outputted to a file. Realizing this the default timeout of 10 seconds was reduced to 5 seconds as  well as running multiple ZGrab scans over smaller lists of IP addresses and domains every hour similar to the ZMap scan scheduling rather than a single ZGrab scan being conducted on the entire list of IP addresses on port 443 but rather splitting that list of IP addresses on port 443 into 2 or 3 smaller list with a dedicated ZGrab Script being executed by the crontab for each of these smaller list. These methods helped solved the problem of the lengthly time a ZGrab scan took, allowing the implementation of more frequent ZGrab scans on smaller lists.
 
 \chapter{Results}
 

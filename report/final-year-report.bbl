@@ -8,6 +8,11 @@
 \newblock In {\em Proceedings of the 2017 ACM SIGSAC Conference on Computer and
   Communications Security\/} (2017), ACM, pp.~1407--1420.
 
+\bibitem{arkin1999network}
+{\sc Arkin, O.}
+\newblock Network scanning techniques.
+\newblock {\em Publicom Communications Solutions\/} (1999).
+
 \bibitem{barker2015recommendation}
 {\sc Barker, E.~B., and Dang, Q.~H.}
 \newblock Recommendation for key management part 3: Application-specific key
@@ -34,6 +39,11 @@
 \newblock Internet assigned numbers authority (iana) procedures for the
   management of the service name and transport protocol port number registry.
 \newblock Tech. rep., 2011.
+
+\bibitem{de1999review}
+{\sc De~Vivo, M., Carrasco, E., Isern, G., and de~Vivo, G.~O.}
+\newblock A review of port scanning techniques.
+\newblock {\em ACM SIGCOMM Computer Communication Review 29}, 2 (1999), 41--48.
 
 \bibitem{dierks2014transport}
 {\sc Dierks, T.}
@@ -185,6 +195,10 @@
 {\sc Popov, A.}
 \newblock Prohibiting rc4 cipher suites.
 \newblock {\em Computer Science 2355\/} (2015), 152--164.
+
+\bibitem{michaelGithub}
+{\sc Power, M.}
+\newblock https://github.com/mikeypower/final-year-project, 2018.
 
 \bibitem{rescorla2000http}
 {\sc Rescorla, E.}

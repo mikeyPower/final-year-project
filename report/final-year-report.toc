@@ -7,33 +7,34 @@
 \contentsline {section}{\numberline {2.2}Port}{5}
 \contentsline {section}{\numberline {2.3}HTTP and HTTPS}{6}
 \contentsline {section}{\numberline {2.4}Transport Layer Security}{6}
-\contentsline {section}{\numberline {2.5}Port Scanning}{8}
+\contentsline {section}{\numberline {2.5}Port Scanning}{9}
 \contentsline {subsection}{\numberline {2.5.1}ZMap}{9}
 \contentsline {section}{\numberline {2.6}Banner Grabbing}{13}
-\contentsline {subsection}{\numberline {2.6.1}ZGrab}{13}
-\contentsline {chapter}{\numberline {3}Related Work}{16}
-\contentsline {chapter}{\numberline {4}Design}{21}
-\contentsline {section}{\numberline {4.1}Overview}{21}
-\contentsline {section}{\numberline {4.2}Ethics}{22}
-\contentsline {chapter}{\numberline {5}Implementation}{24}
-\contentsline {section}{\numberline {5.1}Technologies Used}{24}
-\contentsline {section}{\numberline {5.2}ZMap Implementation}{25}
-\contentsline {section}{\numberline {5.3}ZGrab Implementation}{26}
-\contentsline {section}{\numberline {5.4}Challenges}{27}
-\contentsline {chapter}{\numberline {6}Results}{29}
-\contentsline {section}{\numberline {6.1}ZMap Results}{30}
-\contentsline {subsection}{\numberline {6.1.1}Variation In IP addresses}{31}
-\contentsline {subsection}{\numberline {6.1.2}Port Distribution}{35}
-\contentsline {subsection}{\numberline {6.1.3}Domain Names}{41}
-\contentsline {section}{\numberline {6.2}ZGrab Results}{42}
-\contentsline {subsection}{\numberline {6.2.1}TLS/SSL}{43}
-\contentsline {subsection}{\numberline {6.2.2}Signature Algorithm}{45}
-\contentsline {subsection}{\numberline {6.2.3}Cipher Suite}{46}
-\contentsline {subsection}{\numberline {6.2.4}Browser Trusted}{47}
-\contentsline {subsection}{\numberline {6.2.5}Expired Certificates}{49}
-\contentsline {subsection}{\numberline {6.2.6}Self Signed Certificates}{50}
-\contentsline {subsection}{\numberline {6.2.7}Categorizing the Servers}{52}
-\contentsline {chapter}{\numberline {7}Conclusion}{54}
-\contentsline {chapter}{\numberline {8}Future Work}{56}
-\contentsline {chapter}{\numberline {A}A first appendix}{64}
-\contentsline {chapter}{\numberline {B}A sample of the questionnaire form used}{65}
+\contentsline {subsection}{\numberline {2.6.1}ZGrab}{14}
+\contentsline {chapter}{\numberline {3}Related Work}{17}
+\contentsline {chapter}{\numberline {4}Design}{22}
+\contentsline {section}{\numberline {4.1}Overview}{22}
+\contentsline {section}{\numberline {4.2}Ethics}{23}
+\contentsline {chapter}{\numberline {5}Implementation}{25}
+\contentsline {section}{\numberline {5.1}Technologies Used}{25}
+\contentsline {section}{\numberline {5.2}ZMap Implementation}{26}
+\contentsline {section}{\numberline {5.3}ZGrab Implementation}{27}
+\contentsline {section}{\numberline {5.4}Challenges}{28}
+\contentsline {chapter}{\numberline {6}Results}{30}
+\contentsline {section}{\numberline {6.1}ZMap Results}{31}
+\contentsline {subsection}{\numberline {6.1.1}Variation In IP addresses}{32}
+\contentsline {subsection}{\numberline {6.1.2}Port Distribution}{36}
+\contentsline {subsection}{\numberline {6.1.3}Domain Names}{42}
+\contentsline {section}{\numberline {6.2}ZGrab Results}{43}
+\contentsline {subsection}{\numberline {6.2.1}Response Codes}{44}
+\contentsline {subsection}{\numberline {6.2.2}TLS/SSL}{45}
+\contentsline {subsection}{\numberline {6.2.3}Signature Algorithm}{47}
+\contentsline {subsection}{\numberline {6.2.4}Cipher Suite}{48}
+\contentsline {subsection}{\numberline {6.2.5}Browser Trusted}{49}
+\contentsline {subsection}{\numberline {6.2.6}Expired Certificates}{51}
+\contentsline {subsection}{\numberline {6.2.7}Self Signed Certificates}{52}
+\contentsline {subsection}{\numberline {6.2.8}Categorizing the Servers}{54}
+\contentsline {chapter}{\numberline {7}Conclusion}{56}
+\contentsline {chapter}{\numberline {8}Future Work}{58}
+\contentsline {chapter}{\numberline {A}A first appendix}{66}
+\contentsline {chapter}{\numberline {B}A sample of the questionnaire form used}{67}

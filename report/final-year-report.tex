@@ -97,9 +97,9 @@ To be done
 
 \begin{abstract}
 \noindent
-As the number of Internet devices grows, so to does the difficultly to monitor these devices effectively. This report details the use of ZMap a port scanner and ZGrab an application banner grabber within Trinity College Dublin To survey Web Servers. System administrators have often hundreds of hosts to consider when monitoring Web Servers. The use of the above tools to audit these Web Servers in order to deal with security issues that if left unattended could potential lead to further problems is of the utmost importance for any organization that aims to mitigate these risks, as well as using these tools to study vulnerabilities in order to better defend from attacks, since the availability of tools such as these leads to the potential of attackers finding vulnerability hosts. Scanning at an Internet wide level has shown great promise for uncovering security problems \cite{durumeric2015search} thus the same should be true at a University Campus level.\\
+As the number of Internet devices grows, so to does the difficultly to monitor these devices effectively. This report details the use of ZMap a port scanner and ZGrab an application layer scanner within Trinity College Dublin To survey Web Servers. System administrators have often hundreds of hosts to consider when monitoring Web Servers. The use of the above tools to audit these Web Servers in order to deal with security issues that if left unattended could potential lead to further problems is of the utmost importance for any organization that aims to mitigate such risks, as well as using these tools to study vulnerabilities in order to better defend from attacks, since the availability of tools such as these leads to the potential of attackers finding vulnerability hosts. Scanning at an Internet wide level has shown great promise for uncovering security problems as well as showing the state of public facing web servers  \cite{durumeric2015search} thus the same should be true at a University Campus level.\\
 
-As well as deploying and testing the tool within Trinity College Dublin, I also hope to be able to interpret the output, and communicate that to site owners/system admins in order to help make their web a bit better and more secure.
+As well as deploying and testing the tool within Trinity College Dublin, this report also hope to be able to interpret the output, and communicate that to site owners/system admins in order to help make their web a bit better and more secure.
 
 \end{abstract}
 
@@ -110,9 +110,9 @@ As well as deploying and testing the tool within Trinity College Dublin, I also 
 
 
 
-As with any device that is connected to the Internet, the  security of these systems is of concern. Even when following strict policies,  miss configurations of servers can lead to possible issues which could significant impact. The aim of this project is to deploy a local instance of ZMap and ZGrab within Trinity College Dublin, running scans on both port 80 and 443 in order to survey web servers, in an effort to build a picture of what the current state of Web Servers within the college campus looks like.\\
+As with any device that is connected to the Internet, the  security capabilities of these systems is of concern. Even when following strict policies,  miss configurations of Web Servers can lead to possible issues down the line. The aim of this project is to deploy a local instance of ZMap and ZGrab within Trinity College Dublin, running scans on both port 80 and 443 in order to survey web servers, in an effort to build a picture of what the current state of Web Servers within the college campus looks like.\\
 
-I will also outline the steps that I've taken in order for other organizations and institutions to replicate what I've done here within Trinity College Dublin.\\
+This report  will also outline the steps that were taken in order for other organizations and institutions to replicate what has been done here within Trinity College Dublin.\\
 
 
 This goal will be analyzed with the following questions in mind:
@@ -120,8 +120,11 @@ This goal will be analyzed with the following questions in mind:
   \item Which IP addresses are listening on port 80, port 443 and both ports?
   \item The variation in the number of host on at a certain time?
   \item How many IP addresses have a Hostname?
-  \item What make of servers are being used !!!!!!!!!!!!!!! MORE ABOUT WHO ARE THESE IPS THAT ARE UP, TRYING TO CATEGORISE (WEB IMAGE MONITOR ETC)!!!!!!!!!!!!!!!?
+  \item Trying to categorize IP addresses?
   \item What does the current state of Certificates look like within the college?
+  \item How many Certificates are self signed certs?
+  \item How many Certificates are browser trusted?
+   \item How many Certificates have expired at the time of writing this report?
   \item Are there any out of date versions of TLS being used?
   \item For those IP addresses that don't have a Hostname, do their certificates lead to one?
   \item What Signature and Key Algorithms are being used?
@@ -134,33 +137,26 @@ This goal will be analyzed with the following questions in mind:
 \section{Outline}
 The remainder of this report is organized as follows:\\
 \begin{itemize}
-\item\textbf{Chapter 2} provides the reader with the required background information.
-\item\textbf{Chapter 3} shows other relevant work conducted in this area.
-\item\textbf{Chapter 4} explains the overall design of the investigation as well as the ethical concerns around it.
+\item\textbf{Chapter 2} aims to familiarise the reader with the required background information.
+\item\textbf{Chapter 3} highlights other relevant work conducted in the area of network scanning.
+\item\textbf{Chapter 4} explains the overall design of the investigation as well as the ethical concerns it entails.
 \item\textbf{Chapter 5} details the implementation of ZMap and ZGrab within Trinity College Dublin as well as describing the various programs and scripts used to gather the data.
-\item\textbf{Chapter 6} presents the results of the scans conducted.
+\item\textbf{Chapter 6} presents the results of the study conducted.
 \item\textbf{Chapter 7} provides an analysis of the findings in surveying Web Servers within Trinity College Dublin.
-\item\textbf{Chapter 8} describes the future work that could be done to extend this project.
+\item\textbf{Chapter 8} suggest future work that could be done following the findings of the work done in this project.
 \end{itemize}
 
 
 \chapter{Background}
-!!!!!!!!!!!!!!!
+This chapter will introduce Web Servers along with there underlying technology. It will also discuss the main scanning tools used to conduct the study.
 \section{Web Server}
-!!!!!!!!!!!!!!!REFERENCE RFC FOR HTTP, OR ANY OTHER PORT MENTIONED!!!!!!!!!!!!!!!\\
 
+Web servers are one of the many components that make up the overall Web Application Architecture.
+Communication between between a Web Server and a Clients browser is typical done through a protocol called Hyper Text Transfer Protocol or HTTP for short. The general way in which a Client initiates communication between a web server is through a Web Browser such as Chrome or Firefox. The browser sends a request to the web sever of some resource typically a web page or some other file type, if the resource doesn't exist an error is returned to the client, generally in the form of a 404 or some other status code. As well as handling requests, the server may sometimes be required to handle processing of forms inputted by the client\cite{conallen1999modeling}. Almost any device that is connected to the Internet can host a web server, such as a printer or mobile phone. \\
 
-!!!!!!!!!!!!!!!!!!!!!MIGHT MENTION WHAT A PORT, IP ADDRESS, HTTP AND HTTPS IS !!!!!!!!!!!!!!!!!!!!!
-
-
-
-
-Web servers are one of components that make up the overall web-application architecture.
-Communication between between a web server and a clients browser is done typical through a protocol called Hyper Text Transfer Protocol or HTTP for short. The general way in which a Client initiates communication between a web server is through a Web Browser such as Chrome or Firefox, The browser sends a request to the web sever of some resource typically a web page or some other file type, if the resource doesn't exist an error is returned to the client, generally in the form of a 404 or some other status code. As well as handling request, the server may sometimes be required to handle processing of forms inputted by the client\cite{conallen1999modeling}. Almost any device that is connected to the Internet can host a web server, such as a printer or mobile phone. \\
-
-Web servers play a significant role in terms of the overall workings of web applications and security issues relating to web servers can come in a number of ways such as being incorrectly configured\cite{mendes2008assessing} along with lack of privilege management.
+Web Servers play a significant role in terms of the overall workings of web applications and security issues relating to web servers can come in a number of scenarios such as being incorrectly configured\cite{mendes2008assessing} or lacking proper privilege management.
 \section{Port}
-Port numbers are the original and most extensively used means for application and service identification on the Internet. Ports are 16-bit numbers, and the combination of source and destination port umbers together with the IP addresses of the communicating end systems uniquely identifies a session of a given transport protocol \cite{cotton2011internet} such as TCP(Transmission control protocol) which provides reliability and safety of packets sent  or UDP (User Datagram Protocol) unlike TCP does not gurentee delivery of packets, this is widely used in streaming of videos. \cite{khan2016transport}. Some Port numbers are also known by their associated service names or protocol used for the communication such as "https" for port number 443 and "http" (as well as "www" and "www-http") for port number 80. In total you there are 65535 ports with Port 0 being reserved. There are three distinct ranges of Port numbers:
+Port numbers are the original and most extensively used means for application and service identification on the Internet. Ports are 16-bit numbers, and the combination of source and destination port umbers together with the IP addresses of the communicating end systems uniquely identifies a session of a given transport protocol \cite{cotton2011internet} such as TCP(Transmission control protocol) which provides reliability and safety of packets sent  or UDP (User Datagram Protocol) unlike TCP does not guarantee delivery of packets, UDP is widely used in streaming of videos where speed is more important than reliability \cite{khan2016transport}. Some Port numbers are also known by their associated service names or protocol used for the communication such as "https" for port number 443 and "http" for port number 80. Port numbers range from 0 to 65535 with Port 0 being reserved, leaving 65535 that could be used. There are three distinct classes of Port numbers:
 
 \begin{itemize}
 \item the System Ports, also known as the Well Known Ports, from 0-1023
@@ -173,44 +169,38 @@ Port numbers are the original and most extensively used means for application an
 \section{HTTP and HTTPS}
 The Hypertext transfer Protocol (HTTP) is application layer protocol most commonly associated with the world wide web ("www"). HTTP connections are made on Port 80, HTTP does not encrypt the data that is exchanged between the client and server \cite{fielding1999hypertext}. This is solved with HTTPS or HTTP over TLS which provides a secure session between the client and server encrypting the data exchange between the two parties \cite{rescorla2000http}. 
 
-
-
 \section{Transport Layer Security}
-TLS or SSL as it may sometimes be referred to is a protocol that allows secure communication between a client and server over the Internet, which is typically between a Browser and Web Server. Over the years there have been many versions of TLS/SSL implementations, the first being in 1994 when Netscape developed SSL 1.O however this was never released publicly as it was vulnerable to replay attack\cite{turner2014transport}. This drove the development of SSL 2.0 in 1995, but along with its predecessor it too had problems. Then in 1996 SSL 3.0 was distributed to combat the issues with SSL 2.0 gaining a large popularity in the process \cite{turner2014transport}. In mid 1996 development of these protocols moved to the Internet Engineering Task Force and so too did the name of the protocol changing from SSL to TLS. To date there have been four releases of TLS with TLSv1 being released in 1999, TLSv1.1 in 2006, TLSv1.2 in 2008\cite{turner2014transport} and in 2014 a draft of TLSv1.3 was developed
+TLS or SSL as it may sometimes be referred to is a protocol that allows secure communication between a client and server over the Internet. Over the years there have been many versions of TLS/SSL implementations, the first being in 1994 when Netscape developed SSLv1.O however this was never released publicly as it was vulnerable to replay attacks\cite{turner2014transport}. This drove the development of SSLv2.0 in 1995, but along with its predecessor it too had problems. In total there were 4 main deficiencies with SSLv2.0, one of these for example was not protecting handshake messages which grants a man-in-the-middle to trick the client in selecting a weaker cipher suite than it would normally choose \cite{turner2011prohibiting}. Then in 1996 SSLv3.0 was distributed to combat the issues with SSLv2.0 gaining a large popularity in the process \cite{turner2014transport}. In mid 1996 development of these protocols moved to the Internet Engineering Task Force (IETF) and so too did the name of the protocol changing from SSL to TLS. To date there have been four releases of TLS with TLSv1.0 being released in 1999, TLSv1.1 in 2006, TLSv1.2 in 2008\cite{turner2014transport} and in 2014 a draft of TLSv1.3 was developed
  \cite{dierks2014transport}.\\
  \begin{center}
 \includegraphics[scale=.5]{images/tls_demo.png}
 \end{center}
-In order for a secure connection to be established the client first sends a \textit{Client Hello} message which includes the version of TLS supported by the client a random byte string that is used for calculations later on in the handshake such as generating the pre-master secret,  along with the list of cipher suites and compression methods in order of the clients preference \cite{tlsDemoServer}. As well as this the client sends an empty session identifier\cite{turner2014transport}.
-The server responds with a \textit{ServerHello} message indicating the version of TLS that will be used along with the appropriate cipher suite, compression method and session Identifier. The server also generates its own random byte string. Next a \textit{Certificate} is sent from the server to the Client whenever the key exchange method uses certificates. This certificate message contains a chain of certificates which the client will use to validate the server says who they say they are. Following this a Server Key Exchange Message is sent if the certificate sent by the server lacks sufficient data for the client to exchange a premaster secret.The Server then sends a \textit{ServerHello Done} message to the Client to signal that the client can now continue with its turn of the key exchange related messages. The Client now sends a \textit{ClientKeyExchange} message to the server which includes the pre-master secret created by the client. Both the Client and the Server send a \textit{ChangeCipherSpec} message to alert each other that all future exchanges within this session will be encrypted with the chosen cipher suite and keys. Finally the Client sends a \textit{Finished} Message to the Server and likewise The Server sends a \textit{Finished } message to the Client, both of theses exchanges are used in order to verify that the key exchange and authentication process were successful as well as indicating that each respective part of the TLS handshake is complete. From this point on all \textit{ApplicationData} exchange between the client and server is protected based on the current connection state \cite{tlsDemoServer}\cite{turner2014transport}\\
+In order for a secure connection to be established the client first sends a \textit{Client Hello} message which includes the version of TLS supported by the client a random byte string that is used for generating the pre-master secret,  along with the list of cipher suites and compression methods in order of the clients preference \cite{tlsDemoServer}.A session identifier is also included to identify the session between the client and server\cite{turner2014transport}.
+The server responds with a \textit{ServerHello} message indicating the version of TLS that will be used along with the appropriate cipher suite, compression method and session identifier. The server also generates its own random byte string. Next a \textit{Certificate} is sent from the server to the Client whenever the key exchange method uses certificates. This certificate message contains a chain of certificates which the client will use to validate the server says who they say they are. Following this a Server Key Exchange Message is sent if the certificate sent by the server lacks sufficient data for the client to exchange a pre-master secret.The Server then sends a \textit{ServerHelloDone} message to the Client to signal that the client can now continue with its turn of the key exchange related messages. The Client now sends a \textit{ClientKeyExchange} message to the server which includes the pre-master secret created by the client. Both the Client and the Server send a \textit{ChangeCipherSpec} message to alert each other that all future exchanges within this session will be encrypted with the chosen cipher suite and keys. Finally the Client sends a \textit{Finished} Message to the Server and likewise The Server sends a \textit{Finished } message to the Client, both of theses exchanges are used in order to verify that the key exchange and authentication process were successful as well as indicating that each respective part of the TLS handshake is complete. From this point on all \textit{ApplicationData} exchange between the client and server is protected based on the current connection state \cite{tlsDemoServer}\cite{turner2014transport}.\\
 
 \section{Port Scanning}
 
 Port scanners are tools that are used to check for devices on open ports, these tools could be used by system administrator to monitor devices on a network or by a malicious party hoping to find vulnerable devices to infect.\\
-There are three main grades of port scans.
+There are three main grades of port scans that can be conducted:
 \begin{enumerate}
 \item\textbf{Vertical Scans:}
-The vertical port scan is one in which a single host is scanned across mulitple ports.
+The vertical port scan is one in which a single host is scanned across multiple ports.
 \item\textbf{Horizontal Scans:}
 The horizontal scan is one in which a single port is scanned against multiple hosts.
 \item\textbf{Block Scans:}
 The Block scan is a combination of vertical and horizontal scans.\cite{lee2003detection}
 \end{enumerate}
 
-There are a number Port Scanning tools that are widely available such as Nmap \cite{lyon2009nmap}, within in this project we exclusively use ZMap \cite{durumeric2013zmap} to conduct the Port scans.
+There are a number Port Scanning tools that are widely available such as Nmap \cite{lyon2009nmap} and Nessus \cite{beale2004nessus}, this project exclusively uses ZMap \cite{durumeric2013zmap} to conduct the Port Scans.
 \subsection{ZMap}
-!!!!!!!!!!!!!!!REFERENCE UDP, BACKNET ANYTHING THAT IS NOT OBVIOUS FOR FURTHER CLARIFICATION OR ANYTHING THAT IS GOING TO BE TALKED ABOUT IN THE RESULTS!!!!!!!!!!!!!\\
-
 
 !!!!!!!!!!!!!! SHOW AND DESCRIBE SAMEPLE OUTPUT !!!!!!!!!!!!!\\
 
 
-
-
 ZMap is an open-source network scanner optimized for efficiently performing
-Internet-scale network surveys \cite{durumeric2013zmap}, developed in 2013 by Zakir Durumeric, Eric Wustrow and J. Alex Halderman at the University of Michigan they have been able to effectively diminish the time required to scan the IPv4 address space to a matter of minutes. The architecture allows sending and receiving components
+Internet-scale network surveys \cite{durumeric2013zmap}, developed in 2013 by Zakir Durumeric, Eric Wustrow and J. Alex Halderman at the University of Michigan they have been able to effectively diminish the time required to scan the entire IPv4 address space to a matter of minutes. The architecture allows sending and receiving components
 to run asynchronously and enables a single source machine to comprehensively scan every host in the public IPv4
-address space for a particular open TCP port in under 45 mins using a 1 Gbps Ethernet link\cite{durumeric2013zmap}. The default configuration for ZMap unfortunately only allows scans for one specified port in the given IP range (CIDR Block \cite{fuller1993classless}, which in our case and many others requires users of this tool to write further programmes to investigate hosts on more than one specified port. ZMap currently has fully implemented probe modules for TCP SYN scans, ICMP, DNS queries, UPnP, BACNET, and can send a large number of UDP probes \cite{zmapGithub}\\
+address space for a particular open TCP port in under 45 minutes using a 1 Gbps Ethernet link\cite{durumeric2013zmap}. The default configuration for ZMap unfortunately only allows scans for one specified port in the given IP range (CIDR Block)\cite{fuller1993classless}, which in this study and many others requires users of this tool to write further programmes to investigate hosts on more than one specified port. ZMap currently has fully implemented probe modules for TCP SYN scans, ICMP, DNS queries, UPnP, BACNET, and can send a large number of UDP probes \cite{zmapGithub}\\
 
 
 In order to randomise the scans conducted on the target address space, ZMap remains stateless. To avoid keeping state ZMap sends a fixed number of probs per target with the default sending only one probe.\cite{durumeric2013zmap}\\
@@ -228,16 +218,25 @@ Figure 1. ZMap Architecture.\\
 
 
 ZMap uses a modular design to support many types of probes and integration with a variety of research applications. Instructions are entered Via the Command Line (CLI) which are then parsed to the \textit{State \& Config} module. The next two modules \textit{Validation Generation} and
-\textit{Address Generation} are responsible for generating the target space/address range while also validating this space to ensure any host/IP addresses are excluded according to a configuration file which omits sites/IP ranges such as any reserved address allocations along with others who may wish to opt out of future scans \cite{durumeric2013zmap} while the \textit{Probe Scheduler} sets the timing of the soon to be sent probes. Next we have the \textit{Packet Generation} module which is responsible for generating the required probe packets as per the type of scan we are conducting , the \textit{Packet Transmission} module is responsible for sending these packets to their intended destination. ZMap also provides Extensible probe modules which can be customized for different kinds of probes, and are responsible for generating probe packets and interpreting whether incoming packets are valid responses. The \textit{Framework Monitoring} oversees every packet that is sent and received, while the \textit{Receipt \& Validation} module responds to TCP SYN-ACK packets and discard packets clearly not initiated by the scan by cross checking the source and destination ports of the packets. The \textit{Response Interpretation”} interprets the responses from those that have been validated by the \textit{Receipt \& Validation} module. Before the results of the probes are outputted they are first brought to the \textit{Result Processing} module which processes the results and outputs these either to the console via stdout or to be piped to another process directly such as ZGrab or outputted to a comma separated file (csv) \cite{durumeric2013zmap}.\\
+\textit{Address Generation} are responsible for generating the target space/address range while also validating this space to ensure any host/IP addresses in this generation are excluded according to a configuration file which omits sites/IP ranges such as any reserved address allocations along with individual host who may wish to opt out of future scans \cite{durumeric2013zmap} while the \textit{Probe Scheduler} sets the timing of the soon to be sent probes. Next we have the \textit{Packet Generation} module which is responsible for generating the required probe packets as per the type of scan we are conducting, the \textit{Packet Transmission} module is responsible for sending these packets to their intended destination. ZMap also provides Extensible probe modules which can be customized for different kinds of probes. The \textit{Framework Monitoring} oversees every packet that is sent and received, while the \textit{Receipt \& Validation} module responds to TCP SYN-ACK packets and discard packets clearly not initiated by the scan by cross checking the source and destination ports of the packets. The \textit{Response Interpretation} interprets the responses from those that have been validated by the \textit{Receipt \& Validation} module. Before the results of the probes are outputted they are parsed by the \textit{Result Processing} module which processes the results and outputs them either to the console via stdout or to a comma separated file (csv), the results can also be piped to another process directly such as ZGrab \cite{durumeric2013zmap}.\\
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.3]{pdf_images/zmap_scan_exmaple_2}
+\caption{a nice plot1}
+\label{fig:zmap_scan_example}
+\end{figure}
+
 
 The speed at which ZMap sends packets is performed as fast as the source's CPU or NIC allows. This speed however at which ZMap sends probes is a cause for concern, as sending them in numerical order would probably overload and cause a network failure. So in order to counteract this ZMap uses a random permutation of the address space, iterating over a multiplicative group of integers modulo p, with p being slightly larger than $2^{32}$. By choosing p to be a prime, ZMap guarantees that the group is cyclic and
 will reach all addresses in the IPv4 address space once per cycle. To select a new permutation for each scan, a new primitive root of the multiplicative group and a new random starting address are chosen. ZMap efficiently finds random primitive roots of
 the  multiplicative  group  by  utilizing  the  isomorphism $(Zp - 1,+)~=(Z*p,x)$ and  mapping  roots of$(Zp-1,+)$ into the multiplicative group via the  function f(x) =nx where n is a known primitive root of$(Z/pZ)x$. Once this primitive root is ZMap cycles through the target address space by applying the group operation to the current address. The scan is finished once the initially scanned IP address is reached\cite{durumeric2013zmap}.\\
 
-ZMap send packets at Ethernet Level in order to cache packet values and reduce to overhead on the Kernel.
+ZMap send packets at Ethernet Level in order to cache packet values and reduce the overhead on the Kernel.
 ZMap implements a probing technique known as
-SYN scanning or half-open scanning \cite{durumeric2013zmap}. This was chosen to instead of performing a full TCP handshake
-based on the reduced number of exchanged packets.  In
+SYN scanning or half-open scanning \cite{durumeric2013zmap}. This was chosen instead of performing a full TCP handshake
+based on the reduced number of exchanged packets. In
 the situation where a host is unreachable or does
 not respond, only a single packet is used in the exchange (a SYN from
 the scanner); in the case of a closed port, two packets
@@ -248,33 +247,33 @@ the scanner which will close the connection)\cite{durumeric2013zmap}.
 
 
 \section{Banner Grabbing}
-Banner grabbing is a technique used to gain information about a device on a network by establishing a connection and observing the output from the connection \cite{kondo2014penetration}. System Administrators can use these tools designed for this application to take inventory of the devices and services on their network. Attackers can also use banner grabbing tools in order to find network devices that are using known applications with well documented vulnerability (MD5 for example)
+Banner grabbing is a technique used to gain information about a device on a network, this is obtained by establishing a connection with the device and observing the output from the connection \cite{kondo2014penetration}. System Administrators can use these tools designed for this application to take inventory of the devices and services on their network. Attackers can also use banner grabbing tools in order to find network devices that are using known applications with well documented vulnerability (MD5 for example).
 
 
 \subsection{ZGrab}
 !!!!!!!!!!!!!! SHOW AND DESCRIBE SAMEPLE OUTPUT !!!!!!!!!!!!!\\
 
-ZGrab is one such banner grabber implemented in go that allows user to perform various application handshakes for a number of different protocols such as HTTP, HTTPS, SSH as well as SMTP to name a few. ZGrab connects to the host by opening up a TCP connection. ZGab outputs the information in raw JSON format retrieving all the information about the connection handshake such as SSL/TLS information as well as response codes.\cite{durumeric2015search}
+ZGrab is one such banner grabber implemented in Go \cite{pike2009go} that allows user to perform various application handshakes for a number of different protocols such as HTTP, HTTPS, SSH \cite{ylonen2006secure} as well as SMTP\cite{2012smtp} to name a few. ZGrab connects to the host by opening up a TCP connections \cite{durumeric2015search}. ZGab outputs the information in raw JSON format retrieving all the information about the connection handshake such as SSL/TLS information as well as response codes.
 
-For example When performing a TLS handshake with a host, ZGrab offers the cipher suites implemented by the Golang TLS library and logs the chosen cipher suite\cite{durumeric2015search} rather than using the chosen cipher suite of the source machine performing the ZGrab . ZGrab can be also be used inconjuction with ZMap to grab information simultaneous while a host being scanned or independently of ZMap by passing the host directly into ZGrab. Instructions are passed to ZGrab much in the same way of ZMap via a command line interface (CLI).\\
+For example When performing a TLS handshake with a host, ZGrab offers the cipher suites implemented by the Golang TLS library and logs the chosen cipher suite\cite{durumeric2015search} rather than using the chosen cipher suite of the source machine performing the ZGrab. ZGrab can be also be used in conjunction with ZMap to grab service information simultaneous, while a host is being scanned or independently of ZMap by passing the host source IP address or domain name directly into ZGrab. Instructions are passed to ZGrab much in the same way of ZMap via a command line interface (CLI).\\
 
-In terms of the actual banner grab there are a number of aspects of a web server that we are interested in when we conduct are ZGrab application layer scans in order to see the contrast and similarities underlying the information of the web Servers are to each other scans they are as follows:
+In terms of the actual banner grab there are a number of aspects of a web server that we are interested in when we conduct are ZGrab application layer scans in order to see the contrast and similarities underlying the service information of the web Servers in the college.\\
+Here is a list of the fields that this project extracted to examine the web servers in the college:
 
 \begin{itemize}
   \item Ciphersuite being used to provide encryption of data between the client and server.
   \item Key Exchange Method used to exchanged cryptographic keys between the client and server.
   \item TLS/SSL verison being used to provide secure communication between the client and server.
-  \item The Public Key of the Web server embedded in the certificate.
-  \item The length of the Public Key.
+  \item The Public Key of the Web server embedded in the Certificate.
+  \item The length of the Public Key used.
   \item Certificate start and end date, to see when the certificate was issued and also when it expires.
-  \item the Signature Algorithm used to sign the certificate.
+  \item the Signature Algorithm used to sign the Certificate.
   \item If the Certificate is self signed or not.
   A self signed certificate is a Certificate that has not been Issued and signed by a Certificate Authority rather the issuer who has created the certificate has signed it themselves with their own private key \cite{housley1998internet}.
-  \item Browser Trusted field to see if the certificate is verified by the browser. This is done by the browser who attempts to build a chain of trust from the certificate to a root certificate on the client. The root trust store on the client contains a set of root certificates from trusted CAs to validate against. The browser also checks that the certificate has the correct hostname and the certificate has not become expired \cite{acer2017wild}. If at any point there is a failure in the validation process, this means that the browser is unsure of who the proper identity of the server actually is. 
-  \item The Status code and Reason Phrase, The status code itself is a three digit integer that is received by the client as a response from the server, the phrase is a short description for the user \cite{fielding1999hypertext} \cite{berners1996hypertext}
-  \item HTML body of the web server's root page
-  
- 
+  \item Browser Trusted field to see if the certificate is verified by the browser. This is done by the clients browser who attempts to build a chain of trust from the certificate to a root certificate on the client. The root trust store on the client contains a set of root certificates from trusted CAs to validate against. The browser also checks that the certificate has the correct hostname and the certificate has not yet expired \cite{acer2017wild}. If at any point there is a failure in the validation process, this means that the client(browser) is unsure of who the proper identity of the server actually is. 
+  \item The Status code and Reason Phrase, The status code itself is a three digit integer that is received by the client as a response from the server, the phrase is a short description for the user \cite{fielding1999hypertext} \cite{berners1996hypertext}.
+  \item HTML body of the web server's root page to categorise the servers and their uses.
+
 \end{itemize}
 
 
@@ -649,10 +648,7 @@ Public Key Length  & Number of Certificates\\ [0.5ex]
 \caption{Public key lengths of all IP addresses found in ZGrab scans on port 443}
 \label{table:public_key_lengths}
 \end{table}
-Keeping with public keys, the self signed certificates found in the college contained the only 512 and 768 bit length certificates with regards to the rest of the certificates shown in table \ref{table:public_key_lengths}
-
-!!!!!!!!!!!!!!!NEED TO REFERENCE WHY PUBLIC KEY LENGTHS OF THESE ARE BAD!!!!!!!!!!!!!!!!!!!!!!!
- 
+Keeping with public keys, the self signed certificates found in the college contained the only 512 and 768 bit length certificates with regards to the rest of the certificates shown in table \ref{table:public_key_lengths}. The National Institute of Standards and Technology (NIST) recommends key sizes of at least 2056 bits, \cite{barker2015recommendation} this is due to successful attempts at breaking RSA by factoring for example 512 bit RSA keys were successful factored in 1999 \cite{kaliski2011rsa} at the moment large numbers are quite difficult to factor but the recommendation by nist is a way to stay ahead of the curve.
 
 \subsection{Categorizing the Servers}
 \begin{table}[H]

@@ -8,6 +8,17 @@
 \newblock In {\em Proceedings of the 2017 ACM SIGSAC Conference on Computer and
   Communications Security\/} (2017), ACM, pp.~1407--1420.
 
+\bibitem{barker2015recommendation}
+{\sc Barker, E.~B., and Dang, Q.~H.}
+\newblock Recommendation for key management part 3: Application-specific key
+  management guidance.
+\newblock Tech. rep., 2015.
+
+\bibitem{beale2004nessus}
+{\sc Beale, J., Deraison, R., Meer, H., Temmingh, R., and Walt, C. V.~D.}
+\newblock {\em Nessus network auditing}.
+\newblock Syngress Publishing, 2004.
+
 \bibitem{berners1996hypertext}
 {\sc Berners-Lee, T., Fielding, R., and Frystyk, H.}
 \newblock Hypertext transfer protocol--http/1.0.
@@ -65,6 +76,10 @@
 {\sc Durumeric, Z., Wustrow, E., and Halderman, J.~A.}
 \newblock Zmap, https://github.com/zmap/zmap/blob/master/readme.md.
 
+\bibitem{LetsEncrypt}
+{\sc Encrypt, L.}
+\newblock scoket,https://letsencrypt.org.
+
 \bibitem{fielding1999hypertext}
 {\sc Fielding, R., Gettys, J., Mogul, J., Frystyk, H., Masinter, L., Leach, P.,
   and Berners-Lee, T.}
@@ -87,6 +102,17 @@
 \newblock Internet x. 509 public key infrastructure certificate and crl
   profile.
 \newblock Tech. rep., 1998.
+
+\bibitem{2012smtp}
+{\sc J.~Yao, W.~M.}
+\newblock Smtp extension for internationalized email.
+\newblock Tech. rep., 2012.
+
+\bibitem{kaliski2011rsa}
+{\sc Kaliski~Jr, B.}
+\newblock Rsa factoring challenge.
+\newblock In {\em Encyclopedia of Cryptography and Security}. Springer, 2011,
+  pp.~1064--1065.
 
 \bibitem{khan2016transport}
 {\sc Khan, I.~U., and Hassan, M.~A.}
@@ -143,6 +169,11 @@
 \newblock Transport layer protection cheat sheet,
   https://www.owasp.org/index.php/.
 
+\bibitem{pike2009go}
+{\sc Pike, R.}
+\newblock The go programming language.
+\newblock {\em Talk given at Google’s Tech Talks\/} (2009).
+
 \bibitem{popov2015prohibiting}
 {\sc Popov, A.}
 \newblock Prohibiting rc4 cipher suites.
@@ -175,11 +206,19 @@
 \newblock Updated security considerations for the md5 message-digest and the
   hmac-md5 algorithms.
 
+\bibitem{turner2011prohibiting}
+{\sc Turner, S., and Polk, T.}
+\newblock Prohibiting secure sockets layer (ssl) version 2.0.
+
 \bibitem{vandersloot2016towards}
 {\sc VanderSloot, B., Amann, J., Bernhard, M., Durumeric, Z., Bailey, M., and
   Halderman, J.~A.}
 \newblock Towards a complete view of the certificate ecosystem.
 \newblock In {\em Proceedings of the 2016 Internet Measurement Conference\/}
   (2016), ACM, pp.~543--549.
+
+\bibitem{ylonen2006secure}
+{\sc Ylonen, T., and Lonvick, C.}
+\newblock The secure shell (ssh) authentication protocol.
 
 \end{thebibliography}

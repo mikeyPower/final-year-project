@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650) (preloaded format=pdflatex 2018.4.23)  3 MAY 2018 01:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650) (preloaded format=pdflatex 2018.4.23)  3 MAY 2018 03:47
 entering extended mode
 **./final-year-report.tex
 (final-year-report.tex
@@ -322,7 +322,17 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 LaTeX Warning: Unused global option(s):
     [a4wide].
 
-(final-year-report.aux)
+(final-year-report.aux
+
+LaTeX Warning: Label `table:status_code_both_port_80' multiply defined.
+
+
+LaTeX Warning: Label `table:status_code_both_port_80' multiply defined.
+
+
+LaTeX Warning: Label `table:status_code_both_port_80' multiply defined.
+
+)
 \openout1 = `final-year-report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -340,8 +350,7 @@ LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 15.
-
-(/home/michael/.miktex/texmfs/install/tex/latex/psnfss/ot1ptm.fd
+ (/home/michael/.miktex/texmfs/install/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (/home/michael/.miktex/texmfs/install/tex/context/base/supp-pdf.mkii
@@ -497,7 +506,7 @@ File: omsptm.fd
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 117.
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
@@ -505,17 +514,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.137 \item\textbf
+l.138 \item\textbf
                   {Chapter 2} aims to familiarise the reader with the requir...
 [2]pdfTeX warning (ext4): destination with the same identifier (name{page.3}) h
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.147 \chapter
+l.148 \chapter
               {Background} [3]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--153
+Underfull \hbox (badness 10000) in paragraph at lines 152--154
 
  []
 
@@ -523,11 +532,11 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.153 
+l.154 
        [4
 
 ]
-Underfull \hbox (badness 1028) in paragraph at lines 156--157
+Underfull \hbox (badness 1028) in paragraph at lines 157--158
 \OT1/ptm/m/n/12 and service identification on the Internet. Ports are 16-bit nu
 mbers, and
  []
@@ -536,10 +545,10 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.163 \item t
+l.164 \item t
              he Dynamic Ports, also known as the Private or Ephemeral Ports,
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 170--172
+Underfull \hbox (badness 10000) in paragraph at lines 171--173
 
  []
 
@@ -547,15 +556,15 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.172  \begin{center}
+l.173  \begin{center}
                       [6]
-<images/tls_demo.png, id=342, 205.5178pt x 561.59813pt>
+<images/tls_demo.png, id=359, 205.5178pt x 561.59813pt>
 File: images/tls_demo.png Graphic file (type png)
 <use images/tls_demo.png>
-Package pdftex.def Info: images/tls_demo.png  used on input line 173.
+Package pdftex.def Info: images/tls_demo.png  used on input line 174.
 (pdftex.def)             Requested size: 102.75865pt x 280.79837pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--177
+Underfull \hbox (badness 10000) in paragraph at lines 176--178
 
  []
 
@@ -563,17 +572,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.177 
+l.178 
        [7 <./images/tls_demo.png>]pdfTeX warning (ext4): destination with the s
 ame identifier (name{page.8}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.182 \begin{enumerate}
+l.183 \begin{enumerate}
                         [8]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 192.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 193.
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--197
+Underfull \hbox (badness 10000) in paragraph at lines 194--198
 
  []
 
@@ -581,24 +590,24 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.197 
+l.198 
        [9]
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--203
+Underfull \hbox (badness 10000) in paragraph at lines 202--204
 
  []
 
-<images/zmap_architecture.png, id=380, 927.465pt x 337.26pt>
+<images/zmap_architecture.png, id=397, 927.465pt x 337.26pt>
 File: images/zmap_architecture.png Graphic file (type png)
 <use images/zmap_architecture.png>
-Package pdftex.def Info: images/zmap_architecture.png  used on input line 207.
+Package pdftex.def Info: images/zmap_architecture.png  used on input line 208.
 (pdftex.def)             Requested size: 370.97943pt x 134.9016pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
+Underfull \hbox (badness 10000) in paragraph at lines 213--215
 
  []
 
@@ -606,14 +615,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.213 Z
-       Map uses a modular design to support many types of probes and integra...
-[10 <./images/zmap_architecture.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 213--215
-
- []
-
-<pdf_images/zmap_scan_exmaple_2.pdf, id=389, 1305.87875pt x 746.79pt>
+l.215 
+       [10 <./images/zmap_architecture.png>]
+<pdf_images/zmap_scan_exmaple_2.pdf, id=406, 1305.87875pt x 746.79pt>
 File: pdf_images/zmap_scan_exmaple_2.pdf Graphic file (type pdf)
 <use pdf_images/zmap_scan_exmaple_2.pdf>
 Package pdftex.def Info: pdf_images/zmap_scan_exmaple_2.pdf  used on input line
@@ -635,33 +639,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 247--248
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 251--252
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
 
  []
 
 [14] [15] [16]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--277
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
 
  []
 
 [17
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 278--279
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 281--283
+Underfull \hbox (badness 10000) in paragraph at lines 279--281
 
  []
 
 [19]
-Underfull \hbox (badness 1038) in paragraph at lines 285--286
+Underfull \hbox (badness 1038) in paragraph at lines 283--284
 \OT1/ptm/m/n/12 Urban-Champaign in 2016 have conducted similar HTTPS surveys bu
 t by
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+
  []
 
 
@@ -669,22 +678,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 285--286
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 287--288
-
- []
-
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 289--290
+Underfull \hbox (badness 10000) in paragraph at lines 287--288
 
  []
 
 [21]
 Chapter 4.
-<pdf_images/design.pdf, id=490, 614.295pt x 794.97pt>
+<pdf_images/design.pdf, id=508, 614.295pt x 794.97pt>
 File: pdf_images/design.pdf Graphic file (type pdf)
 <use pdf_images/design.pdf>
-Package pdftex.def Info: pdf_images/design.pdf  used on input line 297.
+Package pdftex.def Info: pdf_images/design.pdf  used on input line 295.
 (pdftex.def)             Requested size: 307.14674pt x 312.12598pt.
 [22
 
@@ -693,7 +697,7 @@ Package pdftex.def Info: pdf_images/design.pdf  used on input line 297.
 pdfTeX warning: pdflatex (file ./pdf_images/design.pdf): PDF inclusion: invalid
  other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 306--307
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
 
  []
 
@@ -702,221 +706,217 @@ Chapter 5.
 [25
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 323--324
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 327--328
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
 
  []
 
 [27]
-<pdf_images/error_zgrab.pdf, id=539, 1305.87875pt x 746.79pt>
+<pdf_images/error_zgrab.pdf, id=557, 1305.87875pt x 746.79pt>
 File: pdf_images/error_zgrab.pdf Graphic file (type pdf)
 <use pdf_images/error_zgrab.pdf>
-Package pdftex.def Info: pdf_images/error_zgrab.pdf  used on input line 343.
+Package pdftex.def Info: pdf_images/error_zgrab.pdf  used on input line 342.
 (pdftex.def)             Requested size: 391.76665pt x 78.92854pt.
 
-Overfull \hbox (1.76665pt too wide) in paragraph at lines 343--344
+Overfull \hbox (1.76665pt too wide) in paragraph at lines 342--343
  [][] 
  []
 
 [28 <./pdf_images/error_zgrab.pdf>] [29] [30]
 Chapter 6.
-<pdf_images/VariationInIpAddressesOnPort80OverTime.pdf, id=569, 722.7pt x 542.0
+<pdf_images/VariationInIpAddressesOnPort80OverTime.pdf, id=587, 722.7pt x 542.0
 25pt>
 File: pdf_images/VariationInIpAddressesOnPort80OverTime.pdf Graphic file (type 
 pdf)
 <use pdf_images/VariationInIpAddressesOnPort80OverTime.pdf>
 Package pdftex.def Info: pdf_images/VariationInIpAddressesOnPort80OverTime.pdf 
- used on input line 363.
+ used on input line 362.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
 [31
 
 ] [32 <./pdf_images/VariationInIpAddressesOnPort80OverTime.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 372--373
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
 
  []
 
-<pdf_images/VariationInIpAddressesOnPort443OverTime.pdf, id=583, 722.7pt x 542.
+<pdf_images/VariationInIpAddressesOnPort443OverTime.pdf, id=601, 722.7pt x 542.
 025pt>
 File: pdf_images/VariationInIpAddressesOnPort443OverTime.pdf Graphic file (type
  pdf)
 <use pdf_images/VariationInIpAddressesOnPort443OverTime.pdf>
 Package pdftex.def Info: pdf_images/VariationInIpAddressesOnPort443OverTime.pdf
-  used on input line 376.
+  used on input line 375.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
 [33 <./pdf_images/VariationInIpAddressesOnPort443OverTime.pdf>]
-<pdf_images/VariationInIpAddressesOnBothPortsOverTime.pdf, id=591, 722.7pt x 54
+<pdf_images/VariationInIpAddressesOnBothPortsOverTime.pdf, id=609, 722.7pt x 54
 2.025pt>
 File: pdf_images/VariationInIpAddressesOnBothPortsOverTime.pdf Graphic file (ty
 pe pdf)
 <use pdf_images/VariationInIpAddressesOnBothPortsOverTime.pdf>
 Package pdftex.def Info: pdf_images/VariationInIpAddressesOnBothPortsOverTime.p
-df  used on input line 387.
+df  used on input line 386.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
  [34 <./pdf_images/VariationInIpAddressesOnBothPortsOverTime.pdf>]
-<pdf_images/AverageDayinTrinityCollegeDublin.pdf, id=602, 722.7pt x 542.025pt>
+<pdf_images/AverageDayinTrinityCollegeDublin.pdf, id=620, 722.7pt x 542.025pt>
 File: pdf_images/AverageDayinTrinityCollegeDublin.pdf Graphic file (type pdf)
 <use pdf_images/AverageDayinTrinityCollegeDublin.pdf>
 Package pdftex.def Info: pdf_images/AverageDayinTrinityCollegeDublin.pdf  used 
-on input line 416.
+on input line 415.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
  [35]
-<pdf_images/IPaddressestoPorts.pdf, id=608, 722.7pt x 542.025pt>
+<pdf_images/IPaddressestoPorts.pdf, id=626, 722.7pt x 542.025pt>
 File: pdf_images/IPaddressestoPorts.pdf Graphic file (type pdf)
 <use pdf_images/IPaddressestoPorts.pdf>
 Package pdftex.def Info: pdf_images/IPaddressestoPorts.pdf  used on input line 
-427.
+426.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
  [36 <./pdf_images/AverageDayinTrinityCollegeDublin.pdf>]
-<pdf_images/RegularVsIrregularIPaddresses.pdf, id=616, 722.7pt x 542.025pt>
+<pdf_images/RegularVsIrregularIPaddresses.pdf, id=634, 722.7pt x 542.025pt>
 File: pdf_images/RegularVsIrregularIPaddresses.pdf Graphic file (type pdf)
 <use pdf_images/RegularVsIrregularIPaddresses.pdf>
 Package pdftex.def Info: pdf_images/RegularVsIrregularIPaddresses.pdf  used on 
-input line 435.
+input line 434.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
  [37 <./pdf_images/IPaddressestoPorts.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 440--442
+Underfull \hbox (badness 10000) in paragraph at lines 439--441
 
  []
 
 [38 <./pdf_images/RegularVsIrregularIPaddresses.pdf>]
-<pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf, id=632, 722.
+<pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf, id=650, 722.
 7pt x 542.025pt>
 File: pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf Graphic 
 file (type pdf)
 <use pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf>
 Package pdftex.def Info: pdf_images/MaximumNumberOfIrregularIPaddressesInAnAver
-ageDay.pdf  used on input line 447.
+ageDay.pdf  used on input line 446.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
-<pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf, id=635, 7
+<pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf, id=653, 7
 22.7pt x 542.025pt>
 File: pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf Graph
 ic file (type pdf)
 <use pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf>
 Package pdftex.def Info: pdf_images/TotalNumberOccurencesOfIrregularIPaddresses
-OnAverage.pdf  used on input line 455.
+OnAverage.pdf  used on input line 454.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
  [39 <./pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf>] [40 
 <./pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf>]
-<pdf_images/IpstoHostname.pdf, id=651, 722.7pt x 542.025pt>
-File: pdf_images/IpstoHostname.pdf Graphic file (type pdf)
-<use pdf_images/IpstoHostname.pdf>
-Package pdftex.def Info: pdf_images/IpstoHostname.pdf  used on input line 492.
+<pdf_images/ReverseDNSlookup.pdf, id=669, 722.7pt x 542.025pt>
+File: pdf_images/ReverseDNSlookup.pdf Graphic file (type pdf)
+<use pdf_images/ReverseDNSlookup.pdf>
+Package pdftex.def Info: pdf_images/ReverseDNSlookup.pdf  used on input line 48
+9.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
  [41]
-<pdf_images/ZMapVsZGrab.pdf, id=656, 722.7pt x 542.025pt>
-File: pdf_images/ZMapVsZGrab.pdf Graphic file (type pdf)
-<use pdf_images/ZMapVsZGrab.pdf>
-Package pdftex.def Info: pdf_images/ZMapVsZGrab.pdf  used on input line 502.
+<pdf_images/ZMapvsZGrab.pdf, id=674, 722.7pt x 542.025pt>
+File: pdf_images/ZMapvsZGrab.pdf Graphic file (type pdf)
+<use pdf_images/ZMapvsZGrab.pdf>
+Package pdftex.def Info: pdf_images/ZMapvsZGrab.pdf  used on input line 499.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [42 <./pdf_images/IpstoHostname.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 507--508
-
- []
-
-[43 <./pdf_images/ZMapVsZGrab.pdf>]
-<pdf_images/TLSVersionsInTCD.pdf, id=670, 722.7pt x 542.025pt>
+ [42 <./pdf_images/ReverseDNSlookup.pdf>] [43 <./pdf_images/ZMapvsZGrab.pdf>] [
+44] [45] [46]
+<pdf_images/TLSVersionsInTCD.pdf, id=701, 722.7pt x 542.025pt>
 File: pdf_images/TLSVersionsInTCD.pdf Graphic file (type pdf)
 <use pdf_images/TLSVersionsInTCD.pdf>
-Package pdftex.def Info: pdf_images/TLSVersionsInTCD.pdf  used on input line 52
-2.
+Package pdftex.def Info: pdf_images/TLSVersionsInTCD.pdf  used on input line 61
+7.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [44] [45 <./pdf_images/TLSVersionsInTCD.pdf>]
-<pdf_images/signatureAlgorithms.pdf, id=691, 722.7pt x 542.025pt>
+ [47] [48 <./pdf_images/TLSVersionsInTCD.pdf>]
+<pdf_images/signatureAlgorithms.pdf, id=721, 722.7pt x 542.025pt>
 File: pdf_images/signatureAlgorithms.pdf Graphic file (type pdf)
 <use pdf_images/signatureAlgorithms.pdf>
 Package pdftex.def Info: pdf_images/signatureAlgorithms.pdf  used on input line
- 532.
+ 627.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [46] [47 <./pdf_images/signatureAlgorithms.pdf>]
-<pdf_images/CipherSuitesInTCD.pdf, id=709, 722.7pt x 542.025pt>
+ [49] [50 <./pdf_images/signatureAlgorithms.pdf>]
+<pdf_images/CipherSuitesInTCD.pdf, id=740, 722.7pt x 542.025pt>
 File: pdf_images/CipherSuitesInTCD.pdf Graphic file (type pdf)
 <use pdf_images/CipherSuitesInTCD.pdf>
-Package pdftex.def Info: pdf_images/CipherSuitesInTCD.pdf  used on input line 5
-43.
+Package pdftex.def Info: pdf_images/CipherSuitesInTCD.pdf  used on input line 6
+38.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 549.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 644.
 
-
-(/home/michael/.miktex/texmfs/install/tex/latex/psnfss/ot1pcr.fd
+ (/home/michael/.miktex/texmfs/install/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 1102) in paragraph at lines 548--551
+Underfull \hbox (badness 1102) in paragraph at lines 643--646
 \OT1/pcr/m/n/12 TLS[]ECDHE[]RSA[]WITH[]AES[]128[]CBC[]SHA \OT1/ptm/m/n/12 with 
 only a single IP address
  []
 
-[48 <./pdf_images/CipherSuitesInTCD.pdf>]
-<pdf_images/BrowserTrusted.pdf, id=719, 722.7pt x 542.025pt>
+[51 <./pdf_images/CipherSuitesInTCD.pdf>]
+<pdf_images/BrowserTrusted.pdf, id=750, 722.7pt x 542.025pt>
 File: pdf_images/BrowserTrusted.pdf Graphic file (type pdf)
 <use pdf_images/BrowserTrusted.pdf>
-Package pdftex.def Info: pdf_images/BrowserTrusted.pdf  used on input line 555.
+Package pdftex.def Info: pdf_images/BrowserTrusted.pdf  used on input line 650.
 
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
 
-Underfull \hbox (badness 1226) in paragraph at lines 559--560
+Underfull \hbox (badness 1226) in paragraph at lines 654--655
 \OT1/pcr/m/n/12 TLS[]ECDHE[]RSA[]WITH[]AES[]128[]GCM[]SHA256 \OT1/ptm/m/n/12 ci
 pher suites and only 17
  []
 
-[49 <./pdf_images/BrowserTrusted.pdf>]
-Overfull \hbox (44.75996pt too wide) in paragraph at lines 563--575
+[52 <./pdf_images/BrowserTrusted.pdf>]
+Overfull \hbox (44.75996pt too wide) in paragraph at lines 658--670
  [][] 
  []
 
-<pdf_images/CertificateExpired.pdf, id=731, 722.7pt x 542.025pt>
+<pdf_images/CertificateExpired.pdf, id=762, 722.7pt x 542.025pt>
 File: pdf_images/CertificateExpired.pdf Graphic file (type pdf)
 <use pdf_images/CertificateExpired.pdf>
 Package pdftex.def Info: pdf_images/CertificateExpired.pdf  used on input line 
-584.
+679.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
-[50] [51 <./pdf_images/CertificateExpired.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 593--594
-\OT1/ptm/m/n/12 !!!!!!!!!!!!!!!!!!!!!!!!!!INSERT GRAPH OF SELF SIGNED
+[53] [54 <./pdf_images/CertificateExpired.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 689--690
+\OT1/ptm/m/n/12 !!!!!!!!!!!!!!!!!!!!!!!!!INSERT GRAPH OF SELF SIGNED
  []
 
-[52] [53] [54] [55]
+[55] [56] [57] [58]
 Chapter 7.
 
-Underfull \hbox (badness 10000) in paragraph at lines 646--648
+Underfull \hbox (badness 10000) in paragraph at lines 742--744
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 649--650
+Underfull \hbox (badness 10000) in paragraph at lines 745--746
 
  []
 
-[56
+[59
 
-] [57]
+] [60]
 Chapter 8.
 
-Underfull \hbox (badness 10000) in paragraph at lines 654--655
+Underfull \hbox (badness 10000) in paragraph at lines 750--751
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 657--658
+Underfull \hbox (badness 10000) in paragraph at lines 752--753
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 659--660
+Underfull \hbox (badness 10000) in paragraph at lines 754--755
 
  []
 
+[61
 
-Underfull \hbox (badness 10000) in paragraph at lines 662--663
+]
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
 
  []
 
-[58
-
-] [59] (final-year-report.bbl [60] [61
+[62] (final-year-report.bbl [63] [64
 
 ]
 Underfull \hbox (badness 2142) in paragraph at lines 49--52
@@ -934,7 +934,7 @@ Underfull \hbox (badness 2165) in paragraph at lines 69--73
 []\OT1/ptm/m/sc/12 Durumeric, Z., Adrian, D., Mirian, A., Bailey, M., and
  []
 
-[62] [63]
+[65] [66]
 Underfull \hbox (badness 2608) in paragraph at lines 161--165
 \OT1/ptm/m/it/12 International Journal of Research in Computer and Communicatio
 n
@@ -945,7 +945,7 @@ Underfull \hbox (badness 3179) in paragraph at lines 179--184
 []\OT1/ptm/m/sc/12 Lee, S., Im, S.-y., Shin, S.-H., Roh, B.-h., and Lee, C.
  []
 
-[64]
+[67]
 Underfull \hbox (badness 3907) in paragraph at lines 192--196
 []\OT1/ptm/m/sc/12 Mendes, N., Neto, A. A., Dur[]aes, J., Vieira, M., and
  []
@@ -984,36 +984,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 233--237
 []$\OT1/pcr/m/n/12 https : / / github . com / ssllabs / research / wiki /
  []
 
-[65]) [66]
+[68]) [69]
 Appendix A.
-[67
+[70
 
 ]
 Appendix B.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 683.
-[68
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 778.
+[71
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 683.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 778.
  (final-year-report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 683.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 683.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 778.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 778.
 Package rerunfilecheck Info: File `final-year-report.out' has not changed.
-(rerunfilecheck)             Checksum: 5BCE399CC57125FB90BEB87478F313E3;2349.
+(rerunfilecheck)             Checksum: CD1A29B67ABADF51F178BB57A1A0CCA7;2347.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 683.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 778.
  ) 
 Here is how much of TeX's memory you used:
- 8247 strings out of 494894
- 129825 string characters out of 3178612
- 242232 words of memory out of 3000000
- 11497 multiletter control sequences out of 15000+200000
+ 8257 strings out of 494894
+ 129950 string characters out of 3178612
+ 248055 words of memory out of 3000000
+ 11498 multiletter control sequences out of 15000+200000
  33432 words of font info for 60 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 35i,8n,58p,2523b,456s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,9n,58p,2523b,456s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/home/michael/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc} </home/mic
 hael/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmmi12.pk> </home/mic
 hael/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmr8.pk> </home/micha
@@ -1027,9 +1027,9 @@ all/fonts/type1/urw/times/utmb8a.pfb></home/michael/.miktex/texmfs/install/font
 s/type1/urw/times/utmr8a.pfb></home/michael/.miktex/texmfs/install/fonts/type1/
 urw/times/utmr8a.pfb></home/michael/.miktex/texmfs/install/fonts/type1/urw/time
 s/utmri8a.pfb>
-Output written on final-year-report.pdf (79 pages, 1290659 bytes).
+Output written on final-year-report.pdf (82 pages, 1298959 bytes).
 PDF statistics:
- 950 PDF objects out of 1000 (max. 8388607)
- 190 named destinations out of 1000 (max. 500000)
+ 982 PDF objects out of 1000 (max. 8388607)
+ 199 named destinations out of 1000 (max. 500000)
  430 words of extra memory for PDF output out of 10000 (max. 10000000)
 

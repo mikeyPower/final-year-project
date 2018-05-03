@@ -5,11 +5,15 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Average Number of IP addresses across week}}{35}{table.6.1}
-\contentsline {table}{\numberline {6.2}{\ignorespaces Top 10 Irregular IP addresses seen at 1am }}{41}{table.6.2}
-\contentsline {table}{\numberline {6.3}{\ignorespaces Browser Trusted Certificate Issuers }}{50}{table.6.3}
-\contentsline {table}{\numberline {6.4}{\ignorespaces Public key lengths of all IP addresses found in ZGrab scans on port 443}}{53}{table.6.4}
-\contentsline {table}{\numberline {6.5}{\ignorespaces Categorizes of Irregular IP addresses}}{54}{table.6.5}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Average Number of IP addresses across the week}}{35}{table.6.1}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Top 10 Irregular IP addresses seen at 1am}}{41}{table.6.2}
+\contentsline {table}{\numberline {6.3}{\ignorespaces How an IP thats open on both port 80 and 443 handles connections to port 80}}{45}{table.6.3}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Status codes of IPs on a Port 80 (only) making connections to port 80:}}{46}{table.6.4}
+\contentsline {table}{\numberline {6.5}{\ignorespaces Status codes of IPs on a Port 443 (only) making connections to port 443}}{46}{table.6.5}
+\contentsline {table}{\numberline {6.6}{\ignorespaces How an IP thats open on both port 80 and 443 handles connections to port 443}}{47}{table.6.6}
+\contentsline {table}{\numberline {6.7}{\ignorespaces Browser Trusted Certificate Issuers Within Trinity College Dublin}}{53}{table.6.7}
+\contentsline {table}{\numberline {6.8}{\ignorespaces Public key lengths of all IP addresses found in ZGrab scans on port 443}}{56}{table.6.8}
+\contentsline {table}{\numberline {6.9}{\ignorespaces Categorizes of Irregular IP addresses}}{57}{table.6.9}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -1,27 +1,29 @@
 \babel@toc {english}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces a nice plot1}}{12}{figure.2.1}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces ZMap Architecture}}{10}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Sample ZMap programme execution being conducted on port 80}}{12}{figure.2.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces a nice plot}}{23}{figure.4.1}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Overall design view of scans conducted}}{23}{figure.4.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces a nice plot}}{28}{figure.5.1}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces ZGrab JSON error output}}{28}{figure.5.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces a nice plot}}{32}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces a nice plot1}}{33}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces a nice plot1}}{34}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces a nice plot1}}{36}{figure.6.4}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces a nice plot1}}{37}{figure.6.5}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces a nice plot1}}{38}{figure.6.6}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Variation in the number of IP addresses on port 80 over time}}{32}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Variation in the number of IP addresses on port 443 over time}}{33}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Variation in the number of IP addresses on both ports over time}}{34}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Average Day in Trinity College Dublin across both port 80 and port 443}}{36}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Number of IP addresses found per Port}}{37}{figure.6.5}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Comparison of Regular and Irregular IP addresses within Trinity College Dublin}}{38}{figure.6.6}
 \contentsline {figure}{\numberline {6.7}{\ignorespaces a nice plot1}}{39}{figure.6.7}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces a nice plot1}}{40}{figure.6.8}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces a nice plot1}}{43}{figure.6.9}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces a nice plot1}}{45}{figure.6.10}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces a nice plot1}}{47}{figure.6.11}
-\contentsline {figure}{\numberline {6.12}{\ignorespaces a nice plot1}}{48}{figure.6.12}
-\contentsline {figure}{\numberline {6.13}{\ignorespaces a nice plot1}}{49}{figure.6.13}
-\contentsline {figure}{\numberline {6.14}{\ignorespaces a nice plot1}}{51}{figure.6.14}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Total Number of occurrences of Irregular IP addresses }}{40}{figure.6.8}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Results of Reverse DNS lookup of all IP addresses in the college}}{42}{figure.6.9}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Comparison of ZMap and ZGrab scans}}{43}{figure.6.10}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Versions of TLS/SSL found within Trinity College Dublin}}{48}{figure.6.11}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Signature Algorithms used to sign Certificates within Trinity College Dublin}}{50}{figure.6.12}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Cipher Suites used within Trinity College Dublin}}{51}{figure.6.13}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Browser Trusted Certificates within Trinity College Dublin}}{52}{figure.6.14}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Expired Certificates within Trinity College Dublin}}{54}{figure.6.15}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

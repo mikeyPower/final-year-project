@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650) (preloaded format=pdflatex 2018.4.23)  3 MAY 2018 13:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650) (preloaded format=pdflatex 2018.4.23)  3 MAY 2018 13:24
 entering extended mode
 **./final-year-report.tex
 (final-year-report.tex
@@ -1062,11 +1062,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 774.
 Here is how much of TeX's memory you used:
  9608 strings out of 494894
  153391 string characters out of 3178612
- 280345 words of memory out of 3000000
+ 280454 words of memory out of 3000000
  12827 multiletter control sequences out of 15000+200000
  29855 words of font info for 56 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 67i,12n,108p,2496b,458s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 67i,10n,108p,2496b,455s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/home/michael/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc} </home/mic
 hael/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmmi12.pk> </home/mic
 hael/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmr8.pk> </home/micha
@@ -1079,7 +1079,7 @@ xmfs/install/fonts/type1/urw/helvetic/uhvbo8a.pfb></home/michael/.miktex/texmfs
 all/fonts/type1/urw/times/utmb8a.pfb></home/michael/.miktex/texmfs/install/font
 s/type1/urw/times/utmr8a.pfb></home/michael/.miktex/texmfs/install/fonts/type1/
 urw/times/utmri8a.pfb>
-Output written on final-year-report.pdf (79 pages, 4713123 bytes).
+Output written on final-year-report.pdf (79 pages, 4710706 bytes).
 PDF statistics:
  18367 PDF objects out of 18468 (max. 8388607)
  205 named destinations out of 1000 (max. 500000)

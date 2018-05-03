@@ -1,5 +1,21 @@
 \begin{thebibliography}{10}
 
+\bibitem{matplotlib}
+Matplotlib.
+\newblock \url{https://matplotlib.org/}.
+
+\bibitem{md5}
+Md5.
+\newblock \url{http://www.win.tue.nl/hashclash/rogue-ca/}.
+
+\bibitem{polycom}
+polycom.
+\newblock \url{http://www.polycom.co.uk/}.
+
+\bibitem{socket}
+scoket programming.
+\newblock \url{https://docs.python.org/2/library/socket.html}.
+
 \bibitem{acer2017wild}
 {\sc Acer, M.~E., Stark, E., Felt, A.~P., Fahl, S., Bhargava, R., Dev, B.,
   Braithwaite, M., Sleevi, R., and Tabriz, P.}
@@ -75,27 +91,32 @@
 
 \bibitem{censysWeb}
 {\sc Durumeric, Z., Wustrow, E., and Halderman, J.~A.}
-\newblock censys, https://censys.io/.
+\newblock censys.
+\newblock \url{https://censys.io/}.
 
 \bibitem{zgrabGithub}
 {\sc Durumeric, Z., Wustrow, E., and Halderman, J.~A.}
-\newblock Zgrab, https://github.com/zmap/zgrab.
+\newblock Zgrab.
+\newblock \url{https://github.com/zmap/zgrab}.
 
 \bibitem{zgrab2Github}
 {\sc Durumeric, Z., Wustrow, E., and Halderman, J.~A.}
-\newblock Zgrab, https://github.com/zmap/zgrab2.
+\newblock Zgrab2.
+\newblock \url{https://github.com/zmap/zgrab2}.
+
+\bibitem{zmapGithub}
+{\sc Durumeric, Z., Wustrow, E., and Halderman, J.~A.}
+\newblock Zmap.
+\newblock \url{https://github.com/zmap/zmap/blob/master/README.md}.
 
 \bibitem{durumeric2013zmap}
 {\sc Durumeric, Z., Wustrow, E., and Halderman, J.~A.}
 \newblock Zmap: Fast internet-wide scanning and its security applications.
 
-\bibitem{zmapGithub}
-{\sc Durumeric, Z., Wustrow, E., and Halderman, J.~A.}
-\newblock Zmap, https://github.com/zmap/zmap/blob/master/readme.md.
-
 \bibitem{LetsEncrypt}
 {\sc Encrypt, L.}
-\newblock scoket,https://letsencrypt.org.
+\newblock Let's encrypt certificates.
+\newblock \url{https://letsencrypt.org}.
 
 \bibitem{fielding1999hypertext}
 {\sc Fielding, R., Gettys, J., Mogul, J., Frystyk, H., Masinter, L., Leach, P.,
@@ -131,6 +152,11 @@
 \newblock In {\em Encyclopedia of Cryptography and Security}. Springer, 2011,
   pp.~1064--1065.
 
+\bibitem{keller1999take}
+{\sc Keller, M.~S.}
+\newblock Take command: cron: Job scheduler.
+\newblock {\em Linux Journal 1999}, 65es (1999), 15.
+
 \bibitem{khan2016transport}
 {\sc Khan, I.~U., and Hassan, M.~A.}
 \newblock Transport layer protocols and services.
@@ -162,10 +188,6 @@
   network discovery and security scanning}.
 \newblock Insecure, 2009.
 
-\bibitem{matplotlib}
-{\sc matplotlib}.
-\newblock matplotlib,https://matplotlib.org/.
-
 \bibitem{mendes2008assessing}
 {\sc Mendes, N., Neto, A.~A., Dur{\~a}es, J., Vieira, M., and Madeira, H.}
 \newblock Assessing and comparing security of web servers.
@@ -174,7 +196,8 @@
 
 \bibitem{tlsDemoServer}
 {\sc mirleft}.
-\newblock Ocaml-tls demo server, https://tls.nqsb.io/.
+\newblock Ocaml-tls demo server.
+\newblock \url{https://tls.nqsb.io/}.
 
 \bibitem{moller2014poodle}
 {\sc M{\"o}ller, B., Duong, T., and Kotowicz, K.}
@@ -183,8 +206,9 @@
 
 \bibitem{owaspTLS_SSL}
 {\sc owasp}.
-\newblock Transport layer protection cheat sheet,
-  https://www.owasp.org/index.php/.
+\newblock Transport layer protection cheat sheet.
+\newblock
+  \url{https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet}.
 
 \bibitem{pike2009go}
 {\sc Pike, R.}
@@ -198,24 +222,18 @@
 
 \bibitem{michaelGithub}
 {\sc Power, M.}
-\newblock https://github.com/mikeypower/final-year-project, 2018.
+\newblock Survey of web servers.
+\newblock \url{https://github.com/mikeyPower/final-year-project}, 2018.
 
 \bibitem{rescorla2000http}
 {\sc Rescorla, E.}
 \newblock Http over tls.
 
-\bibitem{socket}
-{\sc socket}.
-\newblock scoket,https://docs.python.org/2/library/socket.html.
-
-\bibitem{md5}
-{\sc ssllabs}.
-\newblock md5,http://www.win.tue.nl/hashclash/rogue-ca/.
-
 \bibitem{ssllabs}
 {\sc ssllabs}.
-\newblock Transport layer protection cheat
-  sheet,https://github.com/ssllabs/research/wiki/ssl-and-tls-deployment-best-practices.
+\newblock Transport layer protection cheat sheet.
+\newblock
+  \url{https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices}.
 
 \bibitem{top20161}
 {\sc Top, A.}

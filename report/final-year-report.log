@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650) (preloaded format=pdflatex 2018.4.23)  2 MAY 2018 20:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650) (preloaded format=pdflatex 2018.4.23)  3 MAY 2018 01:48
 entering extended mode
 **./final-year-report.tex
 (final-year-report.tex
@@ -216,6 +216,108 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks20
 \@floatcapt=\box29
 )
+(/home/michael/.miktex/texmfs/install/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
+
+(/home/michael/.miktex/texmfs/install/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(/home/michael/.miktex/texmfs/install/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+) (/home/michael/.miktex/texmfs/install/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen120
+\Hy@linkcounter=\count97
+\Hy@pagecounter=\count98
+
+(/home/michael/.miktex/texmfs/install/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count99
+
+(/home/michael/.miktex/texmfs/install/tex/latex/00miktex/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4509.
+Package hyperref Info: Link nesting OFF on input line 4514.
+Package hyperref Info: Hyper index ON on input line 4517.
+Package hyperref Info: Plain pages OFF on input line 4524.
+Package hyperref Info: Backreferencing OFF on input line 4529.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4762.
+\c@Hy@tempcnt=\count100
+
+(/home/michael/.miktex/texmfs/install/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5115.
+\XeTeXLinkMargin=\dimen121
+\Fld@menulength=\count101
+\Field@Width=\dimen122
+\Fld@charsize=\dimen123
+Package hyperref Info: Hyper figures OFF on input line 6369.
+Package hyperref Info: Link nesting OFF on input line 6374.
+Package hyperref Info: Hyper index ON on input line 6377.
+Package hyperref Info: backreferencing OFF on input line 6384.
+Package hyperref Info: Link coloring OFF on input line 6389.
+Package hyperref Info: Link coloring with OCG OFF on input line 6394.
+Package hyperref Info: PDF/A mode OFF on input line 6399.
+LaTeX Info: Redefining \ref on input line 6439.
+LaTeX Info: Redefining \pageref on input line 6443.
+\Hy@abspage=\count102
+\c@Item=\count103
+\c@Hfootnote=\count104
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/home/michael/.miktex/texmfs/install/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
+\Fld@listcount=\count105
+\c@bookmark@seq@number=\count106
+
+(/home/michael/.miktex/texmfs/install/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip43
+)
 
 LaTeX Warning: Unused global option(s):
     [a4wide].
@@ -235,6 +337,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 15.
 
 (/home/michael/.miktex/texmfs/install/tex/latex/psnfss/ot1ptm.fd
@@ -242,39 +346,23 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (/home/michael/.miktex/texmfs/install/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count97
-\scratchdimen=\dimen120
+\scratchcounter=\count107
+\scratchdimen=\dimen124
 \scratchbox=\box30
-\nofMPsegments=\count98
-\nofMParguments=\count99
+\nofMPsegments=\count108
+\nofMParguments=\count109
 \everyMPshowfont=\toks21
-\MPscratchCnt=\count100
-\MPscratchDim=\dimen121
-\MPnumerator=\count101
-\makeMPintoPDFobject=\count102
+\MPscratchCnt=\count110
+\MPscratchDim=\dimen125
+\MPnumerator=\count111
+\makeMPintoPDFobject=\count112
 \everyMPtoPDFconversion=\toks22
 ) (/home/michael/.miktex/texmfs/install/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
 (/home/michael/.miktex/texmfs/install/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-(/home/michael/.miktex/texmfs/install/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-))
-(/home/michael/.miktex/texmfs/install/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-(/home/michael/.miktex/texmfs/install/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-(/home/michael/.miktex/texmfs/install/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 38.
 Package grfext Info: Graphics extension search list:
@@ -282,12 +370,30 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
+\AtBeginShipoutBox=\box31
+Package hyperref Info: Link coloring OFF on input line 15.
+
+(/home/michael/.miktex/texmfs/install/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(/home/michael/.miktex/texmfs/install/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count113
+)
+LaTeX Info: Redefining \ref on input line 15.
+LaTeX Info: Redefining \pageref on input line 15.
+LaTeX Info: Redefining \nameref on input line 15.
+(final-year-report.out) (final-year-report.out)
+\@outlinefile=\write3
+\openout3 = `final-year-report.out'.
+
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 21.
 
 (/home/michael/.miktex/texmfs/install/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
-<images/trinitycollege.pdf, id=1, 597.23125pt x 845.1575pt>
+<images/trinitycollege.pdf, id=159, 597.23125pt x 845.1575pt>
 File: images/trinitycollege.pdf Graphic file (type pdf)
 <use images/trinitycollege.pdf>
 Package pdftex.def Info: images/trinitycollege.pdf  used on input line 26.
@@ -328,328 +434,257 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
  [5
 
 ] [6])
-\tf@toc=\write3
-\openout3 = `final-year-report.toc'.
+\tf@toc=\write4
+\openout4 = `final-year-report.toc'.
 
  [7] (final-year-report.lof
 [8
 
 ])
-\tf@lof=\write4
-\openout4 = `final-year-report.lof'.
+\tf@lof=\write5
+\openout5 = `final-year-report.lof'.
 
- [9]
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
+ [9] (final-year-report.lot)
+\tf@lot=\write6
+\openout6 = `final-year-report.lot'.
+
+ [10
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 100--102
 
  []
 
-[1]
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.105 \end{abstract}
+                     [1]
 Chapter 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 108.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 109.
 
-Overfull \hbox (1.65997pt too wide) in paragraph at lines 109--110
-\OT1/ptm/m/n/12 !!!!!!!!!!!!!!!MIND TENSE USED (PAST OR FUTURE), PICK ONE AND K
-EEP
- []
-
-
-Overfull \hbox (11.42714pt too wide) in paragraph at lines 109--110
-\OT1/ptm/m/n/12 IT, ALSO MIND THE USE OF I WHEN DESCRIBING THE REPORT!!!!!!!!!!
-!!!!! 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
 
  []
 
 
-Overfull \hbox (9.9077pt too wide) in paragraph at lines 113--114
-\OT1/ptm/m/n/12 these systems is of concern. Even when following strict policie
-s, miss configurations
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
-
- []
-
-
-Overfull \hbox (6.78802pt too wide) in paragraph at lines 115--116
+Underfull \hbox (badness 1005) in paragraph at lines 112--113
 []\OT1/ptm/m/n/12 This report will also outline the steps that were taken in or
-der for other organizations
+der for other
  []
 
 
-Overfull \hbox (1.72412pt too wide) in paragraph at lines 115--116
-\OT1/ptm/m/n/12 and institutions to replicate what has been done here within Tr
-inity College Dublin. 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 115--116
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.117   \item W
+               hich IP addresses are listening on port 80, port 443 and both...
 [1
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 120.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 117.
 
  (/home/michael/.miktex/texmfs/install/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 120.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 117.
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
-[2] [3]
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.137 \item\textbf
+                  {Chapter 2} aims to familiarise the reader with the requir...
+[2]pdfTeX warning (ext4): destination with the same identifier (name{page.3}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.147 \chapter
+              {Background} [3]
 Chapter 2.
 
-Overfull \hbox (22.33932pt too wide) in paragraph at lines 154--156
-\OT1/ptm/m/n/12 Protocol or HTTP for short. The general way in which a Client i
-nitiates communication
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 154--156
+Underfull \hbox (badness 10000) in paragraph at lines 151--153
 
  []
 
-[4
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.153 
+       [4
 
 ]
-Overfull \hbox (20.22841pt too wide) in paragraph at lines 157--158
-[]\OT1/ptm/m/n/12 Web Servers play a significant role in terms of the overall w
-orkings of web applications
+Underfull \hbox (badness 1028) in paragraph at lines 156--157
+\OT1/ptm/m/n/12 and service identification on the Internet. Ports are 16-bit nu
+mbers, and
  []
 
-
-Overfull \hbox (5.03604pt too wide) in paragraph at lines 159--160
-\OT1/ptm/m/n/12 service identification on the Internet. Ports are 16-bit number
-s, and the combination
- []
-
-
-Overfull \hbox (36.90718pt too wide) in paragraph at lines 159--160
-\OT1/ptm/m/n/12 of source and destination port umbers together with the IP addr
-esses of the communicating
- []
-
-
-Overfull \hbox (8.7676pt too wide) in paragraph at lines 162--164
-[]\OT1/ptm/m/n/12 the System Ports, also known as the Well Known Ports, from 0-
-1023 (assigned
- []
-
-
-Overfull \hbox (13.83163pt too wide) in paragraph at lines 164--166
-[]\OT1/ptm/m/n/12 the User Ports, also known as the Registered Ports, from 1024
-- 49151 (assigned
- []
-
+pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.163 \item t
+             he Dynamic Ports, also known as the Private or Ephemeral Ports,
 [5]
-Overfull \hbox (14.56346pt too wide) in paragraph at lines 170--171
-\OT1/ptm/m/n/12 The Hypertext transfer Protocol (HTTP) is application layer pro
-tocol most commonly
- []
-
-
-Overfull \hbox (1.15947pt too wide) in paragraph at lines 173--175
-\OT1/ptm/m/n/12 messages which grants a man-in-the-middle to trick the client i
-n selecting a weaker
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--175
+Underfull \hbox (badness 10000) in paragraph at lines 170--172
 
  []
 
-[6]
-<images/tls_demo.png, id=61, 205.5178pt x 561.59813pt>
+pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.172  \begin{center}
+                      [6]
+<images/tls_demo.png, id=342, 205.5178pt x 561.59813pt>
 File: images/tls_demo.png Graphic file (type png)
 <use images/tls_demo.png>
-Package pdftex.def Info: images/tls_demo.png  used on input line 176.
+Package pdftex.def Info: images/tls_demo.png  used on input line 173.
 (pdftex.def)             Requested size: 102.75865pt x 280.79837pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--180
+Underfull \hbox (badness 10000) in paragraph at lines 175--177
 
  []
 
-[7 <./images/tls_demo.png>] [8]
+pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.177 
+       [7 <./images/tls_demo.png>]pdfTeX warning (ext4): destination with the s
+ame identifier (name{page.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.182 \begin{enumerate}
+                        [8]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 195.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 192.
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
+Underfull \hbox (badness 10000) in paragraph at lines 193--197
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.197 
+       [9]
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--204
+Underfull \hbox (badness 10000) in paragraph at lines 201--203
 
  []
 
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 206--207
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 208--210
-
- []
-
-<images/zmap_architecture.png, id=75, 927.465pt x 337.26pt>
+<images/zmap_architecture.png, id=380, 927.465pt x 337.26pt>
 File: images/zmap_architecture.png Graphic file (type png)
 <use images/zmap_architecture.png>
-Package pdftex.def Info: images/zmap_architecture.png  used on input line 214.
+Package pdftex.def Info: images/zmap_architecture.png  used on input line 207.
 (pdftex.def)             Requested size: 370.97943pt x 134.9016pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
 
+pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.213 Z
+       Map uses a modular design to support many types of probes and integra...
 [10 <./images/zmap_architecture.png>]
-Overfull \hbox (2.37099pt too wide) in paragraph at lines 220--222
-\OT1/ptm/m/n/12 omits sites/IP ranges such as any reserved address allocations 
-along with individual
- []
-
-
-Overfull \hbox (0.656pt too wide) in paragraph at lines 220--222
-\OT1/ptm/m/n/12 sending these packets to their intended destination. ZMap also 
-provides Extensible
- []
-
-
-Overfull \hbox (18.15309pt too wide) in paragraph at lines 220--222
-\OT1/ptm/m/n/12 probe modules which can be customized for different kinds of pr
-obes. The \OT1/ptm/m/it/12 Framework
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 220--222
+Underfull \hbox (badness 10000) in paragraph at lines 213--215
 
  []
 
-<pdf_images/zmap_scan_exmaple_2.pdf, id=80, 1305.87875pt x 746.79pt>
+<pdf_images/zmap_scan_exmaple_2.pdf, id=389, 1305.87875pt x 746.79pt>
 File: pdf_images/zmap_scan_exmaple_2.pdf Graphic file (type pdf)
 <use pdf_images/zmap_scan_exmaple_2.pdf>
 Package pdftex.def Info: pdf_images/zmap_scan_exmaple_2.pdf  used on input line
- 226.
+ 219.
 (pdftex.def)             Requested size: 391.76665pt x 224.03873pt.
 
-Overfull \hbox (1.76665pt too wide) in paragraph at lines 226--227
+Overfull \hbox (1.76665pt too wide) in paragraph at lines 219--220
  [][] 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 232--235
+Underfull \hbox (badness 10000) in paragraph at lines 225--228
 
  []
 
 [12 <./pdf_images/zmap_scan_exmaple_2.pdf>]
-Overfull \hbox (5.37238pt too wide) in paragraph at lines 250--251
-\OT1/ptm/m/n/12 network, this is obtained by establishing a connection with the
- device and observing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
 
  []
 
 [13]
-Overfull \hbox (5.93633pt too wide) in paragraph at lines 258--259
-\OT1/ptm/m/n/12 suite[[]] rather than using the chosen cipher suite of the sour
-ce machine performing
- []
-
-
-Overfull \hbox (0.84842pt too wide) in paragraph at lines 258--259
-\OT1/ptm/m/n/12 information simultaneous, while a host is being scanned or inde
-pendently of ZMap
- []
-
-
-Overfull \hbox (19.30357pt too wide) in paragraph at lines 258--259
-\OT1/ptm/m/n/12 by passing the host source IP address or domain name directly i
-nto ZGrab. Instructions
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 258--259
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
 
  []
 
 [14] [15] [16]
 Chapter 3.
 
-Overfull \hbox (2.06128pt too wide) in paragraph at lines 283--284
-\OT1/ptm/m/n/12 the University of Michigan, where in 2014 they published a pape
-r[[]] investigating
- []
-
-
-Overfull \hbox (24.04407pt too wide) in paragraph at lines 283--284
-\OT1/ptm/m/n/12 estimated Internet-wide scan rate of 10 packets per second (pps
-)", they also investigated
- []
-
-
-Overfull \hbox (2.1438pt too wide) in paragraph at lines 283--284
-\OT1/ptm/m/n/12 April 7th 2014. The vulnerability itself allows attackers to re
-motely dump arbitrary
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 283--284
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
 
  []
 
 [17
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 285--286
+Underfull \hbox (badness 10000) in paragraph at lines 278--279
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 288--290
+Underfull \hbox (badness 10000) in paragraph at lines 281--283
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 292--293
+Underfull \hbox (badness 1038) in paragraph at lines 285--286
+\OT1/ptm/m/n/12 Urban-Champaign in 2016 have conducted similar HTTPS surveys bu
+t by
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
 
  []
 
 
-Overfull \hbox (13.4243pt too wide) in paragraph at lines 294--295
-[]\OT1/ptm/m/n/12 Researchers at Ajou University, have implemented ZMap within 
-their own University
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 294--295
+Underfull \hbox (badness 10000) in paragraph at lines 287--288
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 296--297
+Underfull \hbox (badness 10000) in paragraph at lines 289--290
 
  []
 
 [21]
 Chapter 4.
-<pdf_images/design.pdf, id=127, 614.295pt x 794.97pt>
+<pdf_images/design.pdf, id=490, 614.295pt x 794.97pt>
 File: pdf_images/design.pdf Graphic file (type pdf)
 <use pdf_images/design.pdf>
-Package pdftex.def Info: pdf_images/design.pdf  used on input line 304.
+Package pdftex.def Info: pdf_images/design.pdf  used on input line 297.
 (pdftex.def)             Requested size: 307.14674pt x 312.12598pt.
 [22
 
@@ -658,7 +693,7 @@ Package pdftex.def Info: pdf_images/design.pdf  used on input line 304.
 pdfTeX warning: pdflatex (file ./pdf_images/design.pdf): PDF inclusion: invalid
  other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 313--314
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
 
  []
 
@@ -667,319 +702,191 @@ Chapter 5.
 [25
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 330--331
+Underfull \hbox (badness 10000) in paragraph at lines 323--324
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 334--335
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
 
  []
 
-<pdf_images/error_zgrab.pdf, id=154, 1305.87875pt x 746.79pt>
+[27]
+<pdf_images/error_zgrab.pdf, id=539, 1305.87875pt x 746.79pt>
 File: pdf_images/error_zgrab.pdf Graphic file (type pdf)
 <use pdf_images/error_zgrab.pdf>
-Package pdftex.def Info: pdf_images/error_zgrab.pdf  used on input line 350.
+Package pdftex.def Info: pdf_images/error_zgrab.pdf  used on input line 343.
 (pdftex.def)             Requested size: 391.76665pt x 78.92854pt.
 
-Overfull \hbox (1.76665pt too wide) in paragraph at lines 350--351
+Overfull \hbox (1.76665pt too wide) in paragraph at lines 343--344
  [][] 
  []
 
-[27] [28 <./pdf_images/error_zgrab.pdf>] [29]
+[28 <./pdf_images/error_zgrab.pdf>] [29] [30]
 Chapter 6.
-
-Underfull \hbox (badness 10000) in paragraph at lines 362--363
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 364--365
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 366--367
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 368--369
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 370--371
-
- []
-
-[30
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 372--373
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 374--375
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 376--377
-
- []
-
-
-LaTeX Warning: Citation `vandersloot2016toward' on page 31 undefined on input l
-ine 378.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 378--380
-
- []
-
-<pdf_images/VariationInIpAddressesOnPort80OverTime.pdf, id=184, 722.7pt x 542.0
+<pdf_images/VariationInIpAddressesOnPort80OverTime.pdf, id=569, 722.7pt x 542.0
 25pt>
 File: pdf_images/VariationInIpAddressesOnPort80OverTime.pdf Graphic file (type 
 pdf)
 <use pdf_images/VariationInIpAddressesOnPort80OverTime.pdf>
 Package pdftex.def Info: pdf_images/VariationInIpAddressesOnPort80OverTime.pdf 
- used on input line 390.
+ used on input line 363.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
-[31]
-Overfull \hbox (11.6009pt too wide) in paragraph at lines 395--397
-\OT1/ptm/m/n/12 weather which caused a power cut in the college, downing server
- that was conducting
- []
+[31
 
-[32 <./pdf_images/VariationInIpAddressesOnPort80OverTime.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 399--400
+] [32 <./pdf_images/VariationInIpAddressesOnPort80OverTime.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
 
  []
 
-<pdf_images/VariationInIpAddressesOnPort443OverTime.pdf, id=193, 722.7pt x 542.
+<pdf_images/VariationInIpAddressesOnPort443OverTime.pdf, id=583, 722.7pt x 542.
 025pt>
 File: pdf_images/VariationInIpAddressesOnPort443OverTime.pdf Graphic file (type
  pdf)
 <use pdf_images/VariationInIpAddressesOnPort443OverTime.pdf>
 Package pdftex.def Info: pdf_images/VariationInIpAddressesOnPort443OverTime.pdf
-  used on input line 403.
+  used on input line 376.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
 [33 <./pdf_images/VariationInIpAddressesOnPort443OverTime.pdf>]
-<pdf_images/VariationInIpAddressesOnBothPortsOverTime.pdf, id=200, 722.7pt x 54
+<pdf_images/VariationInIpAddressesOnBothPortsOverTime.pdf, id=591, 722.7pt x 54
 2.025pt>
 File: pdf_images/VariationInIpAddressesOnBothPortsOverTime.pdf Graphic file (ty
 pe pdf)
 <use pdf_images/VariationInIpAddressesOnBothPortsOverTime.pdf>
 Package pdftex.def Info: pdf_images/VariationInIpAddressesOnBothPortsOverTime.p
-df  used on input line 414.
+df  used on input line 387.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
  [34 <./pdf_images/VariationInIpAddressesOnBothPortsOverTime.pdf>]
-<pdf_images/AverageDayinTrinityCollegeDublin.pdf, id=206, 722.7pt x 542.025pt>
+<pdf_images/AverageDayinTrinityCollegeDublin.pdf, id=602, 722.7pt x 542.025pt>
 File: pdf_images/AverageDayinTrinityCollegeDublin.pdf Graphic file (type pdf)
 <use pdf_images/AverageDayinTrinityCollegeDublin.pdf>
 Package pdftex.def Info: pdf_images/AverageDayinTrinityCollegeDublin.pdf  used 
-on input line 443.
+on input line 416.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
  [35]
-<pdf_images/IPaddressestoPorts.pdf, id=210, 722.7pt x 542.025pt>
+<pdf_images/IPaddressestoPorts.pdf, id=608, 722.7pt x 542.025pt>
 File: pdf_images/IPaddressestoPorts.pdf Graphic file (type pdf)
 <use pdf_images/IPaddressestoPorts.pdf>
 Package pdftex.def Info: pdf_images/IPaddressestoPorts.pdf  used on input line 
-454.
+427.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
  [36 <./pdf_images/AverageDayinTrinityCollegeDublin.pdf>]
-<pdf_images/RegularVsIrregularIPaddresses.pdf, id=216, 722.7pt x 542.025pt>
+<pdf_images/RegularVsIrregularIPaddresses.pdf, id=616, 722.7pt x 542.025pt>
 File: pdf_images/RegularVsIrregularIPaddresses.pdf Graphic file (type pdf)
 <use pdf_images/RegularVsIrregularIPaddresses.pdf>
 Package pdftex.def Info: pdf_images/RegularVsIrregularIPaddresses.pdf  used on 
-input line 462.
+input line 435.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
  [37 <./pdf_images/IPaddressestoPorts.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 467--469
+Underfull \hbox (badness 10000) in paragraph at lines 440--442
 
  []
 
 [38 <./pdf_images/RegularVsIrregularIPaddresses.pdf>]
-<pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf, id=227, 722.
+<pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf, id=632, 722.
 7pt x 542.025pt>
 File: pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf Graphic 
 file (type pdf)
 <use pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf>
 Package pdftex.def Info: pdf_images/MaximumNumberOfIrregularIPaddressesInAnAver
-ageDay.pdf  used on input line 474.
+ageDay.pdf  used on input line 447.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
-<pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf, id=228, 7
+<pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf, id=635, 7
 22.7pt x 542.025pt>
 File: pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf Graph
 ic file (type pdf)
 <use pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf>
 Package pdftex.def Info: pdf_images/TotalNumberOccurencesOfIrregularIPaddresses
-OnAverage.pdf  used on input line 482.
+OnAverage.pdf  used on input line 455.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
  [39 <./pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf>] [40 
 <./pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf>]
-<pdf_images/IpstoHostname.pdf, id=240, 722.7pt x 542.025pt>
+<pdf_images/IpstoHostname.pdf, id=651, 722.7pt x 542.025pt>
 File: pdf_images/IpstoHostname.pdf Graphic file (type pdf)
 <use pdf_images/IpstoHostname.pdf>
-Package pdftex.def Info: pdf_images/IpstoHostname.pdf  used on input line 519.
+Package pdftex.def Info: pdf_images/IpstoHostname.pdf  used on input line 492.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
  [41]
-<pdf_images/ZMapVsZGrab.pdf, id=244, 722.7pt x 542.025pt>
+<pdf_images/ZMapVsZGrab.pdf, id=656, 722.7pt x 542.025pt>
 File: pdf_images/ZMapVsZGrab.pdf Graphic file (type pdf)
 <use pdf_images/ZMapVsZGrab.pdf>
-Package pdftex.def Info: pdf_images/ZMapVsZGrab.pdf  used on input line 529.
+Package pdftex.def Info: pdf_images/ZMapVsZGrab.pdf  used on input line 502.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
  [42 <./pdf_images/IpstoHostname.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 534--535
+Underfull \hbox (badness 10000) in paragraph at lines 507--508
 
- []
-
-
-Overfull \hbox (47.03525pt too wide) in paragraph at lines 536--537
-[]\OT1/ptm/m/n/12 !!!!!!!!!!!!!!!!!!!! Also state how many Irregular IP address
-es we gathered !!!!!!!!!!!!!!!!!!!!!! 
  []
 
 [43 <./pdf_images/ZMapVsZGrab.pdf>]
-<pdf_images/TLSVersionsInTCD.pdf, id=255, 722.7pt x 542.025pt>
+<pdf_images/TLSVersionsInTCD.pdf, id=670, 722.7pt x 542.025pt>
 File: pdf_images/TLSVersionsInTCD.pdf Graphic file (type pdf)
 <use pdf_images/TLSVersionsInTCD.pdf>
-Package pdftex.def Info: pdf_images/TLSVersionsInTCD.pdf  used on input line 54
-9.
+Package pdftex.def Info: pdf_images/TLSVersionsInTCD.pdf  used on input line 52
+2.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [44]
-Overfull \hbox (1.41368pt too wide) in paragraph at lines 554--555
-\OT1/ptm/m/n/12 Over the course of the banner grabs we have found 3 different v
-ersions of TLS/SSL
- []
-
-[45 <./pdf_images/TLSVersionsInTCD.pdf>]
-<pdf_images/signatureAlgorithms.pdf, id=265, 722.7pt x 542.025pt>
+ [44] [45 <./pdf_images/TLSVersionsInTCD.pdf>]
+<pdf_images/signatureAlgorithms.pdf, id=691, 722.7pt x 542.025pt>
 File: pdf_images/signatureAlgorithms.pdf Graphic file (type pdf)
 <use pdf_images/signatureAlgorithms.pdf>
 Package pdftex.def Info: pdf_images/signatureAlgorithms.pdf  used on input line
- 559.
+ 532.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [46]
-Overfull \hbox (4.51921pt too wide) in paragraph at lines 564--566
-\OT1/ptm/m/n/12 hashing functions.[[]]. With the remaining 290 IP addresses pos
-sessing certificates
- []
-
-[47 <./pdf_images/signatureAlgorithms.pdf>]
-<pdf_images/CipherSuitesInTCD.pdf, id=274, 722.7pt x 542.025pt>
+ [46] [47 <./pdf_images/signatureAlgorithms.pdf>]
+<pdf_images/CipherSuitesInTCD.pdf, id=709, 722.7pt x 542.025pt>
 File: pdf_images/CipherSuitesInTCD.pdf Graphic file (type pdf)
 <use pdf_images/CipherSuitesInTCD.pdf>
 Package pdftex.def Info: pdf_images/CipherSuitesInTCD.pdf  used on input line 5
-70.
+43.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 549.
 
-Overfull \hbox (96.32896pt too wide) in paragraph at lines 575--576
-\OT1/ptm/m/n/12 messages [[]]. The most least wide cipher suite found is $\OML/
-cmm/m/it/12 TLS[]CDHE[]SA[]ITH[]ES[]\OT1/cmr/m/n/12 28[]\OML/cmm/m/it/12 BC[]HA
-$
+
+(/home/michael/.miktex/texmfs/install/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 1102) in paragraph at lines 548--551
+\OT1/pcr/m/n/12 TLS[]ECDHE[]RSA[]WITH[]AES[]128[]CBC[]SHA \OT1/ptm/m/n/12 with 
+only a single IP address
  []
 
 [48 <./pdf_images/CipherSuitesInTCD.pdf>]
-<pdf_images/BrowserTrusted.pdf, id=281, 722.7pt x 542.025pt>
+<pdf_images/BrowserTrusted.pdf, id=719, 722.7pt x 542.025pt>
 File: pdf_images/BrowserTrusted.pdf Graphic file (type pdf)
 <use pdf_images/BrowserTrusted.pdf>
-Package pdftex.def Info: pdf_images/BrowserTrusted.pdf  used on input line 580.
+Package pdftex.def Info: pdf_images/BrowserTrusted.pdf  used on input line 555.
 
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
 
-Overfull \hbox (107.49413pt too wide) in paragraph at lines 584--585
-\OT1/ptm/m/n/12 entire certificates collected with 45 IP address of using $\OML
-/cmm/m/it/12 TLS[]CDHE[]SA[]ITH[]ES[]\OT1/cmr/m/n/12 28[]\OML/cmm/m/it/12 CM[]H
-A\OT1/cmr/m/n/12 256$
+Underfull \hbox (badness 1226) in paragraph at lines 559--560
+\OT1/pcr/m/n/12 TLS[]ECDHE[]RSA[]WITH[]AES[]128[]GCM[]SHA256 \OT1/ptm/m/n/12 ci
+pher suites and only 17
  []
 
 [49 <./pdf_images/BrowserTrusted.pdf>]
-Overfull \hbox (44.75996pt too wide) in paragraph at lines 588--600
+Overfull \hbox (44.75996pt too wide) in paragraph at lines 563--575
  [][] 
  []
 
-<pdf_images/CertificateExpired.pdf, id=287, 722.7pt x 542.025pt>
+<pdf_images/CertificateExpired.pdf, id=731, 722.7pt x 542.025pt>
 File: pdf_images/CertificateExpired.pdf Graphic file (type pdf)
 <use pdf_images/CertificateExpired.pdf>
 Package pdftex.def Info: pdf_images/CertificateExpired.pdf  used on input line 
-609.
+584.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
-[50]
-Overfull \hbox (13.78456pt too wide) in paragraph at lines 614--615
-\OT1/ptm/m/n/12 that are out of date with the most recent certificate expiring 
-in 2018-03-16T15:49:14Z
+[50] [51 <./pdf_images/CertificateExpired.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 593--594
+\OT1/ptm/m/n/12 !!!!!!!!!!!!!!!!!!!!!!!!!!INSERT GRAPH OF SELF SIGNED
  []
 
-
-Overfull \hbox (0.59615pt too wide) in paragraph at lines 614--615
-\OT1/ptm/m/n/12 addresses turned out to be web servers of printer devices (prin
-t servers) specifically
- []
-
-
-Overfull \hbox (0.64311pt too wide) in paragraph at lines 614--615
-\OT1/ptm/m/n/12 HP printers. What's interesting about this is that these device
-s could be an example
- []
-
-[51 <./pdf_images/CertificateExpired.pdf>]
-Overfull \hbox (43.08476pt too wide) in paragraph at lines 618--619
-\OT1/ptm/m/n/12 !!!!!!!!!!!!!!!!!!!!!!!!!!INSERT GRAPH OF SELF SIGNED CERTS!!!!
-!!!!!!!!!!!!!!!!!!!!!!!! 
- []
-
-[52]
-Overfull \hbox (2.32431pt too wide) in paragraph at lines 641--642
-[]\OT1/ptm/m/n/12 Keeping with public keys, the self signed certificates found 
-in the college contained
- []
-
-
-Overfull \hbox (2.56413pt too wide) in paragraph at lines 641--642
-\OT1/ptm/m/n/12 the only 512 and 768 bit length certificates with regards to th
-e rest of the certificates
- []
-
-[53] [54] [55]
+[52] [53] [54] [55]
 Chapter 7.
 
-Underfull \hbox (badness 10000) in paragraph at lines 671--672
+Underfull \hbox (badness 10000) in paragraph at lines 646--648
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 673--675
-
- []
-
-
-Overfull \hbox (25.88051pt too wide) in paragraph at lines 676--677
-[]\OT1/ptm/m/n/12 This project has allowed me to gain a deep understanding of t
-he underlying technologies
- []
-
-
-Overfull \hbox (1.11147pt too wide) in paragraph at lines 676--677
-\OT1/ptm/m/n/12 investigate interesting security topics such POODLE, BEAST and 
-MD5 collisions. 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 676--677
-
- []
-
-
-Overfull \hbox (3.82329pt too wide) in paragraph at lines 678--679
-\OT1/ptm/m/n/12 other institutions and organisations who intend to replicate si
-milar results presented
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 678--679
+Underfull \hbox (badness 10000) in paragraph at lines 649--650
 
  []
 
@@ -988,94 +895,93 @@ Underfull \hbox (badness 10000) in paragraph at lines 678--679
 ] [57]
 Chapter 8.
 
-Underfull \hbox (badness 10000) in paragraph at lines 683--684
+Underfull \hbox (badness 10000) in paragraph at lines 654--655
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 685--686
+Underfull \hbox (badness 10000) in paragraph at lines 657--658
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 687--688
+Underfull \hbox (badness 10000) in paragraph at lines 659--660
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--663
 
  []
 
 [58
 
+] [59] (final-year-report.bbl [60] [61
+
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 690--691
-
- []
-
-
-Overfull \hbox (2.55258pt too wide) in paragraph at lines 692--693
-\OT1/ptm/m/n/12 researches [[]] who have developed metrics for assessing web se
-rver which consist
- []
-
-[59] (final-year-report.bbl [60]
-Underfull \hbox (badness 2142) in paragraph at lines 33--36
+Underfull \hbox (badness 2142) in paragraph at lines 49--52
 []\OT1/ptm/m/sc/12 Conallen, J.  \OT1/ptm/m/n/12 Modeling web application archi
 tectures with uml.
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 38--42
+Underfull \hbox (badness 1360) in paragraph at lines 54--58
 []\OT1/ptm/m/sc/12 Cotton, M., Eggert, L., Touch, J., Westerlund, M., and
  []
 
-[61
 
-]
-Underfull \hbox (badness 2165) in paragraph at lines 53--57
+Underfull \hbox (badness 2165) in paragraph at lines 69--73
 []\OT1/ptm/m/sc/12 Durumeric, Z., Adrian, D., Mirian, A., Bailey, M., and
  []
 
 [62] [63]
-Underfull \hbox (badness 2608) in paragraph at lines 135--139
+Underfull \hbox (badness 2608) in paragraph at lines 161--165
 \OT1/ptm/m/it/12 International Journal of Research in Computer and Communicatio
 n
  []
 
 
-Underfull \hbox (badness 3179) in paragraph at lines 153--158
+Underfull \hbox (badness 3179) in paragraph at lines 179--184
 []\OT1/ptm/m/sc/12 Lee, S., Im, S.-y., Shin, S.-H., Roh, B.-h., and Lee, C.
  []
 
-
-Underfull \hbox (badness 3907) in paragraph at lines 170--174
+[64]
+Underfull \hbox (badness 3907) in paragraph at lines 192--196
 []\OT1/ptm/m/sc/12 Mendes, N., Neto, A. A., Dur[]aes, J., Vieira, M., and
  []
 
 
-Underfull \hbox (badness 1852) in paragraph at lines 170--174
+Underfull \hbox (badness 1852) in paragraph at lines 192--196
 \OT1/ptm/m/sc/12 Madeira, H.  \OT1/ptm/m/n/12 Assessing and comparing security 
 of web servers.
  []
 
 
-Underfull \hbox (badness 1888) in paragraph at lines 170--174
+Underfull \hbox (badness 1888) in paragraph at lines 192--196
 \OT1/ptm/m/n/12 In \OT1/ptm/m/it/12 Dependable Computing, 2008. PRDC'08. 14th I
 EEE Pacific Rim
  []
 
-[64]
-Underfull \hbox (badness 10000) in paragraph at lines 185--188
-[]\OT1/ptm/m/sc/12 owasp\OT1/ptm/m/n/12 .  Transport layer protection cheat she
-et,
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--212
+\OT1/pcr/m/n/12 org / index . php / Transport _ Layer _ Protection _ Cheat _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--219
-[]\OT1/ptm/m/sc/12 ssllabs\OT1/ptm/m/n/12 .  Transport layer protection cheat
+Underfull \hbox (badness 1789) in paragraph at lines 224--227
+[]\OT1/ptm/m/sc/12 Power, M.  \OT1/ptm/m/n/12 Survey of web servers.  []$\OT1/p
+cr/m/n/12 https : / / github . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--219
-\OT1/ptm/m/n/12 sheet,https://github.com/ssllabs/research/wiki/ssl-and-tls-depl
-oyment-
+Underfull \hbox (badness 10000) in paragraph at lines 233--237
+[]\OT1/ptm/m/sc/12 ssllabs\OT1/ptm/m/n/12 .  Transport layer protection cheat s
+heet.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--237
+[]$\OT1/pcr/m/n/12 https : / / github . com / ssllabs / research / wiki /
  []
 
 [65]) [66]
@@ -1084,37 +990,46 @@ Appendix A.
 
 ]
 Appendix B.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 683.
 [68
 
-] (final-year-report.aux)
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 683.
+ (final-year-report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 683.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 683.
+Package rerunfilecheck Info: File `final-year-report.out' has not changed.
+(rerunfilecheck)             Checksum: 5BCE399CC57125FB90BEB87478F313E3;2349.
 
-LaTeX Warning: There were undefined references.
 
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 683.
  ) 
 Here is how much of TeX's memory you used:
- 4468 strings out of 494894
- 72340 string characters out of 3178612
- 160058 words of memory out of 3000000
- 7942 multiletter control sequences out of 15000+200000
- 32917 words of font info for 58 fonts, out of 3000000 for 9000
+ 8247 strings out of 494894
+ 129825 string characters out of 3178612
+ 242232 words of memory out of 3000000
+ 11497 multiletter control sequences out of 15000+200000
+ 33432 words of font info for 60 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 48i,8n,58p,2523b,294s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/michael/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmmi8.pk
-> </home/michael/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmmi12.pk
-> </home/michael/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmr8.pk> 
-</home/michael/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk>{/
-home/michael/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc} </home/michael
-/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi720/cmsy10.pk></home/michael/
-.miktex/texmfs/install/fonts/type1/urw/helvetic/uhvb8a.pfb></home/michael/.mikt
-ex/texmfs/install/fonts/type1/urw/helvetic/uhvbo8a.pfb></home/michael/.miktex/t
-exmfs/install/fonts/type1/urw/helvetic/uhvr8a.pfb></home/michael/.miktex/texmfs
-/install/fonts/type1/urw/times/utmb8a.pfb></home/michael/.miktex/texmfs/install
-/fonts/type1/urw/times/utmr8a.pfb></home/michael/.miktex/texmfs/install/fonts/t
-ype1/urw/times/utmr8a.pfb></home/michael/.miktex/texmfs/install/fonts/type1/urw
-/times/utmri8a.pfb>
-Output written on final-year-report.pdf (78 pages, 1213900 bytes).
+ 35i,8n,58p,2523b,456s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/home/michael/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc} </home/mic
+hael/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmmi12.pk> </home/mic
+hael/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmr8.pk> </home/micha
+el/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk> </home/michae
+l/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi720/cmsy10.pk></home/michael
+/.miktex/texmfs/install/fonts/type1/urw/courier/ucrr8a.pfb></home/michael/.mikt
+ex/texmfs/install/fonts/type1/urw/helvetic/uhvb8a.pfb></home/michael/.miktex/te
+xmfs/install/fonts/type1/urw/helvetic/uhvbo8a.pfb></home/michael/.miktex/texmfs
+/install/fonts/type1/urw/helvetic/uhvr8a.pfb></home/michael/.miktex/texmfs/inst
+all/fonts/type1/urw/times/utmb8a.pfb></home/michael/.miktex/texmfs/install/font
+s/type1/urw/times/utmr8a.pfb></home/michael/.miktex/texmfs/install/fonts/type1/
+urw/times/utmr8a.pfb></home/michael/.miktex/texmfs/install/fonts/type1/urw/time
+s/utmri8a.pfb>
+Output written on final-year-report.pdf (79 pages, 1290659 bytes).
 PDF statistics:
- 431 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 118 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 950 PDF objects out of 1000 (max. 8388607)
+ 190 named destinations out of 1000 (max. 500000)
+ 430 words of extra memory for PDF output out of 10000 (max. 10000000)
 

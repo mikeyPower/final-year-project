@@ -11,9 +11,9 @@
 \linespread{1.5}
 \usepackage{svg}
 \usepackage{float}
-
+\usepackage[hidelinks]{hyperref}
 \begin{document}
-
+\sloppy
 \bgroup %% <<<<<<< begin a group
 \linespread{0}
 \thispagestyle{empty}
@@ -93,6 +93,7 @@ To be done
 \pagestyle{headings}
 \tableofcontents
 \listoffigures
+\listoftables
 
 
 \begin{abstract}
@@ -106,10 +107,6 @@ As well as deploying and testing the tool within Trinity College Dublin, this re
 
 \chapter{Introduction}
 \section{Goals of Report}
-!!!!!!!!!!!!!!!MIND TENSE USED (PAST OR FUTURE), PICK ONE AND KEEP IT, ALSO MIND THE USE OF I WHEN DESCRIBING THE REPORT!!!!!!!!!!!!!!!\\
-
-
-
 As with any device that is connected to the Internet, the  security capabilities of these systems is of concern. Even when following strict policies,  miss configurations of Web Servers can lead to possible issues down the line. The aim of this project is to deploy a local instance of ZMap and ZGrab within Trinity College Dublin, running scans on both port 80 and 443 in order to survey web servers, in an effort to build a picture of what the current state of Web Servers within the college campus looks like.\\
 
 This report  will also outline the steps that were taken in order for other organizations and institutions to replicate what has been done here within Trinity College Dublin.\\
@@ -193,10 +190,6 @@ The Block scan is a combination of vertical and horizontal scans.\cite{lee2003de
 
 There are a number Port Scanning tools that are widely available such as Nmap \cite{lyon2009nmap} and Nessus \cite{beale2004nessus}, this project exclusively uses ZMap \cite{durumeric2013zmap} to conduct the Port Scans.
 \subsection{ZMap}
-
-!!!!!!!!!!!!!! SHOW AND DESCRIBE SAMEPLE OUTPUT !!!!!!!!!!!!!\\
-
-
 ZMap is an open-source network scanner optimized for efficiently performing
 Internet-scale network surveys \cite{durumeric2013zmap}, developed in 2013 by Zakir Durumeric, Eric Wustrow and J. Alex Halderman at the University of Michigan they have been able to effectively diminish the time required to scan the entire IPv4 address space to a matter of minutes. The architecture allows sending and receiving components
 to run asynchronously and enables a single source machine to comprehensively scan every host in the public IPv4
@@ -320,7 +313,7 @@ The majority of this project was implemented in Python and Shell scripts, here a
 \begin{itemize}
   \item ZMap as discussed earlier is a port scanner that finds IP addresses listening on a port by searching either a single IP or range of IP addresses against the desired port.
   \item ZGrab is used to perform the banner grabs of the IP addresses found.
-  \item Crontab was used to automate/schedule both the ZMap and ZGrab scans.
+  \item Crontab \cite{keller1999take} was used to automate/schedule both the ZMap and ZGrab scans.
   \item The majority of Python code was used to analyse and sort the data, as well leverage some libraries with python such as the socket library \cite{socket} to perform both DNS and reverse DNS lookup.
   \item Shell Scripts programmes were used to package ZMap and ZGrab in order for it to run with crontab.
   \item Matplotlib \cite{matplotlib} is a python 2D plotting library used to generate the graphs in this report.
@@ -358,26 +351,6 @@ These banner grabs that were conducted helped in order to see the difference of 
 One of the Challenges encountered within this product concerned the scheduling of the cron jobs for the ZGrab scans. Throughout the ZGrab scans conducted not all of the original IP addresses that were found in the ZMap scan presented themselves in the ZGrab data this can be contributed to a number of different reasons, One of these is the fact that the college has a number of IP address that are up less than 90\% of the time period for which ZMap scans were conducted as well as ZMap being run every hour on the hour, where as in the original scheduling of ZGrab they were set up to run for every 2 hours on the hour and as a result the hours on either side might have have presented themselves with IP addresses that are only in those slots. The reason the cron job was scheduled to run every 2 hours was due to ZGrab taking some time to complete a banner grab especially when an IP or domain wasn't up, causing ZGrab to wait for a default of 10 seconds before attempting to abandon the connection for example to complete a ZGrab scan of all the IP address on port 80 for some instances took over 1 hour and 30 minutes to finish, which when original set to run for every hour would cause the crontab to execute the script containing the ZGrab before the previous one had time to finish losing all the data before it could be outputted to a file. Realizing this the default timeout of 10 seconds was reduced to 5 seconds as  well as running multiple ZGrab scans over smaller lists of IP addresses and domains every hour similar to the ZMap scan scheduling rather than a single ZGrab scan being conducted on the entire list of IP addresses on port 443 but rather splitting that list of IP addresses on port 443 into 2 or 3 smaller list with a dedicated ZGrab Script being executed by the crontab for each of these smaller list. These methods helped solved the problem of the lengthly time a ZGrab scan took, allowing the implementation of more frequent ZGrab scans on smaller lists.
 
 \chapter{Results}
-
-For Comparison of Some results e.g average host per hour look at page 5 and 6 of \cite{durumeric2013zmap}\\
-
-Other comparison \cite{durumeric2015search} page 9 percentage of cipher suites being used could have a new column with TCD figure 5\\
-
-Another comparison can be found with \cite{lee2016implementation} on page 683 finding out of date printers that haven't been updated in a long time\\
-
-Another comparison can be found with trying to see how many scans are necessary for discovering all the host \cite{durumeric2013analysis} page 4\\
-
-Another result comparison could be trying to identify CA that sign certs who have had security issues in the past \cite{durumeric2013analysis} page 6\\
-
-Another result comparison could be looking at key lengths \cite{durumeric2013analysis} page 7 and 8, also look for a paper with recommendations of cryptographic algorithms and key lengths\\
-
-Another result comparison could be looking at signature algorithms, algorithms used to sign the certificates \cite{durumeric2013analysis} page 9\\
-
-Another result comparison looking at ips/hosts sharing multiple public keys, certs e.g Stephens Research and \cite{durumeric2013analysis} page 10\\
-
-Another result comparison could be seeing sites vulnerable to FREAK Attack \cite{vandersloot2016toward} page 54
-vandersloot2016toward7\\
-
 
 This Chapter we present the results of the scans and use them to answer the questions outlined in section 1, in order to better understand the state of Web Servers in the college.
 
@@ -483,7 +456,7 @@ When analysing the hour that an Irregular IP address has ever been active on suc
 \caption{a nice plot1}
 \label{fig:irreg_occurence}
 \end{figure}
-When counting each occurrence of an Irregular IP address on either port we see in figure \ref{fig:irreg_occurence} that there is a large discrepancy between the number of occurrence of an IP and the hour that each IP appears. For example we see in figure \ref{fig:irreg_occurence} that the number of occurrences that happen at 1am is 16014 where as at 3pm, 8777 occurrences have taken place throughout the ZMap scanning period which is the second largest number of occurrences. This large difference on further inspection of the data is due to 27 Unique IP address of which only 10 were on port 80 (only), 1 on port 443 (only) and 16 on both ports.
+When counting each occurrence of an Irregular IP address on either port as seen in figure \ref{fig:irreg_occurence} that there is a large discrepancy between the number of occurrence of an IP and the hour that each IP appears. For example in figure \ref{fig:irreg_occurence} the number of occurrences that happen at 1am is 16014 where as at 3pm, 8777 occurrences have taken place throughout the ZMap scanning period which is the second largest number of occurrences. This large difference on further inspection of the data is due to 27 Unique IP address of which only 10 were on port 80 (only), 1 on port 443 (only) and 16 on both ports.
 
 
 
@@ -509,7 +482,7 @@ When counting each occurrence of an Irregular IP address on either port we see i
 \label{table:2}
 \end{table}
 
-From figure \ref{table:2} we can see that the vast majority of occurrences at 1am account for a major period of the overall number of occurrences. of these 27 that cause this large difference, 17 of them have 50\% or greater with the number of occurrences that are seen at 1am compared to every other day in the week combined.
+From figure \ref{table:2} the vast majority of occurrences at 1am account for a major period of the overall number of occurrences. Of these 27 that cause this large difference, 17 of them have 50\% or greater with the number of occurrences that are seen at 1am compared to every other day in the week combined.
  
 
 !!!!!!!!!!!!!!!!!!!!!!RE DO IPS TO HOSTNAME PIECHART !!!!!!!!!!!!!!!!!!!!
@@ -520,7 +493,7 @@ From figure \ref{table:2} we can see that the vast majority of occurrences at 1a
 
 \end{figure}
 
-In all there 669 IP addresses that have hostname, this makes up 39\% of the overall IP addresses found in the college of those 669 that did have have associating hostnames, 212 were found on port 80 (only), 34 on port 443 (only) and 423 on both ports.
+In all there were 669 IP addresses that have hostname, this makes up 39\% of the overall IP addresses found in the college of those 669 that did have have associating hostnames, 212 were found on port 80 (only), 34 on port 443 (only) and 423 on both ports.
 
 
 \section{ZGrab Results}
@@ -536,7 +509,7 @@ In all there 669 IP addresses that have hostname, this makes up 39\% of the over
 !!!!!!!!!!!!!!!!!!!! Also state how many Irregular IP addresses we gathered !!!!!!!!!!!!!!!!!!!!!!
 
 
-The ZGrab scans were first conducted on the 2018-03-27 at 18:00 and finishing on 2018-04-23 at 15:00. In total we managed to collect service information of 1497 unique IP addresses. With 442 being only on port 80, 130 being on Port 443 only and 925 being open on both ports. The IP addresses that were open on both ports in the ZMap scans were not always found in our ZGrab scans. Of the 925 IP addresses that are open on both ports 669 of those we managed to collect service information being on port 443, 924 of the 925 IP addresses we managed to collect service information regarding port 80. These results seen in figure \ref{fig:zmap_vs_zgrab} show that not all the IP addresses original scanned in the ZMap scans were present in the ZGrab scans, the main reasons for this were outlined in the Challenges subsection within the Implementation Chapter  
+The ZGrab scans were first conducted on the 27th of the March,2018 at 18:00 and finishing on 23rd of April,2018 at 15:00. In total we managed to collect service information of 1497 unique IP addresses. With 442 being only on Port 80, 130 being on Port 443 only and 925 being open on both ports. The IP addresses that were open on both ports in the ZMap scans were not always found in our ZGrab scans. Of the 925 IP addresses that are open on both ports 669 were found being on port 443 in the ZGrab scans, 924 of the 925 IP addresses were found being on port 80 in the ZGrab scans. These results seen in figure \ref{fig:zmap_vs_zgrab} show that not all the IP addresses original scanned in the ZMap scans were present in the ZGrab scans, the main reasons for this were outlined in the Challenges subsection within Chapter 5.
 \subsection{Response Codes}
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!DO RESPONSE CODE TABLE !!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -551,7 +524,7 @@ The ZGrab scans were first conducted on the 2018-03-27 at 18:00 and finishing on
 \label{fig:TLS_SSL}
 \end{figure}
 
-Over the course of the banner grabs we have found 3 different versions of TLS/SSL being implemented in the college to provide encryption of data. It turns out that SSL 3.0 is still being used despite the fact that it is inherently broken and suffers from various attacks such as POODLE\cite{holz2015summarizing} \cite{moller2014poodle} and many organisations \cite{ssllabs} advise not to use it  but use TLSv1.2 instead. One of the reasons as to why this old implementation of SSL/TLS is still being used, might be the fact that many legacy web browser such as IE6/XP only support SSL 3.0 and thus switching off support for SSL 3.0 would prevent browsers from working with the site \cite{owaspTLS_SSL}. The only IP addresses that are using SSL 3.0 also happen to be ones with self signed certificates as most certificates that are self signed are mainly used in the interal network and under less constrictions in terms on the policy that is enforced. Next we have TLSv1.0 which is the next version of TLS after SSLv3.0, similar advise is given with regards to the use of TLSv1.0 as it too is also a legacy protocol that suffers from problems such as the BEAST attack\cite{holz2015summarizing} which is an vulnerability in the implementation of the Cipher Block Chaining (CBC) in TLSv1.0. The most secure of the TLS versions found in the college has the greatest number of IP addresses (366) that are using it, to secure their communication. No version of TLS1.1 was ever discovered throughout the ZGrabs.
+Over the course of the banner grabs there were 3 different versions of TLS/SSL being implemented in the college to provide secure communication. It turns out that SSLv3.0 is still being used despite the fact that it is inherently broken and suffers from various attacks such as POODLE\cite{holz2015summarizing} \cite{moller2014poodle} and many organisations \cite{ssllabs} advise against it's and recommend  TLSv1.2 instead. One of the reasons as to why this old implementation of SSL/TLS is still being used, might be the fact that many legacy web browser such as IE6/XP only support SSLv3.0 and thus switching off support for SSLv3.0 would prevent browsers from working with the site \cite{owaspTLS_SSL}. The only IP addresses that are using SSLv3.0 also happen to be ones with self signed certificates as most certificates that are self signed are predominantly  used within internal networks organizations and under less constrictions in terms of the policy that is enforced upon them by the organization. TLSv1.0 which is the next version of TLS after SSLv3.0 was also discovered, similar advise is given with regards to the use of TLSv1.0 as it too is also a legacy protocol that suffers from well known vulnerabilities such as the BEAST attack\cite{holz2015summarizing} which is an weakness in the implementation of the Cipher Block Chaining (CBC) in TLSv1.0. The most secure of the TLS versions found in the college has the greatest number of IP addresses (366) that are using it, to secure their communication. No version of TLS1.1 was ever discovered throughout the ZGrab scans.
 
 \subsection{Signature Algorithm}
 \begin{figure}[H]
@@ -561,8 +534,8 @@ Over the course of the banner grabs we have found 3 different versions of TLS/SS
 \label{fig:signatureAlgorithms}
 \end{figure}
 
-One of the more surprising discoveries is the prevalence of MD5 hash function. In total we found 273 unique IP addresses that are using MD5withRSA to sign their certificates, of these 264 are self signed certificates. According to the Internet Engineering Task Force MD5 is no longer acceptable where collision resistance is required
-such as digital signatures \cite{turner2011updated} this is due to the fact that MD5 hash functions allows the construction of different messages with the same MD5 hash resulting in a collision \cite{md5}. Along with MD5 being fundamental broken, SHA1 is also now insecure. Both of these signature algorithms in figure \ref{fig:signatureAlgorithms} used to sign certificates account for 63.7\% of 799 IP addresses in the college using unsecured hashing functions.\cite{ssllabs}. With the remaining 290 IP addresses possessing certificates signed with SHA256 which is the recommend signature algorithm to use\cite{ssllabs}.
+One of the more surprising discoveries is the prevalence of the MD5 hash function. In total 273 unique IP addresses that were using MD5withRSA to sign their certificates, of these 264 were self signed certificates. According to the Internet Engineering Task Force (IETF) MD5 is no longer acceptable where collision resistance is required
+such as digital signatures \cite{turner2011updated} this is due to the fact that MD5 hash functions allows the construction of different messages with the same MD5 hash,  resulting in a collision \cite{md5}. Along with MD5 being fundamental broken, SHA1 is also now insecure. Both of these signature algorithms in figure \ref{fig:signatureAlgorithms} used to sign certificates account for 63.7\% of the 799 IP addresses in the college using unsecured hashing functions.\cite{ssllabs}. With the remaining 290 IP addresses possessing certificates signed with SHA256 which is the recommend signature algorithm to use\cite{ssllabs}.
 
 \subsection{Cipher Suite}
 \begin{figure}[H]
@@ -572,7 +545,9 @@ such as digital signatures \cite{turner2011updated} this is due to the fact that
 \label{fig:cipherSuites}
 \end{figure}
 
-As we can see in figure \ref{fig:cipherSuites} $TLS_RSA_WITH_RC4_128_SHA$ is by far the most widely used cipher suite in the college, even though community at large advise against RC4 cipher suites as the bytes used to encrypt plaintext is not as random as one would hope resulting in attackers being able to exploit the bias in the keystream that encrypyt the plaintext, uncovering previous encrypted plaintext messages \cite{popov2015prohibiting}. The most least wide cipher suite found is  $TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA$ with only a single IP address offering up this in cipher suite to be used.
+In figure \ref{fig:cipherSuites}
+\texttt{TLS\_RSA\_WITH\_RC4\_128\_SHA} is by far the most widely used cipher suite in the college, even though community at large advise against RC4 cipher suites as the bytes used to encrypt plaintext is not as random as one would hope resulting in attackers being able to exploit the bias in the keystream that encrypt the plaintext, uncovering previous encrypted plaintext messages \cite{popov2015prohibiting}. The most least used cipher suite found is\\
+\texttt{TLS\_ECDHE\_RSA\_WITH\_AES\_128\_CBC\_SHA} with only a single IP address offering up this cipher suite to be used.
 
 \subsection{Browser Trusted}
 \begin{figure}[H]
@@ -581,7 +556,7 @@ As we can see in figure \ref{fig:cipherSuites} $TLS_RSA_WITH_RC4_128_SHA$ is by 
 \caption{a nice plot1}
 \label{fig:browserTrusted}
 \end{figure}
-Of the certificates we managed to collect only 133 were browser trusted. Further more the cipher suites that browser trusted certificates use differs from that of the entire certificates collected with 45 IP address of using  $TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256$ cipher suites and only 17 using $TLS_RSA_WITH_RC4_128_SHA$. All the browser trusted certificates have been found to use SHA256withRSA as any certificate signed with MD5 or SHA1 is considered insecure \cite{ssllabs}.
+Of the certificates collected only 133 were browser trusted. Further more, the cipher suites that browser trusted certificates use differs from that of the entire certificates collected with 45 IP address of using\\ \texttt{TLS\_ECDHE\_RSA\_WITH\_AES\_128\_GCM\_SHA256} cipher suites and only 17 using \texttt{TLS\_RSA\_WITH\_RC4\_128\_SHA}. All the browser trusted certificates have been found to use SHA256withRSA as any certificate signed with MD5 or SHA1 is considered insecure \cite{ssllabs}.
 
 \begin{table}[H]
 \centering
@@ -600,7 +575,7 @@ GeoTrust DV SSL SHA256 CA & 1 \\[1ex]
 \caption{Browser Trusted Certificate Issuers }
 \label{table:Browser_Trusted_Issuers}
 \end{table}
-There is a breakdown of the top issuers of broswer trusted certificates within TCD presented in table \ref{table:Browser_Trusted_Issuers} with Lets Encrypt who issue certificates with an expiry of 90 days \cite{LetsEncrypt} being the third most popular Issuer of browser trusted certificates in the college. The vast majority of public keys length used stays within the recommend value \cite{ssllabs} with 130 using public keys of length 2048, and remanining 3 using public keys of length 4096.
+There is a breakdown of the top issuers of broswer trusted certificates within TCD presented in table \ref{table:Browser_Trusted_Issuers} with Lets Encrypt who issue certificates with an expiry of 90 days \cite{LetsEncrypt} being the third most popular Issuer of browser trusted certificates in the college. The vast majority of public keys length used stays within the recommend value \cite{ssllabs} with 130 using public keys of length 2048, with the remaining 3 using public keys of length 4096.
 
 
 \subsection{Expired Certificates}
@@ -611,13 +586,13 @@ There is a breakdown of the top issuers of broswer trusted certificates within T
 \label{fig:certExpired}
 \end{figure}
 
-From figure \ref{fig:certExpired} we can see that 18.8\% which is 150 IP addresses have certificates that are out of date with the most recent certificate expiring in 2018-03-16T15:49:14Z this certificate turned out to be a self signed cert, in terms of certificates that are signed by a CA the most expired on 2018-02-14T15:25:09Z. On the other scale the oldest expired certificates is a self signed cert with it's expire set to 1972-12-31T00:05:01Z, once in terms certs signed by CA the oldest being a cert that expired on 2014-08-01T23:59:59Z. One of the interesting findings in terms of the expired certificates is that there are 17 IP addresses with self signed certificates all of whom have certificate expired on 2007-01-01T00:00:00Z while also having their certificated beginning on the 2002-01-01T00:00:00Z, they also share the same public key length of 1024 bits as well as being signed with MD5withRSA along with the same cipher suite of $TLS_RSA_WITH_RC4_128_SHA$ all of these IP addresses turned out to be web servers of printer devices (print servers) specifically HP printers. What's interesting about this is that these devices could be an example of an employee being in charge of maintaining these devices and on leaving forgetting to mention that they exist. It also shows us that there is a good chance since these certificates haven't been updated that devices themselves could be using out of date software.
+From figure \ref{fig:certExpired} it was seen that 18.8\% of all IP addresses which is 150 IP addresses have certificates that are out of date with the most recent certificate having expired on 2018-03-16T15:49:14Z this certificate turned out to be a self signed certificate, in terms of certificates that are signed by a CA the most recent expired on 2018-02-14T15:25:09Z. On the other scale the oldest expired certificate found was a self signed certificate with it's expire set to 1972-12-31T00:05:01Z, of the certs signed by CA the oldest being a certificate that expired on 2014-08-01T23:59:59Z. One of the interesting findings in terms of the expired certificates is that were 17 IP addresses with self signed certificates all of whom have certificates expired on 2007-01-01T00:00:00Z while also having their certificated issued on 2002-01-01T00:00:00Z, they also share the same public key length of 1024 bits as well as being signed with MD5withRSA along with the same cipher suite of \texttt{TLS\_RSA\_WITH\_RC4\_128\_SHA} all of these IP addresses turned out to be web servers of printer devices (print servers) specifically HP printers. What might be the case about these devices is that this could be an example of an individual being in charge of maintaining these machines and on leaving the college forgetting to mention that they exist or have just  forgotten throughout the years. It also shows us that there is a good chance since these certificates haven't been updated for this length of time the devices themselves could be using out of date software.
 
 \subsection{Self Signed Certificates}
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!INSERT GRAPH OF SELF SIGNED CERTS!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-In total there were 555 IP addresses which had certificates that were self signed. The longest validity period found for a certificate was 27 years which was found on a single certificate with the shortest being valid for 12 weeks. Another finding was that of the 555 IP addresses that had self signed certificates 56 of them shared the same public key, which was the largest number of IP addresses that shared the same public key. they also shared the same issuer who had signed the certificates with MD5withRSA and had the same public key length of 1024 bits.
+In total there were 555 IP addresses which had certificates that were self signed. The longest validity period found for a certificate was 27 years which was found on a single certificate with the shortest being valid for 12 weeks. Another finding was that of the 555 IP addresses that had self signed certificates 56 of them shared the same public key, which was the largest instance of IP addresses that shared the same public key, they also shared the same issuer who had signed the certificates with MD5withRSA and had a public key length of 1024 bits.
 
 
 \begin{table}[H]
@@ -638,7 +613,7 @@ Public Key Length  & Number of Certificates\\ [0.5ex]
 \caption{Public key lengths of all IP addresses found in ZGrab scans on port 443}
 \label{table:public_key_lengths}
 \end{table}
-Keeping with public keys, the self signed certificates found in the college contained the only 512 and 768 bit length certificates with regards to the rest of the certificates shown in table \ref{table:public_key_lengths}. The National Institute of Standards and Technology (NIST) recommends key sizes of at least 2056 bits, \cite{barker2015recommendation} this is due to successful attempts at breaking RSA by factoring for example 512 bit RSA keys were successful factored in 1999 \cite{kaliski2011rsa} at the moment large numbers are quite difficult to factor but the recommendation by nist is a way to stay ahead of the curve.
+Keeping with public keys, the self signed certificates found in the college contained the only 512 and 768 bit length keys with regards to the rest of the certificates shown in table \ref{table:public_key_lengths}. The National Institute of Standards and Technology (NIST) recommends key sizes of at least 2056 bits, \cite{barker2015recommendation} this is due to successful attempts at breaking RSA by factorizing, for example 512 bit RSA keys were successful factored in 1999 \cite{kaliski2011rsa}, at the moment large numbers are quite difficult to factor but the recommendation by nist is more of a precaution as key sizes of 2056 bits haven't been broken and hopefully won't be in the near future.
 
 \subsection{Categorizing the Servers}
 \begin{table}[H]
@@ -665,33 +640,31 @@ Projector&1\\[1ex]
 \label{table:category}
 \end{table}
 
-Throughout this product there were 95 successful banner grabs of Irregular IP addresses along with their root page. 63 of these were only on port 80, 2 on port 443 and 30 having known open connections both ports. Of the 30 on both ports 27 were found on port 80 while 25 being found on port 443, 22 of these IP addresses were common between those IP addresses having known connections on both ports in each of the ZGrab scans on port 80 and port 443. Web Image monitors as seen in table \ref{table:category} were one of the most seen types of systems with all of them being exclusively on port 80 only, unfortunately this project hasn't been able to give an in depth information regarding these at the time of writing. Printers make up some of both the common and irregular IP addresses among the college campus with a variety of  models and devices such as HP, Lexmar and Cannon. Conferencing devices were also found with 7 of these being Polycom devices and the remaining being a Tanberg. There were 13 Hello World/test pages which could be either Student projects within the college or pages ensuring a server was functionally running. The actual Web Server pages  found consisted of Microsoft and Appache server pages. There were 3 Other that had no distinguishable way to categories them as seen in Table \ref{table:category} 
+Throughout this product there were 95 successful banner grabs of Irregular IP addresses along with their root pages, 63 of these were only on port 80, 2 on port 443 and 30 having known open connections on both ports. Of the 30 on both ports 27 were found on port 80 while 25 being found on port 443, 22 of these IP addresses were common between those IP addresses having known connections on both ports in each of the ZGrab scans on port 80 and port 443. Web Image monitors as seen in table \ref{table:category} were one of the most seen types of systems with all of them being exclusively on port 80 only, unfortunately this project hasn't been able to give any in depth information regarding these at the time of writing. Printers make up both the regular and irregular IP addresses found amongst the college campus with a variety of models and devices such as HP, Lexmar and Cannon. Conferencing devices were also found with 7 of these being Polycom devices\cite{polycom} and the remaining being a Tanberg. There were 13 Hello World/test pages which could be either Student projects within the college or test pages ensuring a server was functionally running. The actual Web Server pages  found consisted of Microsoft and Appache server pages. There were 3 Others that had no distinguishable way to categories them as seen in Table \ref{table:category}.
 \chapter{Conclusion}
 
-\cite{mendes2008assessing} page 316\\
+This project investigates the current state of Web Servers within Trinity College Dublin. 
+This project has introduced both ZMap a high speed port scanner and ZGrab an application banner grabber within Trinity College Dublin and also showed how these applications can be used to effectively answers questions regarding the current state of web servers such as to what was presented here in Chapter 1.\\
 
-This project investigates the state of Web Servers within Trinity College Dublin. 
-Within this project I’ve introduced both ZMap a high speed port scanner and ZGrab an application banner grabber. I’ve also showed how these applications can be used to effectively answers questions regarding the current state of web servers within TCD such as to what was presented here in Chapter 1.\\
+The methodologies and design of the scans adopted in this project should allow other institutions and organisations who intend to replicate similar results presented here within their own network as well as avoiding the challenges incurred in this project.\\
 
-This project has allowed me to gain a deep understanding of the underlying technologies that aim to make the web more secure. Throughout this project I've been able to investigate interesting security topics such POODLE, BEAST and MD5 collisions.\\
-
-The methodologies and design of the scans adopted in this project should allow other institutions and organisations who intend to replicate similar results presented here within their own private network as well as avoiding the challenges incurred in this journey.\\
-
-With regards to IP addresses on port 443, the version of TLS used and the way it is configured is ultimatley up to the site owners and administrators to ensure that their servers are configured properly the approach taken in this project could be used to identify miss configured servers. For example over time cryptographic algorithms weaken, the methods used within this project could be implemented to locate servers offering weak cipher suites so that the correct configurations can be made. 
+With regards to IP addresses on port 443, the version of TLS used and the way it is configured is ultimately up to the site owners and administrators to ensure that their servers are configured properly, the approach taken in this project could be used to identify these miss configured servers. For example over time cryptographic algorithms weaken, the methods used within this project could be implemented to locate servers offering weak cipher suites in order for the correct configurations to be made. 
 
 \chapter{Future Work}
 While this report has demonstrated the use of ZMap and ZGrab on port 80 and port 443, there are many worthwhile areas of future work that could investigated.\\
 
-Would be beneficial if we could find out the total number of host on port 80 and port 443 from system admins to determine whether or not the scans detecting all host on port 80 and port 443 in order to judge the successfulness of ZMap\\
 
-Similarly to research discussed in Related Work \cite{durumeric2013zmap} \cite{durumeric2013analysis} it would be fascinating to see the adoption rate or change over time of IP addresses listening port 80 (HTTP) to ones listening on port 443 (HTTPS). This could carried out by running the scans implemented within this project over a longer time period to see these changes if at all any as well as investigating the possible reasons behind this, for example one reason could be the fact that Google now ranks sites implementing TLS/SSL as higher.\\
+Would be interesting to rate the successfulness of ZMap by the determining the actual number of know hosts on port 80 and port 443\\
+
+Similarly to research discussed in Related Work \cite{durumeric2013zmap} \cite{durumeric2013analysis} it would be fascinating to see the adoption rate or change over time of IP addresses listening port 80 (HTTP) to ones listening on port 443 (HTTPS). This could carried out by running the scans implemented within this project over a longer time period to see these changes if at all any, as well as investigating the possible reasons behind this, for example one reason could be the fact that Google now ranks sites implementing TLS/SSL as higher.\\
 
 
 This report only detailed scans conducted on port 80 and port 443, in would be interesting to implement scanning on further ports in order to expand the view of activity that is currently on the college network.\\
 
-Further expansion on the code produced within this project could be expanded in other to provide institutions/ organisations an easy to install application that would package the entire design, filtering and graphing of the scans conducted as well as producing daily summaries of the network in terms of number IP addresses listening and also notifying the user of any vulnerabilites or weak cipher suites being used such as servers using null cipher suite for example. This could also be extended to provide a ranking of the most secure web servers and more importantly the most vulnerable by using a weighting system similar to other researches \cite{mendes2008assessing} who have developed metrics for assessing web server which consist of a list of security recommendations that were taken from a set of interviews from security experts. The question of what database to use is a difficult question as discovered through the ZGrab scans that certain JSON objects produced could have a different number of fields, so if a certain field were not accounted for the schema of the database would not be compatible. Within the github of ZGrab \cite{zgrabGithub} there is the schema of all the fields that could be given out in the output of JSON file which could then be parsed with python code similar to what was produced in this project accounting for all the possible fields and then stored in a sqlLite database for example. One problem with this is that it those not take for the account of the possible updates to ZGrab which could involve the changing of the schema produced in the output of the JSON file along with this the creators are currently developing ZGrab 2.0 \cite{zgrab2Github} which will replace the current ZGrab, at the time of writing this report it's unsure at the moment what changes there will be between the two versions. While there doesn't seem to be clear cut solution to implement an application that is scalable, this would be an evaluable en devour.
+Further expansion on the code produced within this project could be expanded in order to provide institutions/ organisations an easy to install application that would package the entire design, filtering and graphing of the scans conducted, as well as producing daily summaries of the network in terms of number IP addresses listening and also notifying the user of any vulnerabilities or weak cipher suites being used for example. This could also be extended to provide a ranking of the most secure web servers and more importantly the most vulnerable by using some form of weighting system or metrics similar to what other researches \cite{mendes2008assessing} have developed for assessing web server which consist of a list of security recommendations that were taken from a set of interviews from security experts. The question of what database to use within this application is difficult, as discovered through the ZGrab scans which showed that certain JSON objects outputs could have a different number of fields, so if a certain field was not accounted for in the schema of the database, a compatibility issue would occur. Within the github of ZGrab \cite{zgrabGithub} there is the schema of all the fields that could be produced in the output of the JSON file which could then be parsed with python code similar to what was produced in this project accounting for all the possible fields and then stored in a sqlLite database for example. One problem with this is that it those not take for the account of the possible updates to ZGrab which could involve the changing of the schema produced in the output of the JSON file along with this the creators are currently developing ZGrab 2.0 \cite{zgrab2Github} which will replace the current ZGrab version used in this project, at the time of writing this report it's unsure at the moment what changes there will be between the two versions. While there doesn't seem to be clear cut solution to implement an application that is scalable, this would be an evaluable en devour.
 
-
+\bgroup
+\linespread{1}
 \bibliographystyle{acm}
 \bibliography{reference}
 
@@ -706,6 +679,6 @@ blah blah \ldots
 
 blah blah
 
-
+\egroup %% <<<<<<< end a group
 \end{document}
 

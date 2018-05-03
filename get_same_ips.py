@@ -29,10 +29,10 @@ with open(csvFile) as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     header =readCSV.next() #Skip first line (Header line)
     #print(len(readCSV))
-    print(len(header))
+    #print(len(header))
     with open("irreg_ips_zgrab_"+now+".csv", "w") as myfile1:
         writer1=csv.writer(myfile1)
-        writer1.writerow(header)
+        #writer1.writerow(header)
         for i in readCSV:
             outer.append(i[ipField])
             count = count +1
@@ -64,7 +64,8 @@ if len(set(outer))>=len(set(inner)):
 else:
     ips =inner
 
-
+hi = set(inner)-set(ips_present)
+print(hi)
 #Print summary report
 summary_f="summary_get_same_ips_"+now+".txt"
 summary_fp=open(summary_f,"w")

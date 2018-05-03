@@ -24,6 +24,11 @@ scoket programming.
 \newblock In {\em Proceedings of the 2017 ACM SIGSAC Conference on Computer and
   Communications Security\/} (2017), ACM, pp.~1407--1420.
 
+\bibitem{wordCloud}
+{\sc amueller}.
+\newblock word cloud.
+\newblock \url{https://github.com/amueller/word_cloud}.
+
 \bibitem{arkin1999network}
 {\sc Arkin, O.}
 \newblock Network scanning techniques.
@@ -203,6 +208,10 @@ scoket programming.
 {\sc M{\"o}ller, B., Duong, T., and Kotowicz, K.}
 \newblock This poodle bites: exploiting the ssl 3.0 fallback.
 \newblock {\em Security Advisory\/} (2014).
+
+\bibitem{researchScans}
+{\sc Mäurer, N.}
+\newblock Efficient scans in a research network, 2015.
 
 \bibitem{owaspTLS_SSL}
 {\sc owasp}.

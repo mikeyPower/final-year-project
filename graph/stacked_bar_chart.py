@@ -95,5 +95,5 @@ ax1.xaxis.set_ticks_position('bottom')
 #ax1.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 plt.legend(['ZMap','ZGrab'], loc="best")#bbox_to_anchor=(1, 0.5))
 
-plt.savefig("ZMap vs ZGrab.png")
+plt.savefig("ZMapvsZGrab.svg")
 #plt.show()

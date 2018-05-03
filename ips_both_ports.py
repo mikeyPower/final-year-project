@@ -13,8 +13,8 @@ csvFile = sys.argv[1]
 
 csv.field_size_limit(sys.maxsize)
 
-ipField=2
-portField=3
+ipField=0
+portField=1
 ips=[]
 both_ports=[]
 with open(csvFile) as csvfile:
@@ -35,6 +35,7 @@ with open(csvFile) as csvfile:
                 #    print(i[portField],type(i[portField]),len(i[portField]))
                 #rstrip is used to get rid of trailling whitespace e.g '\r' etc
                     if i[portField].rstrip() == '80_443':
+                    #if i[portField].rstrip() == "['80', '443']":
                         #print('yes')
                         writer1.writerow(i)
                         both_ports.append(i[ipField])

@@ -314,6 +314,8 @@ if port == 443:
             writer.writerow([i,len(selfSigned[i]),selfSigned[i]])
     myfile.close()
 
+    
+
     browserTrustedNotPresent=0
     bNp =0
     notBrowserTrusted =0
@@ -321,11 +323,13 @@ if port == 443:
         writer=csv.writer(myfile)
         writer.writerow(['Browser Trusted','Number of Ips/Domains','Ip/Domain list'])
         for i in browserTrusted:
+            #print(i)
             if i =='Not Present':
                 browserTrustedNotPresent = len(browserTrusted['Not Present'])
                 bNp =1
             elif i =='False':
                     notBrowserTrusted=len(browserTrusted['False'])
+
             writer.writerow([i,len(browserTrusted[i]),browserTrusted[i]])
     myfile.close()
 
@@ -434,6 +438,28 @@ if port == 443:
                 ceNp =1
             writer.writerow([i,len(certExpired[i]),certExpired[i]])
     myfile.close()
+
+    '''
+    with open(csvFile) as csvfile:
+        readCSV = csv.reader(csvfile, delimiter=',')
+        a = readCSV.next() #Skip first line (Header line)
+        bCount = 0
+        print(a)
+        with open("cert_expired_is_True_"+now+".csv", "w") as myfile:
+            writer=csv.writer(myfile)
+            writer.writerow(a)
+            for i in readCSV:
+                #print(i)
+                trust = certExpired['True']
+                for k in trust:
+                    if k == i[ipField]:
+                        #print(i)
+                        bCount = bCount +1
+                        writer.writerow(i)
+        myfile.close()
+
+    print(bCount)
+    '''
 
     certStartFieldNotPresent=0
     csNp=0
@@ -570,7 +596,7 @@ if port == 443:
     print >>summary_fp, str(len(cipherSuite)-cNp) + " unique cipher suites"
     print >>summary_fp, str(cipherSuiteNotPresent) + " Ip/Domains where cipher suite field not present"
     print >>summary_fp, str(notBrowserTrusted) + " Ips/Domains are not Browser Trusted"
-    print >>summary_fp, str(len(browserTrusted['True'])) + " Ips/Domains are Browser Trusted"
+    #print >>summary_fp, str(len(browserTrusted['True'])) + " Ips/Domains are Browser Trusted"
     print >>summary_fp, str(browserTrustedNotPresent) + " Ips/Domains where Browser Trusted field not present"
     print >>summary_fp, str(len(tls)-tNp) + " unique tls versions found"
     print >>summary_fp, str(tlsNotPresent) + " Ips/Domains where tls field not present"

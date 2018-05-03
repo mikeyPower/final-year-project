@@ -11,6 +11,7 @@ import matplotlib
 from matplotlib import font_manager as fm
 from matplotlib import cm
 
+#matplotlib.use('Agg')
 
 #Get timestamp of programme execution
 now=str(int(time.time()))
@@ -86,7 +87,7 @@ patches, texts, autotexts = ax1.pie(y_col, explode=None, autopct='%1.1f%%',
 shadow=False, startangle=90, colors=cols1)#,labels=x_col)#,labels=x_col)
 ax1.axis('equal')
 #fig1.set_facecolor('w') #change canvas color
-plt.title(a[0],y=1.05)
+plt.title("Self Signed Certifcates",y=1.05)
 
 #Change font size
 proptease = fm.FontProperties()
@@ -104,4 +105,4 @@ plt.setp(texts, fontproperties=proptease)
 plt.legend(patches, x_col,loc='best')#,bbox_to_anchor=(0.8, 0.5),prop={'size':8})
 
 #plt.show() # Equal aspect ratio ensures that pie is drawn as a circle.
-plt.savefig("Certificate Expired.png")
+plt.savefig("SelfSigned.svg")

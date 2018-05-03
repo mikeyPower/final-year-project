@@ -82,18 +82,22 @@ for i,j,k,l in zip(y_pos,y_col,cols2,x_col):
     #            ha='center', va='bottom')
 
 
-plt.xticks(y_pos, x_col,fontsize=8, rotation=45)
+plt.xticks(y_pos, x_col,fontsize=8, rotation=90)
 
 #label y-axis
 plt.ylabel('Number of IP addresses')
 
+
+
 #label x-axis
 #plt.xlabel('Status Codes')
-plt.xlabel('Ports')
+#plt.xlabel('Ports')
+plt.xlabel('Categorize')
 
 
 #label title
 plt.title('IP addresses to Ports')
+plt.title('Categorizes of Irregular IP addresses')
 #plt.title('Request of IP addresses on Both Ports to Port 80')
 
 
@@ -121,5 +125,6 @@ ax1.xaxis.set_ticks_position('bottom')
 
 
 #plt.show()
-plt.savefig("Cipher Suites.svg")
+#plt.savefig("Cipher Suites.svg")
+plt.savefig("Categorizing.svg")
 #plt.savefig("Request of IP addresses on Both Ports to Port 80.svg")

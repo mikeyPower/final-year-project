@@ -92,7 +92,7 @@ Michael Power
 
 
 \chapter*{Acknowledgements}
-I would sincerely like to thank my supervisor Dr. Stephen Farrell for his continuous support, guidance and contributions  throughout the project, as well as providing me with one of his machines to conduct the scans that were carried out for this project. 
+I would sincerely like to thank my supervisor Dr Stephen Farrell for his continuous support, guidance and contributions  throughout the project, as well as providing me with one of his machines to conduct the scans that were carried out for this project. 
 
 \newpage
 
@@ -131,7 +131,6 @@ This goal of this project will be analysed with the following questions in mind:
    \item How many Certificates have expired at the time of writing this report?
   \item Are there any out of date versions of TLS being used?
   \item What Signature and Key Algorithms are being used?
-  \item Is secure renegotiation false for any IP addresses?
   \item Are there any public keys that are used across multiple IP addresses?
   \item The variation in public key lengths?
   \item How many IP addresses are managing redirects correctly?
@@ -351,7 +350,7 @@ The ZMap scans took place between the 5th of February, 2018 at 8pm up until and 
 2nd of March at 2am, 2018  up until the 16th of March at 12am, 2018 no scans were detected this was partly due to extreme weather which caused a power cut in the college, downing server that was conducting the ZMap Scans on both Port 80 and 443, the scans were resumed on 16th of March at 1am. In absence of this period there was a total of 827 observational periods in which the ZMap scans took place. An exceptional high count of 1116 IP addresses was recorded on the 13th of February at 1am as seen in figure \ref{fig:port80ZMap}, this high count was due to an unknown failure of the ZMap scan on port 443 at the same time, as within this observational slice there were no subsequent IP addresses on port 443 to compare against thus all those found were only seen on port 80.\\
 
 
-Another intriguing  point to note is that the count of IP addresses throughout the week is steady, with the number of IP addresses on port 80 (only) rising throughout the weekdays and falling at the weekend.\\
+Another intriguing  point to note is that the count of IP addresses throughout the week is steady, with the number of IP addresses on port 80 (only) rising throughout the weekdays and falling at the weekend.
 
 \begin{figure}[H]
 \centering
@@ -359,6 +358,7 @@ Another intriguing  point to note is that the count of IP addresses throughout t
 \caption{Variation in the number of IP addresses on port 443 over time}
 \label{fig:port443ZMap}
 \end{figure}
+
 
 From figure \ref{fig:port443ZMap} the failed scan that appeared on the 13th of Feburary at 1am which lead to the overly high count of IP addresses on port 80 (only) for this observational slice can be seen. As the scan period edged nearer the second half of the term an obvious drop in the average number of IP addresses from 145 before the server was cut off to to 105 after the server was back up and running.
 
@@ -437,7 +437,7 @@ When analysing the hour that an Irregular IP address has ever been active on suc
 \caption{Total Number of occurrences of Irregular IP addresses }
 \label{fig:irreg_occurence}
 \end{figure}
-When counting each occurrence of an Irregular IP address on either port as seen in figure \ref{fig:irreg_occurence} that there is a large discrepancy between the number of occurrence of an IP and the hour that each IP appears. For example in figure \ref{fig:irreg_occurence} the number of occurrences that happen at 1am is 16014 where as at 3pm, 8777 occurrences have taken place throughout the ZMap scanning period which is the second largest number of occurrences. This large difference on further inspection of the data is due to 27 Unique IP address of which only 10 were on port 80 (only), 1 on port 443 (only) and 16 on both ports.
+When counting each occurrence of an Irregular IP address on either port as seen in figure \ref{fig:irreg_occurence} that there is a large discrepancy between the number of occurrence of an IP and the hour that each IP appears. For example in figure \ref{fig:irreg_occurence} the number of occurrences that happen at 1am is 16014 where as at 3pm, 8777 occurrences have taken place throughout the ZMap scanning period which is the second largest number of occurrences. This large difference on further inspection of the data is due to 27 Unique IP address of which only 10 were on port 80 (only), 1 on port 443 (only) and 16 on both ports.\\
 
 
 
@@ -465,7 +465,7 @@ When counting each occurrence of an Irregular IP address on either port as seen 
 \label{table:2}
 \end{table}
 
-From figure \ref{table:2} the vast majority of occurrences at 1am account for a major period of the overall number of occurrences. Of these 27 that cause this large difference, 17 of them have 50\% or greater with the number of occurrences that are seen at 1am compared to every other day in the week combined.
+From table \ref{table:2} the vast majority of occurrences at 1am account for a major period of the overall number of occurrences. Of these 27 that cause this large difference, 17 of them have 50\% or greater with the number of occurrences that are seen at 1am compared to every other day in the week combined.
 \section{Categorising the Servers}
 \begin{table}[H]
 \centering
@@ -681,7 +681,7 @@ In figure \ref{fig:cipherSuites}
 \caption{Browser Trusted Certificates within Trinity College Dublin}
 \label{fig:browserTrusted}
 \end{figure}
-Of the certificates collected only 133 were browser trusted. Further more, the cipher suites that browser trusted certificates use differs from that of the entire certificates collected with 45 IP address of using\\ \texttt{TLS\_ECDHE\_RSA\_WITH\_AES\_128\_GCM\_SHA256} cipher suites and only 17 using \texttt{TLS\_RSA\_WITH\_RC4\_128\_SHA}. All the browser trusted certificates have been found to use SHA256withRSA as any certificate signed with MD5 or SHA1 is considered insecure \cite{ssllabs}.
+Of the certificates collected only 133 were browser trusted. Further more, the cipher suites that browser trusted certificates use differs from that of the entire certificates collected with 45 IP address of using\\ \texttt{TLS\_ECDHE\_RSA\_WITH\_AES\_128\_GCM\_SHA256} cipher suites and only 17 using \texttt{TLS\_RSA\_WITH\_RC4\_128\_SHA}. All the browser trusted certificates have been found to use SHA256withRSA as any certificate signed with MD5 or SHA1 is considered insecure \cite{ssllabs}.\\
 
 \begin{table}[H]
 \centering
@@ -757,7 +757,8 @@ With regards to IP addresses on port 443, the version of TLS used and the way it
 \chapter{Future Work}
 While this report has demonstrated the use of ZMap and ZGrab on port 80 and port 443, there are many worthwhile areas of future work that could investigated.\\
 
-Would be interesting to rate the successfulness of ZMap by the determining the actual number of know hosts on port 80 and port 443 against the data collected in this project. While this project has been able to categorise some of the hosts found, there is still some analysis left as to who they are.\\
+It would be interesting to rate the successfulness of ZMap by the determining the actual number of know hosts on port 80 and port 443 against the data collected in this project. While this project has been able to categorise some of the hosts found, there is still some analysis left as to who they are.\\
+
 
 Similarly to research discussed in Related Work \cite{durumeric2013zmap} \cite{durumeric2013analysis} it would be fascinating to see the adoption rate or change over time of IP addresses listening port 80 (HTTP) to ones listening on port 443 (HTTPS). This could carried out by running the scans implemented within this project over a longer time period to see these changes if at all any, as well as investigating the possible reasons behind this, for example one reason could be the fact that Google now ranks sites implementing TLS/SSL as higher than those that don't.\\
 

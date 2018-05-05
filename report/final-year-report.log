@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650) (preloaded format=pdflatex 2018.4.23)  3 MAY 2018 13:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6650) (preloaded format=pdflatex 2018.4.23)  5 MAY 2018 10:11
 entering extended mode
 **./final-year-report.tex
 (final-year-report.tex
@@ -366,6 +366,9 @@ s
 \f@nch@O@olf=\skip56
 \f@nch@O@orf=\skip57
 )
+(/home/michael/.miktex/texmfs/install/tex/generic/genmisc/nth.sty
+Package: nth 2002/02/27
+)
 
 LaTeX Warning: Unused global option(s):
     [a4wide].
@@ -386,21 +389,21 @@ LaTeX Warning: Label `sub@fig:f2' multiply defined.
 )
 \openout1 = `final-year-report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 25.
  (/home/michael/.miktex/texmfs/install/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -431,7 +434,7 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring OFF on input line 24.
+Package hyperref Info: Link coloring OFF on input line 25.
 
 (/home/michael/.miktex/texmfs/install/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -441,9 +444,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count121
 )
-LaTeX Info: Redefining \ref on input line 24.
-LaTeX Info: Redefining \pageref on input line 24.
-LaTeX Info: Redefining \nameref on input line 24.
+LaTeX Info: Redefining \ref on input line 25.
+LaTeX Info: Redefining \pageref on input line 25.
+LaTeX Info: Redefining \nameref on input line 25.
 (final-year-report.out) (final-year-report.out)
 \@outlinefile=\write3
 \openout3 = `final-year-report.out'.
@@ -451,7 +454,7 @@ LaTeX Info: Redefining \nameref on input line 24.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 30.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 31.
 
 (/home/michael/.miktex/texmfs/install/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
@@ -459,32 +462,32 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 <images/tcd.png, id=151, 323.0469pt x 85.5195pt>
 File: images/tcd.png Graphic file (type png)
 <use images/tcd.png>
-Package pdftex.def Info: images/tcd.png  used on input line 35.
+Package pdftex.def Info: images/tcd.png  used on input line 36.
 (pdftex.def)             Requested size: 355.35269pt x 94.07172pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 43.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 44.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 43.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 44.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <17.28> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 43.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 44.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <17.28> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 43.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 44.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 58.
+(Font)              <14.4> on input line 59.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 58.
+(Font)              <7> on input line 59.
  [1
 
 {/home/michael/.miktex/texmfs/data/pdftex/config/pdftex.map} <./images/tcd.png>
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 66.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 73.
+(Font)              <12> on input line 74.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 73.
+(Font)              <8> on input line 74.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 73.
+(Font)              <6> on input line 74.
  [2
 
 ]
@@ -515,7 +518,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
  [10
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 108--110
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
 
  []
 
@@ -523,24 +526,24 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.113 \end{abstract}
+l.114 \end{abstract}
                      [1]
 Chapter 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 117.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 118.
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
 
  []
 
 
-Underfull \hbox (badness 1005) in paragraph at lines 120--121
+Underfull \hbox (badness 1005) in paragraph at lines 121--122
 []\OT1/ptm/m/n/12 This report will also outline the steps that were taken in or
 der for other
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
@@ -548,18 +551,18 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.125   \item W
+l.126   \item W
                hich IP addresses are listening on port 80, port 443 and both...
 [1
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 125.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 126.
 
  (/home/michael/.miktex/texmfs/install/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 125.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 126.
 
 Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
@@ -569,8 +572,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.144 \item\textbf
-                  {Chapter 3} highlights other relevant work conducted in th...
+l.145 \item\textbf
+                  {Chapter 4} explains the overall design of the investigati...
 [2]pdfTeX warning (ext4): destination with the same identifier (name{page.3}) h
 as been already used, duplicate ignored
 <to be read again> 
@@ -777,46 +780,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 350--352
  []
 
 [32 <./pdf_images/Ip_p80_alpha.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 354--355
-
- []
-
 <pdf_images/Ip_p443_alpha.pdf, id=6389, 722.7pt x 542.025pt>
 File: pdf_images/Ip_p443_alpha.pdf Graphic file (type pdf)
 <use pdf_images/Ip_p443_alpha.pdf>
 Package pdftex.def Info: pdf_images/Ip_p443_alpha.pdf  used on input line 358.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
-[33 <./pdf_images/Ip_p443_alpha.pdf>]
+ [33 <./pdf_images/Ip_p443_alpha.pdf>]
 <pdf_images/Ip_bp_alpha.pdf, id=12193, 722.7pt x 542.025pt>
 File: pdf_images/Ip_bp_alpha.pdf Graphic file (type pdf)
 <use pdf_images/Ip_bp_alpha.pdf>
-Package pdftex.def Info: pdf_images/Ip_bp_alpha.pdf  used on input line 367.
+Package pdftex.def Info: pdf_images/Ip_bp_alpha.pdf  used on input line 368.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [34 <./pdf_images/Ip_bp_alpha.pdf>]
+
+[34 <./pdf_images/Ip_bp_alpha.pdf>]
 <pdf_images/AverageDayinTrinityCollegeDublin.pdf, id=18000, 722.7pt x 542.025pt
 >
 File: pdf_images/AverageDayinTrinityCollegeDublin.pdf Graphic file (type pdf)
 <use pdf_images/AverageDayinTrinityCollegeDublin.pdf>
 Package pdftex.def Info: pdf_images/AverageDayinTrinityCollegeDublin.pdf  used 
-on input line 396.
+on input line 397.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
-
-[35]
+ [35]
 <pdf_images/IPaddressestoPorts.pdf, id=18006, 722.7pt x 542.025pt>
 File: pdf_images/IPaddressestoPorts.pdf Graphic file (type pdf)
 <use pdf_images/IPaddressestoPorts.pdf>
 Package pdftex.def Info: pdf_images/IPaddressestoPorts.pdf  used on input line 
-407.
+408.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
  [36 <./pdf_images/AverageDayinTrinityCollegeDublin.pdf>]
 <pdf_images/RegularVsIrregularIPaddresses.pdf, id=18014, 722.7pt x 542.025pt>
 File: pdf_images/RegularVsIrregularIPaddresses.pdf Graphic file (type pdf)
 <use pdf_images/RegularVsIrregularIPaddresses.pdf>
 Package pdftex.def Info: pdf_images/RegularVsIrregularIPaddresses.pdf  used on 
-input line 415.
+input line 416.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
  [37 <./pdf_images/IPaddressestoPorts.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 420--422
+Underfull \hbox (badness 10000) in paragraph at lines 421--423
 
  []
 
@@ -827,7 +826,7 @@ File: pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf Graphic
 file (type pdf)
 <use pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf>
 Package pdftex.def Info: pdf_images/MaximumNumberOfIrregularIPaddressesInAnAver
-ageDay.pdf  used on input line 428.
+ageDay.pdf  used on input line 429.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
  [39 <./pdf_images/MaximumNumberOfIrregularIPaddressesInAnAverageDay.pdf>]
 <pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf, id=18039,
@@ -836,47 +835,52 @@ File: pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf Graph
 ic file (type pdf)
 <use pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf>
 Package pdftex.def Info: pdf_images/TotalNumberOccurencesOfIrregularIPaddresses
-OnAverage.pdf  used on input line 436.
+OnAverage.pdf  used on input line 437.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
- [40 <./pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf>] [
-41]
-Underfull \hbox (badness 10000) in paragraph at lines 496--497
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--442
+
+ []
+
+[40 <./pdf_images/TotalNumberOccurencesOfIrregularIPaddressesOnAverage.pdf>]
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 497--498
 
  []
 
 <images/redirect.png, id=18053, 401.5pt x 200.75pt>
 File: images/redirect.png Graphic file (type png)
 <use images/redirect.png>
-Package pdftex.def Info: images/redirect.png  used on input line 500.
+Package pdftex.def Info: images/redirect.png  used on input line 501.
 (pdftex.def)             Requested size: 155.99762pt x 78.00117pt.
 <images/polycom.png, id=18054, 401.5pt x 200.75pt>
 File: images/polycom.png Graphic file (type png)
 <use images/polycom.png>
-Package pdftex.def Info: images/polycom.png  used on input line 502.
+Package pdftex.def Info: images/polycom.png  used on input line 503.
 (pdftex.def)             Requested size: 155.99762pt x 78.00117pt.
 <images/printer.png, id=18055, 401.5pt x 200.75pt>
 File: images/printer.png Graphic file (type png)
 <use images/printer.png>
-Package pdftex.def Info: images/printer.png  used on input line 505.
+Package pdftex.def Info: images/printer.png  used on input line 506.
 (pdftex.def)             Requested size: 155.99762pt x 78.00117pt.
 <images/image_monitor.png, id=18056, 401.5pt x 200.75pt>
 File: images/image_monitor.png Graphic file (type png)
 <use images/image_monitor.png>
-Package pdftex.def Info: images/image_monitor.png  used on input line 507.
+Package pdftex.def Info: images/image_monitor.png  used on input line 508.
 (pdftex.def)             Requested size: 155.99762pt x 78.00117pt.
 [42]
 <pdf_images/ReverseDNSlookup.pdf, id=18064, 722.7pt x 542.025pt>
 File: pdf_images/ReverseDNSlookup.pdf Graphic file (type pdf)
 <use pdf_images/ReverseDNSlookup.pdf>
 Package pdftex.def Info: pdf_images/ReverseDNSlookup.pdf  used on input line 51
-6.
+7.
 (pdftex.def)             Requested size: 325.21199pt x 243.90898pt.
  [43 <./images/redirect.png (PNG copy)> <./images/polycom.png (PNG copy)> <./im
 ages/printer.png (PNG copy)> <./images/image_monitor.png (PNG copy)>]
 <pdf_images/ZMapvsZGrab.pdf, id=18074, 722.7pt x 542.025pt>
 File: pdf_images/ZMapvsZGrab.pdf Graphic file (type pdf)
 <use pdf_images/ZMapvsZGrab.pdf>
-Package pdftex.def Info: pdf_images/ZMapvsZGrab.pdf  used on input line 526.
+Package pdftex.def Info: pdf_images/ZMapvsZGrab.pdf  used on input line 527.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
 
 [44 <./pdf_images/ReverseDNSlookup.pdf>] [45 <./pdf_images/ZMapvsZGrab.pdf>]
@@ -885,29 +889,29 @@ Package pdftex.def Info: pdf_images/ZMapvsZGrab.pdf  used on input line 526.
 File: pdf_images/TLSVersionsInTCD.pdf Graphic file (type pdf)
 <use pdf_images/TLSVersionsInTCD.pdf>
 Package pdftex.def Info: pdf_images/TLSVersionsInTCD.pdf  used on input line 64
-7.
+8.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
  [47] [48 <./pdf_images/TLSVersionsInTCD.pdf>]
 <pdf_images/signatureAlgorithms.pdf, id=18119, 722.7pt x 542.025pt>
 File: pdf_images/signatureAlgorithms.pdf Graphic file (type pdf)
 <use pdf_images/signatureAlgorithms.pdf>
 Package pdftex.def Info: pdf_images/signatureAlgorithms.pdf  used on input line
- 657.
+ 658.
 (pdftex.def)             Requested size: 325.21199pt x 243.90898pt.
  [49] [50 <./pdf_images/signatureAlgorithms.pdf>]
 <pdf_images/CipherSuitesInTCD.pdf, id=18138, 722.7pt x 542.025pt>
 File: pdf_images/CipherSuitesInTCD.pdf Graphic file (type pdf)
 <use pdf_images/CipherSuitesInTCD.pdf>
 Package pdftex.def Info: pdf_images/CipherSuitesInTCD.pdf  used on input line 6
-68.
+69.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 674.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 675.
 
 
 (/home/michael/.miktex/texmfs/install/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 1102) in paragraph at lines 673--676
+Underfull \hbox (badness 1102) in paragraph at lines 674--677
 \OT1/pcr/m/n/12 TLS[]ECDHE[]RSA[]WITH[]AES[]128[]CBC[]SHA \OT1/ptm/m/n/12 with 
 only a single IP address
  []
@@ -916,13 +920,18 @@ only a single IP address
 <pdf_images/BrowserTrusted.pdf, id=18148, 722.7pt x 542.025pt>
 File: pdf_images/BrowserTrusted.pdf Graphic file (type pdf)
 <use pdf_images/BrowserTrusted.pdf>
-Package pdftex.def Info: pdf_images/BrowserTrusted.pdf  used on input line 680.
+Package pdftex.def Info: pdf_images/BrowserTrusted.pdf  used on input line 681.
 
 (pdftex.def)             Requested size: 325.21199pt x 243.90898pt.
 
-Underfull \hbox (badness 1226) in paragraph at lines 684--685
+Underfull \hbox (badness 1226) in paragraph at lines 685--686
 \OT1/pcr/m/n/12 TLS[]ECDHE[]RSA[]WITH[]AES[]128[]GCM[]SHA256 \OT1/ptm/m/n/12 ci
 pher suites and only 17
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 685--686
+
  []
 
 [52 <./pdf_images/BrowserTrusted.pdf>]
@@ -930,23 +939,23 @@ pher suites and only 17
 File: pdf_images/CertificateExpired.pdf Graphic file (type pdf)
 <use pdf_images/CertificateExpired.pdf>
 Package pdftex.def Info: pdf_images/CertificateExpired.pdf  used on input line 
-711.
+712.
 (pdftex.def)             Requested size: 325.21199pt x 243.90898pt.
  [53] [54 <./pdf_images/CertificateExpired.pdf>]
 <pdf_images/SelfSigned.pdf, id=18173, 722.7pt x 542.025pt>
 File: pdf_images/SelfSigned.pdf Graphic file (type pdf)
 <use pdf_images/SelfSigned.pdf>
-Package pdftex.def Info: pdf_images/SelfSigned.pdf  used on input line 721.
+Package pdftex.def Info: pdf_images/SelfSigned.pdf  used on input line 722.
 (pdftex.def)             Requested size: 325.21199pt x 243.90898pt.
  [55] [56 <./pdf_images/SelfSigned.pdf>] [57]
 Chapter 7.
 
-Underfull \hbox (badness 10000) in paragraph at lines 750--752
+Underfull \hbox (badness 10000) in paragraph at lines 751--753
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 753--754
+Underfull \hbox (badness 10000) in paragraph at lines 754--755
 
  []
 
@@ -955,24 +964,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 753--754
 ] [59]
 Chapter 8.
 
-Underfull \hbox (badness 10000) in paragraph at lines 758--759
+Underfull \hbox (badness 10000) in paragraph at lines 759--760
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 760--761
+Underfull \hbox (badness 10000) in paragraph at lines 761--762
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 762--763
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
 
  []
 
 [60
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 764--765
+Underfull \hbox (badness 10000) in paragraph at lines 766--767
 
  []
 
@@ -1045,26 +1054,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 242--246
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 774.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 776.
  [68]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 774.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 776.
  (final-year-report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 774.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 774.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 776.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 776.
 Package rerunfilecheck Info: File `final-year-report.out' has not changed.
 (rerunfilecheck)             Checksum: 9D501DA5FED289A4475FCA8ABA249CF3;2155.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 774.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 776.
  ) 
 Here is how much of TeX's memory you used:
- 9608 strings out of 494894
- 153391 string characters out of 3178612
- 280454 words of memory out of 3000000
- 12827 multiletter control sequences out of 15000+200000
- 29855 words of font info for 56 fonts, out of 3000000 for 9000
+ 9628 strings out of 494894
+ 153728 string characters out of 3178612
+ 280589 words of memory out of 3000000
+ 12842 multiletter control sequences out of 15000+200000
+ 31440 words of font info for 58 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
  67i,10n,108p,2496b,455s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/home/michael/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc} </home/mic
@@ -1079,7 +1088,7 @@ xmfs/install/fonts/type1/urw/helvetic/uhvbo8a.pfb></home/michael/.miktex/texmfs
 all/fonts/type1/urw/times/utmb8a.pfb></home/michael/.miktex/texmfs/install/font
 s/type1/urw/times/utmr8a.pfb></home/michael/.miktex/texmfs/install/fonts/type1/
 urw/times/utmri8a.pfb>
-Output written on final-year-report.pdf (79 pages, 4710706 bytes).
+Output written on final-year-report.pdf (79 pages, 4710707 bytes).
 PDF statistics:
  18367 PDF objects out of 18468 (max. 8388607)
  205 named destinations out of 1000 (max. 500000)
